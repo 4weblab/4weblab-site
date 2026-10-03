@@ -48,15 +48,20 @@ function redactQuestion(question: string) {
 
 function extractResponse(payload: Record<string, unknown>) {
   const output = Array.isArray(payload.output) ? payload.output : [];
-  let reply = '';
   for (const item of output) {
     if (!item || typeof item !== 'object') continue;
     const record = item as Record<string, unknown>;
-    if (record.type === 'message' && Array.isArray(record.content)) for (const content of record.content) {
-      if (content && typeof content === 'object' && (content as Record<string, unknown>).type === 'output_text') reply += trim((content as Record<string, unknown>).text, 1_200);
+    if (record.type !== 'message' || !Array.isArray(record.content)) continue;
+    const parts: string[] = [];
+    for (const content of record.content) {
+      if (content && typeof content === 'object' && (content as Record<string, unknown>).type === 'output_text') parts.push(trim((content as Record<string, unknown>).text, 1_200));
     }
+    // Una richiesta deve produrre un solo turno visibile: ignoriamo eventuali
+    // messaggi aggiuntivi generati a valle dallo stesso provider.
+    const reply = parts.join('').trim();
+    if (reply) return { reply };
   }
-  return { reply: reply.trim() };
+  return { reply: '' };
 }
 
 export default async function assistant(request: Request): Promise<Response> {
