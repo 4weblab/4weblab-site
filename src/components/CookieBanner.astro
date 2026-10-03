@@ -71,7 +71,9 @@
     if (!hasSavedPreference()) banner.hidden = false;
 
     banner.querySelector('[data-cookie-action="accept"]')?.addEventListener('click', () => save(true));
-    banner.querySelector('[data-cookie-action="deny"]')?.addEventListener('click', () => save(false));
+    banner.querySelectorAll('[data-cookie-action="deny"]').forEach((button) => {
+      button.addEventListener('click', () => save(false));
+    });
     banner.querySelector('[data-cookie-action="customize"]')?.addEventListener('click', () => {
       openPreferences();
     });
