@@ -1,9 +1,6 @@
 import { ASSISTANT_KNOWLEDGE_BASE } from './assistant-kb';
 
 type ChatMessage = { role: 'user' | 'assistant'; content: string };
-type ContactPrefill = { servizio: string; tipo_attivita: string; zona: string; esigenza: string; url_sito_attuale?: string };
-
-const SERVICE_OPTIONS = new Set(['perizia_essential', 'perizia_premium', 'sito_per_negozio', 'sito_per_professionisti', 'sito_aziendale', 'progetto_su_misura', 'google_ads', 'chatgpt_ads', 'valutazione_servizio']);
 const MAX_MESSAGES = 12;
 const MAX_MESSAGE_LENGTH = 750;
 const MAX_TOTAL_LENGTH = 5_000;
@@ -49,27 +46,17 @@ function redactQuestion(question: string) {
   return question.replace(/[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/g, '[rimosso]').replace(/(?:\+?39\s*)?(?:\d[\s.-]*){8,14}/g, '[rimosso]');
 }
 
-function contactPrefill(value: unknown): ContactPrefill {
-  const raw = value && typeof value === 'object' ? value as Record<string, unknown> : {};
-  const servizio = trim(raw.servizio, 60);
-  const url = trim(raw.url_sito_attuale, 200);
-  return { servizio: SERVICE_OPTIONS.has(servizio) ? servizio : 'valutazione_servizio', tipo_attivita: trim(raw.tipo_attivita, 100), zona: trim(raw.zona, 100), esigenza: trim(raw.esigenza, 200), ...(url.startsWith('http://') || url.startsWith('https://') ? { url_sito_attuale: url } : {}) };
-}
-
 function extractResponse(payload: Record<string, unknown>) {
   const output = Array.isArray(payload.output) ? payload.output : [];
-  let reply = ''; let action: ContactPrefill | null = null;
+  let reply = '';
   for (const item of output) {
     if (!item || typeof item !== 'object') continue;
     const record = item as Record<string, unknown>;
     if (record.type === 'message' && Array.isArray(record.content)) for (const content of record.content) {
       if (content && typeof content === 'object' && (content as Record<string, unknown>).type === 'output_text') reply += trim((content as Record<string, unknown>).text, 1_200);
     }
-    if (record.type === 'function_call' && record.name === 'propose_contact_card') {
-      try { action = contactPrefill(JSON.parse(String(record.arguments ?? '{}'))); } catch { action = contactPrefill({}); }
-    }
   }
-  return { reply: reply.trim(), action };
+  return { reply: reply.trim() };
 }
 
 export default async function assistant(request: Request): Promise<Response> {
@@ -96,7 +83,6 @@ export default async function assistant(request: Request): Promise<Response> {
         model: process.env.ASSISTANT_MODEL || 'gpt-6-luna', store: false, reasoning: { effort: 'none' }, max_output_tokens: 320,
         instructions: `${ASSISTANT_KNOWLEDGE_BASE}\nPagina che il visitatore sta leggendo: ${currentPage || 'non disponibile'}.`,
         input: messages.map((message) => ({ role: message.role, content: [{ type: 'input_text', text: message.content }] })),
-        tools: [{ type: 'function', name: 'propose_contact_card', description: 'Propone una scheda riepilogativa da mostrare al visitatore prima del modulo contatti. Non raccoglie dati personali.', strict: true, parameters: { type: 'object', additionalProperties: false, required: ['servizio', 'tipo_attivita', 'zona', 'esigenza', 'url_sito_attuale'], properties: { servizio: { type: 'string', enum: [...SERVICE_OPTIONS] }, tipo_attivita: { type: 'string' }, zona: { type: 'string' }, esigenza: { type: 'string' }, url_sito_attuale: { type: ['string', 'null'] } } } }],
       }),
     });
     if (!upstream.ok) {
@@ -104,8 +90,8 @@ export default async function assistant(request: Request): Promise<Response> {
       throw new Error(`OpenAI response ${upstream.status}: ${detail}`);
     }
     const result = extractResponse(await upstream.json() as Record<string, unknown>);
-    const reply = result.reply || (result.action ? 'Perfetto, Le preparo un riepilogo da controllare prima di contattarci.' : 'Non riesco a formulare una risposta utile. Può raccontarci il suo obiettivo dal modulo contatti o su WhatsApp?');
-    return json({ reply, action: result.action ? { type: 'show_contact_card', prefill: result.action } : null });
+    const reply = result.reply || 'Non riesco a formulare una risposta utile. Può raccontarci il suo obiettivo dal modulo contatti o su WhatsApp?';
+    return json({ reply, action: null });
   } catch (error) {
     // Manteniamo i messaggi degli utenti fuori dai log: registriamo soltanto il
     // motivo tecnico, utile per distinguere quota, modello e timeout.
