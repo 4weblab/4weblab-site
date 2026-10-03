@@ -4,7 +4,7 @@ interface Props { contactTarget?: string; showHome?: boolean; }
 const { contactTarget = '#contatti', showHome = true } = Astro.props;
 ---
 
-<script is:inline src="/analytics-consent.js"></script>
+<script is:inline src="/analytics-consent.js" defer></script>
 <header>
   <a class="brand brand-image" href="/" aria-label="4 Web Lab, home"><img src="/4weblab-logo-header.svg" width="240" height="88" alt="4 Web Lab" /></a>
   <nav aria-label="Navigazione principale">
