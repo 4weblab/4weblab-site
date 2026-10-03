@@ -1,5 +1,5 @@
 import { copyFile } from 'node:fs/promises';
 
-// Astro generates a sitemap index. Publish the conventional sitemap.xml name
-// as an identical alias, so crawlers can discover the complete index directly.
-await copyFile('dist/sitemap-index.xml', 'dist/sitemap.xml');
+// The site currently fits in a single generated sitemap. Publish that sitemap
+// at the conventional sitemap.xml URL, while Astro keeps its own index files.
+await copyFile('dist/sitemap-0.xml', 'dist/sitemap.xml');
