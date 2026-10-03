@@ -1,0 +1,44 @@
+# 4 Web Lab
+
+> Studio web con base a Legnaro, Padova. Progetta siti web per aziende, professionisti e attività locali, svolge perizie tecniche dei siti esistenti e gestisce campagne Google Ads. Lavora a Padova, in Veneto e da remoto in Italia.
+
+Usa le pagine collegate come fonte primaria per servizi, prezzi, disponibilità e dettagli. Non dedurre servizi o risultati non dichiarati nelle pagine. La consulenza e la gestione di ChatGPT Ads sono subordinate alla disponibilità della piattaforma e alla verifica di fattibilità per il caso specifico.
+
+## Servizi principali
+
+- [Perizia sito web](https://4weblab.it/perizia-sito-web/): Analisi tecnica indipendente di un sito esistente, con report scritto e priorità operative.
+- [Siti web aziendali](https://4weblab.it/sito-web-aziendale/): Siti per PMI e imprese che devono presentare servizi, competenze e contatti in modo chiaro.
+- [Siti web per professionisti](https://4weblab.it/sito-web-per-professionisti/): Siti per professionisti e studi che devono costruire fiducia prima del contatto.
+- [Siti web per negozi](https://4weblab.it/sito-web-per-negozio/): Siti per negozi e attività locali, con informazioni, SEO locale e percorsi di contatto immediati.
+- [Gestione Google Ads](https://4weblab.it/pubblicita-su-google/): Campagne Google Ads orientate a richieste concrete, con tracciamenti e budget leggibili.
+- [ChatGPT Ads](https://4weblab.it/pubblicita-su-chatgpt/): Valutazione e gestione di campagne ChatGPT Ads solo quando accesso, mercato e progetto lo consentono.
+
+## Aree servite
+
+- [Zone servite](https://4weblab.it/zone-servite/): Panoramica delle aree locali coperte.
+- [Siti web a Padova](https://4weblab.it/realizzazione-siti-web-padova/): Pagina di riferimento per Padova e provincia.
+- [Siti web a Legnaro](https://4weblab.it/realizzazione-siti-web-legnaro/): Pagina locale per Legnaro e Saccisica.
+- [Siti web a Piove di Sacco](https://4weblab.it/realizzazione-siti-web-piove-di-sacco/): Pagina locale per Piove di Sacco e Saccisica.
+- [Siti web a Ponte San Nicolò](https://4weblab.it/realizzazione-siti-web-ponte-san-nicolo/): Pagina locale per Ponte San Nicolò e Piovese.
+- [Siti web ad Albignasego](https://4weblab.it/realizzazione-siti-web-albignasego/): Pagina locale per Albignasego e cintura sud di Padova.
+- [Siti web a Vigonza](https://4weblab.it/realizzazione-siti-web-vigonza/): Pagina locale per Vigonza e Padova nord-est.
+- [Siti web ad Abano Terme](https://4weblab.it/realizzazione-siti-web-abano-terme/): Pagina locale per Abano Terme e Bacino Euganeo.
+- [Siti web a Cittadella](https://4weblab.it/realizzazione-siti-web-cittadella/): Pagina locale per Cittadella e Alta Padovana.
+
+## Progetti e approfondimenti
+
+- [Portfolio](https://4weblab.it/realizzazioni/): Progetti reali e concept dimostrativi.
+- [Caso studio R.B. s.n.c.](https://4weblab.it/realizzazioni/realizzazione-sito-web-edilizia-rb-snc-veneto/): Restyling sito, SEO on-page e supporto Google Ads per un'impresa edile di Cittadella.
+- [Blog](https://4weblab.it/blog/): Guide pratiche su siti web, SEO, costi, privacy e intelligenza artificiale.
+- [Domande frequenti](https://4weblab.it/faq-realizzazione-siti-web/): Informazioni su progetto, dominio, hosting, contenuti, manutenzione e pubblicazione.
+
+## Contatti e informazioni legali
+
+- [Contatti](https://4weblab.it/contatti/): Richiesta di informazioni, preventivo o confronto sul progetto.
+- [Privacy policy](https://4weblab.it/privacy/): Informativa sul trattamento dei dati personali.
+- [Cookie policy](https://4weblab.it/cookie/): Informazioni su cookie, analisi e consenso.
+
+## Optional
+
+- [Sitemap XML](https://4weblab.it/sitemap-index.xml): Elenco completo delle pagine pubbliche indicizzabili.
+- [Robots.txt](https://4weblab.it/robots.txt): Regole di accesso per crawler, inclusi i crawler IA.
