@@ -40,5 +40,5 @@ Usa le pagine collegate come fonte primaria per servizi, prezzi, disponibilità 
 
 ## Optional
 
-- [Sitemap XML](https://4weblab.it/sitemap-index.xml): Elenco completo delle pagine pubbliche indicizzabili.
+- [Sitemap XML](https://4weblab.it/sitemap.xml): Elenco completo delle pagine pubbliche indicizzabili.
 - [Robots.txt](https://4weblab.it/robots.txt): Regole di accesso per crawler, inclusi i crawler IA.
