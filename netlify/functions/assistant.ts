@@ -87,7 +87,10 @@ export default async function assistant(request: Request): Promise<Response> {
       body: JSON.stringify({
         model: process.env.ASSISTANT_MODEL || 'gpt-6-luna', store: false, reasoning: { effort: 'none' }, max_output_tokens: 320,
         instructions: `${ASSISTANT_KNOWLEDGE_BASE}\nPagina che il visitatore sta leggendo: ${currentPage || 'non disponibile'}.`,
-        input: messages.map((message) => ({ role: message.role, content: [{ type: 'input_text', text: message.content }] })),
+        input: messages.map((message) => ({
+          role: message.role,
+          content: [{ type: message.role === 'assistant' ? 'output_text' : 'input_text', text: message.content }],
+        })),
       }),
     });
     if (!upstream.ok) {
