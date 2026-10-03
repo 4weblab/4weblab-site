@@ -1,0 +1,134 @@
+---
+import '../styles/global.css';
+import SeoHead from '../components/SeoHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../config/site';
+const pageUrl = `${SITE.url}/sito-web-per-professionisti`;
+const audiences = ['Consulenti e liberi professionisti', 'Studi legali, commercialisti, architetti e tecnici', 'Medici, professionisti della salute e della formazione', 'Attività che vivono di reputazione, fiducia e primi contatti'];
+const faqs = [['Quanto costa un sito per liberi professionisti?', 'I progetti partono da 990 € + IVA. Il costo finale dipende da pagine, contenuti e funzionalità necessarie.'], ['Quanto tempo occorre?', 'In media il progetto richiede da 2 a 4 settimane dalla raccolta dei materiali e dall’analisi iniziale.'], ['Il sito sarà visibile su Google?', 'Ogni progetto include una base SEO on-page e tecnica; risultati e tempi dipendono da concorrenza, contenuti e attività nel tempo.'], ['Posso aggiornare i contenuti?', 'La modalità di aggiornamento viene definita in base al progetto: autonomia guidata oppure supporto continuativo.']];
+const structuredData = [{ '@context':'https://schema.org', '@graph': [{ '@type':'BreadcrumbList', itemListElement:[{ '@type':'ListItem',position:1,name:'Home',item:`${SITE.url}/`},{ '@type':'ListItem',position:2,name:'Siti web per professionisti',item:pageUrl}] }, { '@type':'Service','@id':`${pageUrl}#service`,name:'Siti web per professionisti',description:'Realizzazione di siti web per liberi professionisti e studi professionali.',serviceType:'Web design per professionisti',provider:{'@id':`${SITE.url}/#business`},areaServed:[{'@type':'AdministrativeArea',name:'Veneto'},{'@type':'City',name:'Padova'}],url:pageUrl,inLanguage:'it-IT',isPartOf:{'@id':`${SITE.url}/#website`},offers:{'@type':'Offer',priceCurrency:'EUR',priceSpecification:{'@type':'PriceSpecification',minPrice:'990',priceCurrency:'EUR'}} }, { '@type':'FAQPage',mainEntity:faqs.map(([name,text])=>({'@type':'Question',name,acceptedAnswer:{'@type':'Answer',text}})) }]}];
+---
+<!doctype html>
+<html lang="it">
+<head>
+<SeoHead title="Siti web per professionisti e studi a Padova | 4 Web Lab" description="Siti web per professionisti e studi a Padova: presenza autorevole, contenuti chiari e SEO tecnica. Progetti da 990 € + IVA." image="/images/og/sito-web-per-professionisti.webp" structuredData={structuredData}/>
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+<SiteHeader contactTarget="#contatti-professionisti" />
+<main id="contenuto">
+  <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Siti web per professionisti' }]} /></div></div>
+<section class="professionisti-hero">
+<div class="wrap professionisti-hero-grid">
+<img src="/images/professionista.webp" width="800" height="800" alt="Professionista al lavoro" fetchpriority="high"/>
+<div>
+<p class="hero-location">Siti web per professionisti · Padova / tutta Italia</p>
+<h1>La fiducia inizia<br />
+<em>prima dell’incontro.</em>
+</h1>
+<p class="lead">Un sito professionale dà forma a competenze, metodo e servizi: aiuta chi ti cerca a capire perché contattarti.</p>
+<div class="actions">
+<a class="button" href="#contatti-professionisti">Richiedi un preventivo ↓</a>
+<a class="plain light" href="#contatti-professionisti">Parliamo del progetto →</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section wrap professionisti-intro">
+<div>
+<p class="eyebrow">La prima percezione conta</p>
+<h2>Non basta<br />essere bravi.<br />
+<em>Bisogna capirlo.</em>
+</h2>
+</div>
+<div>
+<p class="statement">Prima del primo appuntamento, un potenziale cliente cerca segnali di competenza, chiarezza e affidabilità.</p>
+<p>Il sito deve rendere leggibile il valore del tuo lavoro, senza sovraccaricare di informazioni chi sta ancora decidendo a chi rivolgersi.</p><p class="context-link">Quando la priorità è intercettare una domanda già esplicita, una <a href="/pubblicita-su-google">campagna pubblicitaria su Google</a> può portare il pubblico giusto su pagine progettate per il contatto.</p>
+</div>
+<div class="professionisti-principles"><article><span>01</span><h3>Presentare il metodo</h3><p>Servizi, approccio e competenze in un percorso semplice da consultare.</p></article><article><span>02</span><h3>Rispondere alle domande</h3><p>Contenuti essenziali per ridurre dubbi prima del contatto.</p></article><article><span>03</span><h3>Rendere facile agire</h3><p>Canali diretti per chiamare, scrivere o richiedere un appuntamento.</p><p class="context-link">Per servizi complessi o consulenziali, valutiamo anche la <a href="/pubblicita-su-chatgpt">pubblicità su ChatGPT</a> quando mercato e piattaforma la rendono realmente praticabile.</p></article></div>
+</section>
+<section class="professionisti-audience">
+<div class="wrap">
+<p class="eyebrow">Per chi lavora sulla propria reputazione</p>
+<h2>Una presenza che<br />
+<em>parla con precisione.</em>
+</h2>
+<div>{audiences.map((item,index)=>
+<article>
+<small>0{index+1}</small>
+<p>{item}</p>
+</article>)}</div>
+</div>
+</section>
+<section class="professionisti-price">
+<div class="wrap">
+<div>
+<p class="eyebrow light">Investimento</p>
+<h2>Da <em>990 €</em>
+<br />+ IVA.</h2>
+<p>Un progetto su misura, a partire da una base chiara: tre pagine, design dedicato e ottimizzazione tecnica iniziale.</p>
+</div>
+<div class="price-card">
+<p class="plan-label">SITO PER PROFESSIONISTI</p>
+<ul>{['Design su misura', 'Fino a 3 pagine iniziali', 'Versione mobile', 'Base SEO on-page', 'Form e contatti diretti'].map(item=>
+<li>✓ {item}</li>)}</ul>
+<a class="button" href="#contatti-professionisti">Parliamo del progetto →</a>
+</div>
+</div>
+</section>
+<section class="section wrap perizia-faq">
+<div>
+<p class="eyebrow">Domande frequenti</p>
+<h2>Dettagli<br />importanti.</h2>
+</div>
+<div>{faqs.map(([question,answer])=>
+<details>
+<summary>{question}<span>+</span>
+</summary>
+<p>{answer}</p>
+</details>)}</div>
+</section>
+<section id="contatti-professionisti" class="contact">
+<div class="wrap perizia-contact">
+<div>
+<p class="eyebrow light">Parliamo del tuo lavoro</p>
+<h2>Parti dalla tua<br />
+<em>competenza.</em>
+</h2>
+<p>Raccontaci attività, obiettivo e pubblico: capiamo insieme quale sito può rappresentarti al meglio.</p>
+<a class="plain lime" href="https://wa.me/393514656042">WhatsApp ↗</a>
+</div>
+<form id="professionisti-form" method="post" action="https://api.web3forms.com/submit">
+<input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3"/>
+<input type="hidden" name="subject" value="Nuova richiesta sito web per professionista"/>
+<input type="hidden" name="source_page" value="sito-web-per-professionisti"/>
+<label>Nome e cognome *<input name="name" required autocomplete="name"/>
+</label>
+<label>Email *<input name="email" type="email" required autocomplete="email"/>
+</label>
+<label>Telefono<input name="phone" type="tel" autocomplete="tel"/>
+</label>
+<label>Professione o studio<input name="business" autocomplete="organization"/>
+</label>
+<label>Raccontaci di cosa hai bisogno *<textarea name="message" required rows="3">
+</textarea>
+</label>
+<label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"/>
+</label>
+<button class="button" type="submit">Invia la richiesta ↗</button>
+<p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy">Privacy policy</a>.</p>
+<p id="professionisti-status" class="form-status" aria-live="polite">
+</p>
+</form>
+</div>
+</section>
+</main>
+<SiteFooter />
+<script is:inline>const form=document.querySelector('#professionisti-form'),status=document.querySelector('#professionisti-status');form?.addEventListener('submit',async event=>{event.preventDefault();if(form.website.value)return;const button=form.querySelector('button[type="submit"]');button.disabled=true;button.textContent='Invio in corso…';status.textContent='';try{const response=await fetch(form.action,{method:'POST',body:new FormData(form)}),data=await response.json();if(!response.ok||!data.success)throw new Error('send');form.reset();status.textContent='Richiesta inviata. Ti rispondiamo entro 24 ore lavorative.'}catch{status.textContent='Invio non riuscito. Riprova tra poco o contattaci su WhatsApp.'}finally{button.disabled=false;button.textContent='Invia la richiesta ↗'}});</script>
+</body>
+</html>
+
+
+

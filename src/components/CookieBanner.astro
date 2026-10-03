@@ -1,0 +1,92 @@
+<section class="cookie-banner" data-cookie-banner aria-label="Preferenze cookie" hidden>
+  <div class="cookie-banner__content">
+    <p class="eyebrow">Preferenze privacy</p>
+    <h2>Decidi tu cosa misurare.</h2>
+    <p>Usiamo Google Analytics solo per capire in forma aggregata come viene consultato il sito. Puoi accettare, rifiutare o scegliere in modo dettagliato. I cookie tecnici necessari al funzionamento del sito non richiedono consenso.</p>
+    <p class="cookie-banner__links"><a href="/privacy">Privacy policy</a><a href="/cookie">Cookie policy</a></p>
+    <div class="cookie-banner__actions" data-cookie-main-actions>
+      <button class="cookie-button cookie-button--secondary" type="button" data-cookie-action="deny">Rifiuta</button>
+      <button class="cookie-button cookie-button--secondary" type="button" data-cookie-action="customize">Personalizza</button>
+      <button class="cookie-button" type="button" data-cookie-action="accept">Accetta Analytics</button>
+    </div>
+    <form class="cookie-banner__preferences" data-cookie-preferences hidden>
+      <label class="cookie-banner__necessary"><input type="checkbox" checked disabled /> Tecnici necessari <span>Sempre attivi</span></label>
+      <label><input type="checkbox" name="analytics" /> Analytics <span>Misura in forma aggregata le visite e le pagine consultate.</span></label>
+      <div class="cookie-banner__actions">
+        <button class="cookie-button cookie-button--secondary" type="button" data-cookie-action="back">Indietro</button>
+        <button class="cookie-button" type="submit">Salva preferenze</button>
+      </div>
+    </form>
+  </div>
+</section>
+<button class="cookie-settings-trigger" type="button" data-open-cookie-preferences aria-label="Gestisci le preferenze cookie">Cookie</button>
+
+<script is:inline>
+  (() => {
+    const preferenceKey = '4weblab-cookie-preferences';
+    const banner = document.querySelector('[data-cookie-banner]');
+    if (!banner) return;
+
+    const preferences = banner.querySelector('[data-cookie-preferences]');
+    const mainActions = banner.querySelector('[data-cookie-main-actions]');
+    const analytics = preferences?.querySelector('input[name="analytics"]');
+
+    const maxAge = 183 * 24 * 60 * 60 * 1000;
+    const hasSavedPreference = () => {
+      try {
+        const value = JSON.parse(window.localStorage.getItem(preferenceKey) || 'null');
+        if (!value?.updatedAt || Date.now() - new Date(value.updatedAt).getTime() > maxAge) {
+          window.localStorage.removeItem(preferenceKey);
+          return false;
+        }
+        return typeof value.analytics === 'boolean';
+      } catch { return false; }
+    };
+
+    const save = (analyticsAllowed) => {
+      try {
+        window.localStorage.setItem(preferenceKey, JSON.stringify({
+          version: 1,
+          analytics: analyticsAllowed,
+          updatedAt: new Date().toISOString(),
+        }));
+      } catch {
+        // The current-page choice still applies if browser storage is unavailable.
+      }
+      window.dispatchEvent(new CustomEvent('4weblab:analytics-consent', {
+        detail: { analytics: analyticsAllowed },
+      }));
+      banner.hidden = true;
+    };
+
+    const openPreferences = () => {
+      banner.hidden = false;
+      mainActions.hidden = true;
+      preferences.hidden = false;
+      analytics?.focus();
+    };
+
+    window.fourWebLabCookiePreferences = { open: openPreferences };
+    if (!hasSavedPreference()) banner.hidden = false;
+
+    banner.querySelector('[data-cookie-action="accept"]')?.addEventListener('click', () => save(true));
+    banner.querySelector('[data-cookie-action="deny"]')?.addEventListener('click', () => save(false));
+    banner.querySelector('[data-cookie-action="customize"]')?.addEventListener('click', () => {
+      openPreferences();
+    });
+    banner.querySelector('[data-cookie-action="back"]')?.addEventListener('click', () => {
+      preferences.hidden = true;
+      mainActions.hidden = false;
+    });
+    preferences?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      save(Boolean(analytics?.checked));
+    });
+    document.addEventListener('click', (event) => {
+      const trigger = event.target.closest('[data-open-cookie-preferences]');
+      if (!trigger) return;
+      event.preventDefault();
+      openPreferences();
+    });
+  })();
+</script>

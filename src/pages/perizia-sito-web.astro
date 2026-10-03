@@ -1,0 +1,99 @@
+---
+import '../styles/global.css';
+import SeoHead from '../components/SeoHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../config/site';
+
+const pageUrl = `${SITE.url}/perizia-sito-web`;
+const reasons = [
+  ['Avete pagato un sito e volete capire se è fatto bene.', 'Non sapete se quello che vi hanno consegnato è un lavoro solido o una scorciatoia. La perizia ve lo dice.'],
+  ['Il sito non porta contatti.', 'Ricevete qualche visita, ma nessuno chiama. La perizia individua le cause su cui intervenire.'],
+  ['Google non trova il vostro sito.', 'Quando cercate il vostro nome, il sito non compare o compare troppo in basso. La perizia identifica i blocchi.'],
+  ['Volete rifarlo ma non sapete se serve.', 'Prima di investire in un nuovo sito, volete essere sicuri che il problema sia davvero il sito.'],
+  ['Avete cambiato agenzia.', 'Una perizia indipendente vi restituisce un quadro chiaro del lavoro esistente.'],
+  ['Sospettate problemi tecnici.', 'Il sito è lento, si comporta male su mobile o perde visitatori: analizziamo le cause.'],
+];
+const essential = ['Struttura tecnica', 'Indicizzazione', 'SEO on-page essenziale', 'Velocità e prestazioni', 'Versione mobile', 'Esperienza d’uso', 'Conversione', 'Proprietà e accessi'];
+const premium = ['Tutto Essential', 'Analisi HTML, CSS e JavaScript', 'Dati strutturati', 'Canonical, sitemap e robots', 'Analytics e tracciamenti', 'Sicurezza di base'];
+const faqs = [
+  ['Cos’è la Perizia del sito web?', 'È un’analisi tecnica scritta di un sito esistente: indica cosa funziona, cosa non funziona e cosa affrontare per primo. Non è una perizia giurata e non ha valore legale.'],
+  ['È la stessa cosa di un audit SEO?', 'No. Un audit SEO guarda soprattutto il posizionamento; la perizia considera anche salute tecnica, esperienza d’uso e conversione.'],
+  ['Serve l’accesso al sito per l’Essential?', 'No. L’Essential parte dall’URL e dall’analisi esterna. Per il Premium sono consigliati gli accessi a Search Console e Analytics.'],
+  ['Quanto tempo serve?', 'Essential: 5 giorni lavorativi dalla conferma. Premium: 7 giorni lavorativi dalla conferma.'],
+  ['Il report è riservato?', 'Sì. Potete tenerlo privato o condividerlo con chi preferite.'],
+];
+const structuredData = [{
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Perizia sito web', item: pageUrl },
+    ] },
+    { '@type': 'Service', '@id': `${pageUrl}#service`, name: 'Perizia del sito web', serviceType: 'Perizia tecnica del sito web', provider: { '@id': `${SITE.url}/#business` }, areaServed: { '@type': 'Country', name: 'Italia' }, url: pageUrl, inLanguage: 'it-IT', isPartOf: { '@id': `${SITE.url}/#website` }, offers: [
+      { '@type': 'Offer', name: 'Essential', url: pageUrl, price: '219', priceCurrency: 'EUR', availability: 'https://schema.org/InStock', priceSpecification: { '@type': 'UnitPriceSpecification', price: '219', priceCurrency: 'EUR', valueAddedTaxIncluded: false } },
+      { '@type': 'Offer', name: 'Premium', url: pageUrl, price: '499', priceCurrency: 'EUR', availability: 'https://schema.org/InStock', priceSpecification: { '@type': 'UnitPriceSpecification', price: '499', priceCurrency: 'EUR', valueAddedTaxIncluded: false } },
+    ] },
+    { '@type': 'FAQPage', mainEntity: faqs.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) },
+  ],
+}];
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <SeoHead title="Perizia sito web: analisi tecnica indipendente | 4 Web Lab" description="Scopri cosa non funziona nel tuo sito. Analisi tecnica sito web con report scritto, prezzo fisso, da 219 € + IVA." image="/images/og/perizia-sito-web.webp" structuredData={structuredData} />
+  </head>
+  <body>
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+    <SiteHeader contactTarget="#richiedi-perizia" />
+    <main id="contenuto">
+      <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Perizia sito web' }]} /></div></div>
+      <section class="perizia-hero"><div class="wrap">
+        <p class="hero-location">Home / Perizia sito web</p>
+        <h1>Scopri cosa non<br /><em>funziona davvero.</em></h1>
+        <p class="lead">I tool gratuiti elencano errori. Noi definiamo quali incidono sul rendimento del tuo sito e in quale ordine intervenire.</p>
+        <div class="actions"><a class="button" href="#richiedi-perizia">Richiedi la perizia ↓</a><a class="plain light" href="#cosa-controlliamo">Cosa controlliamo →</a></div>
+        <p class="perizia-note">Perizia tecnica indipendente, non forense.</p>
+      </div><img class="perizia-hero-visual" src="/images/perizia-hero-analyst.webp" width="1536" height="1024" alt="Professionista che analizza un sito web datato" /></section>
+
+      <section class="perizia-intro section wrap"><div><p class="eyebrow">Una diagnosi, prima di decidere</p><h2>Un report scritto.<br />Priorità chiare.</h2></div><div><p class="statement">La Perizia Sito Web è un’analisi tecnica di un sito esistente. Esamina struttura, indicizzazione, prestazioni, esperienza utente e capacità di convertire visitatori in contatti.</p><p>Ricevi un report con problemi ordinati per impatto, dai bloccanti ai secondari, e indicazioni pratiche per affrontarli.</p></div></section>
+
+      <section class="perizia-reasons"><div class="wrap"><p class="eyebrow">Quando può servire</p><h2>Non decidere<br /><em>al buio.</em></h2><div class="reason-grid">{reasons.map(([title, description], index) => <article><small>0{index + 1}</small><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
+
+      <section id="cosa-controlliamo" class="section wrap perizia-checks"><div><p class="eyebrow">Il perimetro dell’analisi</p><h2>Cosa<br />controlliamo.</h2></div><div class="checks-content"><p class="checks-answer"><strong>Un’analisi tecnica serve a capire quali ostacoli del sito incidono davvero su visibilità, esperienza e richieste di contatto, prima di investire in correzioni o in un rifacimento.</strong></p><div class="checks-split"><article><span>SEO ESSENZIALE / ESSENTIAL</span><p>Verifichiamo gli elementi fondamentali che aiutano Google a leggere, comprendere e indicizzare le pagine del sito.</p></article><article><span>DATI STRUTTURATI / PREMIUM</span><p>Controlliamo i segnali tecnici che aiutano i motori e i sistemi AI a interpretare con più precisione contenuti, attività e servizi.</p></article></div><p class="checks-legal">Su cookie e privacy verifichiamo soltanto l’esistenza di banner e pagine: non esprimiamo pareri legali.</p></div></section>
+
+      <section id="prezzi" class="perizia-pricing"><div class="wrap"><p class="eyebrow light">Scegli il livello</p><h2>Due modi per<br /><em>fare chiarezza.</em></h2><div class="plan-grid"><article class="plan"><p class="plan-label">01 / DIAGNOSI ESTERNA</p><h3>Essential</h3><p class="plan-price">219 € <small>+ IVA</small></p><p>La diagnosi rapida, solo dall’esterno. Non servono accessi.</p><ul>{essential.map(item => <li>✓ {item}</li>)}</ul><small class="plan-delivery">Consegna in 5 giorni lavorativi</small><a class="button" href="#richiedi-perizia">Richiedi Essential →</a></article><article class="plan featured"><p class="plan-label">02 / ANALISI COMPLETA</p><h3>Premium</h3><p class="plan-price">499 € <small>+ IVA</small></p><p>L’analisi completa. Search Console e Analytics sono consigliati.</p><ul>{premium.map(item => <li>✓ {item}</li>)}</ul><small class="plan-delivery">Consegna in 7 giorni lavorativi</small><a class="button" href="#richiedi-perizia">Richiedi Premium →</a></article></div><p class="perizia-disclaimer">Prezzi fissi. Se un sito ha dimensioni fuori dal normale e richiede più tempo, te lo comunichiamo prima di iniziare.</p></div></section>
+
+      <section class="section wrap perizia-method"><div><p class="eyebrow">Dal sito al report</p><h2>Come<br />funziona.</h2></div><ol><li><small>01</small><div><h3>Ci invii l’URL</h3><p>Compili il form con l’indirizzo del sito e il motivo della richiesta.</p></div></li><li><small>02</small><div><h3>Definiamo il livello</h3><p>Ti rispondiamo entro 24 ore lavorative con una prima indicazione.</p></div></li><li><small>03</small><div><h3>Analizziamo</h3><p>Procediamo con i controlli previsti e prepariamo il report.</p></div></li><li><small>04</small><div><h3>Ricevi priorità chiare</h3><p>Consegniamo il report e, se utile, ne parliamo insieme in call.</p></div></li></ol></section>
+
+      <section class="perizia-after"><div class="wrap"><p class="eyebrow">Dopo la perizia</p><h2>Il report è tuo.<br /><em>La scelta anche.</em></h2><div class="after-grid"><article><h3>Continui da solo</h3><p>Puoi condividerlo con il tuo team, con l’agenzia che ti segue o con un altro professionista per chiedere un preventivo.</p></article><article><h3>Interveniamo insieme</h3><p>Ogni intervento riceve una quotazione separata. Puoi iniziare da una priorità e decidere in seguito come proseguire.</p></article><article><h3>Valuti un nuovo sito</h3><p>Se conviene ripartire, ricevi un preventivo pensato per il tuo caso. Se non serve, il report lo dice chiaramente.</p></article></div></div></section>
+
+      <section class="section wrap perizia-faq"><div><p class="eyebrow">Domande frequenti</p><h2>Risposte<br />dirette.</h2></div><div>{faqs.map(([question, answer]) => <details><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
+
+      <section id="richiedi-perizia" class="contact"><div class="wrap perizia-contact"><div><p class="eyebrow light">Richiedi la perizia</p><h2>Parti da una<br /><em>domanda vera.</em></h2><p>Hai un sito da verificare? Raccontaci il punto da cui vuoi partire.</p><a class="plain lime" href="https://wa.me/393514656042">WhatsApp ↗</a></div><form id="perizia-form" method="post" action="https://api.web3forms.com/submit"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuova richiesta perizia sito web" /><input type="hidden" name="from_name" value="4 Web Lab – Perizia sito web" /><input type="hidden" name="source_page" value="perizia-sito-web" /><label>Nome e cognome *<input name="name" required autocomplete="name" /></label><label>Email *<input name="email" type="email" required autocomplete="email" /></label><label>Telefono<input name="phone" type="tel" autocomplete="tel" /></label><label>Indirizzo del sito *<input name="site_url" type="url" required placeholder="https://www.tuosito.it" autocomplete="url" /></label><label>Motivo della richiesta *<select name="reason" required><option value="" selected disabled>Seleziona un motivo</option>{reasons.map(([title]) => <option value={title}>{title}</option>)}</select></label><label>Livello di perizia *<select name="level" required><option value="" selected disabled>Seleziona un livello</option><option>Essential – 219 € + IVA</option><option>Premium – 499 € + IVA</option></select></label><label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label><button class="button" type="submit">Invia la richiesta ↗</button><p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy">Privacy policy</a>.</p><p id="form-status" class="form-status" aria-live="polite"></p></form></div></section>
+    </main>
+<SiteFooter />
+    <script is:inline>
+      const form = document.querySelector('#perizia-form');
+      const status = document.querySelector('#form-status');
+      form?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (form.website.value) return;
+        const button = form.querySelector('button[type="submit"]');
+        button.disabled = true; button.textContent = 'Invio in corso…'; status.textContent = '';
+        try {
+          const response = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+          const data = await response.json();
+          if (!response.ok || !data.success) throw new Error('send');
+          form.reset(); status.textContent = 'Richiesta inviata. Ti rispondiamo entro 24 ore lavorative.';
+        } catch { status.textContent = 'Invio non riuscito. Riprova tra poco o contattaci su WhatsApp.'; }
+        finally { button.disabled = false; button.textContent = 'Invia la richiesta ↗'; }
+      });
+    </script>
+  </body>
+</html>
+
+
+

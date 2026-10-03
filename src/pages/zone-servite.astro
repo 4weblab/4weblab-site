@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import SeoHead from '../components/SeoHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../config/site';
+
+const pageUrl = `${SITE.url}/zone-servite`;
+const zones = [
+  { name: 'Padova', slug: 'padova', description: 'Il riferimento per attività, professionisti e PMI dell’area urbana.', x: 422, y: 248 },
+  { name: 'Legnaro', slug: 'legnaro', description: 'La nostra base operativa, nella Saccisica.', x: 444, y: 373 },
+  { name: 'Piove di Sacco', slug: 'piove-di-sacco', description: 'Commercio, servizi e attività della Saccisica.', x: 525, y: 422 },
+  { name: 'Ponte San Nicolò', slug: 'ponte-san-nicolo', description: 'Il corridoio commerciale della Piovese.', x: 389, y: 334 },
+  { name: 'Albignasego', slug: 'albignasego', description: 'Una cintura sud densa di imprese e servizi.', x: 350, y: 304 },
+  { name: 'Vigonza', slug: 'vigonza', description: 'Un territorio in movimento a nord-est di Padova.', x: 493, y: 212 },
+  { name: 'Abano Terme', slug: 'abano-terme', description: 'Ospitalità, benessere e commercio del Bacino Euganeo.', x: 288, y: 345 },
+  { name: 'Cittadella', slug: 'cittadella', description: 'Artigianato e imprese dell’Alta Padovana.', x: 305, y: 100 },
+];
+const href = (slug: string) => `/realizzazione-siti-web-${slug}`;
+const structuredData = [{ '@context': 'https://schema.org', '@graph': [
+  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: 'Zone servite', item: pageUrl }] },
+  { '@type': 'CollectionPage', '@id': `${pageUrl}#webpage`, name: 'Zone servite per la realizzazione di siti web in provincia di Padova', url: pageUrl, inLanguage: 'it-IT', mainEntity: { '@type': 'ItemList', numberOfItems: zones.length, itemListElement: zones.map((zone, index) => ({ '@type': 'ListItem', position: index + 1, name: `Realizzazione siti web a ${zone.name}`, url: `${SITE.url}${href(zone.slug)}` })) } },
+] }];
+---
+
+<!doctype html><html lang="it"><head><SeoHead title="Siti web a Padova e provincia | Zone servite | 4 Web Lab" description="Realizzazione siti web a Padova, Legnaro, Piove di Sacco, Cittadella e provincia. Scopri le zone servite da 4 Web Lab." image="/images/og/zone-servite.webp" structuredData={structuredData} /></head><body>
+<a class="skip" href="#contenuto">Vai al contenuto</a><SiteHeader contactTarget="/contatti" />
+<main id="contenuto">
+  <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Zone servite' }]} /></div></div>
+  <section class="zones-hub-hero"><div class="wrap"><p class="hero-location">Padova · provincia · Veneto</p><h1>Siti web<br />vicini al tuo<br /><em>territorio.</em></h1><p class="lead">Una pagina per ogni area in cui lavoriamo: non per riempire una mappa, ma per parlare a chi cerca un progetto web con un riferimento concreto.</p></div></section>
+  <section class="section wrap zones-hub-intro"><div><p class="eyebrow">Base a Legnaro</p><h2>Un lavoro locale.<br /><em>Quando serve.</em></h2></div><div><p class="statement">Conoscere il territorio aiuta a capire il contesto di un’attività. Ma un buon sito non cambia in base al comune: cambia in base a ciò che deve rendere chiaro e utile.</p><p>Per questo ogni pagina locale collega lo stesso metodo a esigenze diverse: commercio, professioni, servizi e piccole imprese. Senza promesse generiche e senza pagine copia-incolla.</p></div></section>
+  <section class="zones-hub-locations"><div class="zones-hub-locations-grid"><div><p class="eyebrow">Le località</p><h2>Siti web,<br />zona per<br /><em>zona.</em></h2><p>Seleziona l’area più vicina alla tua attività.</p></div><div class="zones-card-grid" role="region" aria-label="Località servite" tabindex="0">{zones.map((zone, index) => <a href={href(zone.slug)}><small>{String(index + 1).padStart(2, '0')}</small><h3>Siti web a {zone.name}</h3><p>{zone.description}</p><span>Scopri la zona →</span></a>)}</div></div></section>
+  <section class="zones-hub-method"><div class="wrap"><p class="eyebrow">Lo stesso approccio</p><div class="zones-hub-method-grid"><h2>Il sito deve<br />spiegare, farsi<br /><em>trovare, agire.</em></h2><div><article><span>01</span><h3>Capire l’attività</h3><p>Obiettivo, servizi, pubblico e priorità prima di scegliere pagine o design.</p></article><article><span>02</span><h3>Costruire il percorso</h3><p>Contenuti e call to action ordinati attorno alle domande reali di chi cerca.</p></article><article><span>03</span><h3>Rendere il sito leggibile</h3><p>Base SEO tecnica, esperienza mobile e informazioni che Google può interpretare.</p></article></div></div></div></section>
+  <section class="zones-hub-cta"><div class="wrap"><div><p class="eyebrow light">Veneto e tutta Italia</p><h2>La tua zona<br />non è ancora<br /><em>in elenco?</em></h2></div><div><p>Lavoriamo anche oltre queste pagine locali. Raccontaci attività e obiettivo: capiamo insieme da quale struttura digitale partire.</p><a class="button" href="/contatti">Parliamone →</a></div></div></section>
+</main><SiteFooter />
+</body></html>

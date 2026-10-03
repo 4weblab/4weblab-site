@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import SeoHead from '../components/SeoHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../config/site';
+
+const pageUrl = `${SITE.url}/contatti`;
+const reassurances = [
+  ['01', 'Richiesta e preventivo gratuiti', 'Raccogliamo le informazioni necessarie e ti restituiamo un primo confronto senza costi e senza impegno.'],
+  ['02', 'Parli con chi segue il progetto', 'Niente centralini, passaggi inutili o attese indefinite: il confronto resta diretto e personale.'],
+  ['03', 'Risposta entro un giorno lavorativo', 'Le richieste da form, email e WhatsApp vengono gestite nello stesso giorno quando possibile, al più tardi nel giorno lavorativo successivo.'],
+];
+const structuredData = [{ '@context': 'https://schema.org', '@graph': [
+  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: 'Contatti', item: pageUrl }] },
+  { '@type': 'ContactPage', '@id': `${pageUrl}#webpage`, name: 'Contatti 4 Web Lab', url: pageUrl, description: 'Contatta 4 Web Lab per siti web, perizie tecniche e pubblicità digitale.', inLanguage: 'it-IT', about: { '@id': `${SITE.url}/#business` } },
+] }];
+---
+<!doctype html>
+<html lang="it">
+  <head>
+    <SeoHead title="Contatti | 4 Web Lab" description="Contatta 4 Web Lab per un sito web, una perizia tecnica o una consulenza. Richiesta e preventivo gratuiti; risposta entro un giorno lavorativo." image="/images/og/contatti.webp" structuredData={structuredData} />
+  </head>
+  <body>
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+    <SiteHeader contactTarget="#scrivici" />
+    <main id="contenuto">
+      <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contatti' }]} /></div></div>
+      <section class="contact-page-hero"><div class="wrap"><p class="hero-location">Home / Contatti</p><h1>Parliamone.<br /><em>Senza attese.</em></h1><p class="lead">Raccontaci attività, obiettivo o dubbio. La richiesta di informazioni e il preventivo sono sempre gratuiti.</p><div class="actions"><a class="button" href="#scrivici">Scrivici ↓</a><a class="plain light" href="tel:+393514656042">Chiamaci →</a></div></div></section>
+
+      <section class="contact-reassurance"><div class="wrap"><div><p class="eyebrow">Un primo confronto semplice</p><h2>Una risposta<br />chiara, prima<br /><em>di tutto.</em></h2></div><div class="contact-reassurance-list">{reassurances.map(([number, title, text]) => <article><small>{number}</small><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+
+      <section class="section wrap contact-direct"><div><p class="eyebrow">Contatto diretto</p><h2>Scegli il canale<br />che preferisci.</h2></div><div class="contact-direct-links"><a href="tel:+393514656042"><span>Chiamate</span><strong>+39 351 465 6042</strong><small>Parla direttamente con noi</small></a><a href="mailto:info@4weblab.it"><span>Email</span><strong>info@4weblab.it</strong><small>Per richieste, materiali o informazioni</small></a><a class="contact-whatsapp" href="https://wa.me/393514656042"><span>WhatsApp</span><strong>Scrivici un messaggio ↗</strong><small>Il canale più rapido per iniziare</small></a></div></section>
+
+      <section id="scrivici" class="contact contact-page-form"><div class="wrap perizia-contact"><div><p class="eyebrow light">Scrivici</p><h2>Non sai ancora<br />da dove <em>partire?</em></h2><p>Va bene anche una domanda semplice. Ti aiutiamo a capire quale può essere il prossimo passo, senza pacchetti preconfezionati.</p><a class="plain lime" href="https://wa.me/393514656042">WhatsApp ↗</a></div><form id="contact-form" method="post" action="https://api.web3forms.com/submit"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuova richiesta dal sito – Contatti" /><input type="hidden" name="from_name" value="4 Web Lab – Contatti" /><input type="hidden" name="source_page" value="contatti" /><label>Nome e cognome *<input name="name" required autocomplete="name" /></label><label>Email *<input name="email" type="email" required autocomplete="email" /></label><label>Telefono<input name="phone" type="tel" autocomplete="tel" /></label><label>Azienda o attività<input name="business" autocomplete="organization" /></label><label>Di cosa hai bisogno? *<textarea name="message" required rows="4" placeholder="Raccontaci il punto da cui vuoi partire"></textarea></label><label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label><button class="button" type="submit">Invia la richiesta →</button><p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy">Privacy policy</a>.</p><p id="contact-form-status" class="form-status" aria-live="polite"></p></form></div></section>
+    </main>
+    <SiteFooter />
+    <script is:inline>
+      const form = document.querySelector('#contact-form');
+      const status = document.querySelector('#contact-form-status');
+      form?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (form.website.value) return;
+        const button = form.querySelector('button[type="submit"]');
+        button.disabled = true; button.textContent = 'Invio in corso…'; status.textContent = '';
+        try {
+          const response = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+          const data = await response.json();
+          if (!response.ok || !data.success) throw new Error('send');
+          form.reset(); status.textContent = 'Richiesta inviata. Ti rispondiamo entro un giorno lavorativo.';
+        } catch { status.textContent = 'Invio non riuscito. Riprova tra poco o contattaci su WhatsApp.'; }
+        finally { button.disabled = false; button.textContent = 'Invia la richiesta →'; }
+      });
+    </script>
+  </body>
+</html>

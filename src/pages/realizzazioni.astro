@@ -1,0 +1,112 @@
+---
+import '../styles/global.css';
+import SeoHead from '../components/SeoHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../config/site';
+
+const pageUrl = `${SITE.url}/realizzazioni`;
+const concepts = [
+  { title: 'Personal trainer', sector: 'Vera Method', description: 'Un concept ad alta energia per rendere visibili metodo, programmi e primo contatto.', images: ['screenshots/vera-method-hero.webp', 'screenshots/vera-method-middle.webp', 'screenshots/vera-method-final.webp'], alt: ['Hero del concept per personal trainer Vera Method', 'Sezione centrale del concept Vera Method', 'Sezione finale del concept Vera Method'] },
+  { title: 'Azienda metalmeccanica', sector: 'Aurum CNC', description: 'Un impianto B2B con lavorazioni, capacità produttiva e richieste commerciali ordinate.', images: ['screenshots/metalmeccanica-hero.webp', 'screenshots/metalmeccanica-middle.webp', 'screenshots/metalmeccanica-final.webp'], alt: ['Hero del concept Aurum CNC', 'Sezione centrale del concept Aurum', 'Sezione finale del concept Aurum'] },
+  { title: 'Studio dentistico', sector: 'Aurea', description: 'Un percorso premium che organizza servizi, fiducia e prenotazione senza appesantire.', images: ['screenshots/dental-hero.webp', 'screenshots/dental-middle.webp', 'screenshots/dental-final.webp'], alt: ['Hero del concept Studio Aurea', 'Sezione centrale del concept Aurea', 'Sezione finale del concept Aurea'] },
+  { title: 'Azienda fotovoltaica ed energia solare', sector: 'Solaris', description: 'Un concept tecnico per spiegare impianti, casi d’uso e richiesta di consulenza B2B.', images: ['screenshots/fotovoltaico-hero.webp', 'screenshots/fotovoltaico-middle.webp', 'screenshots/fotovoltaico-final.webp'], alt: ['Hero del concept Solaris', 'Sezione centrale del concept Solaris', 'Sezione finale del concept Solaris'] },
+  { title: 'Alloggi B&B', sector: 'Casa Marea', description: 'Una direzione editoriale per camere, atmosfera e prenotazione diretta.', images: ['screenshots/boutique-bb-hero.webp', 'screenshots/boutique-bb-middle.webp', 'screenshots/boutique-bb-final.webp'], alt: ['Hero del concept boutique B&B', 'Sezione centrale del concept boutique B&B', 'Sezione finale del concept boutique B&B'] },
+  { title: 'Fioreria', sector: 'Atelier Flora', description: 'Un concept immersivo per un’attività locale che vende composizioni, eventi e relazioni.', images: ['screenshots/flower-atelier-hero.webp', 'screenshots/flower-atelier-middle.webp', 'screenshots/flower-atelier-final.webp'], alt: ['Hero del concept Atelier Flora', 'Sezione centrale del concept Atelier Flora', 'Sezione finale del concept Atelier Flora'] },
+  { title: 'Pasticceria artigianale', sector: 'Farina Viva', description: 'Un percorso caldo e commerciale per prodotti, ordinazioni e presenza territoriale.', images: ['screenshots/pasticceria-hero.webp', 'screenshots/pasticceria-middle.webp', 'screenshots/pasticceria-final.webp'], alt: ['Hero del concept Farina Viva', 'Sezione centrale del concept Farina Viva', 'Sezione finale del concept Farina Viva'] },
+];
+const structuredData = [{ '@context': 'https://schema.org', '@graph': [
+  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: 'Portfolio', item: pageUrl }] },
+  { '@type': 'CollectionPage', '@id': `${pageUrl}#collection`, name: 'Portfolio 4 Web Lab', description: 'Portfolio di progetti reali e concept dimostrativi di 4 Web Lab.', url: pageUrl, inLanguage: 'it-IT', isPartOf: { '@id': `${SITE.url}/#website` }, about: { '@id': `${SITE.url}/#business` } }
+]}];
+---
+<!doctype html>
+<html lang="it">
+<head><SeoHead title="Portfolio siti web e concept | 4 Web Lab Padova" description="Portfolio di 4 Web Lab: progetti reali e concept dimostrativi per siti web di aziende, professionisti e attività locali." image="/images/og/realizzazioni.webp" structuredData={structuredData}/></head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+<SiteHeader contactTarget="#portfolio-contatti" />
+<main id="contenuto">
+  <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Portfolio' }]} /></div></div>
+  <section class="portfolio-hero">
+    <div class="wrap">
+      <p class="hero-location">Portfolio · Padova / tutta Italia</p>
+      <h1>Progetti reali.<br /><em>Idee che prendono forma.</em></h1>
+      <p class="lead">Una selezione trasparente: lavori pubblicati, progetti in sviluppo e concept che mostrano come può cambiare la presenza digitale di un’attività.</p>
+      <a class="button" href="#portfolio-concept">Esplora il portfolio ↓</a>
+    </div>
+  </section>
+
+  <section class="portfolio-intro section wrap">
+    <div><p class="eyebrow">Come leggere questa pagina</p><h2>Non tutti i lavori<br />sono la stessa<br /><em>cosa.</em></h2></div>
+    <div><p class="statement">I progetti reali raccontano collaborazioni effettive. I concept dimostrativi rendono visibile un possibile approccio per settore.</p><p>Li teniamo distinti perché un portfolio deve chiarire il lavoro svolto, non gonfiarlo. Ogni concept è un esempio di struttura, direzione visiva e percorso di contatto: non un caso cliente né una promessa di risultato.</p></div>
+  </section>
+
+  <section class="portfolio-real">
+    <div class="wrap">
+      <div class="portfolio-section-heading"><p class="eyebrow">Progetti reali</p><h2>Il lavoro<br /><em>pubblicato.</em></h2><p>Qui trovi una selezione di siti e progetti seguiti da 4 Web Lab: lavori pubblicati, interventi in corso e casi studio che raccontano obiettivi e scelte progettuali. <strong>Nota bene:</strong> ogni attività è inserita solo su richiesta o previo accordo con il committente.</p></div>
+      <div class="portfolio-real-grid">
+        <a class="portfolio-real-card portfolio-real-link" href="/realizzazioni/realizzazione-sito-web-edilizia-rb-snc-veneto">
+          <img src="/images/portfolio/rb-snc-edilizia.webp" width="1200" height="800" alt="Cantiere R.B. s.n.c. per rimozione eternit e rifacimento tetti" loading="lazy" />
+          <div><p class="portfolio-label real">Progetto reale</p><h3>R.B. s.n.c.</h3><p>Restyling del sito, ottimizzazione SEO on-page e supporto Google Ads per un’impresa edile attiva in Veneto.</p><span class="portfolio-status">Leggi il caso studio →</span></div>
+        </a>
+        <article class="portfolio-real-card coming">
+          <img src="/images/portfolio/elisa-piovan-pt.webp" width="1200" height="800" alt="Elisa Piovan, personal trainer" loading="lazy" />
+          <div><p class="portfolio-label real">In sviluppo</p><h3>Eli Trainer</h3><p>Nuovo sito professionale per Elisa Piovan: struttura, design e fondazioni tecniche per SEO, AEO e GEO.</p><span class="portfolio-status">Sarà pubblicato con il lancio del sito</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio-concept" class="portfolio-concepts section wrap">
+    <div class="portfolio-section-heading align-right"><p class="eyebrow">Concept dimostrativi</p><h2>Un settore.<br /><em>Tre inquadrature.</em></h2><p>Ogni scheda raccoglie i passaggi chiave di un concept: apertura, sviluppo e chiusura. Le immagini sono cliccabili per una vista più ampia.</p></div>
+    <div class="concept-list">
+      {concepts.map((concept, index) => <article class:list={['concept-card', index % 2 === 1 && 'reverse']}>
+        <div class="concept-main"><p class="portfolio-label">Concept dimostrativo · {concept.sector}</p><h3>Sito web per {concept.title.toLowerCase()}.</h3><p>{concept.description}</p><ul><li>Direzione visiva per il settore</li><li>Gerarchia dei contenuti e CTA</li><li>Esperienza pensata anche per mobile</li></ul><a class="plain" href="#portfolio-contatti">Vorrei un progetto simile →</a></div>
+        <div class="concept-previews" aria-label={`Tre anteprime del concept ${concept.sector}`}>
+          {concept.images.map((image, imageIndex) => <button type="button" data-portfolio-zoom data-src={`/images/portfolio/${image}`} data-alt={concept.alt[imageIndex]} aria-label={`Ingrandisci l’anteprima ${imageIndex + 1} del concept ${concept.sector}`}><img src={`/images/portfolio/${image}`} width="1200" height="800" alt={concept.alt[imageIndex]} loading="lazy" /><span>{['Hero', 'Sezione centrale', 'Chiusura'][imageIndex]} ↗</span></button>)}
+        </div>
+      </article>)}
+    </div>
+  </section>
+
+  <section id="portfolio-contatti" class="contact portfolio-contact"><div class="wrap contact-grid"><div><p class="eyebrow light">Il tuo settore è diverso?</p><h2>Partiamo dalla<br /><em>tua realtà.</em></h2><p>Non serve scegliere un concept e copiarlo. Serve capire cosa deve trovare chi arriva sul tuo sito, e costruire un percorso adatto.</p><a class="plain lime" href="https://wa.me/393514656042">WhatsApp ↗</a></div><div class="portfolio-contact-card"><p class="portfolio-label">4 Web Lab</p><h3>Raccontaci il progetto.</h3><p>Attività, obiettivo e pubblico sono il punto da cui iniziare.</p><a class="button" href="/contatti">Parliamone →</a></div></div></section>
+</main>
+<dialog id="portfolio-lightbox" class="portfolio-lightbox" aria-label="Anteprima immagine">
+  <div class="portfolio-lightbox-inner">
+    <button type="button" class="portfolio-lightbox-close" aria-label="Chiudi immagine">Chiudi <span aria-hidden="true">×</span></button>
+    <img id="portfolio-lightbox-image" src="" alt="" width="1200" height="800" />
+  </div>
+</dialog>
+<SiteFooter />
+</body>
+</html>
+
+<script>
+  const lightbox = document.querySelector('#portfolio-lightbox');
+  const lightboxImage = document.querySelector('#portfolio-lightbox-image');
+  const closeLightbox = document.querySelector('.portfolio-lightbox-close');
+
+  if (lightbox instanceof HTMLDialogElement && lightboxImage instanceof HTMLImageElement && closeLightbox instanceof HTMLButtonElement) {
+    document.querySelectorAll('[data-portfolio-zoom]').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const source = trigger.dataset.src;
+        if (!source) return;
+        lightboxImage.src = source;
+        lightboxImage.alt = trigger.dataset.alt || '';
+        lightbox.showModal();
+        closeLightbox.focus();
+      });
+    });
+
+    closeLightbox.addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+    lightbox.addEventListener('close', () => {
+      lightboxImage.removeAttribute('src');
+      lightboxImage.alt = '';
+    });
+  }
+</script>

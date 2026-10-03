@@ -1,0 +1,21 @@
+---
+interface Item {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: Item[];
+  tone?: 'light' | 'dark';
+}
+
+const { items, tone = 'light' } = Astro.props;
+---
+
+<nav class:list={['site-breadcrumb', `site-breadcrumb--${tone}`]} aria-label="Breadcrumb">
+  <ol>
+    {items.map((item, index) => <li>
+      {item.href && index < items.length - 1 ? <a href={item.href}>{item.label}</a> : <span aria-current={index === items.length - 1 ? 'page' : undefined}>{item.label}</span>}
+    </li>)}
+  </ol>
+</nav>

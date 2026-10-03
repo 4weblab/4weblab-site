@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 88" role="img" aria-labelledby="title">
+  <title id="title">4 Web Lab</title>
+  <circle cx="44" cy="44" r="40" fill="#d7f54a"/>
+  <path fill="#101a2d" d="M52 15 18 51v13h31v12h14V64h9V52h-9V15Zm-3 37H33l16-17Z"/>
+  <g fill="#f8f7f2" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="34" letter-spacing="-2">
+    <text x="94" y="41">WEB</text>
+    <text x="94" y="75">LAB</text>
+  </g>
+</svg>

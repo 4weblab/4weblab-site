@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import SeoHead from '../components/SeoHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { SITE } from '../config/site';
+
+const pageUrl = `${SITE.url}/privacy`;
+const structuredData = [{ '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${pageUrl}#webpage`, name: 'Privacy Policy | 4 Web Lab', url: pageUrl, inLanguage: 'it-IT', isPartOf: { '@id': `${SITE.url}/#website` } }];
+---
+<!doctype html>
+<html lang="it">
+  <head><SeoHead title="Privacy Policy | 4 Web Lab" description="Informativa privacy di 4 Web Lab: dati di contatto, assistente IA, form, WhatsApp e Google Analytics." structuredData={structuredData} /></head>
+  <body>
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+    <SiteHeader contactTarget="/contatti" />
+    <main id="contenuto" class="legal-page">
+      <header class="legal-page__hero"><div class="wrap"><p class="hero-location">Home / Privacy policy</p><h1>Privacy<br /><em>Policy.</em></h1><p>Ultimo aggiornamento: 3 ottobre 2026</p></div></header>
+      <article class="legal-page__content">
+        <p class="legal-page__intro">Questa informativa descrive come 4 Web Lab tratta i dati personali raccolti tramite il sito. Non sostituisce eventuali informative specifiche fornite nel corso di un rapporto contrattuale.</p>
+        <h2>1. Titolare del trattamento</h2>
+        <p>Il Titolare del trattamento è <strong>4 Web Lab di Fullin Carlo</strong>, Via Belluno 44, 35020 Legnaro (PD), P. IVA 05765760284. Per richieste relative ai dati personali: <a href="mailto:info@4weblab.it">info@4weblab.it</a>.</p>
+        <h2>2. Dati trattati e modalità di raccolta</h2>
+        <p>Il sito può trattare dati tecnici di navigazione necessari alla sicurezza e al funzionamento dell’infrastruttura. Quando l’utente invia un form, può comunicare nome, email, telefono, attività, indirizzo del sito e contenuto del messaggio. Quando usa WhatsApp o email, i dati inviati sono trattati attraverso i rispettivi canali scelti dall’utente.</p>
+        <p>Se utilizza l’assistente IA, il messaggio viene inviato a OpenAI esclusivamente per generare la risposta. 4 Web Lab non salva la conversazione in un proprio database né la usa per creare profili; la chat resta disponibile soltanto nella pagina aperta dal visitatore. Invitiamo a non inserire nella chat dati personali o informazioni riservate e a usare il modulo o WhatsApp per lasciare i recapiti.</p>
+        <p>Previo consenso, Google Analytics 4 può raccogliere informazioni statistiche pseudonimizzate sull’uso del sito, ad esempio pagine consultate, dispositivo e sorgente di traffico. Il tag non viene caricato prima della scelta positiva nel banner.</p>
+        <h2>3. Finalità e basi giuridiche</h2>
+        <ul><li>rispondere a richieste di informazioni, preventivo o contatto e svolgere eventuali misure precontrattuali: art. 6.1.b GDPR;</li><li>adempiere agli obblighi di legge: art. 6.1.c GDPR;</li><li>proteggere il sito e gestire la sua infrastruttura: legittimo interesse, art. 6.1.f GDPR;</li><li>misurare in forma statistica l’uso del sito tramite Google Analytics 4: consenso, art. 6.1.a GDPR e art. 122 Codice Privacy.</li></ul>
+        <h2>4. Destinatari e servizi coinvolti</h2>
+        <p>I messaggi inviati dai form vengono trasmessi tramite Web3Forms, servizio utilizzato per recapitare la richiesta al Titolare. I messaggi dell’assistente IA sono elaborati da OpenAI per generare la risposta, con la memorizzazione applicativa disattivata. Google Analytics 4 è fornito da Google Ireland Limited; WhatsApp ed email sono gestiti dai rispettivi fornitori del canale scelto. I dati possono inoltre essere accessibili a fornitori tecnici che gestiscono hosting, manutenzione o sicurezza, nei limiti necessari al servizio.</p>
+        <h2>5. Trasferimenti extra SEE</h2>
+        <p>Alcuni fornitori possono trattare dati anche fuori dallo Spazio Economico Europeo. In particolare Google e OpenAI possono comportare trasferimenti verso gli Stati Uniti. Le garanzie applicabili dipendono dal fornitore e dal servizio attivo; consulta le informative di <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google</a> e <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer">OpenAI</a>. Per un’analisi applicata al singolo caso è opportuno rivolgersi a un consulente privacy.</p>
+        <h2>6. Tempi di conservazione</h2>
+        <p>I dati di contatto vengono conservati per il tempo necessario a gestire la richiesta e, in assenza di un rapporto successivo, fino a 24 mesi dall’ultima interazione. 4 Web Lab non conserva la conversazione con l’assistente IA. I dati Analytics seguono le impostazioni della proprietà GA4; la configurazione prevista è 14 mesi per dati a livello utente/evento. Le preferenze cookie sono conservate sul dispositivo per un massimo di 6 mesi.</p>
+        <h2>7. Diritti dell’interessato</h2>
+        <p>Nei limiti previsti dagli articoli 15–22 GDPR, puoi chiedere accesso, rettifica, cancellazione, limitazione, opposizione e portabilità dei dati, nonché revocare il consenso in ogni momento. Puoi anche proporre reclamo al <a href="https://www.garanteprivacy.it/" target="_blank" rel="noopener noreferrer">Garante per la protezione dei dati personali</a>. Scrivi a <a href="mailto:info@4weblab.it">info@4weblab.it</a> per esercitare i tuoi diritti.</p>
+        <h2>8. Modifiche all’informativa</h2>
+        <p>Questa pagina può essere aggiornata quando cambiano i trattamenti, i servizi utilizzati o i riferimenti normativi. La data di aggiornamento indica l’ultima revisione pubblicata.</p>
+      </article>
+    </main>
+    <SiteFooter />
+  </body>
+</html>

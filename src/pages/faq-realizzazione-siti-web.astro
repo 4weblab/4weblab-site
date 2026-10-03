@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+import SeoHead from '../components/SeoHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../config/site';
+
+const pageUrl = `${SITE.url}/faq-realizzazione-siti-web`;
+const groups = [
+  { label: 'Prima di iniziare', title: 'Il progetto,<br /><em>senza zone grigie.</em>', questions: [
+    ['Di quali materiali avete bisogno per iniziare?', 'Più materiali vengono raccolti all’inizio del progetto, più il lavoro procede in modo rapido e ordinato. Logo, testi anche grezzi, fotografie, listini, riferimenti ai servizi, accessi e contatti aiutano a definire meglio la struttura del sito e a ridurre i tempi di produzione.'],
+    ['Se ho già dominio, hosting o email aziendale, possiamo mantenerli?', 'Solitamente dominio ed email aziendale restano esattamente come sono. L’hosting viene invece verificato prima dell’avvio, per capire se offre prestazioni e configurazioni adeguate alla piattaforma web richiesta. Se non fosse sufficiente, proponiamo una soluzione compatibile prima della pubblicazione.'],
+    ['A chi restano intestati dominio, hosting, account e contenuti del sito?', 'Il codice del sito, il dominio e gli accessi completi ai servizi collegati restano sempre al cliente. Se l’hosting è gestito direttamente da 4 Web Lab, l’accesso tecnico al pannello non viene normalmente fornito per ragioni di sicurezza e corretta gestione dell’infrastruttura. Il cliente mantiene comunque piena titolarità di dominio e progetto.'],
+    ['Un nuovo sito può sostituire quello esistente senza interrompere email o sito online?', 'Sì. Il nuovo sito viene sviluppato e verificato prima della messa online, così da ridurre al minimo interruzioni e rischi per sito, dominio ed email aziendale. Pianificare correttamente produzione, verifiche e pubblicazione è un aspetto a cui 4 Web Lab presta particolare attenzione.'],
+    ['Cosa comprende il passaggio di consegne quando il sito va online?', 'Dipende dal prodotto consegnato e dal livello di autonomia richiesto. Se il sito include, per esempio, un sistema per pubblicare news o articoli del blog, spieghiamo al cliente come utilizzarlo. L’obiettivo è consegnare un sito chiaro da gestire, non una piattaforma lasciata senza indicazioni.'],
+  ] },
+  { label: 'Contenuti e revisioni', title: 'Il sito parla<br /><em>della tua realtà.</em>', questions: [
+    ['Posso chiedere modifiche dopo la pubblicazione?', 'Certamente. Piccole correzioni, sviste o modifiche emerse subito dopo la pubblicazione sono normali e vengono gestite senza costi aggiuntivi. La creazione di nuove pagine, sezioni o funzionalità viene invece valutata separatamente, perché richiede un nuovo perimetro di lavoro.'],
+    ['Come funziona la manutenzione dopo il lancio?', 'Se il servizio di hosting è gestito integralmente da 4 Web Lab, la manutenzione tecnica ordinaria del sito è inclusa. In caso di sito irraggiungibile, lento o temporaneamente non disponibile per cause legate all’infrastruttura o alla gestione tecnica, interveniamo senza costi aggiuntivi per il cliente.'],
+    ['Chi scrive i testi del sito?', 'I contenuti devono essere forniti dal cliente, anche in forma grezza: nessuno conosce servizi, esperienza e settore meglio di chi ci lavora ogni giorno. Il nostro copywriter li controlla, organizza e adatta alla struttura del sito; il testo finale viene sempre validato dal cliente prima della messa online.'],
+    ['Le fotografie e le immagini sono incluse?', 'Possiamo lavorare con immagini e fotografie fornite dal cliente. Se non sono disponibili, è possibile organizzare un servizio fotografico extra oppure usare immagini generate con IA per elementi di contorno non rappresentativi. Per persone, sedi, prodotti, lavori reali o aspetti che devono essere fedeli alla realtà, privilegiamo sempre materiale autentico.'],
+    ['Quante revisioni possiamo fare prima della pubblicazione?', 'Il nostro approccio è personale e flessibile. Più che fissarci sul numero di revisioni, lavoriamo per arrivare a un risultato condiviso e soddisfacente. Modifiche che cambiano in modo sostanziale obiettivo, struttura o perimetro del progetto vengono invece valutate insieme prima di procedere.'],
+    ['Il sito sarà utilizzabile anche da smartphone?', 'Sì. La versione mobile non è un adattamento secondario: è una priorità del progetto, insieme a leggibilità, velocità, chiarezza dei contatti e facilità d’uso. Il sito viene verificato sui principali formati di schermo prima della pubblicazione.'],
+  ] },
+  { label: 'Strumenti e crescita', title: 'Dopo il lancio,<br /><em>con metodo.</em>', questions: [
+    ['Possiamo collegare il sito a WhatsApp, newsletter, CRM, prenotazioni o altri strumenti?', 'Sì. Durante il briefing valutiamo insieme bisogni e priorità dell’attività: WhatsApp, CRM, newsletter, sistemi di prenotazione, form evoluti o altre integrazioni vengono proposte solo quando portano un’utilità reale al progetto e al cliente finale.'],
+    ['Possiamo mantenere URL e risultati del vecchio sito quando lo rifacciamo?', 'Sì. Quando un sito esistente viene sostituito, impostiamo redirect tra le vecchie e le nuove pagine per aiutare utenti e motori di ricerca a raggiungere i contenuti corretti. È un passaggio importante per preservare, per quanto tecnicamente possibile, il valore SEO accumulato dal dominio e dagli URL esistenti.'],
+    ['Come misuriamo se il sito sta funzionando?', 'Il tipo di controllo dipende dall’obiettivo del cliente. Possiamo seguire insieme strumenti essenziali come Google Search Console per monitorare visibilità e indicizzazione, oppure configurare sistemi più completi come Google Analytics per osservare visite, pagine consultate e azioni utili, come invii form o click sui contatti.'],
+    ['Lavorate solo a Padova o anche da remoto?', 'Lavoriamo con clienti in tutta Italia. Il nostro sistema full remote è collaudato negli anni e permette di gestire briefing, raccolta materiali, revisioni, approvazioni e messa online in modo ordinato anche senza incontri in presenza.'],
+  ] },
+];
+const faqs = groups.flatMap((group) => group.questions);
+const structuredData = [{ '@context': 'https://schema.org', '@graph': [
+  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: 'FAQ realizzazione siti web', item: pageUrl }] },
+  { '@type': 'FAQPage', mainEntity: faqs.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) },
+] }];
+---
+<!doctype html>
+<html lang="it">
+  <head>
+    <SeoHead title="FAQ realizzazione siti web: domande frequenti | 4 Web Lab" description="Risposte su realizzazione siti web, dominio, hosting, contenuti, manutenzione, SEO, passaggio di consegne e lavoro da remoto." image="/images/og/faq-realizzazione-siti-web.webp" structuredData={structuredData} />
+  </head>
+  <body>
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+    <SiteHeader contactTarget="#faq-contatti" />
+    <main id="contenuto">
+      <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'FAQ realizzazione siti web' }]} /></div></div>
+      <section class="faq-hub-hero"><div class="wrap"><p class="hero-location">Home / Domande frequenti</p><h1>Le domande<br />prima di<br /><em>partire.</em></h1><p class="lead">Risposte concrete su progetto, contenuti, proprietà, manutenzione e pubblicazione di un sito web professionale.</p><a class="plain light" href="#domande">Vai alle domande ↓</a></div></section>
+
+      <section class="faq-hub-intro section wrap"><div><p class="eyebrow">Prima della richiesta</p><h2>Chiarezza<br />prima del<br /><em>preventivo.</em></h2></div><div><p class="statement">Un sito web non è un pacchetto standard. Le risposte qui raccolte chiariscono come lavoriamo e cosa succede prima, durante e dopo la pubblicazione.</p><p>Per dubbi legati a un servizio specifico trovi già risposte mirate nelle relative pagine. Qui raccogliamo invece ciò che riguarda il rapporto di lavoro e la gestione del progetto.</p></div></section>
+
+      <section id="domande" class="faq-hub-groups">{groups.map((group, groupIndex) => <div class:list={['faq-hub-group', groupIndex % 2 === 1 && 'dark']}><div class="faq-hub-group-wrap"><div class="faq-hub-group-heading"><p class:list={['eyebrow', groupIndex % 2 === 1 && 'light']}>{String(groupIndex + 1).padStart(2, '0')} / {group.label}</p><h2 set:html={group.title} /></div><div class="faq-hub-list">{group.questions.map(([question, answer], index) => <details><summary><small>{String(index + 1).padStart(2, '0')}</small><span>{question}</span><b aria-hidden="true">+</b></summary><p>{answer}</p></details>)}</div></div></div>)}</section>
+
+      <section id="faq-contatti" class="contact faq-contact"><div class="wrap perizia-contact"><div><p class="eyebrow light">Non hai trovato la risposta?</p><h2>Non hai ancora<br />la tua risposta?</h2><p>Raccontaci attività, obiettivo e dubbio. Ti rispondiamo con chiarezza, senza obblighi.</p><a class="plain lime" href="https://wa.me/393514656042">WhatsApp ↗</a></div><form id="faq-form" method="post" action="https://api.web3forms.com/submit"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuova domanda dal sito – FAQ" /><input type="hidden" name="from_name" value="4 Web Lab – FAQ" /><input type="hidden" name="source_page" value="faq-realizzazione-siti-web" /><label>Nome e cognome *<input name="name" required autocomplete="name" /></label><label>Email *<input name="email" type="email" required autocomplete="email" /></label><label>Azienda o attività<input name="business" autocomplete="organization" /></label><label>La tua domanda *<textarea name="message" required rows="4" placeholder="Scrivi qui ciò che vuoi chiarire"></textarea></label><label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label><button class="button" type="submit">Non hai ancora la tua risposta? Contattaci →</button><p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy">Privacy policy</a>.</p><p id="faq-form-status" class="form-status" aria-live="polite"></p></form></div></section>
+    </main>
+    <SiteFooter />
+    <script is:inline>
+      const form = document.querySelector('#faq-form');
+      const status = document.querySelector('#faq-form-status');
+      form?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (form.website.value) return;
+        const button = form.querySelector('button[type="submit"]');
+        button.disabled = true; button.textContent = 'Invio in corso…'; status.textContent = '';
+        try {
+          const response = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+          const data = await response.json();
+          if (!response.ok || !data.success) throw new Error('send');
+          form.reset(); status.textContent = 'Domanda inviata. Ti rispondiamo entro 24 ore lavorative.';
+        } catch { status.textContent = 'Invio non riuscito. Riprova tra poco o contattaci su WhatsApp.'; }
+        finally { button.disabled = false; button.textContent = 'Non hai ancora la tua risposta? Contattaci →'; }
+      });
+    </script>
+  </body>
+</html>

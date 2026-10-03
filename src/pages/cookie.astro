@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import SeoHead from '../components/SeoHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { SITE } from '../config/site';
+
+const pageUrl = `${SITE.url}/cookie`;
+const structuredData = [{ '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${pageUrl}#webpage`, name: 'Cookie Policy | 4 Web Lab', url: pageUrl, inLanguage: 'it-IT', isPartOf: { '@id': `${SITE.url}/#website` } }];
+---
+<!doctype html>
+<html lang="it">
+  <head><SeoHead title="Cookie Policy | 4 Web Lab" description="Cookie Policy di 4 Web Lab: preferenze, Google Analytics 4 e gestione del consenso." structuredData={structuredData} /></head>
+  <body>
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+    <SiteHeader contactTarget="/contatti" />
+    <main id="contenuto" class="legal-page">
+      <header class="legal-page__hero"><div class="wrap"><p class="hero-location">Home / Cookie policy</p><h1>Cookie<br /><em>Policy.</em></h1><p>Ultimo aggiornamento: 2 ottobre 2026</p></div></header>
+      <article class="legal-page__content">
+        <p class="legal-page__intro">Questa pagina spiega quali tecnologie di memorizzazione e misurazione sono usate dal sito e come cambiare la tua scelta.</p>
+        <h2>Cosa sono cookie e tecnologie simili</h2>
+        <p>I cookie sono piccoli file memorizzati nel browser. Il sito usa anche localStorage, una memoria del browser che consente di conservare le preferenze. Le tecnologie vengono distinte in necessarie e statistiche: quelle statistiche restano disattivate fino al consenso.</p>
+        <h2>Tecnologie attive sul sito</h2>
+        <div class="legal-page__table" role="region" aria-label="Elenco cookie e tecnologie"><table><thead><tr><th>Nome</th><th>Tipo</th><th>Finalità</th><th>Durata</th></tr></thead><tbody><tr><td>4weblab-cookie-preferences</td><td>Preferenza tecnica<br />(localStorage)</td><td>Memorizza la scelta su Analytics e la data del consenso.</td><td>Massimo 6 mesi</td></tr><tr><td>_ga</td><td>Statistico di terza parte<br />(Google)</td><td>Identificatore pseudonimo per Google Analytics 4.</td><td>Fino a 2 anni</td></tr><tr><td>_ga_HWVJ1KWYSN</td><td>Statistico di terza parte<br />(Google)</td><td>Mantiene lo stato della sessione della proprietà GA4.</td><td>Fino a 2 anni</td></tr></tbody></table></div>
+        <p>Il sito non attiva cookie pubblicitari o di marketing attraverso il codice attuale. Web3Forms viene contattato solo quando l’utente invia volontariamente un modulo; non è un cookie di navigazione gestito da questo banner.</p>
+        <h2>Google Analytics 4</h2>
+        <p>Google Analytics 4, ID misurazione <code>G-HWVJ1KWYSN</code>, è utilizzato solo dopo consenso per misurare visite e pagine consultate in forma statistica. Prima della scelta positiva, lo script di Google non viene caricato e non vengono creati cookie Analytics.</p>
+        <p>Il codice del sito invia a Google il consenso per la sola categoria Analytics e mantiene disattivati ad storage, ad user data e ad personalization. Le impostazioni della proprietà GA4 — inclusi conservazione dati, Google Signals e condivisione dati — devono restare coerenti con questa policy.</p>
+        <h2>Come modificare o revocare il consenso</h2>
+        <p>Puoi riaprire il pannello in qualsiasi momento con il pulsante seguente, oppure con “Gestisci cookie” nel piè di pagina. La modifica opera per le visite successive e ferma i nuovi caricamenti Analytics; non elimina automaticamente i cookie eventualmente già memorizzati, che puoi cancellare dalle impostazioni del browser.</p>
+        <button class="button" type="button" data-open-cookie-preferences>Gestisci le preferenze cookie</button>
+        <h2>Gestione dal browser</h2>
+        <p>Puoi cancellare o bloccare cookie e dati del sito dalle impostazioni del browser. Le relative guide sono disponibili per <a href="https://support.google.com/chrome/answer/95647?hl=it" target="_blank" rel="noopener noreferrer">Chrome</a>, <a href="https://support.mozilla.org/it/kb/Eliminare%20i%20cookie" target="_blank" rel="noopener noreferrer">Firefox</a>, <a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a> e <a href="https://support.microsoft.com/it-it/microsoft-edge/eliminare-i-cookie-in-microsoft-edge" target="_blank" rel="noopener noreferrer">Microsoft Edge</a>.</p>
+        <h2>Riferimenti e aggiornamenti</h2>
+        <p>Per maggiori informazioni consulta la <a href="/privacy">Privacy Policy</a>, l’<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">informativa privacy di Google</a> e le <a href="https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876" target="_blank" rel="noopener noreferrer">Linee guida del Garante Privacy</a>. Questa policy sarà aggiornata se cambiano le tecnologie utilizzate.</p>
+      </article>
+    </main>
+    <SiteFooter />
+  </body>
+</html>
