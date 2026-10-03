@@ -91,7 +91,7 @@ export default async function assistant(request: Request): Promise<Response> {
 
   try {
     const upstream = await fetch('https://api.openai.com/v1/responses', {
-      method: 'POST', signal: AbortSignal.timeout(8_000), headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+      method: 'POST', signal: AbortSignal.timeout(25_000), headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: process.env.ASSISTANT_MODEL || 'gpt-6-luna', store: false, reasoning: { effort: 'none' }, max_output_tokens: 320,
         instructions: `${ASSISTANT_KNOWLEDGE_BASE}\nPagina che il visitatore sta leggendo: ${currentPage || 'non disponibile'}.`,
@@ -99,11 +99,17 @@ export default async function assistant(request: Request): Promise<Response> {
         tools: [{ type: 'function', name: 'propose_contact_card', description: 'Propone una scheda riepilogativa da mostrare al visitatore prima del modulo contatti. Non raccoglie dati personali.', strict: true, parameters: { type: 'object', additionalProperties: false, required: ['servizio', 'tipo_attivita', 'zona', 'esigenza', 'url_sito_attuale'], properties: { servizio: { type: 'string', enum: [...SERVICE_OPTIONS] }, tipo_attivita: { type: 'string' }, zona: { type: 'string' }, esigenza: { type: 'string' }, url_sito_attuale: { type: ['string', 'null'] } } } }],
       }),
     });
-    if (!upstream.ok) throw new Error(`OpenAI response ${upstream.status}`);
+    if (!upstream.ok) {
+      const detail = (await upstream.text()).replace(/[\r\n]+/g, ' ').slice(0, 500);
+      throw new Error(`OpenAI response ${upstream.status}: ${detail}`);
+    }
     const result = extractResponse(await upstream.json() as Record<string, unknown>);
     const reply = result.reply || (result.action ? 'Perfetto, Le preparo un riepilogo da controllare prima di contattarci.' : 'Non riesco a formulare una risposta utile. Può raccontarci il suo obiettivo dal modulo contatti o su WhatsApp?');
     return json({ reply, action: result.action ? { type: 'show_contact_card', prefill: result.action } : null });
-  } catch {
+  } catch (error) {
+    // Manteniamo i messaggi degli utenti fuori dai log: registriamo soltanto il
+    // motivo tecnico, utile per distinguere quota, modello e timeout.
+    console.error('assistant_request_failed', error instanceof Error ? error.message : 'unknown error');
     return json({ error: 'assistant_error', message: 'Non riesco a rispondere ora. Può contattarci dal modulo o su WhatsApp.' }, 502);
   }
 }
