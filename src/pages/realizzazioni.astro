@@ -73,10 +73,11 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
 
   <section id="portfolio-contatti" class="contact portfolio-contact"><div class="wrap contact-grid"><div><p class="eyebrow light">Il tuo settore è diverso?</p><h2>Partiamo dalla<br /><em>tua realtà.</em></h2><p>Non serve scegliere un concept e copiarlo. Serve capire cosa deve trovare chi arriva sul tuo sito, e costruire un percorso adatto.</p><a class="plain lime" href="https://wa.me/393514656042">WhatsApp ↗</a></div><div class="portfolio-contact-card"><p class="portfolio-label">4 Web Lab</p><h3>Raccontaci il progetto.</h3><p>Attività, obiettivo e pubblico sono il punto da cui iniziare.</p><a class="button" href="/contatti">Parliamone →</a></div></div></section>
 </main>
-<dialog id="portfolio-lightbox" class="portfolio-lightbox" aria-label="Anteprima immagine">
+<dialog id="portfolio-lightbox" class="portfolio-lightbox" aria-labelledby="portfolio-lightbox-title">
   <div class="portfolio-lightbox-inner">
+    <p id="portfolio-lightbox-title" class="sr-only">Anteprima immagine del portfolio</p>
     <button type="button" class="portfolio-lightbox-close" aria-label="Chiudi immagine">Chiudi <span aria-hidden="true">×</span></button>
-    <img id="portfolio-lightbox-image" src="" alt="" width="1200" height="800" />
+    <img id="portfolio-lightbox-image" alt="" width="1200" height="800" hidden />
   </div>
 </dialog>
 <SiteFooter />
@@ -95,6 +96,7 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
         if (!source) return;
         lightboxImage.src = source;
         lightboxImage.alt = trigger.dataset.alt || '';
+        lightboxImage.hidden = false;
         lightbox.showModal();
         closeLightbox.focus();
       });
@@ -104,9 +106,12 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
     lightbox.addEventListener('click', (event) => {
       if (event.target === lightbox) lightbox.close();
     });
-    lightbox.addEventListener('close', () => {
+    const resetLightbox = () => {
+      lightboxImage.hidden = true;
       lightboxImage.removeAttribute('src');
       lightboxImage.alt = '';
-    });
+    };
+    lightbox.addEventListener('cancel', resetLightbox);
+    lightbox.addEventListener('close', resetLightbox);
   }
 </script>
