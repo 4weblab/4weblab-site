@@ -1,9 +1,9 @@
-/siti-web-per-negozi /sito-web-per-negozio/ 301
-/siti-web-per-negozi/ /sito-web-per-negozio/ 301
-/siti-web-per-professionisti /sito-web-per-professionisti/ 301
-/siti-web-per-professionisti/ /sito-web-per-professionisti/ 301
-/siti-web-aziendali /sito-web-aziendale/ 301
-/siti-web-aziendali/ /sito-web-aziendale/ 301
+/siti-web-per-negozi /sito-web-per-negozio/ 301!
+/siti-web-per-negozi/ /sito-web-per-negozio/ 301!
+/siti-web-per-professionisti /sito-web-per-professionisti/ 301!
+/siti-web-per-professionisti/ /sito-web-per-professionisti/ 301!
+/siti-web-aziendali /sito-web-aziendale/ 301!
+/siti-web-aziendali/ /sito-web-aziendale/ 301!
 /pubblicita-google-ads /pubblicita-su-google/ 301
 /pubblicita-google-ads/ /pubblicita-su-google/ 301
 /chatgpt-ads /pubblicita-su-chatgpt/ 301
@@ -12,8 +12,8 @@
 /pubblicita-chatgpt-ads/ /pubblicita-su-chatgpt/ 301
 
 # Legacy SEO service: the current equivalent begins with a technical site assessment.
-/posizionamento-google-e-ai /perizia-sito-web/ 301
-/posizionamento-google-e-ai/ /perizia-sito-web/ 301
+/posizionamento-google-e-ai /perizia-sito-web/ 301!
+/posizionamento-google-e-ai/ /perizia-sito-web/ 301!
 
 # Legacy portfolio detail pages now live in the portfolio overview.
 /realizzazioni/demo-personal-trainer-vera-method /realizzazioni/ 301
