@@ -33,7 +33,7 @@ const checks = [
         <div class="wrap hero-layout">
           <div class="hero-copy">
             <p class="hero-location">4 Web Lab · Padova / ovunque serva</p>
-            <h1>Il tuo sito non<br /><em>lavora abbastanza.</em></h1>
+            <h1>Perizia e creazione<br /><em>di siti web a Padova.</em></h1>
             <p class="lead">Perizie tecniche e creazione siti web a Padova: prima di rifarlo, capiamo perché. Poi progettiamo una presenza digitale capace di trasformare attenzione in contatti.</p>
             <div class="actions"><a class="button" href="#perizia">Ho già un sito ↓</a><a class="plain light" href="#soluzioni">Devo crearne uno →</a></div>
           </div>
@@ -85,11 +85,35 @@ const checks = [
       <section id="contatti" class="contact">
         <div class="wrap contact-grid">
           <div><p class="eyebrow light">Facciamo il primo passo</p><h2>Parti da una<br /><em>domanda vera.</em></h2><p>Hai un sito da verificare o un progetto da costruire? Raccontaci da dove parti.</p><a class="plain lime" href={whatsApp} target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div>
-          <form action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuovo contatto dal sito 4 Web Lab" /><label class="honeypot" aria-hidden="true">Non compilare questo campo<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label><label>Nome<input name="name" required autocomplete="name" /></label><label>Email<input name="email" type="email" required autocomplete="email" /></label><label>Di cosa hai bisogno?<select name="esigenza"><option>Voglio una perizia</option><option>Devo creare un sito</option><option>Vorrei capire quale servizio mi serve</option></select></label><label>Raccontaci in due righe<textarea name="message" rows="3" required></textarea></label><button class="button" type="submit">Invia la richiesta ↗</button><p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy">Privacy policy</a>.</p></form>
+          <form id="home-contact-form" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuovo contatto dal sito 4 Web Lab" /><input type="hidden" name="source_page" value="home" /><label class="honeypot" aria-hidden="true">Non compilare questo campo<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label><label>Nome<input name="name" required autocomplete="name" /></label><label>Email<input name="email" type="email" required autocomplete="email" /></label><label>Di cosa hai bisogno?<select name="esigenza"><option>Voglio una perizia</option><option>Devo creare un sito</option><option>Vorrei capire quale servizio mi serve</option></select></label><label>Raccontaci in due righe<textarea name="message" rows="3" required></textarea></label><button class="button" type="submit">Invia la richiesta ↗</button><p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy">Privacy policy</a>.</p><p id="home-contact-status" class="form-status" aria-live="polite"></p></form>
         </div>
       </section>
     </main>
     <SiteFooter />
+    <script is:inline>
+      const homeForm = document.querySelector('#home-contact-form');
+      const homeStatus = document.querySelector('#home-contact-status');
+      homeForm?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (homeForm.botcheck.checked) return;
+        const button = homeForm.querySelector('button[type="submit"]');
+        button.disabled = true;
+        button.textContent = 'Invio in corso…';
+        homeStatus.textContent = '';
+        try {
+          const response = await fetch(homeForm.action, { method: 'POST', body: new FormData(homeForm) });
+          const data = await response.json();
+          if (!response.ok || !data.success) throw new Error('send');
+          homeForm.reset();
+          homeStatus.textContent = 'Richiesta inviata. Ti ricontatteremo a breve.';
+        } catch {
+          homeStatus.textContent = 'Invio non riuscito. Riprova tra poco o contattaci su WhatsApp.';
+        } finally {
+          button.disabled = false;
+          button.textContent = 'Invia la richiesta ↗';
+        }
+      });
+    </script>
   </body>
 </html>
 

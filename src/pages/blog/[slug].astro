@@ -13,6 +13,7 @@ export function getStaticPaths() {
 }
 
 const { article } = Astro.props;
+const h1Title = article.h1Title ?? article.title;
 const expanded = expandedBlogContent[article.slug];
 const visual = getArticleVisual(article);
 const seoTitle = getArticleSeoTitle(article);
@@ -23,8 +24,8 @@ const allSections = [...expanded.sections, blogSupplements[article.slug]];
 const wordCount = [article.intro, expanded.kicker, ...allSections.map((section) => section.paragraphs), ...article.faqs.map((faq) => faq[1])].flat().join(' ').trim().split(/\s+/).length;
 const readingTime = Math.max(1, Math.ceil(wordCount / 180));
 const structuredData = [{ '@context': 'https://schema.org', '@graph': [
-  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE.url}/blog` }, { '@type': 'ListItem', position: 3, name: article.title, item: pageUrl }] },
-  { '@type': 'BlogPosting', '@id': `${pageUrl}#article`, headline: article.title, description: article.description, image: [`${SITE.url}${visual.image}`], url: pageUrl, mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }, datePublished: article.published, dateModified: modified, articleSection: article.category, inLanguage: 'it-IT', wordCount, author: { '@type': 'Person', name: 'Carlo Fullin', url: SITE.url }, publisher: { '@id': `${SITE.url}/#business` } },
+  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE.url}/blog` }, { '@type': 'ListItem', position: 3, name: h1Title, item: pageUrl }] },
+  { '@type': 'BlogPosting', '@id': `${pageUrl}#article`, headline: h1Title, description: article.description, image: [`${SITE.url}${visual.image}`], url: pageUrl, mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }, datePublished: article.published, dateModified: modified, articleSection: article.category, inLanguage: 'it-IT', wordCount, author: { '@type': 'Person', name: 'Carlo Fullin', url: SITE.url }, publisher: { '@id': `${SITE.url}/#business` } },
   { '@type': 'FAQPage', mainEntity: article.faqs.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) },
 ] }];
 ---
@@ -44,9 +45,9 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
       <article class="article-linear">
         <header class="article-linear-header">
           <div class="wrap">
-            <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span><span aria-current="page">{article.title}</span></nav>
+            <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span><span aria-current="page">{h1Title}</span></nav>
             <p class="eyebrow light">{article.category}</p>
-            <h1>{article.title}</h1>
+            <h1>{h1Title}</h1>
             <p class="article-linear-meta">Pubblicato il {formatArticleDate(article.published)} · Aggiornato il {formatArticleDate(modified)} · {readingTime} min di lettura</p>
           </div>
         </header>
