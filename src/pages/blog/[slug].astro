@@ -9,7 +9,8 @@ import { blogSupplements, expandedBlogContent } from '../../config/blog-expanded
 import { articleInterlinks, getArticleModified } from '../../config/blog-interlinks';
 
 export function getStaticPaths() {
-  return blogArticles.filter((article) => article.slug !== 'guida-wordpress-alternative-2026').map((article) => ({ params: { slug: article.slug }, props: { article } }));
+  const customArticleSlugs = new Set(['guida-wordpress-alternative-2026', 'eu-code-week-2026-programmazione-intelligenza-artificiale']);
+  return blogArticles.filter((article) => !customArticleSlugs.has(article.slug)).map((article) => ({ params: { slug: article.slug }, props: { article } }));
 }
 
 const { article } = Astro.props;

@@ -2,6 +2,7 @@ type Zone = {
   name: string; territory: string; title: string; description: string; heroTitle: string; heroLead: string;
   territoryHeading: string; detail: string; benefitIntro: string;
   benefits: { title: string; text: string }[]; audience: string[]; faqs: readonly [string, string][];
+  continuity?: { eyebrow: string; title: string; emphasis: string; lead: string; steps: { title: string; text: string }[]; support: string; proof: { before: string; anchor: string; href: string; after: string } };
 };
 
 const localPreposition = (place: string) => place === 'Albignasego' || place === 'Abano Terme' ? 'ad' : 'a';
@@ -17,6 +18,18 @@ export const areas = {
     benefits: [{ title: 'Presenza locale chiara', text: 'Servizi, area di lavoro e contatti diventano immediatamente leggibili per chi cerca da Padova e provincia.' }, { title: 'SEO tecnica e contenuti', text: 'Struttura, pagine e dati essenziali aiutano Google a comprendere attività, servizi e contesto territoriale.' }, { title: 'Un contatto semplice', text: 'Telefono, form e CTA accompagnano il passaggio dalla ricerca al confronto, senza complicarlo.' }],
     audience: ['Artigiani e attività locali', 'Professionisti e studi', 'PMI e aziende B2B'],
     faqs: [pricingFaq('Padova'), timingFaq('Padova'), ['Offrite SEO locale per posizionarsi su Padova?', 'Sì. Ogni progetto parte da una base SEO on-page: title, meta description, contenuti, collegamenti interni e dati strutturati sono progettati per rendere la pagina comprensibile ai motori di ricerca e alle persone.']],
+    continuity: {
+      eyebrow: 'Un progetto che continua', title: 'Dall’analisi alla gestione.', emphasis: 'Senza lasciare il sito da solo.',
+      lead: 'Un sito utile non si esaurisce con la pubblicazione. Partiamo da attività, obiettivo e pubblico, progettiamo una struttura chiara, costruiamo una base SEO tecnica e definiamo come mantenerla utile nel tempo.',
+      steps: [
+        { title: 'Analisi e direzione', text: 'Prima di progettare, mettiamo a fuoco cosa deve trovare il cliente, quale azione deve compiere e quali priorità ha davvero il progetto.' },
+        { title: 'Sito e contenuti', text: 'Struttura, design e testi lavorano insieme per rendere offerta, competenze e contatti più comprensibili.' },
+        { title: 'SEO tecnica', text: 'Pagine, metadati, collegamenti interni e fondazioni tecniche vengono preparati per essere letti bene dalle persone e dai motori di ricerca.' },
+        { title: 'Dopo la pubblicazione', text: 'Se l’hosting è gestito integralmente da 4 Web Lab, la manutenzione tecnica ordinaria e straordinaria è inclusa. Per contenuti, evoluzioni e nuove esigenze definiamo insieme la modalità di aggiornamento più adatta al progetto.' },
+      ],
+      support: 'Un sito può evolvere senza perdere chiarezza: la gestione nel tempo è parte del percorso, non un tema da affrontare solo quando emerge un problema.',
+      proof: { before: 'Un esempio concreto: ', anchor: 'guarda il caso studio R.B. s.n.c.', href: '/realizzazioni/realizzazione-sito-web-edilizia-rb-snc-veneto', after: ', progetto reale per un’impresa attiva in provincia di Padova.' },
+    },
   },
   legnaro: {
     name: 'Legnaro', territory: 'Legnaro e Saccisica', title: 'Realizzazione siti web a Legnaro | 4 Web Lab', description: 'Realizzazione siti web a Legnaro e nella Saccisica per attività, professionisti e PMI: confronto diretto, struttura chiara e SEO tecnica.',
