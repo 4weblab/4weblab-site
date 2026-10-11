@@ -20,8 +20,8 @@ const checks = [
 <html lang="it">
   <head>
     <SeoHead
-      title="Perizia e creazione siti web a Padova | 4 Web Lab"
-      description="Perizia e creazione siti web a Padova. Analizziamo ciò che blocca il tuo sito o progettiamo una presenza digitale che porta contatti."
+      title="Siti web a Padova: analisi, creazione e Google Ads | 4 Web Lab"
+      description="Hai già un sito o devi crearne uno? Analizziamo cosa non funziona e realizziamo siti web per attività, professionisti e PMI. Anche Google Ads."
       image="/images/og/home.webp"
     />
   </head>
@@ -32,60 +32,58 @@ const checks = [
       <section class="hero">
         <div class="wrap hero-layout">
           <div class="hero-copy">
-            <p class="hero-location">4 Web Lab · Padova / ovunque serva</p>
-            <h1>Perizia e creazione<br /><em>di siti web a Padova.</em></h1>
-            <p class="lead">Perizie tecniche e creazione siti web a Padova: prima di rifarlo, capiamo perché. Poi progettiamo una presenza digitale capace di trasformare attenzione in contatti.</p>
-            <div class="actions"><a class="button" href="#perizia">Ho già un sito ↓</a><a class="plain light" href="#soluzioni">Devo crearne uno →</a></div>
-          </div>
-          <div class="hero-analysis" aria-label="Le aree considerate durante una perizia sito web">
-            <div class="analysis-head"><span>Analisi iniziale</span><span class="analysis-status">In lettura</span></div>
-            <div class="analysis-body">
-              <p>Un sito non è una vetrina.<br /><strong>È una decisione di business.</strong></p>
-              <dl>
-                <div><dt>Struttura</dt><dd><i></i><i></i><i></i></dd></div>
-                <div><dt>Visibilità</dt><dd><i></i><i></i><i></i></dd></div>
-                <div><dt>Conversione</dt><dd><i></i><i></i><i></i></dd></div>
-              </dl>
-            </div>
-            <div class="analysis-foot">Osserva prima di decidere</div>
+            <p class="hero-location">Siti web e Google Ads per attività, professionisti e PMI</p>
+            <h1>Il tuo sito non deve solo esserci.<br /><em>Deve farsi capire e portare contatti.</em></h1>
+            <p class="lead">Hai già un sito ma non sai cosa lo sta frenando? Oppure devi crearne uno da zero? Partiamo dalla tua situazione, mettiamo in ordine le priorità e costruiamo ciò che serve: analisi, contenuti, sito web e Google Ads quando possono aiutarti davvero.</p>
+            <div class="actions"><a class="button" href="#partenza">Raccontaci da dove parti ↓</a><a class="plain" href="#soluzioni">Vedi le soluzioni</a></div>
           </div>
         </div>
       </section>
-      <aside class="local-strip"><div class="wrap"><span>BASE A LEGNARO · PADOVA</span><p>Affianchiamo attività locali, professionisti e PMI in Veneto e in tutta Italia.</p><a href="/zone-servite">Scopri dove lavoriamo ↗</a></div></aside>
+      <section id="partenza" class="home-start" aria-labelledby="home-start-title">
+        <div class="wrap home-start-layout">
+          <div><h2 id="home-start-title">Da dove<br /><em>parti?</em></h2><p>La soluzione cambia in base alla situazione. Scegli il punto più vicino al tuo caso.</p></div>
+          <div class="home-start-list">
+            <a href="/perizia-sito-web"><small>01</small><span><strong>Ho già un sito</strong><em>Non porta abbastanza richieste o non sai se conviene rifarlo.</em></span><b aria-hidden="true">→</b></a>
+            <a href="/contatti"><small>02</small><span><strong>Devo creare un sito</strong><em>Mi serve un sito chiaro, credibile e adatto alla mia attività.</em></span><b aria-hidden="true">→</b></a>
+            <a href="/pubblicita-su-google"><small>03</small><span><strong>Voglio più richieste</strong><em>Voglio capire se Google Ads può intercettare persone interessate.</em></span><b aria-hidden="true">→</b></a>
+          </div>
+        </div>
+      </section>
+      <aside class="local-strip"><div class="wrap"><span>SITI WEB A PADOVA</span><p>Partiamo dalla tua realtà, dal pubblico che vuoi raggiungere e dal tipo di contatto che vuoi ricevere. Base a Legnaro, lavoriamo anche da remoto in Veneto e in tutta Italia.</p><a href="/zone-servite">Dove lavoriamo ↗</a></div></aside>
       <section id="perizia" class="section wrap perizia">
-        <div><p class="eyebrow">Il punto di partenza</p><h2>Non sempre serve<br />un sito nuovo.</h2></div>
-        <div><p class="statement">Se il sito non porta contatti, il problema può essere tecnico, strategico o semplicemente poco visibile. Una <strong>Perizia Sito Web</strong> separa i sintomi dalle cause.</p><a class="plain" href="/perizia-sito-web">Come funziona la perizia →</a></div>
+        <div><p class="eyebrow">Se il sito esiste già</p><h2>Prima di rifarlo,<br />capiamo cosa <em>non funziona.</em></h2></div>
+        <div><p class="statement">Un sito può perdere contatti per motivi diversi: struttura confusa, pagine poco visibili, messaggi generici, problemi tecnici o inviti all’azione poco chiari. La <strong>Perizia Sito Web</strong> separa i sintomi dalle cause e ti consegna priorità concrete.</p><a class="plain" href="/perizia-sito-web">Vedi come funziona la perizia →</a></div>
         <div class="board">
           <div class="board-top">DIAGNOSI INDIPENDENTE · <span><strong>ESSENTIAL</strong></span></div>
-          <div class="board-main"><div><b>219€</b><p>Prezzo fisso.<br />Report scritto e priorità.</p></div><ul>{checks.map((check) => <li>✓ {check}</li>)}</ul></div>
+          <div class="board-main"><div><b>219€</b><p>+ IVA<br />Report scritto e priorità.</p></div><ul>{checks.map((check) => <li>✓ {check}</li>)}</ul></div>
           <div class="board-top muted"><span><strong>Essential · 219 € + IVA</strong> · consegna in 5 giorni lavorativi</span><span>Non è una perizia giurata o forense.</span></div>
         </div>
       </section>
       <section class="diagnostic-feature" aria-labelledby="diagnostic-feature-title">
-        <div class="wrap diagnostic-feature-copy"><div><p class="eyebrow">Prima della soluzione</p><h2 id="diagnostic-feature-title">Leggere il sito<br />prima di <em>rifarlo.</em></h2></div><p>Ogni pagina, messaggio e scelta tecnica ha un peso. Li osserviamo insieme per capire dove intervenire e cosa lasciare stare.</p></div>
+        <div class="wrap diagnostic-feature-copy"><div><p class="eyebrow">Il punto di partenza</p><h2 id="diagnostic-feature-title">Un sito nuovo non risolve<br />automaticamente un problema <em>vecchio.</em></h2></div><p>Prima guardiamo cosa cercano le persone, cosa capiscono quando arrivano sul sito e dove si interrompe il percorso verso il contatto. Solo dopo decidiamo se serve correggere, riscrivere, rifare o promuovere.</p></div>
         <figure class="diagnostic-feature-visual"><img src="/images/website-diagnostic-editorial.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Una pagina web scomposta in livelli, attraversata da una linea di analisi luminosa" /></figure>
       </section>
       <section id="soluzioni" class="section dark">
         <div class="wrap">
-          <div class="services-title"><div><p class="eyebrow light">Soluzioni connesse</p><h2>Non attività<br /><em>scollegate.</em></h2></div><p>Ogni progetto nasce da un problema da risolvere, non da un pacchetto da vendere.</p></div>
+          <div class="services-title"><div><p class="eyebrow light">Cosa possiamo costruire</p><h2>Scegli la soluzione<br /><em>in base al tuo obiettivo.</em></h2></div><p>Non vendiamo pacchetti scollegati. Colleghiamo sito, contenuti e promozione solo quando servono al problema che vuoi risolvere.</p></div>
           <div class="services">
-            <a class="featured" href="/perizia-sito-web"><div class="service-copy"><small>Per chi ha già un sito</small><h3>Perizia sito web</h3><p>Hai già un sito, ma non sai cosa lo sta frenando? Lo analizziamo e ti consegniamo priorità chiare.</p></div><div class="service-art audit-art" aria-hidden="true"><span>Struttura</span><span>Visibilità</span><span>Conversione</span></div><span class="service-link">Scopri la perizia ↗</span></a>
-            <a href="/sito-web-per-negozio"><div class="service-copy"><small>Presenza locale</small><h3>Siti per negozi e attività locali</h3><p>Una presenza locale che rende semplice trovarti, capire cosa fai e contattarti.</p></div><div class="service-art local-art" aria-hidden="true"><i></i><i></i><i></i></div><span class="service-link">Scopri la soluzione ↗</span></a>
-            <a href="/sito-web-per-professionisti"><div class="service-copy"><small>Competenza chiara</small><h3>Siti per professionisti</h3><p>Un sito che rende chiara la tua competenza e trasforma ricerche in richieste qualificate.</p></div><img class="service-photo" src="/images/website-pages-editorial.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Rivista aperta con immagini editoriali, a supporto dei siti per professionisti" /><span class="service-link">Scopri la soluzione ↗</span></a>
-            <a href="/sito-web-aziendale"><div class="service-copy"><small>Offerta B2B</small><h3>Siti aziendali per PMI</h3><p>Una presenza digitale solida per raccontare offerta, metodo e valore a interlocutori B2B.</p></div><div class="service-art company-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="service-link">Scopri la soluzione ↗</span></a>
-            <a href="/pubblicita-su-google"><div class="service-copy"><small>Domanda attiva</small><h3>Pubblicità su Google (ADV)</h3><p>Campagne Google Ads progettate per intercettare una domanda già attiva e trasformarla in contatti misurabili.</p></div><div class="service-art search-art" aria-hidden="true"><span>cerca</span><i></i><i></i></div><span class="service-link">Scopri la soluzione ↗</span></a>
-            <a href="/pubblicita-su-chatgpt"><div class="service-copy"><small>Nuovi contesti di scelta</small><h3>Pubblicità su ChatGPT (ADV)</h3><p>Campagne ChatGPT Ads pensate per rendere il tuo brand presente nei momenti in cui le persone stanno valutando una scelta.</p></div><div class="service-art conversation-art" aria-hidden="true"><i></i><i></i><i></i></div><span class="service-link">Scopri la soluzione ↗</span></a>
+            <a class="featured" href="/perizia-sito-web"><div class="service-copy"><small>Se il sito esiste già</small><h3>Perizia sito web</h3><p>Non porta abbastanza richieste o non sai se conviene rifarlo? Analizziamo struttura, visibilità, messaggi e percorso verso il contatto.</p></div><div class="service-art audit-art" aria-hidden="true"><span>Struttura</span><span>Visibilità</span><span>Contatti</span></div><span class="service-link">Analizza il sito ↗</span></a>
+            <a href="/sito-web-per-negozio"><div class="service-copy"><small>Per attività locali</small><h3>Siti web per negozi e attività locali</h3><p>Per farti trovare, mostrare cosa offri e rendere semplice contattarti, chiamarti o raggiungerti.</p></div><div class="service-art local-art" aria-hidden="true"><i></i><i></i><i></i></div><span class="service-link">Vedi i siti per attività locali ↗</span></a>
+            <a href="/sito-web-per-professionisti"><div class="service-copy"><small>Per professionisti</small><h3>Siti web per professionisti</h3><p>Per spiegare con chiarezza cosa fai, per chi lavori e perché una persona dovrebbe contattarti.</p></div><img class="service-photo" src="/images/website-pages-editorial.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Rivista aperta con immagini editoriali, a supporto dei siti per professionisti" /><span class="service-link">Vedi i siti per professionisti ↗</span></a>
+            <a href="/sito-web-aziendale"><div class="service-copy"><small>Per PMI e aziende</small><h3>Siti web aziendali per PMI</h3><p>Per presentare servizi, competenze e casi reali a clienti, partner e interlocutori B2B.</p></div><div class="service-art company-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="service-link">Vedi i siti aziendali ↗</span></a>
+            <a href="/pubblicita-su-google"><div class="service-copy"><small>Per chi sta già cercando</small><h3>Google Ads per ottenere richieste</h3><p>Campagne pensate per intercettare ricerche attive, portare il traffico alla pagina giusta e misurare richieste, chiamate o vendite.</p></div><div class="service-art search-art" aria-hidden="true"><span>cerca</span><i></i><i></i></div><span class="service-link">Valuta Google Ads ↗</span></a>
+            <a href="/pubblicita-su-chatgpt"><div class="service-copy"><small>Nuovi contesti di scelta</small><h3>Pubblicità nei nuovi contesti di scelta</h3><p>Un servizio sperimentale per valutare come rendere il tuo brand presente mentre le persone confrontano soluzioni e prendono decisioni.</p></div><div class="service-art conversation-art" aria-hidden="true"><i></i><i></i><i></i></div><span class="service-link">Scopri il servizio ↗</span></a>
           </div>
         </div>
       </section>
       <section id="metodo" class="section wrap method">
-        <div><p class="eyebrow">Il nostro metodo</p><h2>Meno promesse.<br /><em>Più chiarezza.</em></h2></div>
-        <ol><li><small>01</small><div><h3>Guardiamo prima di proporre</h3><p>Contesto, obiettivi, ostacoli. Anche quando il problema non è il sito.</p></div></li><li><small>02</small><div><h3>Mettiamo in ordine le priorità</h3><p>Le azioni urgenti non sono sempre quelle più visibili. Le rendiamo leggibili.</p></div></li><li><small>03</small><div><h3>Costruiamo ciò che serve</h3><p>Design, contenuti e sviluppo lavorano insieme per portare alla prossima conversazione.</p></div></li></ol>
+        <div><p class="eyebrow">Come lavoriamo</p><h2>Prima capiamo.<br /><em>Poi costruiamo.</em></h2></div>
+        <ol><li><small>01</small><div><h3>Guardiamo la situazione reale</h3><p>Obiettivi, pubblico, sito attuale, contenuti e ostacoli. Non partiamo dal template.</p></div></li><li><small>02</small><div><h3>Scegliamo cosa serve davvero</h3><p>Una correzione, una nuova struttura, un sito completo o una campagna. La soluzione dipende dal problema.</p></div></li><li><small>03</small><div><h3>Costruiamo e verifichiamo</h3><p>Design, testi, sviluppo e promozione lavorano insieme per portare alla prossima conversazione.</p></div></li></ol>
       </section>
       <section id="contatti" class="contact">
         <div class="wrap contact-grid">
-          <div><p class="eyebrow light">Facciamo il primo passo</p><h2>Parti da una<br /><em>domanda vera.</em></h2><p>Hai un sito da verificare o un progetto da costruire? Raccontaci da dove parti.</p><a class="plain lime" href={whatsApp} target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div>
-          <form id="home-contact-form" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuovo contatto dal sito 4 Web Lab" /><input type="hidden" name="source_page" value="home" /><label class="honeypot" aria-hidden="true">Non compilare questo campo<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label><label>Nome<input name="name" required autocomplete="name" /></label><label>Email<input name="email" type="email" required autocomplete="email" /></label><label>Di cosa hai bisogno?<select name="esigenza"><option>Voglio una perizia</option><option>Devo creare un sito</option><option>Vorrei capire quale servizio mi serve</option></select></label><label>Raccontaci in due righe<textarea name="message" rows="3" required></textarea></label><button class="button" type="submit">Invia la richiesta ↗</button><p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy">Privacy policy</a>.</p><p id="home-contact-status" class="form-status" aria-live="polite"></p></form>
+          <div><p class="eyebrow light">Il prossimo passo</p><h2>Raccontaci cosa<br /><em>non sta funzionando.</em></h2><p>Hai già un sito, devi crearne uno o vuoi capire se Google Ads può aiutarti? Scrivici in due righe. Ti risponderemo con il prossimo passo più sensato per la tua situazione.</p><a class="plain lime" href={whatsApp} target="_blank" rel="noopener noreferrer">Scrivici su WhatsApp ↗</a></div>
+          <form id="home-contact-form" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuovo contatto dal sito 4 Web Lab" /><input type="hidden" name="source_page" value="home" /><label class="honeypot" aria-hidden="true">Non compilare questo campo<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label><label>Nome<input name="name" required autocomplete="name" /></label><label>Email<input name="email" type="email" required autocomplete="email" /></label><label>Di cosa hai bisogno?<select name="esigenza"><option>Ho già un sito e voglio capire cosa non funziona</option><option>Devo creare un sito web</option><option>Voglio valutare Google Ads</option><option>Non so ancora quale servizio mi serve</option></select></label><label>Raccontaci il progetto in due righe<textarea name="message" rows="3" required></textarea></label><button class="button" type="submit">Raccontaci il progetto ↗</button><p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy">Privacy policy</a>.</p><p id="home-contact-status" class="form-status" aria-live="polite"></p></form>
         </div>
       </section>
     </main>
@@ -105,12 +103,12 @@ const checks = [
           const data = await response.json();
           if (!response.ok || !data.success) throw new Error('send');
           homeForm.reset();
-          homeStatus.textContent = 'Richiesta inviata. Ti ricontatteremo a breve.';
+          homeStatus.textContent = 'Richiesta inviata. Abbiamo ricevuto il tuo messaggio e ti ricontatteremo a breve.';
         } catch {
           homeStatus.textContent = 'Invio non riuscito. Riprova tra poco o contattaci su WhatsApp.';
         } finally {
           button.disabled = false;
-          button.textContent = 'Invia la richiesta ↗';
+          button.textContent = 'Raccontaci il progetto ↗';
         }
       });
     </script>

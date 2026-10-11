@@ -31,6 +31,8 @@
     const preferences = banner.querySelector('[data-cookie-preferences]');
     const mainActions = banner.querySelector('[data-cookie-main-actions]');
     const analytics = preferences?.querySelector('input[name="analytics"]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let panelAnimation;
 
     const maxAge = 183 * 24 * 60 * 60 * 1000;
     const hasSavedPreference = () => {
@@ -60,11 +62,56 @@
       banner.hidden = true;
     };
 
+    const animatePanel = (element, entering) => {
+      if (!(element instanceof HTMLElement) || typeof element.animate !== 'function') return null;
+      panelAnimation?.cancel();
+      const reduced = reducedMotion.matches;
+      const frames = reduced
+        ? [{ opacity: entering ? 0 : 1 }, { opacity: entering ? 1 : 0 }]
+        : entering
+          ? [{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'translateY(0)' }]
+          : [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(4px)' }];
+      panelAnimation = element.animate(frames, { duration: reduced ? 80 : entering ? 160 : 120, easing: 'cubic-bezier(0.16, 1, 0.3, 1)', fill: 'both' });
+      return panelAnimation;
+    };
+
+    const showPreferences = () => {
+      if (!(preferences instanceof HTMLElement) || !(mainActions instanceof HTMLElement)) return;
+      banner.hidden = false;
+      const reveal = () => {
+        preferences.hidden = false;
+        animatePanel(preferences, true);
+        analytics?.focus();
+      };
+      if (mainActions.hidden) { reveal(); return; }
+      const animation = animatePanel(mainActions, false);
+      if (!animation) { mainActions.hidden = true; reveal(); return; }
+      animation.finished.catch(() => undefined).then(() => {
+        if (panelAnimation !== animation) return;
+        mainActions.hidden = true;
+        reveal();
+      });
+    };
+
+    const showMainActions = () => {
+      if (!(preferences instanceof HTMLElement) || !(mainActions instanceof HTMLElement)) return;
+      const reveal = () => {
+        mainActions.hidden = false;
+        animatePanel(mainActions, true);
+        mainActions.querySelector('[data-cookie-action="customize"]')?.focus();
+      };
+      const animation = animatePanel(preferences, false);
+      if (!animation) { preferences.hidden = true; reveal(); return; }
+      animation.finished.catch(() => undefined).then(() => {
+        if (panelAnimation !== animation) return;
+        preferences.hidden = true;
+        reveal();
+      });
+    };
+
     const openPreferences = () => {
       banner.hidden = false;
-      mainActions.hidden = true;
-      preferences.hidden = false;
-      analytics?.focus();
+      showPreferences();
     };
 
     window.fourWebLabCookiePreferences = { open: openPreferences };
@@ -78,8 +125,7 @@
       openPreferences();
     });
     banner.querySelector('[data-cookie-action="back"]')?.addEventListener('click', () => {
-      preferences.hidden = true;
-      mainActions.hidden = false;
+      showMainActions();
     });
     preferences?.addEventListener('submit', (event) => {
       event.preventDefault();

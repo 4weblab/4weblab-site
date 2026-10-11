@@ -1,5 +1,6 @@
 ---
 import CookieBanner from './CookieBanner.astro';
+import FormFeedback from './FormFeedback.astro';
 interface Props { contactTarget?: string; showHome?: boolean; }
 const { contactTarget = '#contatti', showHome = true } = Astro.props;
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -12,16 +13,83 @@ const servicePaths = new Set([
 ]);
 const isCurrent = (href: string) => pathname === href;
 const isServiceCurrent = servicePaths.has(pathname);
+const resourcePaths = new Set(['/zone-servite', '/blog', '/faq-realizzazione-siti-web']);
+const isResourceCurrent = resourcePaths.has(pathname) || pathname.startsWith('/realizzazione-siti-web-') || pathname.startsWith('/blog/');
 ---
 
 <script is:inline src="/analytics-consent.js" defer></script>
 <script>
-  document.querySelector('.skip[href="#contenuto"]')?.addEventListener('click', () => {
-    const target = document.querySelector('#contenuto');
-    if (!(target instanceof HTMLElement)) return;
-    target.tabIndex = -1;
-    window.setTimeout(() => target.focus({ preventScroll: true }), 0);
-  });
+  const initialiseInteractionPolish = () => {
+    document.querySelector('.skip[href="#contenuto"]')?.addEventListener('click', () => {
+      const target = document.querySelector('#contenuto');
+      if (!(target instanceof HTMLElement)) return;
+      target.tabIndex = -1;
+      window.setTimeout(() => target.focus({ preventScroll: true }), 0);
+    });
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const motionOptions = (duration) => ({ duration, easing: 'cubic-bezier(0.16, 1, 0.3, 1)', fill: 'both' });
+    const menu = document.querySelector('.mobile-menu');
+    const menuSummary = menu?.querySelector(':scope > summary');
+    const menuPanel = menu?.querySelector(':scope > .mobile-menu-panel');
+    let menuAnimation;
+    const animateMenu = (opening) => {
+      if (!(menuPanel instanceof HTMLElement) || typeof menuPanel.animate !== 'function') return null;
+      menuAnimation?.cancel();
+      const reduced = reducedMotion.matches;
+      const frames = reduced
+        ? [{ opacity: opening ? 0 : 1 }, { opacity: opening ? 1 : 0 }]
+        : opening
+          ? [{ opacity: 0, transform: 'translateY(-8px)' }, { opacity: 1, transform: 'translateY(0)' }]
+          : [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-8px)' }];
+      menuAnimation = menuPanel.animate(frames, motionOptions(reduced ? 80 : opening ? 180 : 140));
+      return menuAnimation;
+    };
+    if (menu instanceof HTMLDetailsElement && menuSummary instanceof HTMLElement) {
+      menu.addEventListener('toggle', () => { if (menu.open) animateMenu(true); });
+      menuSummary.addEventListener('click', (event) => {
+        if (!menu.open) return;
+        event.preventDefault();
+        const animation = animateMenu(false);
+        if (!animation) { menu.open = false; return; }
+        animation.finished.catch(() => undefined).then(() => {
+          if (menuAnimation === animation) menu.open = false;
+        });
+      });
+    }
+
+    const faqSelector = '.perizia-faq details, .local-faq details, .blog-faq details, .faq-hub-list details';
+    document.querySelectorAll(faqSelector).forEach((details) => {
+      const summary = details.querySelector(':scope > summary');
+      const answer = details.querySelector(':scope > p');
+      if (!(details instanceof HTMLDetailsElement) || !(summary instanceof HTMLElement) || !(answer instanceof HTMLElement)) return;
+      let answerAnimation;
+      const animateAnswer = (opening) => {
+        if (typeof answer.animate !== 'function') return null;
+        answerAnimation?.cancel();
+        const reduced = reducedMotion.matches;
+        const frames = reduced
+          ? [{ opacity: opening ? 0 : 1 }, { opacity: opening ? 1 : 0 }]
+          : opening
+            ? [{ opacity: 0, transform: 'translateY(-4px)' }, { opacity: 1, transform: 'translateY(0)' }]
+            : [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-4px)' }];
+        answerAnimation = answer.animate(frames, motionOptions(reduced ? 80 : opening ? 160 : 140));
+        return answerAnimation;
+      };
+      details.addEventListener('toggle', () => { if (details.open) animateAnswer(true); });
+      summary.addEventListener('click', (event) => {
+        if (!details.open) return;
+        event.preventDefault();
+        const animation = animateAnswer(false);
+        if (!animation) { details.open = false; return; }
+        animation.finished.catch(() => undefined).then(() => {
+          if (answerAnimation === animation) details.open = false;
+        });
+      });
+    });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initialiseInteractionPolish, { once: true });
+  else initialiseInteractionPolish();
 </script>
 <header>
   <a class="brand brand-image" href="/" aria-label="4 Web Lab, home"><img src="/4weblab-logo-header.svg" width="240" height="88" alt="4 Web Lab" /></a>
@@ -39,13 +107,17 @@ const isServiceCurrent = servicePaths.has(pathname);
       </div>
     </details>
     <a href="/realizzazioni" aria-current={isCurrent('/realizzazioni') || pathname.startsWith('/realizzazioni/') ? 'page' : undefined}>Portfolio</a>
-    <a href="/zone-servite" aria-current={isCurrent('/zone-servite') || pathname.startsWith('/realizzazione-siti-web-') ? 'page' : undefined}>Zone servite</a>
-    <a href="/blog" aria-current={isCurrent('/blog') || pathname.startsWith('/blog/') ? 'page' : undefined}>Blog</a>
-    <a href="/faq-realizzazione-siti-web" aria-current={isCurrent('/faq-realizzazione-siti-web') ? 'page' : undefined}>FAQ</a>
-    <a href="/contatti" aria-current={isCurrent('/contatti') ? 'page' : undefined}>Contatti</a>
+    <details class:list={['service-menu', 'resource-menu', { 'is-current': isResourceCurrent }]}>
+      <summary>Risorse <span aria-hidden="true">+</span></summary>
+      <div class="service-menu-panel">
+        <a href="/zone-servite" aria-current={isCurrent('/zone-servite') || pathname.startsWith('/realizzazione-siti-web-') ? 'page' : undefined}>Zone servite</a>
+        <a href="/blog" aria-current={isCurrent('/blog') || pathname.startsWith('/blog/') ? 'page' : undefined}>Blog</a>
+        <a href="/faq-realizzazione-siti-web" aria-current={isCurrent('/faq-realizzazione-siti-web') ? 'page' : undefined}>FAQ</a>
+      </div>
+    </details>
   </nav>
   <div class="header-actions">
-    <a class="top-cta" href="tel:+393514656042"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 2.9 9.4 2a1.8 1.8 0 0 1 2 1l1.2 4a1.8 1.8 0 0 1-.8 2L10.3 10a13.5 13.5 0 0 0 3.7 3.7l1-1.5a1.8 1.8 0 0 1 2-.8l4 1.2a1.8 1.8 0 0 1 1 2l-.9 2.8a2.7 2.7 0 0 1-2.6 1.9C10 19.3 4.7 14 4.7 5.5A2.7 2.7 0 0 1 6.6 2.9Z" /></svg>Chiamaci</a>
+    <a class="top-cta" href={contactTarget}>Parliamone <span aria-hidden="true">→</span></a>
     <details class="mobile-menu">
       <summary aria-label="Apri il menu di navigazione"><span class="mobile-menu-icon" aria-hidden="true"></span><span class="sr-only">Apri il menu</span></summary>
       <div class="mobile-menu-panel">
@@ -63,15 +135,20 @@ const isServiceCurrent = servicePaths.has(pathname);
             </div>
           </details>
           <a href="/realizzazioni" aria-current={isCurrent('/realizzazioni') || pathname.startsWith('/realizzazioni/') ? 'page' : undefined}>Portfolio</a>
-          <a href="/zone-servite" aria-current={isCurrent('/zone-servite') || pathname.startsWith('/realizzazione-siti-web-') ? 'page' : undefined}>Zone servite</a>
-          <a href="/blog" aria-current={isCurrent('/blog') || pathname.startsWith('/blog/') ? 'page' : undefined}>Blog</a>
-          <a href="/faq-realizzazione-siti-web" aria-current={isCurrent('/faq-realizzazione-siti-web') ? 'page' : undefined}>FAQ</a>
-          <a href="/contatti" aria-current={isCurrent('/contatti') ? 'page' : undefined}>Contatti</a>
+          <details class:list={['mobile-service-menu', { 'is-current': isResourceCurrent }]}>
+            <summary>Risorse <span aria-hidden="true">+</span></summary>
+            <div class="mobile-service-links">
+              <a href="/zone-servite" aria-current={isCurrent('/zone-servite') || pathname.startsWith('/realizzazione-siti-web-') ? 'page' : undefined}>Zone servite</a>
+              <a href="/blog" aria-current={isCurrent('/blog') || pathname.startsWith('/blog/') ? 'page' : undefined}>Blog</a>
+              <a href="/faq-realizzazione-siti-web" aria-current={isCurrent('/faq-realizzazione-siti-web') ? 'page' : undefined}>FAQ</a>
+            </div>
+          </details>
         </nav>
       </div>
     </details>
   </div>
 </header>
 <CookieBanner />
+<FormFeedback />
 
 

@@ -9,7 +9,7 @@ const slug = 'eu-code-week-2026-programmazione-intelligenza-artificiale';
 const pageUrl = `${SITE.url}/blog/${slug}`;
 const title = 'EU Code Week 2026: Programmazione e Intelligenza Artificiale';
 const description = 'EU Code Week 2026, dal 10 al 25 ottobre: scopri perché programmazione, competenze digitali e pensiero critico contano anche nell\'era dell\'IA.';
-const image = '/images/blog/covers/blog-eu-code-week-2026.png';
+const image = '/images/blog/covers/blog-eu-code-week-2026.webp';
 const structuredData = [{ '@context': 'https://schema.org', '@graph': [
   { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE.url}/blog` }, { '@type': 'ListItem', position: 3, name: title, item: pageUrl }] },
   { '@type': 'BlogPosting', '@id': `${pageUrl}#article`, headline: title, description, image: [`${SITE.url}${image}`], url: pageUrl, mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }, datePublished: '2026-10-09', dateModified: '2026-10-09', articleSection: 'Tecnologia & AI', inLanguage: 'it-IT', author: { '@type': 'Person', name: 'Carlo Fullin', url: SITE.url }, publisher: { '@id': `${SITE.url}/#business` } },

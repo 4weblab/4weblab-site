@@ -1,0 +1,98 @@
+<script>
+  const requiredMessage = (field) => {
+    if (field.validity.valueMissing) return field instanceof HTMLSelectElement ? 'Seleziona un’opzione.' : 'Completa questo campo.';
+    if (field.validity.typeMismatch) return field.type === 'email' ? 'Inserisci un indirizzo email valido.' : 'Inserisci un indirizzo web completo, ad esempio https://www.esempio.it.';
+    return 'Controlla questo campo.';
+  };
+
+  const controlsFor = (form) => [...form.elements].filter((field) => field instanceof HTMLInputElement || field instanceof HTMLSelectElement || field instanceof HTMLTextAreaElement).filter((field) => field.willValidate);
+
+  const setFieldError = (field) => {
+    const label = field.closest('label');
+    if (!label || field.validity.valid) return true;
+    const errorId = `${field.form?.id || 'form'}-${field.name || 'field'}-error`;
+    let error = label.querySelector(`#${CSS.escape(errorId)}`);
+    if (!(error instanceof HTMLElement)) {
+      error = document.createElement('span');
+      error.id = errorId;
+      error.className = 'field-error';
+      error.setAttribute('role', 'alert');
+      label.append(error);
+    }
+    error.textContent = requiredMessage(field);
+    field.setAttribute('aria-invalid', 'true');
+    field.setAttribute('aria-describedby', errorId);
+    return false;
+  };
+
+  const clearFieldError = (field) => {
+    const label = field.closest('label');
+    label?.querySelector('.field-error')?.remove();
+    field.removeAttribute('aria-invalid');
+    field.removeAttribute('aria-describedby');
+  };
+
+  const initialiseForm = (form) => {
+    if (form.dataset.feedbackReady === 'true') return;
+    form.dataset.feedbackReady = 'true';
+    form.noValidate = true;
+    const status = form.querySelector('.form-status');
+    const button = form.querySelector('button[type="submit"]');
+    if (!(status instanceof HTMLElement) || !(button instanceof HTMLButtonElement)) return;
+    const defaultButtonText = button.textContent || 'Invia la richiesta';
+    const updateStatus = (message, role = 'status') => {
+      status.textContent = message;
+      status.setAttribute('role', role);
+    };
+
+    controlsFor(form).forEach((field) => {
+      field.addEventListener('blur', () => {
+        if (field.validity.valid) clearFieldError(field);
+        else setFieldError(field);
+      });
+      field.addEventListener('input', () => {
+        if (field.validity.valid) clearFieldError(field);
+      });
+      field.addEventListener('change', () => {
+        if (field.validity.valid) clearFieldError(field);
+      });
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      const fields = controlsFor(form);
+      const firstInvalid = fields.find((field) => !setFieldError(field));
+      if (firstInvalid) {
+        updateStatus('Controlla i campi evidenziati e riprova.', 'status');
+        firstInvalid.focus();
+        return;
+      }
+      const honeypot = form.elements.namedItem('website') || form.elements.namedItem('botcheck');
+      if (honeypot instanceof HTMLInputElement && ((honeypot.type === 'checkbox' && honeypot.checked) || (honeypot.type !== 'checkbox' && honeypot.value))) return;
+
+      button.disabled = true;
+      button.textContent = 'Invio in corso…';
+      updateStatus('', 'status');
+      try {
+        const response = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+        const data = await response.json();
+        if (!response.ok || !data.success) throw new Error('send');
+        form.reset();
+        fields.forEach(clearFieldError);
+        updateStatus('Richiesta inviata. Ti rispondiamo entro un giorno lavorativo.', 'status');
+      } catch {
+        updateStatus('Invio non riuscito. Riprova tra poco o contattaci su WhatsApp.', 'alert');
+      } finally {
+        button.disabled = false;
+        button.textContent = defaultButtonText;
+      }
+    }, true);
+  };
+
+  const start = () => document.querySelectorAll('form[action="https://api.web3forms.com/submit"]').forEach((form) => {
+    if (form instanceof HTMLFormElement) initialiseForm(form);
+  });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
+  else start();
+</script>

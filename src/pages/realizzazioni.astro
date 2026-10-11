@@ -90,6 +90,27 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
   const closeLightbox = document.querySelector('.portfolio-lightbox-close');
 
   if (lightbox instanceof HTMLDialogElement && lightboxImage instanceof HTMLImageElement && closeLightbox instanceof HTMLButtonElement) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let lightboxAnimation;
+    const animateLightbox = (opening) => {
+      lightboxAnimation?.cancel();
+      const reduced = reducedMotion.matches;
+      const frames = reduced
+        ? [{ opacity: opening ? 0 : 1 }, { opacity: opening ? 1 : 0 }]
+        : opening
+          ? [{ opacity: 0, transform: 'scale(.98)' }, { opacity: 1, transform: 'scale(1)' }]
+          : [{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.98)' }];
+      lightboxAnimation = lightbox.animate(frames, { duration: reduced ? 80 : opening ? 200 : 140, easing: 'cubic-bezier(0.16, 1, 0.3, 1)', fill: 'both' });
+      return lightboxAnimation;
+    };
+    const dismissLightbox = () => {
+      if (!lightbox.open || lightbox.dataset.closing === 'true') return;
+      lightbox.dataset.closing = 'true';
+      const animation = animateLightbox(false);
+      animation.finished.catch(() => undefined).then(() => {
+        if (lightboxAnimation === animation) lightbox.close();
+      });
+    };
     document.querySelectorAll('[data-portfolio-zoom]').forEach((trigger) => {
       trigger.addEventListener('click', () => {
         const source = trigger.dataset.src;
@@ -98,20 +119,21 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
         lightboxImage.alt = trigger.dataset.alt || '';
         lightboxImage.hidden = false;
         lightbox.showModal();
+        requestAnimationFrame(() => animateLightbox(true));
         closeLightbox.focus();
       });
     });
 
-    closeLightbox.addEventListener('click', () => lightbox.close());
+    closeLightbox.addEventListener('click', dismissLightbox);
     lightbox.addEventListener('click', (event) => {
-      if (event.target === lightbox) lightbox.close();
+      if (event.target === lightbox) dismissLightbox();
     });
     const resetLightbox = () => {
       lightboxImage.hidden = true;
       lightboxImage.removeAttribute('src');
       lightboxImage.alt = '';
     };
-    lightbox.addEventListener('cancel', resetLightbox);
-    lightbox.addEventListener('close', resetLightbox);
+    lightbox.addEventListener('cancel', (event) => { event.preventDefault(); dismissLightbox(); });
+    lightbox.addEventListener('close', () => { lightboxAnimation?.cancel(); lightbox.removeAttribute('data-closing'); resetLightbox(); });
   }
 </script>
