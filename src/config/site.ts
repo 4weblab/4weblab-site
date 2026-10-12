@@ -11,8 +11,7 @@ export const SITE = {
 
 export const organizationStructuredData = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  additionalType: 'https://schema.org/InternetMarketingService',
+  '@type': 'Organization',
   '@id': `${SITE.url}/#business`,
   name: SITE.name,
   legalName: SITE.legalName,
@@ -27,18 +26,21 @@ export const organizationStructuredData = {
     name: 'Carlo Fullin',
     sameAs: 'https://www.linkedin.com/in/carlo-fullin-6aa6b73b7/',
   },
-  areaServed: [
-    { '@type': 'AdministrativeArea', name: 'Veneto' },
-    { '@type': 'City', name: 'Padova' },
-    { '@type': 'City', name: 'Venezia' },
-  ],
-  openingHoursSpecification: [
-    {
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: SITE.email,
+    telephone: SITE.telephone,
+    hoursAvailable: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '09:00',
       closes: '19:00',
     },
+  },
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Veneto' },
+    { '@type': 'City', name: 'Padova' },
+    { '@type': 'City', name: 'Venezia' },
   ],
 };
 
