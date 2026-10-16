@@ -8,20 +8,27 @@ import { SITE } from '../config/site';
 
 const pageUrl = `${SITE.url}/perizia-sito-web`;
 const reasons = [
-  ['Avete pagato un sito e volete capire se il lavoro è solido.', 'Una valutazione indipendente separa un lavoro ben fatto dalle scorciatoie difficili da vedere.'],
-  ['Il sito riceve visite ma non porta contatti.', 'Analizziamo il percorso e individuiamo cosa può fermare una richiesta, una chiamata o un acquisto.'],
-  ['Il sito non compare quando cercano la vostra attività.', 'Controlliamo struttura, indicizzazione e contenuti per capire dove si trovano i blocchi.'],
-  ['State valutando un nuovo sito ma non sapete se serve.', 'Prima di investire in un rifacimento, verifichiamo se il problema è davvero il sito o se bastano interventi mirati.'],
-  ['Avete cambiato agenzia e volete un punto fermo.', 'Una perizia indipendente vi restituisce un quadro chiaro del lavoro esistente e delle priorità.'],
-  ['Il sito è lento o difficile da usare da mobile.', 'Controlliamo prestazioni, comportamento sui dispositivi e ostacoli che possono far perdere visitatori.'],
+  ['Il sito non porta abbastanza contatti.', 'Controlliamo la chiarezza dell’offerta e il percorso verso la richiesta.'],
+  ['Il sito non si trova su Google.', 'Verifichiamo indicizzazione, struttura e contenuti delle pagine principali.'],
+  ['Il sito è lento o difficile da usare da mobile.', 'Analizziamo le prestazioni e gli ostacoli più evidenti sui dispositivi mobili.'],
+  ['Non so se correggere o rifare il sito.', 'Valutiamo i problemi prima di consigliarti un intervento o un rifacimento.'],
 ];
-const essential = ['Struttura tecnica', 'Indicizzazione', 'SEO on-page essenziale', 'Velocità e prestazioni', 'Versione mobile', 'Esperienza d’uso', 'Conversione', 'Proprietà e accessi'];
-const premium = ['Tutto Essential', 'Analisi HTML, CSS e JavaScript', 'Dati strutturati', 'Canonical, sitemap e robots', 'Analytics e tracciamenti', 'Sicurezza di base'];
+const checks = [
+  ['Tecnica', 'HTTPS, sitemap, robots.txt, link rotti, redirect, struttura degli URL ed errori di scansione riconoscibili.'],
+  ['Indicizzazione', 'Presenza su Google, pagine principali indicizzate e anomalie visibili. Se hai accesso a Search Console, possiamo usare anche quei dati.'],
+  ['SEO delle pagine', 'Title, meta description, H1, titoli principali, struttura dei contenuti, duplicazioni evidenti e coerenza con i servizi offerti.'],
+  ['Velocità e mobile', 'PageSpeed, Core Web Vitals quando sono disponibili dati reali, caricamento e problemi d’uso da smartphone.'],
+  ['Esperienza e contatti', 'Chiarezza dell’offerta, leggibilità, inviti all’azione, contatti e ostacoli evidenti alla richiesta.'],
+  ['SEO locale, se pertinente', 'Coerenza delle informazioni, presenza locale, pagine geografiche e segnali principali.'],
+];
 const faqs = [
-  ['Cos’è la Perizia del sito web?', 'È un’analisi tecnica scritta di un sito esistente: indica cosa funziona, cosa non funziona e cosa affrontare per primo. Non è una perizia giurata e non ha valore legale.'],
-  ['È la stessa cosa di un audit SEO?', 'No. Un audit SEO guarda soprattutto il posizionamento; la perizia considera anche salute tecnica, esperienza d’uso e conversione.'],
-  ['Serve l’accesso al sito per l’Essential?', 'No. L’Essential parte dall’URL e dall’analisi esterna. Per il Premium sono consigliati gli accessi a Search Console e Analytics.'],
-  ['Quanto tempo serve?', 'Essential: 5 giorni lavorativi dalla conferma. Premium: 7 giorni lavorativi dalla conferma.'],
+  ['Posso usare un tool gratuito?', 'Sì. I tool sono utili per trovare errori e misurare alcuni aspetti del sito. La verifica professionale interpreta i risultati e mette in ordine gli interventi in base al tuo caso.'],
+  ['E se il sito non ha problemi rilevanti?', 'Ricevi comunque una valutazione scritta dello stato del sito. Non inseriamo problemi inesistenti per proporti lavori.'],
+  ['Devo affidare a voi gli interventi?', 'No. Il report è tuo e puoi decidere liberamente come usarlo. Se ci affidi gli interventi individuati, il costo pagato per la verifica viene scalato dal loro preventivo.'],
+  ['Mi direte per forza che devo rifare il sito?', 'No. Se i problemi si possono correggere con interventi mirati, il report lo indica. Un rifacimento viene proposto solo se motivato dalla verifica.'],
+  ['Cosa succede se il sito ha 10 o più pagine?', 'Ti chiamiamo prima di iniziare e prepariamo un preventivo dedicato. La verifica parte solo dopo la tua conferma. Se poi ci affidi gli interventi individuati, recuperi l’intero importo pagato per la verifica.'],
+  ['Servono accessi al sito?', 'Per iniziare basta l’indirizzo del sito. La verifica usa i dati accessibili dall’esterno; eventuali dati di Search Console possono aiutare ad approfondire l’indicizzazione.'],
+  ['Quando riceverò il report?', 'Ti confermiamo i tempi di consegna prima di avviare la verifica.'],
   ['Il report è riservato?', 'Sì. Potete tenerlo privato o condividerlo con chi preferite.'],
 ];
 const structuredData = [{
@@ -31,9 +38,8 @@ const structuredData = [{
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
       { '@type': 'ListItem', position: 2, name: 'Perizia sito web', item: pageUrl },
     ] },
-    { '@type': 'Service', '@id': `${pageUrl}#service`, name: 'Perizia del sito web', serviceType: 'Perizia tecnica del sito web', provider: { '@id': `${SITE.url}/#business` }, areaServed: { '@type': 'Country', name: 'Italia' }, url: pageUrl, inLanguage: 'it-IT', isPartOf: { '@id': `${SITE.url}/#website` }, offers: [
-      { '@type': 'Offer', name: 'Essential', url: pageUrl, price: '219', priceCurrency: 'EUR', availability: 'https://schema.org/InStock', priceSpecification: { '@type': 'UnitPriceSpecification', price: '219', priceCurrency: 'EUR', valueAddedTaxIncluded: false } },
-      { '@type': 'Offer', name: 'Premium', url: pageUrl, price: '499', priceCurrency: 'EUR', availability: 'https://schema.org/InStock', priceSpecification: { '@type': 'UnitPriceSpecification', price: '499', priceCurrency: 'EUR', valueAddedTaxIncluded: false } },
+    { '@type': 'Service', '@id': `${pageUrl}#service`, name: 'Verifica tecnica professionale del sito', serviceType: 'Verifica tecnica del sito web', provider: { '@id': `${SITE.url}/#business` }, areaServed: { '@type': 'Country', name: 'Italia' }, url: pageUrl, inLanguage: 'it-IT', isPartOf: { '@id': `${SITE.url}/#website` }, offers: [
+      { '@type': 'Offer', name: 'Verifica tecnica professionale del sito', description: 'Prezzo per siti con meno di 10 pagine; da 10 pagine, preventivo dedicato prima dell’avvio.', url: pageUrl, price: '49.90', priceCurrency: 'EUR', priceSpecification: { '@type': 'UnitPriceSpecification', price: '49.90', priceCurrency: 'EUR', valueAddedTaxIncluded: false } },
     ] },
     { '@type': 'FAQPage', mainEntity: faqs.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) },
   ],
@@ -43,7 +49,7 @@ const structuredData = [{
 <!doctype html>
 <html lang="it">
   <head>
-    <SeoHead title="Perizia sito web: analisi tecnica indipendente | 4 Web Lab" description="Scopri cosa non funziona nel tuo sito. Analisi tecnica sito web con report scritto, prezzo fisso, da 219 € + IVA." image="/images/og/perizia-sito-web.webp" structuredData={structuredData} />
+    <SeoHead title="Perizia sito web: verifica tecnica professionale | 4 Web Lab" description="Perizia Sito Web: verifica di indicizzazione, SEO, velocità e mobile. Report scritto con priorità, 49,90 € + IVA; da 10 pagine, preventivo dedicato." image="/images/og/perizia-sito-web.webp" structuredData={structuredData} />
   </head>
   <body>
     <a class="skip" href="#contenuto">Vai al contenuto</a>
@@ -51,28 +57,29 @@ const structuredData = [{
     <main id="contenuto">
       <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Perizia sito web' }]} /></div></div>
       <section class="perizia-hero"><div class="wrap">
-        <p class="hero-location">Analisi tecnica di un sito esistente</p>
-        <h1>Perizia sito web:<br /><em>capisci cosa non funziona.</em></h1>
-        <p class="lead">Analizziamo il tuo sito e separiamo i problemi reali dai dettagli secondari. Ricevi un report scritto con priorità concrete, prima di spendere per correzioni o rifacimenti.</p>
-        <div class="actions"><a class="button" href="#richiedi-perizia">Richiedi la perizia ↓</a><a class="plain light" href="#cosa-controlliamo">Cosa controlliamo →</a></div>
+        <p class="hero-location">Perizia sito web · verifica tecnica professionale</p>
+        <h1>Il tuo sito non funziona<br /><em>come dovrebbe?</em></h1>
+        <p class="lead">Controlliamo indicizzazione, SEO delle pagine, velocità, versione mobile e possibili problemi tecnici. Ricevi un report scritto che distingue le priorità e indica da dove conviene iniziare.</p>
+        <p class="perizia-hero-offer"><strong>49,90 € + IVA</strong><span>Da 10 pagine, preventivo dedicato prima di iniziare. Se ci affidi gli interventi individuati, recuperi l’intero costo pagato per la verifica.</span></p>
+        <div class="actions"><a class="button" href="#richiedi-perizia">Richiedi la verifica ↓</a><a class="plain light" href="#cosa-controlliamo">Cosa controlliamo →</a></div>
         <p class="perizia-note">Analisi tecnica indipendente.<br />Non forense.</p>
       </div></section>
 
-      <section class="perizia-intro section wrap"><div><p class="eyebrow">Prima di decidere</p><h2>Prima di rifarlo,<br />capisci cosa<br /><em>va corretto.</em></h2></div><div><p class="statement">La Perizia Sito Web analizza un sito esistente per capire se i problemi dipendono dalla struttura tecnica, dalla visibilità su Google, dai contenuti, dall’esperienza d’uso o dal percorso verso il contatto.</p><p>Nel report trovi gli interventi ordinati per priorità: cosa blocca il sito, cosa può aspettare e quale azione conviene affrontare per prima.</p></div></section>
+      <section class="perizia-intro section wrap"><div><p class="eyebrow">Prima di decidere</p><h2>Prima di rifarlo,<br />capisci cosa<br /><em>va corretto.</em></h2></div><div><p class="statement">La Perizia Sito Web è un audit del sito web esistente: una verifica professionale che mette in relazione i problemi tecnici, la visibilità su Google e il percorso verso il contatto.</p><p>Il report distingue ciò che richiede attenzione immediata, ciò che può limitare visibilità o richieste e ciò che si può migliorare con più calma.</p></div></section>
 
-      <section class="perizia-reasons"><div class="wrap"><p class="eyebrow">Parti da un problema concreto</p><h2>Quando serve<br />una perizia<br /><em>del sito.</em></h2><div class="reason-grid">{reasons.map(([title, description], index) => <article><small>0{index + 1}</small><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
+      <section class="perizia-reasons"><div class="wrap perizia-reasons-wrap"><p class="eyebrow">Parti da un problema concreto</p><h2>Quando serve<br />una perizia<br /><em>del sito.</em></h2><div class="reason-grid">{reasons.map(([title, description], index) => <article><small>0{index + 1}</small><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
 
-      <section id="cosa-controlliamo" class="section wrap perizia-checks"><div><p class="eyebrow">Il perimetro dell’analisi</p><h2>Cosa analizziamo<br />prima di dirti<br /><em>cosa cambiare.</em></h2></div><div class="checks-content"><p class="checks-answer"><strong>Una perizia serve a capire quali problemi incidono davvero sulla visibilità, sull’esperienza delle persone e sulle richieste di contatto. Non restituisce un elenco indistinto di errori: ordina le priorità.</strong></p><div class="checks-split"><article><span>SEO E STRUTTURA / ESSENTIAL</span><p>Controlliamo struttura delle pagine, indicizzazione, contenuti, prestazioni, versione mobile, esperienza d’uso e percorso verso il contatto.</p></article><article><span>ANALISI APPROFONDITA / PREMIUM</span><p>Aggiungiamo l’analisi di HTML, CSS, JavaScript, dati strutturati, canonical, sitemap, robots, Analytics e tracciamenti quando gli accessi sono disponibili.</p></article></div><p class="checks-legal">Su cookie e privacy verifichiamo soltanto la presenza di banner e pagine informative. Non esprimiamo valutazioni legali.</p></div></section>
+      <section id="cosa-controlliamo" class="section wrap perizia-checks"><div><p class="eyebrow">Il perimetro dell’analisi</p><h2>Cosa controlliamo<br />nel tuo <em>sito.</em></h2></div><div class="checks-content"><p class="checks-answer"><strong>Gli strumenti gratuiti aiutano a trovare possibili problemi. La nostra analisi tecnica del sito web serve a interpretarli e a capire quali interventi affrontare per primi.</strong></p><div class="perizia-checks-grid">{checks.map(([title, description]) => <article><h3>{title}</h3><p>{description}</p></article>)}</div><p class="checks-legal">I controlli partono dai dati accessibili dall’esterno. Eventuali dati riservati, come quelli di Search Console, richiedono il tuo accesso. Su cookie e privacy segnaliamo solo anomalie visibili, senza valutazioni legali.</p></div></section>
 
-      <section id="prezzi" class="perizia-pricing"><div class="wrap"><p class="eyebrow light">Due livelli di analisi</p><h2>Scegli quanto<br />vuoi approfondire<br /><em>il problema.</em></h2><div class="plan-grid"><article class="plan"><p class="plan-label">01 / DIAGNOSI ESTERNA</p><h3>Essential</h3><p class="plan-price">219 € <small>+ IVA</small></p><p>La diagnosi esterna per capire da dove partire. Non servono accessi al sito.</p><ul>{essential.map(item => <li>✓ {item}</li>)}</ul><small class="plan-delivery">Consegna in 5 giorni lavorativi</small><a class="button" href="#richiedi-perizia">Richiedi Essential →</a></article><article class="plan featured"><p class="plan-label">02 / ANALISI COMPLETA</p><h3>Premium</h3><p class="plan-price">499 € <small>+ IVA</small></p><p>L’analisi completa per approfondire tecnica, dati e tracciamenti. Gli accessi a Search Console e Analytics sono consigliati.</p><ul>{premium.map(item => <li>✓ {item}</li>)}</ul><small class="plan-delivery">Consegna in 7 giorni lavorativi</small><a class="button" href="#richiedi-perizia">Richiedi Premium →</a></article></div><p class="perizia-disclaimer">Prezzi fissi. Se un sito ha dimensioni fuori dal normale e richiede più tempo, te lo comunichiamo prima di iniziare.</p></div></section>
+      <section id="prezzi" class="perizia-pricing"><div class="wrap"><p class="eyebrow light">Una sola verifica</p><h2>Un report scritto.<br /><em>Priorità chiare.</em></h2><div class="perizia-offer"><div><h3>Verifica tecnica professionale del sito</h3><p class="plan-price">49,90 € <small>+ IVA</small></p><p>Controlliamo gli aspetti indicati sopra e ti consegniamo una valutazione ordinata per priorità: <strong>Critico, Importante, Migliorabile.</strong></p><a class="button" href="#richiedi-perizia">Richiedi la verifica →</a><p class="perizia-guide-link">Vuoi iniziare da solo? <a href="/blog/come-controllare-un-sito-web-gratis">Leggi cosa puoi controllare gratis e quali limiti hanno i tool online →</a></p></div><div class="perizia-offer-details"><h3>Il costo della verifica viene recuperato</h3><p>Il report è tuo e decidi liberamente se intervenire. Se affidi a 4 Web Lab gli interventi individuati, recuperi l’intero costo pagato per la verifica: lo scaliamo dal preventivo dei lavori.</p><p class="perizia-quote-note">Il sito ha 10 o più pagine? Ti chiamiamo prima di iniziare e prepariamo un preventivo dedicato. La verifica parte solo dopo la tua conferma.</p></div></div></div></section>
 
-      <section class="section wrap perizia-method"><div><p class="eyebrow">Dal sito al report</p><h2>Come funziona<br />la perizia.</h2></div><ol><li><small>01</small><div><h3>Ci invii l’URL</h3><p>Ci racconti cosa non torna e compili il form con l’indirizzo del sito.</p></div></li><li><small>02</small><div><h3>Definiamo il livello</h3><p>Ti confermiamo quale analisi è più adatta e cosa ci serve per iniziare.</p></div></li><li><small>03</small><div><h3>Analizziamo il sito</h3><p>Eseguiamo i controlli previsti e colleghiamo gli errori alle loro conseguenze.</p></div></li><li><small>04</small><div><h3>Ricevi le priorità</h3><p>Consegniamo il report scritto. Se serve, lo commentiamo insieme in call.</p></div></li></ol></section>
+      <section class="section wrap perizia-method"><div><p class="eyebrow">Dal sito al report</p><h2>Come funziona<br />la verifica.</h2></div><ol><li><small>01</small><div><h3>Ci invii l’URL</h3><p>Indichi il sito e ci racconti cosa vuoi capire.</p></div></li><li><small>02</small><div><h3>Confermiamo il lavoro</h3><p>Ti confermiamo prezzo e tempi prima di iniziare. Per siti da 10 pagine prepariamo un preventivo dedicato.</p></div></li><li><small>03</small><div><h3>Controlliamo il sito</h3><p>Verifichiamo gli aspetti tecnici, la visibilità, le prestazioni e il percorso verso il contatto.</p></div></li><li><small>04</small><div><h3>Ricevi il report</h3><p>Ti consegniamo una valutazione scritta con problemi e interventi ordinati per priorità.</p></div></li></ol></section>
 
-      <section class="perizia-after"><div class="wrap"><p class="eyebrow">Dopo l’analisi</p><h2>Il report è tuo.<br /><em>La decisione anche.</em></h2><div class="after-grid"><article><h3>Continui con il tuo team</h3><p>Condividi il report con chi segue il sito e chiedi preventivi o correzioni basate su priorità chiare.</p></article><article><h3>Interveniamo sulle priorità</h3><p>Puoi affidare a noi uno o più interventi. Ogni lavoro viene quotato separatamente.</p></article><article><h3>Valuti se rifare il sito</h3><p>Se il rifacimento è davvero la scelta migliore, lo motiveremo. Se non serve, il report lo dirà con chiarezza.</p></article></div></div></section>
+      <section class="perizia-after"><div class="wrap"><p class="eyebrow">Dopo la verifica</p><h2>Il report è tuo.<br /><em>La decisione anche.</em></h2><div class="after-grid"><article><h3>Continui con il tuo team</h3><p>Condividi il report con chi segue il sito e chiedi correzioni basate su priorità chiare.</p></article><article><h3>Ci affidi gli interventi</h3><p>Prepariamo un preventivo per i lavori necessari e scaliamo l’intero costo pagato per la verifica.</p></article><article><h3>Valuti se rifare il sito</h3><p>Se il rifacimento è la scelta migliore, lo motiviamo. Se bastano correzioni mirate, il report lo indica.</p></article></div></div></section>
 
       <section class="section wrap perizia-faq"><div><p class="eyebrow">Domande frequenti</p><h2>Risposte<br />dirette.</h2></div><div>{faqs.map(([question, answer]) => <details><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
 
-      <section id="richiedi-perizia" class="contact"><div class="wrap perizia-contact"><div><p class="eyebrow light">Richiedi la perizia</p><h2>Parti da ciò<br /><em>che vuoi capire.</em></h2><p>Raccontaci cosa non torna nel tuo sito: poche richieste, problemi tecnici, scarsa visibilità o dubbi sul lavoro ricevuto.</p><a class="plain lime" href="https://wa.me/393514656042">WhatsApp ↗</a></div><form id="perizia-form" method="post" action="https://api.web3forms.com/submit"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuova richiesta perizia sito web" /><input type="hidden" name="from_name" value="4 Web Lab – Perizia sito web" /><input type="hidden" name="source_page" value="perizia-sito-web" /><label>Nome e cognome *<input name="name" required autocomplete="name" /></label><label>Email *<input name="email" type="email" required autocomplete="email" /></label><label>Telefono<input name="phone" type="tel" autocomplete="tel" /></label><label>Indirizzo del sito *<input name="site_url" type="url" required placeholder="https://www.tuosito.it" autocomplete="url" /></label><label>Motivo della richiesta *<select name="reason" required><option value="" selected disabled>Seleziona un motivo</option>{reasons.map(([title]) => <option value={title}>{title}</option>)}</select></label><label>Livello di perizia *<select name="level" required><option value="" selected disabled>Seleziona un livello</option><option>Essential – 219 € + IVA</option><option>Premium – 499 € + IVA</option></select></label><label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label><button class="button" type="submit">Invia la richiesta ↗</button><p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy">Privacy policy</a>.</p><p id="form-status" class="form-status" aria-live="polite"></p></form></div></section>
+      <section id="richiedi-perizia" class="contact"><div class="wrap perizia-contact"><div><p class="eyebrow light">Richiedi la verifica</p><h2>Parti da ciò<br /><em>che vuoi capire.</em></h2><p>Indicaci il tuo sito e il problema che vuoi chiarire. Ti confermiamo prezzo e tempi prima di iniziare; per siti da 10 pagine ti chiamiamo con un preventivo dedicato.</p><a class="plain lime" href="https://wa.me/393514656042">WhatsApp ↗</a></div><form id="perizia-form" method="post" action="https://api.web3forms.com/submit"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuova richiesta verifica tecnica sito web" /><input type="hidden" name="from_name" value="4 Web Lab – Verifica sito web" /><input type="hidden" name="source_page" value="perizia-sito-web" /><label>Nome e cognome *<input name="name" required autocomplete="name" /></label><label>Email *<input name="email" type="email" required autocomplete="email" /></label><label>Telefono per il contatto *<input name="phone" type="tel" required autocomplete="tel" /></label><label>Indirizzo del sito *<input name="site_url" type="url" required placeholder="https://www.tuosito.it" autocomplete="url" /></label><label>Che cosa vuoi capire? *<select name="reason" required><option value="" selected disabled>Seleziona un motivo</option>{reasons.map(([title]) => <option value={title}>{title}</option>)}</select></label><label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label><button class="button" type="submit">Richiedi la verifica ↗</button><p class="privacy">L’invio del modulo non avvia la verifica né comporta un pagamento. I dati sono usati solo per rispondere alla richiesta. <a href="/privacy">Privacy policy</a>.</p><p id="form-status" class="form-status" aria-live="polite"></p></form></div></section>
     </main>
 <SiteFooter />
     <script is:inline>
@@ -87,13 +94,19 @@ const structuredData = [{
           const response = await fetch(form.action, { method: 'POST', body: new FormData(form) });
           const data = await response.json();
           if (!response.ok || !data.success) throw new Error('send');
-          form.reset(); status.textContent = 'Richiesta inviata. Ti rispondiamo entro 24 ore lavorative.';
+          form.reset(); status.textContent = 'Richiesta inviata. Ti contatteremo per confermare prezzo e tempi prima di iniziare.';
         } catch { status.textContent = 'Invio non riuscito. Riprova tra poco o contattaci su WhatsApp.'; }
-        finally { button.disabled = false; button.textContent = 'Invia la richiesta ↗'; }
+        finally { button.disabled = false; button.textContent = 'Richiedi la verifica ↗'; }
       });
     </script>
   </body>
 </html>
+
+<style>
+  .perizia-guide-link { margin-top: 25px; }
+  .perizia-guide-link a { color: var(--lime); text-underline-offset: 3px; }
+  .perizia-guide-link a:hover { color: #fff; }
+</style>
 
 
 

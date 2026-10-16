@@ -1,0 +1,99 @@
+---
+import '../../styles/global.css';
+import SeoHead from '../../components/SeoHead.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { SITE } from '../../config/site';
+import { formatArticleDate, getArticle, getArticleSeoTitle, getArticleVisual } from '../../config/blog';
+
+const article = getArticle('come-controllare-un-sito-web-gratis');
+if (!article) throw new Error('Articolo sulla verifica gratuita del sito non trovato');
+const visual = getArticleVisual(article);
+const pageUrl = `${SITE.url}/blog/${article.slug}`;
+const structuredData = [{ '@context': 'https://schema.org', '@graph': [
+  { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE.url}/blog` },
+    { '@type': 'ListItem', position: 3, name: article.title, item: pageUrl },
+  ] },
+  { '@type': 'BlogPosting', '@id': `${pageUrl}#article`, headline: article.title, description: article.description, image: [`${SITE.url}${visual.image}`], url: pageUrl, mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }, datePublished: article.published, dateModified: article.modified, articleSection: article.category, inLanguage: 'it-IT', author: { '@type': 'Person', name: 'Carlo Fullin', url: SITE.url }, publisher: { '@id': `${SITE.url}/#business` } },
+] }];
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <SeoHead title={`${getArticleSeoTitle(article)} | 4 Web Lab`} description={article.description} image={visual.image} type="article" structuredData={structuredData} />
+    <meta property="article:published_time" content={article.published} />
+    <meta property="article:modified_time" content={article.modified} />
+    <meta property="article:section" content={article.category} />
+    <meta property="article:author" content="Carlo Fullin" />
+  </head>
+  <body>
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+    <SiteHeader contactTarget="/contatti" />
+    <main id="contenuto">
+      <article class="article-linear">
+        <header class="article-linear-header">
+          <div class="wrap">
+            <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span><span aria-current="page">Controllare un sito web gratis</span></nav>
+            <p class="eyebrow light">{article.category}</p>
+            <h1>{article.title}</h1>
+            <p class="article-linear-meta">Pubblicato il {formatArticleDate(article.published)} · 6 min di lettura</p>
+          </div>
+        </header>
+
+        <div class="article-linear-body">
+          <p class="article-kicker">Vuoi capire se il tuo sito ha problemi senza pagare subito un’analisi? Puoi partire da strumenti gratuiti. Ti daranno indizi su indicizzazione, velocità, link e SEO delle pagine. Il punto è sapere che cosa stanno misurando: un semaforo rosso non spiega da solo la causa, né indica quale intervento conviene fare per primo.</p>
+
+          <h2>Prima dei tool, scegli tre pagine</h2>
+          <p>Per un primo controllo del sito web prendi la homepage, una pagina che descrive un servizio e la pagina da cui arrivano le richieste. Guardale anche dal telefono: riesci a capire cosa offre l’attività, a trovare i contatti e a completare il modulo senza ostacoli? Questo piccolo test non produce un punteggio, ma intercetta problemi che i controlli automatici possono lasciarsi sfuggire.</p>
+          <p>Annota l’indirizzo esatto delle pagine. Quando farai un test SEO o di velocità, confronta sempre URL equivalenti: la homepage può funzionare bene mentre una pagina importante ha un errore o carica molto più lentamente.</p>
+
+          <h2>Indicizzazione: Google Search Console</h2>
+          <p>Se possiedi il sito e puoi verificare la proprietà, <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Google Search Console</a> è il punto di partenza per verificare l’indicizzazione. Con lo strumento <a href="https://support.google.com/webmasters/answer/9012289/" target="_blank" rel="noopener noreferrer">Controllo URL</a> puoi vedere che cosa sa Google di una pagina e fare un test della versione online. Controlla le pagine che contano davvero, non solo il numero totale riportato nei grafici.</p>
+          <p>Se non hai accesso, cercare <code>site:tuodominio.it</code> su Google dà un primo indizio, ma non è un censimento delle pagine indicizzate: Google precisa che i risultati dell’operatore <a href="https://developers.google.com/search/docs/monitor-debug/search-operators/all-search-site" target="_blank" rel="noopener noreferrer"><code>site:</code> non sono necessariamente completi</a>. Anche un test URL positivo non garantisce che la pagina compaia in ogni ricerca. «Non trovo il sito su Google» può voler dire mancata indicizzazione, ma anche che la pagina non risponde abbastanza bene alla ricerca fatta.</p>
+
+          <h2>Velocità e versione mobile: PageSpeed Insights</h2>
+          <p>Inserisci ciascuna pagina in <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a> e guarda separatamente i risultati mobile e desktop. Lo strumento mostra dati di laboratorio e, quando ce ne sono abbastanza, dati raccolti da utenti reali. Se questi ultimi mancano, non significa automaticamente che il sito non abbia visitatori o che funzioni male: <a href="https://developers.google.com/speed/docs/insights/v5/about" target="_blank" rel="noopener noreferrer">Google spiega che servono campioni sufficienti</a>.</p>
+          <p>Non fermarti al voto. Leggi quali elementi rallentano la pagina, poi aprila su uno smartphone vero. Un’immagine troppo pesante, uno script o un componente che si sposta mentre tocchi lo schermo richiedono interventi diversi. E una pagina che supera un test di prestazioni può comunque avere testi illeggibili, pulsanti scomodi o un modulo che non invia nulla.</p>
+
+          <h2>HTTPS, title e file per i motori: controlli a mano</h2>
+          <p>Apri una pagina importante usando sia <code>https://</code> sia <code>http://</code>. La versione non sicura dovrebbe portarti a quella HTTPS, senza avvisi del browser. Fai la prova anche su una pagina interna: controllare solo la homepage non basta. È un primo controllo, non una verifica completa della sicurezza del sito. Google consiglia di <a href="https://developers.google.com/search/docs/crawling-indexing/301-redirects" target="_blank" rel="noopener noreferrer">indirizzare le varianti dell’URL verso quella scelta</a>.</p>
+          <p>Per ogni pagina che hai selezionato, apri il sorgente dal browser e cerca <code>&lt;title&gt;</code> e <code>&lt;meta name="description"&gt;</code>. Dovrebbero descrivere quella pagina, non ripetere lo stesso testo ovunque. Se non li trovi, chiedi a chi gestisce il sito di verificare anche l’HTML effettivamente generato. Ricorda che <a href="https://developers.google.com/search/docs/appearance/title-link" target="_blank" rel="noopener noreferrer">Google può mostrare un titolo diverso</a> e <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer">scegliere autonomamente il testo dell’anteprima</a>: il risultato di ricerca non è una copia fedele dei metadati.</p>
+          <p>Infine prova ad aprire <code>tuodominio.it/sitemap.xml</code> e <code>tuodominio.it/robots.txt</code>. Sono indirizzi comuni, non universali: una sitemap può trovarsi altrove o non essere necessaria per un sito piccolo e ben collegato; <a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview" target="_blank" rel="noopener noreferrer">non garantisce comunque l’indicizzazione</a>. Il file <code>robots.txt</code> indica ai crawler quali percorsi possono visitare, <a href="https://developers.google.com/search/docs/crawling-indexing/robots/intro" target="_blank" rel="noopener noreferrer">non quali pagine compariranno su Google</a>. Se hai Search Console, usala per verificare l’URL della sitemap e lo stato delle pagine prima di modificare questi file.</p>
+
+          <h2>Link rotti e SEO di base: due controlli diversi</h2>
+          <p>Il <a href="https://validator.w3.org/checklink" target="_blank" rel="noopener noreferrer">W3C Link Checker</a> permette di inserire l’URL di una pagina e cercare problemi nei collegamenti e nelle risorse richiamate. Parti dalle pagine principali; se segnala un link, aprilo e verifica prima di correggerlo. Un collegamento può rispondere in modo diverso a un controllo automatico rispetto a un visitatore.</p>
+          <p>Per una scansione SEO più ampia esistono <a href="https://ahrefs.com/seo-audit-tool" target="_blank" rel="noopener noreferrer">Ahrefs Free Site Audit</a> e il <a href="https://it.semrush.com/siteaudit/" target="_blank" rel="noopener noreferrer">SEO Checker di Semrush</a>. Sono alternative, non due passaggi obbligatori. Possono aiutarti a individuare title mancanti, errori tecnici e pagine da rivedere; prima di usarli verifica registrazione, requisiti e limiti dell’offerta gratuita sulle rispettive pagine. Ahrefs, per esempio, richiede un sito verificato per il suo audit gratuito e applica un limite mensile alla scansione. Le condizioni dei servizi commerciali possono cambiare.</p>
+          <p>In ogni caso, apri tu stesso le pagine segnalate. Il title descrive davvero il servizio? Il titolo principale è chiaro? Il testo risponde a quello che una persona cerca, oppure ripete solo parole chiave? Un controllo SEO automatico può segnalare un campo vuoto o duplicato; non può giudicare da solo se l’offerta è comprensibile e se l’invito al contatto arriva al momento giusto.</p>
+
+          <h2>Che cosa resta fuori da una verifica gratis</h2>
+          <p>Alcuni strumenti pubblici, come Search Console e PageSpeed Insights, sono già molto utili senza un abbonamento. Nei servizi commerciali, invece, le funzioni gratuite possono avere limiti su pagine analizzate, cronologia, esportazioni o approfondimenti. Non c’è bisogno di comprare subito più piattaforme per sapere se un sito merita attenzione. Il limite più importante non è sempre il paywall: è il passaggio dal dato alla decisione.</p>
+          <p>Una pagina esclusa dall’indice può dipendere da un <code>noindex</code>, da una versione canonica diversa, da un reindirizzamento o da altri motivi. Toccare <code>robots.txt</code>, sitemap, redirect o impostazioni SEO senza aver individuato la causa può peggiorare la visibilità. Google distingue chiaramente, per esempio, tra <a href="https://developers.google.com/search/docs/crawling-indexing/robots/intro" target="_blank" rel="noopener noreferrer">bloccare la scansione con robots.txt</a> ed escludere una pagina dall’indice con <code>noindex</code>. Anche le correzioni alla velocità — cache, immagini, script, plugin — vanno provate sul sito e controllate dopo la pubblicazione.</p>
+          <p>Qui entra in gioco un’analisi tecnica del sito web: non per sostituire i tool gratuiti, ma per leggere insieme i risultati, capire quali problemi sono reali e ordinare gli interventi. Se non gestisci personalmente codice, hosting e pubblicazione, affidare le modifiche a uno studio web permette di lavorare con backup, verifiche e un piano di ripristino, senza tentare correzioni alla cieca sul sito online.</p>
+
+          <section class="audit-cta" aria-labelledby="audit-cta-title">
+            <p class="eyebrow">Dai segnali alle priorità</p>
+            <h2 id="audit-cta-title">Hai trovato un problema. Ora capiamo che cosa fare.</h2>
+            <p>Con la Perizia Sito Web di 4 Web Lab ricevi una verifica professionale e un report scritto con le priorità. Il prezzo è 49,90 € + IVA per siti con meno di 10 pagine; da 10 pagine ti contattiamo prima dell’avvio con un preventivo dedicato. Se ci affidi gli interventi individuati, scaliamo dal preventivo l’intero importo pagato per la verifica.</p>
+            <a class="button" href="/perizia-sito-web">Richiedi la perizia del sito →</a>
+          </section>
+
+          <p class="article-sources">Per costruire questa guida abbiamo confrontato <a href="https://raffaelenocera.com/audit-seo-tecnico-fai-da-te-checklist-50-punti/" target="_blank" rel="noopener noreferrer">la checklist di Raffaele Nocera</a>, <a href="https://www.audioeye.com/it/post/free-website-audit-tools/" target="_blank" rel="noopener noreferrer">la guida di AudioEye</a>, <a href="https://it.semrush.com/blog/seo-audit/" target="_blank" rel="noopener noreferrer">la guida SEO audit di Semrush</a> e <a href="https://ahrefs.com/blog/website-audit/" target="_blank" rel="noopener noreferrer">la guida di Ahrefs</a>. Funzioni e limiti dei tool sono stati verificati sulle pagine ufficiali collegate nei paragrafi; consulta sempre le condizioni aggiornate prima di usare un servizio.</p>
+        </div>
+      </article>
+    </main>
+    <SiteFooter />
+  </body>
+</html>
+
+<style>
+  .article-linear-header h1 { max-width: none; font-size: clamp(42px, 5vw, 68px); line-height: 1.06; }
+  .audit-cta { margin: 75px 0 0; padding: clamp(24px, 5vw, 42px); background: var(--ink); color: #fff; }
+  .audit-cta .eyebrow { margin-bottom: 16px; color: var(--lime); }
+  .audit-cta h2 { margin: 0 0 22px; color: #fff; font-size: clamp(32px, 4vw, 48px); }
+  .audit-cta p:not(.eyebrow) { color: #dbe4ef; }
+  .audit-cta .button { display: inline-flex; color: var(--ink); text-decoration: none; }
+  @media (max-width: 680px) { .audit-cta { margin-top: 55px; } }
+</style>

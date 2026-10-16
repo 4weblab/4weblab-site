@@ -9,7 +9,7 @@ import { blogSupplements, expandedBlogContent } from '../../config/blog-expanded
 import { articleInterlinks, getArticleModified } from '../../config/blog-interlinks';
 
 export function getStaticPaths() {
-  const customArticleSlugs = new Set(['guida-wordpress-alternative-2026', 'eu-code-week-2026-programmazione-intelligenza-artificiale']);
+  const customArticleSlugs = new Set(['come-controllare-un-sito-web-gratis', 'guida-wordpress-alternative-2026', 'eu-code-week-2026-programmazione-intelligenza-artificiale']);
   return blogArticles.filter((article) => !customArticleSlugs.has(article.slug)).map((article) => ({ params: { slug: article.slug }, props: { article } }));
 }
 

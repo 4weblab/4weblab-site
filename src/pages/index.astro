@@ -3,15 +3,16 @@ import "../styles/global.css";
 import SeoHead from "../components/SeoHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
 
 const whatsApp =
   "https://wa.me/393514656042?text=Ciao!%20Vorrei%20informazioni%20sui%20servizi%20di%204%20Web%20Lab.";
 const checks = [
-  "Struttura e prestazioni",
-  "Google e indicizzazione",
-  "Esperienza su mobile",
-  "Conversione e messaggi",
-  "Proprietà e accessi",
+  "Struttura e indicizzazione",
+  "SEO delle pagine",
+  "Velocità e versione mobile",
+  "Chiarezza dell’offerta",
+  "Contatti e inviti all’azione",
   "Priorità di intervento",
 ];
 ---
@@ -52,24 +53,24 @@ const checks = [
       <aside class="local-strip"><div class="wrap"><span>SITI WEB A PADOVA</span><p>Partiamo dalla tua realtà, dal pubblico che vuoi raggiungere e dal tipo di contatto che vuoi ricevere. Base a Legnaro, lavoriamo anche da remoto in Veneto e in tutta Italia.</p><a href="/zone-servite">Dove lavoriamo ↗</a></div></aside>
       <section id="perizia" class="section wrap perizia">
         <div><p class="eyebrow">Se il sito esiste già</p><h2>Prima di rifarlo,<br />capiamo cosa <em>non funziona.</em></h2></div>
-        <div><p class="statement">Un sito può perdere contatti per motivi diversi: struttura confusa, pagine poco visibili, messaggi generici, problemi tecnici o inviti all’azione poco chiari. La <strong>Perizia Sito Web</strong> separa i sintomi dalle cause e ti consegna priorità concrete.</p><a class="plain" href="/perizia-sito-web">Vedi come funziona la perizia →</a></div>
+        <div><p class="statement">Hai già un sito ma non sai cosa lo frena? La <strong>Perizia Sito Web</strong> è una verifica professionale degli aspetti tecnici, della visibilità su Google e del percorso verso il contatto. Ricevi un report scritto con i problemi ordinati per priorità.</p><a class="plain" href="/perizia-sito-web">Scopri la verifica del sito →</a></div>
         <div class="board">
-          <div class="board-top">DIAGNOSI INDIPENDENTE · <span><strong>ESSENTIAL</strong></span></div>
-          <div class="board-main"><div><b>219€</b><p>+ IVA<br />Report scritto e priorità.</p></div><ul>{checks.map((check) => <li>✓ {check}</li>)}</ul></div>
-          <div class="board-top muted"><span><strong>Essential · 219 € + IVA</strong> · consegna in 5 giorni lavorativi</span><span>Non è una perizia giurata o forense.</span></div>
+          <div class="board-top"><strong>VERIFICA PROFESSIONALE DEL SITO</strong></div>
+          <div class="board-main"><div><b>49,90€</b><p>+ IVA<br />Report scritto e priorità di intervento.</p><a class="button board-cta" href="/perizia-sito-web">Analizza il suo sito</a></div><ul>{checks.map((check) => <li>✓ {check}</li>)}</ul></div>
+          <div class="board-top muted"><span>Da 10 pagine, preventivo dedicato prima dell’avvio. Se ci affidi gli interventi individuati, <strong>recuperi l’intero costo pagato per la verifica.</strong></span><span>Non è una perizia giurata o forense.</span></div>
         </div>
       </section>
       <section class="diagnostic-feature" aria-labelledby="diagnostic-feature-title">
         <div class="wrap diagnostic-feature-copy"><div><p class="eyebrow">Il punto di partenza</p><h2 id="diagnostic-feature-title">Un sito nuovo non risolve<br />automaticamente un problema <em>vecchio.</em></h2></div><p>Prima guardiamo cosa cercano le persone, cosa capiscono quando arrivano sul sito e dove si interrompe il percorso verso il contatto. Solo dopo decidiamo se serve correggere, riscrivere, rifare o promuovere.</p></div>
-        <figure class="diagnostic-feature-visual"><img src="/images/website-diagnostic-editorial.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Una pagina web scomposta in livelli, attraversata da una linea di analisi luminosa" /></figure>
+        <figure class="diagnostic-feature-visual"><ResponsiveImage src="/images/website-diagnostic-editorial.webp" width={1672} height={941} sizes="(max-width: 680px) calc(100vw - 40px), min(100vw - 80px, 1672px)" alt="Una pagina web scomposta in livelli, attraversata da una linea di analisi luminosa" /></figure>
       </section>
       <section id="soluzioni" class="section dark">
         <div class="wrap">
           <div class="services-title"><div><p class="eyebrow light">Cosa possiamo costruire</p><h2>Scegli la soluzione<br /><em>in base al tuo obiettivo.</em></h2></div><p>Non vendiamo pacchetti scollegati. Colleghiamo sito, contenuti e promozione solo quando servono al problema che vuoi risolvere.</p></div>
           <div class="services">
-            <a class="featured" href="/perizia-sito-web"><div class="service-copy"><small>Se il sito esiste già</small><h3>Perizia sito web</h3><p>Non porta abbastanza richieste o non sai se conviene rifarlo? Analizziamo struttura, visibilità, messaggi e percorso verso il contatto.</p></div><div class="service-art audit-art" aria-hidden="true"><span>Struttura</span><span>Visibilità</span><span>Contatti</span></div><span class="service-link">Analizza il sito ↗</span></a>
+            <a class="featured" href="/perizia-sito-web"><div class="service-copy"><small>Se il sito esiste già</small><h3>Verifica professionale del sito</h3><p>Hai dubbi su velocità, visibilità o risultati del tuo sito? Controlliamo cosa succede e ti indichiamo da dove conviene iniziare.</p></div><div class="service-art audit-art" aria-hidden="true"><span>Struttura</span><span>Visibilità</span><span>Contatti</span></div><span class="service-link">Scopri la verifica ↗</span></a>
             <a href="/sito-web-per-negozio"><div class="service-copy"><small>Per attività locali</small><h3>Siti web per negozi e attività locali</h3><p>Per farti trovare, mostrare cosa offri e rendere semplice contattarti, chiamarti o raggiungerti.</p></div><div class="service-art local-art" aria-hidden="true"><i></i><i></i><i></i></div><span class="service-link">Vedi i siti per attività locali ↗</span></a>
-            <a href="/sito-web-per-professionisti"><div class="service-copy"><small>Per professionisti</small><h3>Siti web per professionisti</h3><p>Per spiegare con chiarezza cosa fai, per chi lavori e perché una persona dovrebbe contattarti.</p></div><img class="service-photo" src="/images/website-pages-editorial.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Rivista aperta con immagini editoriali, a supporto dei siti per professionisti" /><span class="service-link">Vedi i siti per professionisti ↗</span></a>
+            <a href="/sito-web-per-professionisti"><div class="service-copy"><small>Per professionisti</small><h3>Siti web per professionisti</h3><p>Per spiegare con chiarezza cosa fai, per chi lavori e perché una persona dovrebbe contattarti.</p></div><ResponsiveImage class="service-photo" src="/images/website-pages-editorial.webp" width={1254} height={1254} sizes="(max-width: 680px) calc(100vw - 40px), 360px" alt="Rivista aperta con immagini editoriali, a supporto dei siti per professionisti" /><span class="service-link">Vedi i siti per professionisti ↗</span></a>
             <a href="/sito-web-aziendale"><div class="service-copy"><small>Per PMI e aziende</small><h3>Siti web aziendali per PMI</h3><p>Per presentare servizi, competenze e casi reali a clienti, partner e interlocutori B2B.</p></div><div class="service-art company-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="service-link">Vedi i siti aziendali ↗</span></a>
             <a href="/pubblicita-su-google"><div class="service-copy"><small>Per chi sta già cercando</small><h3>Google Ads per ottenere richieste</h3><p>Campagne pensate per intercettare ricerche attive, portare il traffico alla pagina giusta e misurare richieste, chiamate o vendite.</p></div><div class="service-art search-art" aria-hidden="true"><span>cerca</span><i></i><i></i></div><span class="service-link">Valuta Google Ads ↗</span></a>
             <a href="/pubblicita-su-chatgpt"><div class="service-copy"><small>Nuovi contesti di scelta</small><h3>Pubblicità nei nuovi contesti di scelta</h3><p>Un servizio sperimentale per valutare come rendere il tuo brand presente mentre le persone confrontano soluzioni e prendono decisioni.</p></div><div class="service-art conversation-art" aria-hidden="true"><i></i><i></i><i></i></div><span class="service-link">Scopri il servizio ↗</span></a>
