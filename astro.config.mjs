@@ -15,6 +15,11 @@ const updatedPages = new Set([
 // https://astro.build/config
 export default defineConfig({
   site: 'https://4weblab.it',
+  build: {
+    // Evita due richieste CSS bloccanti nel primo rendering. Il CSS resta
+    // generato e minificato da Astro, ma viene incluso direttamente nell'HTML.
+    inlineStylesheets: 'always',
+  },
   integrations: [sitemap({
     lastmod: new Date('2026-10-12T00:00:00.000Z'),
     serialize(item) {
