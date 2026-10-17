@@ -5,7 +5,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { SITE } from '../config/site';
 
-const pageUrl = `${SITE.url}/privacy`;
+const pageUrl = `${SITE.url}/privacy/`;
 const structuredData = [{ '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${pageUrl}#webpage`, name: 'Privacy Policy | 4 Web Lab', url: pageUrl, inLanguage: 'it-IT', isPartOf: { '@id': `${SITE.url}/#website` } }];
 ---
 <!doctype html>
@@ -13,7 +13,7 @@ const structuredData = [{ '@context': 'https://schema.org', '@type': 'WebPage', 
   <head><SeoHead title="Privacy Policy | 4 Web Lab" description="Informativa privacy di 4 Web Lab: dati di contatto, assistente IA, form, WhatsApp e Google Analytics." structuredData={structuredData} /></head>
   <body>
     <a class="skip" href="#contenuto">Vai al contenuto</a>
-    <SiteHeader contactTarget="/contatti" />
+    <SiteHeader contactTarget="/contatti/" />
     <main id="contenuto" class="legal-page">
       <header class="legal-page__hero"><div class="wrap"><p class="hero-location">Home / Privacy policy</p><h1>Privacy<br /><em>Policy.</em></h1><p>Ultimo aggiornamento: 3 ottobre 2026</p></div></header>
       <article class="legal-page__content">

@@ -6,12 +6,12 @@ import SiteFooter from '../../components/SiteFooter.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { SITE } from '../../config/site';
 
-const pageUrl = `${SITE.url}/realizzazioni/realizzazione-sito-web-edilizia-rb-snc-veneto`;
+const pageUrl = `${SITE.url}/realizzazioni/realizzazione-sito-web-edilizia-rb-snc-veneto/`;
 const liveUrl = 'https://rb-snc.it';
 const structuredData = [{ '@context': 'https://schema.org', '@graph': [
   { '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
-    { '@type': 'ListItem', position: 2, name: 'Portfolio', item: `${SITE.url}/realizzazioni` },
+    { '@type': 'ListItem', position: 2, name: 'Portfolio', item: `${SITE.url}/realizzazioni/` },
     { '@type': 'ListItem', position: 3, name: 'R.B. s.n.c.', item: pageUrl },
   ] },
   { '@type': 'CreativeWork', '@id': `${pageUrl}#case-study`, name: 'R.B. s.n.c. — sito web, SEO e Google Ads', url: pageUrl, inLanguage: 'it-IT', author: { '@id': `${SITE.url}/#business` }, creator: { '@id': `${SITE.url}/#business` }, about: { '@type': 'Organization', name: 'R.B. s.n.c. di Bertoluzzo e Ragazzo', url: liveUrl, description: 'Impresa edile specializzata in rimozione eternit e rifacimento tetti, con sede a Cittadella (Padova).' }, workExample: { '@type': 'WebSite', name: 'rb-snc.it', url: liveUrl } },
@@ -19,9 +19,9 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
 ---
 
 <!doctype html><html lang="it"><head><SeoHead title="Caso studio R.B. s.n.c.: sito web, SEO e Google Ads | 4 Web Lab" description="Caso studio R.B. s.n.c. a Cittadella: restyling sito, SEO e Google Ads per un’impresa edile." image="/images/og/rb-snc-edilizia.webp" structuredData={structuredData} /></head><body>
-<a class="skip" href="#contenuto">Vai al contenuto</a><SiteHeader contactTarget="/contatti" />
+<a class="skip" href="#contenuto">Vai al contenuto</a><SiteHeader contactTarget="/contatti/" />
 <main id="contenuto">
-  <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Portfolio', href: '/realizzazioni' }, { label: 'R.B. s.n.c.' }]} /></div></div>
+  <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Portfolio', href: '/realizzazioni/' }, { label: 'R.B. s.n.c.' }]} /></div></div>
       <section class="rb-hero"><div class="wrap rb-hero-grid"><div><p class="hero-location">Caso studio reale · Cittadella / Veneto</p><h1>Caso studio R.B. s.n.c.:<br /><em>sito, SEO e Google Ads.</em></h1><p class="lead">Per R.B. s.n.c. abbiamo ricostruito il sito, organizzato le informazioni di servizio e creato una base tecnica utile alla ricerca organica e alle campagne Google Ads.</p><div class="actions"><a class="button" href={liveUrl} target="_blank" rel="noopener external">Visita rb-snc.it ↗</a><a class="plain light" href="#intervento">Vedi l’intervento ↓</a></div></div><div class="rb-hero-media"><img src="/images/portfolio/rb-snc-edilizia.webp" width="1600" height="1000" alt="Operaio con dispositivi di protezione durante un intervento su una copertura, progetto R.B. s.n.c." fetchpriority="high" /></div></div></section>
 
   <section class="section wrap rb-context"><div><p class="eyebrow">Il punto di partenza</p><h2>Un sito fermo<br />nel tempo.<br /><em>Un servizio no.</em></h2></div><div><p class="statement">R.B. s.n.c. opera in un settore tecnico, locale e competitivo: chi cerca bonifica amianto, rimozione eternit o rifacimento tetti deve capire subito competenze, servizi e area operativa.</p><p>Il sito precedente risaliva al 2010, con struttura e visual non più adatti alla consultazione da mobile né alla presenza sui motori di ricerca. Il progetto non chiedeva un semplice restyling: serviva una nuova base per comunicare e farsi trovare.</p></div></section>
@@ -34,6 +34,6 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
 
   <section class="section wrap rb-technical"><div><p class="eyebrow">La base tecnica</p><h2>Non solo una<br />nuova <em>facciata.</em></h2></div><div><p class="statement">La qualità del progetto non si esaurisce nel design. Il sito è stato ricostruito per essere più leggero, consultabile e leggibile anche dai sistemi che devono interpretarlo.</p><div class="rb-technical-list"><article><h3>Performance</h3><p>Asset ottimizzati, immagini WebP e layout progettato per ridurre attriti di caricamento e consultazione.</p></article><article><h3>SEO tecnico</h3><p>Gerarchia dei titoli, metadati, sitemap, canonical e struttura delle pagine di servizio.</p></article><article><h3>Dati strutturati</h3><p>Informazioni organizzate per aiutare i motori di ricerca a comprendere attività, servizi e territorio.</p></article></div><p class="rb-note"><strong>Nota:</strong> non pubblichiamo dati commerciali o di campagna del cliente. Il caso studio racconta le attività svolte e le scelte progettuali, non promesse di risultato.</p></div></section>
 
-  <section class="rb-next"><div class="wrap rb-next-grid"><div><p class="eyebrow light">Un progetto reale</p><h2>Hai un sito<br />che non sostiene<br /><em>più il lavoro?</em></h2></div><div><p>Prima di investire in un nuovo sito o in pubblicità, conviene capire se la presenza attuale è una base su cui costruire oppure un limite da risolvere.</p><div class="actions"><a class="button" href="/perizia-sito-web">Scopri la perizia →</a><a class="plain lime" href="/contatti">Parliamone →</a></div></div></div></section>
+  <section class="rb-next"><div class="wrap rb-next-grid"><div><p class="eyebrow light">Un progetto reale</p><h2>Hai un sito<br />che non sostiene<br /><em>più il lavoro?</em></h2></div><div><p>Prima di investire in un nuovo sito o in pubblicità, conviene capire se la presenza attuale è una base su cui costruire oppure un limite da risolvere.</p><div class="actions"><a class="button" href="/perizia-sito-web/">Scopri la perizia →</a><a class="plain lime" href="/contatti/">Parliamone →</a></div></div></div></section>
 </main><SiteFooter />
 </body></html>

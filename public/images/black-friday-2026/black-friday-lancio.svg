@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Black Friday 2026 4 Web Lab</title>
+  <desc id="desc">Porta online la tua attività con il 25 per cento di sconto sulla realizzazione iniziale di un nuovo sito.</desc>
+  <rect width="1200" height="1500" fill="#101a2d"/>
+  <rect x="72" y="78" width="1056" height="1344" fill="none" stroke="#ffffff" stroke-opacity=".28"/>
+  <rect x="72" y="78" width="1056" height="22" fill="#d7f54a"/>
+  <text x="116" y="176" fill="#d7f54a" font-family="DM Mono, monospace" font-size="23" letter-spacing="4">BLACK FRIDAY 2026</text>
+  <text x="116" y="348" fill="#ffffff" font-family="Georgia, serif" font-size="112" font-weight="700">Porta online</text>
+  <text x="116" y="468" fill="#ffffff" font-family="Georgia, serif" font-size="112" font-weight="700">la tua</text>
+  <rect x="104" y="505" width="768" height="128" fill="#d7f54a"/>
+  <text x="116" y="610" fill="#101a2d" font-family="Georgia, serif" font-size="112" font-weight="700">attività.</text>
+  <text x="116" y="762" fill="#d7dfeb" font-family="DM Sans, Arial, sans-serif" font-size="30">Nuovi siti per professionisti e aziende.</text>
+  <text x="116" y="832" fill="#d7f54a" font-family="DM Mono, monospace" font-size="32" letter-spacing="2">-25% SULLA REALIZZAZIONE INIZIALE</text>
+  <line x1="116" y1="930" x2="1080" y2="930" stroke="#ffffff" stroke-opacity=".28"/>
+  <text x="116" y="1012" fill="#ffffff" font-family="DM Mono, monospace" font-size="22" letter-spacing="3">FINO AL</text>
+  <text x="116" y="1122" fill="#d7f54a" font-family="Georgia, serif" font-size="106" font-weight="700">27.11.2026</text>
+  <text x="116" y="1296" fill="#ffffff" font-family="DM Sans, Arial, sans-serif" font-size="24">Preventivo confermato entro la scadenza.</text>
+  <text x="1080" y="1358" text-anchor="end" fill="#aebed4" font-family="DM Mono, monospace" font-size="22" letter-spacing="2">4 WEB LAB</text>
+</svg>

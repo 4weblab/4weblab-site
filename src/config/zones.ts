@@ -28,7 +28,7 @@ export const areas = {
         { title: 'Dopo la pubblicazione', text: 'Se l’hosting è gestito integralmente da 4 Web Lab, la manutenzione tecnica ordinaria e straordinaria è inclusa. Per contenuti, evoluzioni e nuove esigenze definiamo insieme la modalità di aggiornamento più adatta al progetto.' },
       ],
       support: 'Un sito può evolvere senza perdere chiarezza: la gestione nel tempo è parte del percorso, non un tema da affrontare solo quando emerge un problema.',
-      proof: { before: 'Un esempio concreto: ', anchor: 'guarda il caso studio R.B. s.n.c.', href: '/realizzazioni/realizzazione-sito-web-edilizia-rb-snc-veneto', after: ', progetto reale per un’impresa attiva in provincia di Padova.' },
+      proof: { before: 'Un esempio concreto: ', anchor: 'guarda il caso studio R.B. s.n.c.', href: '/realizzazioni/realizzazione-sito-web-edilizia-rb-snc-veneto/', after: ', progetto reale per un’impresa attiva in provincia di Padova.' },
     },
   },
   legnaro: {

@@ -1,5 +1,5 @@
 ---
-import { SITE, organizationStructuredData, websiteStructuredData } from '../config/site';
+import { SITE, organizationStructuredData, sitePath, websiteStructuredData } from '../config/site';
 
 interface Props {
   title: string;
@@ -12,7 +12,7 @@ interface Props {
 
 const { title, description, image, type = 'website', noindex = false, structuredData = [] } = Astro.props;
 const canonicalPath = Astro.url.pathname;
-const canonical = new URL(canonicalPath, SITE.url).toString();
+const canonical = sitePath(canonicalPath);
 const socialImage = image ? new URL(image, SITE.url).toString() : undefined;
 const baseStructuredData = noindex ? [] : [organizationStructuredData, websiteStructuredData];
 const jsonLd = [...baseStructuredData, ...structuredData];

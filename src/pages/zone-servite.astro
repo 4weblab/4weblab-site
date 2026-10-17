@@ -6,7 +6,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SITE } from '../config/site';
 
-const pageUrl = `${SITE.url}/zone-servite`;
+const pageUrl = `${SITE.url}/zone-servite/`;
 const zones = [
   { name: 'Padova', slug: 'padova', description: 'Attività locali, professionisti e PMI dell’area urbana.', x: 422, y: 248 },
   { name: 'Legnaro', slug: 'legnaro', description: 'Attività e professionisti della Saccisica.', x: 444, y: 373 },
@@ -17,22 +17,22 @@ const zones = [
   { name: 'Abano Terme', slug: 'abano-terme', description: 'Hotel, benessere, commercio e servizi locali.', x: 288, y: 345 },
   { name: 'Cittadella', slug: 'cittadella', description: 'Artigiani, professionisti e imprese dell’Alta Padovana.', x: 305, y: 100 },
 ];
-const href = (slug: string) => `/realizzazione-siti-web-${slug}`;
+const href = (slug: string) => `/realizzazione-siti-web-${slug}/`;
 const localPreposition = (name: string) => name === 'Albignasego' || name === 'Abano Terme' ? 'ad' : 'a';
 const structuredData = [{ '@context': 'https://schema.org', '@graph': [
   { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: 'Zone servite', item: pageUrl }] },
-  { '@type': 'CollectionPage', '@id': `${pageUrl}#webpage`, name: 'Zone servite per la realizzazione di siti web in provincia di Padova', url: pageUrl, inLanguage: 'it-IT', mainEntity: { '@type': 'ItemList', numberOfItems: zones.length, itemListElement: zones.map((zone, index) => ({ '@type': 'ListItem', position: index + 1, name: `Realizzazione siti web a ${zone.name}`, url: `${SITE.url}${href(zone.slug)}` })) } },
+  { '@type': 'CollectionPage', '@id': `${pageUrl}#webpage`, name: 'Zone servite per la realizzazione di siti web in provincia di Padova', url: pageUrl, inLanguage: 'it-IT', mainEntity: { '@type': 'ItemList', numberOfItems: zones.length, itemListElement: zones.map((zone, index) => ({ '@type': 'ListItem', position: index + 1, name: `Realizzazione siti web a ${zone.name}`, url: `${SITE.url}/realizzazione-siti-web-${zone.slug}/` })) } },
 ] }];
 ---
 
 <!doctype html><html lang="it"><head><SeoHead title="Siti web a Padova e provincia | Zone servite | 4 Web Lab" description="Realizzazione siti web a Padova, Legnaro, Piove di Sacco, Cittadella e provincia. Scopri le zone servite da 4 Web Lab." image="/images/og/zone-servite.webp" structuredData={structuredData} /></head><body>
-<a class="skip" href="#contenuto">Vai al contenuto</a><SiteHeader contactTarget="/contatti" />
+<a class="skip" href="#contenuto">Vai al contenuto</a><SiteHeader contactTarget="/contatti/" />
 <main id="contenuto">
   <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Zone servite' }]} /></div></div>
   <section class="zones-hub-hero"><div class="wrap"><p class="hero-location">Padova · provincia · Veneto</p><h1>Siti web a Padova e provincia:<br /><em>zone servite.</em></h1><p class="lead">Realizziamo siti web per attività, professionisti e aziende tra Padova e provincia. Scegli la zona più vicina alla tua attività e scopri come lavoriamo.</p></div></section>
   <section class="section wrap zones-hub-intro"><div><p class="eyebrow">Un riferimento vicino</p><h2>Un lavoro locale.<br /><em>Un metodo concreto.</em></h2></div><div><p class="statement">Conoscere il territorio aiuta a capire meglio attività, clienti e modo di lavorare. Ma un buon sito non si limita a citare il comune: deve spiegare cosa offri, per chi lavori e come iniziare un contatto.</p><p>Per questo ogni pagina locale parte da esigenze reali: attività commerciali, professionisti, servizi e piccole imprese. La zona cambia, ma il metodo resta lo stesso: struttura chiara, contenuti utili e un percorso semplice verso la richiesta.</p></div></section>
   <section class="zones-hub-locations"><div class="zones-hub-locations-grid"><div><p class="eyebrow">Scegli la tua zona</p><h2>Siti web,<br />zona per<br /><em>zona.</em></h2><p>Trova l’area più vicina alla tua attività e guarda da dove può partire il progetto.</p></div><div class="zones-card-grid" role="region" aria-label="Località servite" tabindex="0">{zones.map((zone, index) => <a href={href(zone.slug)}><small>{String(index + 1).padStart(2, '0')}</small><h3>Siti web {localPreposition(zone.name)} {zone.name}</h3><p>{zone.description}</p><span>Scopri la zona →</span></a>)}</div></div></section>
   <section class="zones-hub-method"><div class="wrap"><p class="eyebrow">Come lavoriamo</p><div class="zones-hub-method-grid"><h2>Il sito deve<br />farsi capire,<br />farsi trovare e<br /><em>rendere semplice il contatto.</em></h2><div><article><span>01</span><h3>Capire cosa offri</h3><p>Obiettivi, servizi, pubblico e priorità prima di scegliere pagine o design.</p></article><article><span>02</span><h3>Guidare la scelta</h3><p>Contenuti e call to action ordinati attorno alle domande reali di chi cerca.</p></article><article><span>03</span><h3>Rendere semplice il contatto</h3><p>Base SEO tecnica, esperienza mobile e informazioni facili da trovare e utilizzare.</p></article></div></div></div></section>
-  <section class="zones-hub-cta"><div class="wrap"><div><p class="eyebrow light">La tua zona non c’è?</p><h2>Partiamo dal<br /><em>tuo progetto.</em></h2></div><div><p>Lavoriamo anche oltre le località presenti in elenco. Raccontaci attività, obiettivo e area servita: capiamo insieme quale struttura può essere utile al tuo progetto.</p><a class="button" href="/contatti">Parliamone →</a></div></div></section>
+  <section class="zones-hub-cta"><div class="wrap"><div><p class="eyebrow light">La tua zona non c’è?</p><h2>Partiamo dal<br /><em>tuo progetto.</em></h2></div><div><p>Lavoriamo anche oltre le località presenti in elenco. Raccontaci attività, obiettivo e area servita: capiamo insieme quale struttura può essere utile al tuo progetto.</p><a class="button" href="/contatti/">Parliamone →</a></div></div></section>
 </main><SiteFooter />
 </body></html>

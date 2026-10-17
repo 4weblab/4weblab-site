@@ -9,14 +9,22 @@ export const SITE = {
   logo: '/4weblab-logo-header.svg',
 } as const;
 
+/** Build an internal canonical URL using the project's trailing-slash rule. */
+export const sitePath = (path = '/') => {
+  const [pathname, suffix = ''] = path.split(/([?#].*)/, 2);
+  const cleanPath = pathname.replace(/^\/+|\/+$/g, '');
+  const normalizedPath = pathname === '/' ? '/' : /\.[^/]+$/.test(pathname) ? `/${cleanPath}` : `/${cleanPath}/`;
+  return `${SITE.url}${normalizedPath}${suffix}`;
+};
+
 export const organizationStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': `${SITE.url}/#business`,
+  '@id': `${sitePath('/')}#business`,
   name: SITE.name,
   legalName: SITE.legalName,
-  url: SITE.url,
-  logo: `${SITE.url}${SITE.logo}`,
+  url: sitePath('/'),
+  logo: sitePath(SITE.logo),
   email: SITE.email,
   telephone: SITE.telephone,
   vatID: '05765760284',
@@ -47,10 +55,10 @@ export const organizationStructuredData = {
 export const websiteStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  '@id': `${SITE.url}/#website`,
+  '@id': `${sitePath('/')}#website`,
   name: SITE.name,
-  url: SITE.url,
-  publisher: { '@id': `${SITE.url}/#business` },
+  url: sitePath('/'),
+  publisher: { '@id': `${sitePath('/')}#business` },
 };
 
 

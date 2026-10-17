@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Black Friday 2026, meno 25 per cento 4 Web Lab</title>
+  <desc id="desc">Un sito professionale o aziendale con il 25 per cento di sconto fino al 27 novembre 2026.</desc>
+  <rect width="1200" height="1200" fill="#f5f4ef"/>
+  <rect x="44" y="44" width="1112" height="1112" fill="#101a2d"/>
+  <circle cx="942" cy="238" r="160" fill="#d7f54a"/>
+  <text x="942" y="281" text-anchor="middle" fill="#101a2d" font-family="Georgia, serif" font-size="128" font-weight="700">25%</text>
+  <text x="100" y="150" fill="#d7f54a" font-family="DM Mono, monospace" font-size="22" letter-spacing="4">4 WEB LAB · BLACK FRIDAY</text>
+  <text x="100" y="390" fill="#ffffff" font-family="Georgia, serif" font-size="104" font-weight="700">Il sito che</text>
+  <text x="100" y="500" fill="#ffffff" font-family="Georgia, serif" font-size="104" font-weight="700">rimandavi.</text>
+  <rect x="92" y="552" width="790" height="116" fill="#d7f54a"/>
+  <text x="106" y="648" fill="#101a2d" font-family="Georgia, serif" font-size="92" font-weight="700">Adesso costa meno.</text>
+  <text x="100" y="790" fill="#d7dfeb" font-family="DM Sans, Arial, sans-serif" font-size="28">Nuovi siti web per professionisti e aziende.</text>
+  <text x="100" y="860" fill="#ffffff" font-family="DM Mono, monospace" font-size="24" letter-spacing="2">PREZZO BLOCCATO FINO AL 27 NOVEMBRE</text>
+  <line x1="100" y1="966" x2="1100" y2="966" stroke="#ffffff" stroke-opacity=".28"/>
+  <text x="100" y="1040" fill="#aebed4" font-family="DM Mono, monospace" font-size="20" letter-spacing="2">PORTA ONLINE LA TUA ATTIVITÀ</text>
+  <text x="1100" y="1090" text-anchor="end" fill="#d7f54a" font-family="DM Mono, monospace" font-size="20" letter-spacing="2">4WEBLAB.IT</text>
+</svg>

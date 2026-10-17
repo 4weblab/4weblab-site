@@ -6,13 +6,13 @@ import SiteFooter from '../../components/SiteFooter.astro';
 import { SITE } from '../../config/site';
 
 const slug = 'eu-code-week-2026-programmazione-intelligenza-artificiale';
-const pageUrl = `${SITE.url}/blog/${slug}`;
+const pageUrl = `${SITE.url}/blog/${slug}/`;
 const title = 'EU Code Week 2026: Programmazione e Intelligenza Artificiale';
 const description = 'EU Code Week 2026, dal 10 al 25 ottobre: scopri perché programmazione, competenze digitali e pensiero critico contano anche nell\'era dell\'IA.';
 const image = '/images/blog/covers/blog-eu-code-week-2026.webp';
 const structuredData = [{ '@context': 'https://schema.org', '@graph': [
-  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE.url}/blog` }, { '@type': 'ListItem', position: 3, name: title, item: pageUrl }] },
-  { '@type': 'BlogPosting', '@id': `${pageUrl}#article`, headline: title, description, image: [`${SITE.url}${image}`], url: pageUrl, mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }, datePublished: '2026-10-09', dateModified: '2026-10-09', articleSection: 'Tecnologia & AI', inLanguage: 'it-IT', author: { '@type': 'Person', name: 'Carlo Fullin', url: SITE.url }, publisher: { '@id': `${SITE.url}/#business` } },
+  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE.url}/blog/` }, { '@type': 'ListItem', position: 3, name: title, item: pageUrl }] },
+  { '@type': 'BlogPosting', '@id': `${pageUrl}#article`, headline: title, description, image: [`${SITE.url}${image}`], url: pageUrl, mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }, datePublished: '2026-10-09', dateModified: '2026-10-09', articleSection: 'Tecnologia & AI', inLanguage: 'it-IT', author: { '@type': 'Person', name: 'Carlo Fullin', url: `${SITE.url}/` }, publisher: { '@id': `${SITE.url}/#business` } },
 ] }];
 ---
 
@@ -27,12 +27,12 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
   </head>
   <body>
     <a class="skip" href="#contenuto">Vai al contenuto</a>
-    <SiteHeader contactTarget="/contatti" />
+    <SiteHeader contactTarget="/contatti/" />
     <main id="contenuto">
       <article class="article-linear">
         <header class="article-linear-header">
           <div class="wrap">
-            <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span><span aria-current="page">EU Code Week 2026</span></nav>
+            <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span aria-current="page">EU Code Week 2026</span></nav>
             <p class="eyebrow light">Tecnologia &amp; AI</p>
             <h1>EU Code Week 2026: nell’era dell’intelligenza artificiale, saper programmare serve ancora?</h1>
             <p class="article-linear-meta">Pubblicato il 9 ottobre 2026 · Aggiornato il 9 ottobre 2026 · 6 min di lettura</p>
@@ -46,7 +46,7 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
 
           <section><h2>Cos’è la EU Code Week 2026?</h2><p>La EU Code Week è un’iniziativa europea che coinvolge scuole, insegnanti, studenti, famiglie e comunità attraverso attività dedicate alla programmazione e alla cultura digitale.</p><p>Il 12 ottobre, a Bruxelles, si tiene l’evento inaugurale ufficiale, dedicato alla resilienza e alla partecipazione delle comunità nell’era dell’intelligenza artificiale.</p><p>L’obiettivo non è trasformare tutti in sviluppatori software. È rendere più accessibili conoscenze che stanno diventando fondamentali nella vita quotidiana e professionale.</p><p>Perché imparare a programmare non significa soltanto scrivere istruzioni per un computer. Significa imparare ad analizzare un problema, dividerlo in parti più semplici e costruire una soluzione logica.</p><p>Una capacità utile ben oltre il mondo informatico.</p></section>
 
-          <section><h2>Se l’intelligenza artificiale scrive codice, perché imparare a farlo?</h2><p>Oggi basta descrivere un progetto a un sistema di intelligenza artificiale per ottenere una prima versione di un’applicazione o di un sito web. Questo rappresenta un progresso concreto.</p><p>Il problema nasce quando non siamo in grado di valutare il risultato. Un software può funzionare apparentemente bene, ma contenere errori, vulnerabilità o scelte tecniche inadatte al suo utilizzo. Un testo generato può essere convincente e contenere informazioni inesatte.</p><p>Chi possiede competenze digitali sa formulare richieste più precise, riconoscere i limiti degli strumenti e verificare ciò che viene prodotto. Per questo, quando l’IA genera codice o una prima versione di un sito, resta utile capire quali controlli fare: lo approfondiamo nell’articolo sui <a href="/blog/siti-web-creati-con-intelligenza-artificiale">siti web creati con intelligenza artificiale</a>.</p><p>In altre parole, <strong>l’intelligenza artificiale può ridurre il lavoro necessario per realizzare qualcosa, ma non elimina la responsabilità di capire cosa si sta realizzando.</strong></p></section>
+          <section><h2>Se l’intelligenza artificiale scrive codice, perché imparare a farlo?</h2><p>Oggi basta descrivere un progetto a un sistema di intelligenza artificiale per ottenere una prima versione di un’applicazione o di un sito web. Questo rappresenta un progresso concreto.</p><p>Il problema nasce quando non siamo in grado di valutare il risultato. Un software può funzionare apparentemente bene, ma contenere errori, vulnerabilità o scelte tecniche inadatte al suo utilizzo. Un testo generato può essere convincente e contenere informazioni inesatte.</p><p>Chi possiede competenze digitali sa formulare richieste più precise, riconoscere i limiti degli strumenti e verificare ciò che viene prodotto. Per questo, quando l’IA genera codice o una prima versione di un sito, resta utile capire quali controlli fare: lo approfondiamo nell’articolo sui <a href="/blog/siti-web-creati-con-intelligenza-artificiale/">siti web creati con intelligenza artificiale</a>.</p><p>In altre parole, <strong>l’intelligenza artificiale può ridurre il lavoro necessario per realizzare qualcosa, ma non elimina la responsabilità di capire cosa si sta realizzando.</strong></p></section>
 
           <section><h2>Il divario digitale europeo è ancora un problema</h2><p>Secondo i dati Eurostat, nel 2025 il 93% delle persone nell’Unione europea utilizzava Internet almeno una volta alla settimana.</p><p>Nello stesso anno, però, soltanto il 60% della popolazione tra i 16 e i 74 anni possedeva competenze digitali almeno di base.</p><p>Utilizzare quotidianamente uno smartphone, quindi, non equivale necessariamente a saper gestire informazioni, valutare fonti o proteggere i propri dati.</p><p>Il problema riguarda anche il mondo del lavoro. Per questo l’Unione europea ha fissato un obiettivo preciso: portare almeno all’80% la popolazione con competenze digitali di base entro il 2030.</p><p>La EU Code Week si inserisce proprio in questo percorso, offrendo occasioni per avvicinarsi alla tecnologia attraverso attività pratiche e condivise.</p></section>
 

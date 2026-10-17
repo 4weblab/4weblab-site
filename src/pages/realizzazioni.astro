@@ -6,7 +6,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SITE } from '../config/site';
 
-const pageUrl = `${SITE.url}/realizzazioni`;
+const pageUrl = `${SITE.url}/realizzazioni/`;
 const concepts = [
   { title: 'Personal trainer', sector: 'Vera Method', description: 'Un concept ad alta energia per rendere visibili metodo, programmi e primo contatto.', images: ['screenshots/vera-method-hero.webp', 'screenshots/vera-method-middle.webp', 'screenshots/vera-method-final.webp'], alt: ['Hero del concept per personal trainer Vera Method', 'Sezione centrale del concept Vera Method', 'Sezione finale del concept Vera Method'] },
   { title: 'Azienda metalmeccanica', sector: 'Aurum CNC', description: 'Un impianto B2B con lavorazioni, capacità produttiva e richieste commerciali ordinate.', images: ['screenshots/metalmeccanica-hero.webp', 'screenshots/metalmeccanica-middle.webp', 'screenshots/metalmeccanica-final.webp'], alt: ['Hero del concept Aurum CNC', 'Sezione centrale del concept Aurum', 'Sezione finale del concept Aurum'] },
@@ -47,7 +47,7 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
     <div class="wrap">
       <div class="portfolio-section-heading"><p class="eyebrow">Progetti reali</p><h2>Il lavoro<br /><em>pubblicato.</em></h2><p>Qui trovi una selezione di siti e progetti seguiti da 4 Web Lab: lavori pubblicati, interventi in corso e casi studio che raccontano obiettivi e scelte progettuali. <strong>Nota bene:</strong> ogni attività è inserita solo su richiesta o previo accordo con il committente.</p></div>
       <div class="portfolio-real-grid">
-        <a class="portfolio-real-card portfolio-real-link" href="/realizzazioni/realizzazione-sito-web-edilizia-rb-snc-veneto">
+        <a class="portfolio-real-card portfolio-real-link" href="/realizzazioni/realizzazione-sito-web-edilizia-rb-snc-veneto/">
           <img src="/images/portfolio/rb-snc-edilizia.webp" width="1200" height="800" alt="Cantiere R.B. s.n.c. per rimozione eternit e rifacimento tetti" loading="lazy" />
           <div><p class="portfolio-label real">Progetto reale</p><h3>R.B. s.n.c.</h3><p>Restyling del sito, ottimizzazione SEO on-page e supporto Google Ads per un’impresa edile attiva in Veneto.</p><span class="portfolio-status">Leggi il caso studio →</span></div>
         </a>
@@ -71,7 +71,7 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
     </div>
   </section>
 
-  <section id="portfolio-contatti" class="contact portfolio-contact"><div class="wrap contact-grid"><div><p class="eyebrow light">Il tuo settore è diverso?</p><h2>Partiamo dalla<br /><em>tua realtà.</em></h2><p>Non serve scegliere un concept e copiarlo. Serve capire cosa deve trovare chi arriva sul tuo sito, e costruire un percorso adatto.</p><a class="plain lime" href="https://wa.me/393514656042">WhatsApp ↗</a></div><div class="portfolio-contact-card"><p class="portfolio-label">4 Web Lab</p><h3>Raccontaci il progetto.</h3><p>Attività, obiettivo e pubblico sono il punto da cui iniziare.</p><a class="button" href="/contatti">Parliamone →</a></div></div></section>
+  <section id="portfolio-contatti" class="contact portfolio-contact"><div class="wrap contact-grid"><div><p class="eyebrow light">Il tuo settore è diverso?</p><h2>Partiamo dalla<br /><em>tua realtà.</em></h2><p>Non serve scegliere un concept e copiarlo. Serve capire cosa deve trovare chi arriva sul tuo sito, e costruire un percorso adatto.</p><a class="plain lime" href="https://wa.me/393514656042">WhatsApp ↗</a></div><div class="portfolio-contact-card"><p class="portfolio-label">4 Web Lab</p><h3>Raccontaci il progetto.</h3><p>Attività, obiettivo e pubblico sono il punto da cui iniziare.</p><a class="button" href="/contatti/">Parliamone →</a></div></div></section>
 </main>
 <dialog id="portfolio-lightbox" class="portfolio-lightbox" aria-labelledby="portfolio-lightbox-title">
   <div class="portfolio-lightbox-inner">

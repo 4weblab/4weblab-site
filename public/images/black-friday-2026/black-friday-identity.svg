@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 580" role="img" aria-labelledby="title desc">
+  <title id="title">4 Web Lab Black Friday 2026</title>
+  <desc id="desc">Banner grafico di 4 Web Lab per il Black Friday 2026 con sconto del 25 percento sulla realizzazione di siti web.</desc>
+  <rect width="1600" height="580" fill="#101a2d"/>
+  <path d="M870 0h730v580H660z" fill="#18233b"/>
+  <path d="m1150 0 450 0v580h-810z" fill="#202a42" opacity=".72"/>
+  <rect x="48" y="42" width="1504" height="496" fill="none" stroke="#d7f54a" stroke-width="2" opacity=".55"/>
+  <path d="M48 472h540" stroke="#ff674d" stroke-width="4"/>
+  <path d="M900 42v496" stroke="#d7f54a" stroke-width="2" opacity=".55"/>
+  <circle cx="1450" cy="114" r="8" fill="#d7f54a"/>
+  <circle cx="832" cy="490" r="6" fill="#ff674d"/>
+  <circle cx="130" cy="112" r="30" fill="#d7f54a"/>
+  <text x="130" y="123" fill="#101a2d" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800">4</text>
+  <text x="178" y="108" fill="#f5f3ed" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="800" letter-spacing="2">WEB</text>
+  <text x="178" y="131" fill="#d7f54a" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="800" letter-spacing="2">LAB</text>
+  <text x="92" y="218" fill="#cbd7e6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="5">REALIZZAZIONE SITI WEB</text>
+  <text x="92" y="400" fill="#f5f3ed" font-family="Georgia, Times New Roman, serif" font-size="155" font-weight="700" letter-spacing="-8">BLACK</text>
+  <text x="92" y="525" fill="#d7f54a" font-family="Georgia, Times New Roman, serif" font-size="155" font-weight="700" letter-spacing="-8">FRIDAY</text>
+  <text x="1260" y="196" fill="#f5f3ed" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="6">2026</text>
+  <text x="1010" y="395" fill="#d7f54a" font-family="Georgia, Times New Roman, serif" font-size="122" font-style="italic" font-weight="700" letter-spacing="-8">-25%</text>
+</svg>

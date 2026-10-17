@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { SITE } from '../config/site';
+import { sitePath } from '../config/site';
 
 export const prerender = true;
 
@@ -12,7 +12,7 @@ const isNonProductionDeploy =
 export const GET: APIRoute = () =>
   new Response(isNonProductionDeploy
     ? 'User-agent: *\nDisallow: /\n'
-    : `# All crawlers are allowed, including search, AI, and research crawlers.\nUser-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`, {
+    : `# All crawlers are allowed, including search, AI, and research crawlers.\nUser-agent: *\nAllow: /\n\nSitemap: ${sitePath('/sitemap.xml')}\n`, {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },
   });
 
