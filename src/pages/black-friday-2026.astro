@@ -1,378 +1,127 @@
 ---
 import '../styles/global.css';
 import SeoHead from '../components/SeoHead.astro';
-import SiteHeader from '../components/SiteHeader.astro';
-import SiteFooter from '../components/SiteFooter.astro';
 import { SITE } from '../config/site';
 
 const pageUrl = `${SITE.url}/black-friday-2026/`;
-const faqs = [
-  ['A chi è rivolta la promozione?', 'A professionisti, studi, PMI, imprese locali e aziende che devono ancora realizzare il loro sito web. Non riguarda restyling o interventi parziali su siti già online.'],
-  ['Ho già Facebook o Instagram: mi serve anche un sito?', 'I social sono canali utili, ma appartengono a piattaforme di terzi. Il sito è uno spazio proprietario dove puoi spiegare servizi, metodo, contatti e informazioni importanti con una struttura che controlli tu.'],
-  ['Devo vendere online per avere bisogno di un sito?', 'No. Un sito può presentare l’attività, mostrare servizi e competenze, sostenere la reputazione, rispondere alle domande e rendere più semplice chiedere informazioni.'],
-  ['Cosa comprende il piano Professionisti?', 'Design su misura, fino a 3 pagine iniziali, versione mobile, base SEO on-page, form e contatti diretti. Il preventivo chiarisce la struttura effettivamente necessaria al progetto.'],
-  ['Cosa comprende il piano Aziende?', 'Architettura multipagina, design dedicato e versione mobile, base SEO tecnica e on-page, form, contatti e tracciamenti essenziali, pubblicazione e passaggio di consegne.'],
-  ['Lo sconto vale anche per hosting e servizi ricorrenti?', 'No. Il 25% si applica esclusivamente al costo di realizzazione iniziale del sito. Le condizioni dell’hosting restano quelle ordinarie.'],
-  ['Entro quando devo confermare?', 'Il preventivo deve essere confermato entro il 27 novembre 2026 compreso. Non è necessario che l’acconto sia già contabilizzato entro quella data.'],
-  ['Quando sarà pronto il sito?', 'Le tempistiche vengono concordate individualmente in base alla struttura, ai materiali disponibili e al progetto. La promozione blocca il prezzo, non una data universale di consegna.'],
-];
-
+const description = 'Black Friday 2026 4 Web Lab: dal 2 al 27 novembre scopri l’offerta sulla realizzazione di siti web professionali e aziendali.';
 const structuredData = [{
   '@context': 'https://schema.org',
-  '@graph': [
-    { '@type': 'WebPage', '@id': `${pageUrl}#webpage`, name: 'Black Friday 2026 4 Web Lab', url: pageUrl, inLanguage: 'it-IT', isPartOf: { '@id': `${SITE.url}/#website` } },
-    {
-      '@type': 'Offer',
-      '@id': `${pageUrl}#professionisti-offer`,
-      name: 'Black Friday 2026, piano Professionisti',
-      price: '742.50',
-      priceCurrency: 'EUR',
-      priceValidUntil: '2026-11-27',
-      availability: 'https://schema.org/InStock',
-      url: pageUrl,
-      seller: { '@id': `${SITE.url}/#business` },
-      itemOffered: { '@type': 'Service', name: 'Sito web per professionisti' },
-    },
-    {
-      '@type': 'Offer',
-      '@id': `${pageUrl}#aziende-offer`,
-      name: 'Black Friday 2026, piano Aziende',
-      price: '1417.50',
-      priceCurrency: 'EUR',
-      priceValidUntil: '2026-11-27',
-      availability: 'https://schema.org/InStock',
-      url: pageUrl,
-      seller: { '@id': `${SITE.url}/#business` },
-      itemOffered: { '@type': 'Service', name: 'Sito web aziendale' },
-    },
-    { '@type': 'FAQPage', mainEntity: faqs.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) },
-  ],
+  '@type': 'WebPage',
+  '@id': `${pageUrl}#webpage`,
+  name: 'Black Friday 2026 4 Web Lab',
+  description,
+  url: pageUrl,
+  inLanguage: 'it-IT',
+  isPartOf: { '@id': `${SITE.url}/#website` },
 }];
-
-const whatsappHref = 'https://wa.me/393514656042?text=Buongiorno%2C%20vorrei%20parlare%20del%20Black%20Friday%202026%20di%204%20Web%20Lab.';
 ---
 
 <!doctype html>
 <html lang="it">
-<head>
-  <SeoHead
-    title="Black Friday 2026: realizzazione siti web professionali e aziendali"
-    description="Black Friday 2026 4 Web Lab: -25% sulla realizzazione iniziale di nuovi siti web professionali e aziendali. Preventivo confermato entro il 27 novembre."
-    image="/images/og/sito-web-per-professionisti.webp"
-    noindex
-    structuredData={structuredData}
-  />
-</head>
-<body class="bf-page">
-  <a class="skip" href="#contenuto">Vai al contenuto</a>
-  <SiteHeader contactTarget="#bf-contatti" />
-  <main id="contenuto">
-    <section class="bf-hero">
-      <div class="wrap bf-hero-grid">
-        <div>
-          <p class="hero-location">Black Friday 2026 · 4 Web Lab</p>
-          <h1>Black Friday 2026:<br /><em>-25% sui siti web</em><br />professionali e aziendali.</h1>
-          <p class="lead">Per il Black Friday, la realizzazione iniziale di un nuovo sito per professionisti e aziende ha il 25% di sconto. Il servizio resta quello ordinario di 4 Web Lab.</p>
-          <div class="actions">
-            <a class="button" data-bf-cta="preventivo" href="#bf-contatti">Richiedi il preventivo</a>
-            <a class="plain light" data-bf-cta="whatsapp" href={whatsappHref}>Parla su WhatsApp</a>
-          </div>
+  <head>
+    <SeoHead
+      title="Black Friday 2026: 25% di sconto sui siti web | 4 Web Lab"
+      description={description}
+      image="/images/og/black-friday-2026.png"
+      structuredData={structuredData}
+    />
+  </head>
+  <body class="bf-prelanding">
+    <main class="prelanding-shell">
+      <section class="prelanding-card" aria-labelledby="prelanding-title">
+        <a class="prelanding-brand" href="/" aria-label="4 Web Lab, home">4 <span>WEB<br />LAB</span></a>
+        <p class="prelanding-eyebrow">Black Friday 2026</p>
+        <h1 id="prelanding-title">25% di sconto<br /><em>sui siti web.</em></h1>
+        <div class="prelanding-copy">
+          <p>Grazie per il tuo interesse.</p>
+          <p>L’offerta di 4 Web Lab sarà pubblicata e accessibile dal <strong>2 al 27 novembre 2026</strong>.</p>
+          <p>Lascia il tuo indirizzo email e ti invieremo un promemoria quando l’offerta sarà disponibile.</p>
         </div>
-        <div class="bf-hero-proof" aria-label="Dettagli essenziali dell’offerta">
-          <p class="bf-proof-label">Prezzo bloccato fino al</p>
-        <strong>-25%</strong>
-          <div class="bf-proof-rule"></div>
-          <p>Nuovi siti web professionali e aziendali. Preventivo confermato entro il 27 novembre 2026.</p>
-        </div>
-      </div>
-    </section>
 
-    <section class="bf-deadline" aria-label="Scadenza della promozione">
-      <div class="wrap bf-deadline-grid"><strong>-25% sulla realizzazione iniziale</strong><span>Preventivo confermato entro il 27 novembre 2026 compreso.</span></div>
-    </section>
-
-    <section class="section wrap bf-problem">
-      <div>
-        <p class="section-context">L’offerta Black Friday</p>
-        <h2>Porta online il tuo lavoro.<br /><em>Fatti trovare da nuovi clienti.</em></h2>
-      </div>
-      <div>
-        <p class="statement">Il Black Friday 2026 è l’occasione per portare online il tuo studio o la tua azienda con un sito web professionale, pensato per presentare ciò che fai e rendere più semplice il contatto con le persone interessate ai tuoi servizi.</p>
-        <p>Dal 2 al 27 novembre, la realizzazione del tuo nuovo sito web parte con il 25% di sconto sul prezzo ordinario. Che tu sia un professionista, uno studio, un’attività locale o un’azienda, costruiamo una presenza online chiara, credibile e coerente con il tuo lavoro.</p>
-        <p>Un sito che valorizza le tue competenze, spiega i tuoi servizi e ti aiuta ad attirare nuove opportunità.</p>
-      </div>
-    </section>
-
-    <section class="bf-socials">
-      <div class="wrap bf-socials-grid">
-        <div>
-          <p class="section-context section-context--light">Una domanda frequente</p>
-          <h2>“Ho già<br /><em>Facebook.”</em></h2>
-        </div>
-        <div>
-          <p class="statement">Facebook e Instagram possono aiutare a comunicare. Non sono però lo spazio proprietario della tua attività.</p>
-          <ul class="bf-check-list">
-            <li><strong>Social</strong><span>Dipendono dalle regole, dal formato e dalla visibilità decisi dalla piattaforma.</span></li>
-            <li><strong>Sito</strong><span>Organizza servizi, informazioni, prove e contatti in un percorso che controlli tu.</span></li>
-            <li><strong>Insieme</strong><span>I social possono portare attenzione. Il sito può raccogliere e chiarire quella attenzione.</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="bf-valore" class="section bf-value" aria-label="I vantaggi di un sito web professionale">
-      <div class="bf-value-art" aria-hidden="true">
-        <img src="/images/black-friday-2026/black-friday-identity.svg?v=2" alt="" />
-      </div>
-      <div class="wrap bf-value-inner">
-        <div class="bf-value-grid">
-          <article><strong>01</strong><h3>Credibilità</h3><p>Chi ti cerca trova informazioni chiare, coerenti e aggiornate invece di dover ricostruire la tua attività da frammenti.</p></article>
-          <article><strong>02</strong><h3>Ricerca</h3><p>Una struttura indicizzabile e contenuti utili possono sostenere la tua presenza sui motori di ricerca nel tempo.</p></article>
-          <article><strong>03</strong><h3>Contatto</h3><p>Servizi, form, telefono e WhatsApp diventano più facili da trovare per chi è già interessato.</p></article>
-          <article><strong>04</strong><h3>Proprietà</h3><p>Il progetto diventa uno spazio della tua attività, non solo un profilo dentro una piattaforma altrui.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="bf-audience">
-      <div class="wrap bf-audience-grid">
-        <div>
-          <p class="section-context section-context--light">A chi è rivolta</p>
-          <h2>Due percorsi.<br /><em>Un problema comune.</em></h2>
-        </div>
-        <div class="bf-audience-list">
-          <article><p class="bf-plan-tag">Professionisti</p><h3>Per chi vive di competenza e fiducia.</h3><p>Consulenti, studi, tecnici, professionisti locali e attività individuali che devono spiegare metodo, servizi e primo contatto.</p><a class="plain lime" href="#bf-offerta">Vedi il piano Professionisti</a></article>
-          <article><p class="bf-plan-tag">Aziende</p><h3>Per chi deve rendere chiaro il proprio valore.</h3><p>PMI, imprese locali, artigiani, aziende B2B e attività di servizi che devono presentare offerta, competenze e prossimi passi.</p><a class="plain lime" href="#bf-offerta">Vedi il piano Aziende</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="bf-offerta" class="section wrap bf-offer">
-      <div class="bf-section-heading">
-        <p class="section-context">L’offerta Black Friday</p>
-        <h2>Il servizio resta intero.<br /><em>Il prezzo iniziale scende.</em></h2>
-        <p>La promozione applica il 25% di sconto esclusivamente alla realizzazione iniziale del nuovo sito. Non è una versione ridotta del servizio.</p>
-      </div>
-      <div class="bf-prices">
-        <article class="bf-price-card">
-          <p class="bf-plan-tag">Piano Professionisti</p>
-          <p class="bf-price-old">990 € + IVA</p>
-          <p class="bf-price"><strong>742,50 €</strong> + IVA</p>
-          <p class="bf-saving">Risparmi 247,50 €</p>
-          <ul><li>Design su misura</li><li>Fino a 3 pagine iniziali</li><li>Versione mobile</li><li>Base SEO on-page</li><li>Form e contatti diretti</li></ul>
-          <a class="button" data-bf-cta="preventivo-professionisti" href="#bf-contatti">Parliamo del progetto</a>
-        </article>
-        <article class="bf-price-card bf-price-card--featured">
-          <p class="bf-plan-tag">Piano Aziende</p>
-          <p class="bf-price-old">1.890 € + IVA</p>
-          <p class="bf-price"><strong>1.417,50 €</strong> + IVA</p>
-          <p class="bf-saving">Risparmi 472,50 €</p>
-          <ul><li>Architettura multipagina</li><li>Design dedicato e versione mobile</li><li>Base SEO tecnica e on-page</li><li>Form, contatti e tracciamenti essenziali</li><li>Pubblicazione e passaggio di consegne</li></ul>
-          <a class="button" data-bf-cta="preventivo-aziende" href="#bf-contatti">Parliamo del progetto</a>
-        </article>
-      </div>
-      <p class="bf-offer-note">Hosting e servizi ricorrenti seguono le condizioni ordinarie. La promozione riguarda la realizzazione iniziale del sito.</p>
-    </section>
-
-    <section class="bf-method">
-      <div class="wrap bf-method-grid">
-        <div>
-          <p class="section-context section-context--light">Come lavoriamo</p>
-          <h2>Non compri una pagina.<br /><em>Costruisci una base.</em></h2>
-        </div>
-        <div class="bf-method-steps">
-          <article><strong>01</strong><div><h3>Capire cosa deve fare il sito</h3><p>Partiamo da attività, pubblico, servizi e priorità prima di scegliere struttura e contenuti.</p></div></article>
-          <article><strong>02</strong><div><h3>Organizzare le informazioni</h3><p>Il percorso deve rispondere alle domande reali di chi sta valutando se contattarti.</p></div></article>
-          <article><strong>03</strong><div><h3>Progettare e pubblicare</h3><p>Design dedicato, esperienza mobile, base tecnica ordinata, form e contatti verificabili.</p></div></article>
-          <article><strong>04</strong><div><h3>Definire il dopo</h3><p>Tempi, materiali, aggiornamenti e gestione tecnica vengono chiariti in base al progetto.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wrap bf-proof">
-      <div>
-        <p class="section-context">Prove, senza sovrapromesse</p>
-        <h2>Il portfolio mostra<br /><em>come lavoriamo.</em></h2>
-        <p class="statement">I lavori reali e i concept dimostrativi sono tenuti distinti. È il modo più corretto per capire cosa è stato pubblicato e cosa invece serve a mostrare un possibile approccio.</p>
-        <a class="plain" href="/realizzazioni/">Vedi il portfolio</a>
-      </div>
-      <div class="bf-proof-projects">
-        <article class="bf-proof-project">
-          <div class="bf-proof-desktop">
-            <img src="/images/portfolio/elisa-piovan-desktop.png" width="2123" height="1209" loading="lazy" decoding="async" alt="Schermata desktop del sito web realizzato per Elisa Piovan" />
-          </div>
-          <div class="bf-proof-mobile">
-            <img src="/images/portfolio/mobile/elisa-piovan-mobile.png" width="967" height="1626" loading="lazy" decoding="async" alt="Versione mobile del sito web di Elisa Piovan visualizzata su smartphone" />
-          </div>
-          <p><strong>Progetto reale</strong> · Elisa Piovan · sito web per fitness coach al femminile</p>
-        </article>
-        <article class="bf-proof-project">
-          <div class="bf-proof-desktop">
-            <img src="/images/case-rb-snc/after-detail.webp" width="1600" height="727" loading="lazy" decoding="async" alt="Schermata desktop del sito web realizzato per R.B. s.n.c." />
-          </div>
-          <div class="bf-proof-mobile">
-            <img src="/images/portfolio/mobile/rb-snc-mobile.png" width="939" height="1674" loading="lazy" decoding="async" alt="Versione mobile del sito web di R.B. s.n.c. visualizzata su smartphone" />
-          </div>
-          <p><strong>Progetto reale</strong> · R.B. s.n.c. · sito, SEO e Google Ads</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="bf-faq">
-      <div class="wrap bf-faq-grid">
-        <div><p class="section-context section-context--light">Prima di decidere</p><h2>Le domande<br /><em>giuste.</em></h2></div>
-        <div>{faqs.map(([question, answer]) => <details><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
-      </div>
-    </section>
-
-    <section id="bf-contatti" class="contact bf-contact">
-      <div class="wrap perizia-contact">
-        <div>
-          <p class="eyebrow light">Fino al 27 novembre 2026</p>
-          <h2>Blocca il prezzo<br />del tuo <em>progetto.</em></h2>
-          <p>Raccontaci se sei un professionista o un’azienda e da dove vuoi partire. Ti rispondiamo con un preventivo coerente con la struttura realmente necessaria.</p>
-          <a class="plain lime" data-bf-cta="whatsapp" href={whatsappHref}>Scrivici su WhatsApp</a>
-        </div>
-        <form id="bf-form" method="post" action="https://api.web3forms.com/submit">
+        <form id="bf-prelanding-form" class="prelanding-form" method="post" action="https://api.web3forms.com/submit">
           <input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" />
-          <input type="hidden" name="subject" value="Richiesta Black Friday 2026 4 Web Lab" />
-          <input type="hidden" name="from_name" value="4 Web Lab - Black Friday 2026" />
-          <input type="hidden" name="source_page" value="black-friday-2026" />
-          <input type="hidden" name="utm_source" value="" />
-          <input type="hidden" name="utm_medium" value="" />
-          <input type="hidden" name="utm_campaign" value="" />
-          <label>Nome e cognome *<input name="name" required autocomplete="name" /></label>
-          <label>Email *<input name="email" type="email" required autocomplete="email" /></label>
-          <label>Telefono<input name="phone" type="tel" autocomplete="tel" /></label>
-          <label>Attività o azienda<input name="business" autocomplete="organization" /></label>
-          <label>Che sito vuoi realizzare? *<select name="plan" required><option value="" selected disabled>Scegli un’opzione</option><option>Nuovo sito per professionista</option><option>Nuovo sito aziendale</option><option>Non so ancora quale piano</option></select></label>
-          <label>Raccontaci da dove vuoi partire *<textarea name="message" required rows="4" placeholder="Attività, servizi e obiettivo del sito"></textarea></label>
-          <label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label>
-          <button class="button" type="submit">Richiedi il preventivo</button>
-          <p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy/">Privacy policy</a>.</p>
-          <p id="bf-form-status" class="form-status" aria-live="polite"></p>
+          <input type="hidden" name="subject" value="Promemoria Black Friday 2026 - modulo pre-landing 4 Web Lab" />
+          <input type="hidden" name="from_name" value="4 Web Lab - Pre-landing Black Friday 2026" />
+          <input type="hidden" name="source_page" value="black-friday-2026-prelanding" />
+          <input type="checkbox" name="botcheck" class="prelanding-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <label for="prelanding-email">Il tuo indirizzo email</label>
+          <input id="prelanding-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="nome@esempio.it" required />
+          <label class="prelanding-consent">
+            <input name="privacy_consent" type="checkbox" value="accepted" required />
+            <span>Acconsento all’uso del mio indirizzo email esclusivamente per ricevere un promemoria sull’inizio dell’offerta. <a href="/privacy/">Privacy Policy</a>.</span>
+          </label>
+          <button type="submit">Avvisami quando sarà disponibile</button>
+          <p id="bf-prelanding-status" class="prelanding-status" aria-live="polite"></p>
         </form>
-      </div>
-    </section>
-  </main>
-  <SiteFooter />
-  <script is:inline>
-    const form = document.querySelector('#bf-form');
-    const status = document.querySelector('#bf-form-status');
-    const params = new URLSearchParams(window.location.search);
-    ['utm_source', 'utm_medium', 'utm_campaign'].forEach((name) => {
-      const field = form?.querySelector(`[name="${name}"]`);
-      if (field) field.value = params.get(name) || '';
-    });
-    const track = (name, extra = {}) => {
-      if (typeof window.gtag === 'function') window.gtag('event', name, { campaign: 'black_friday_2026', ...extra });
-    };
-    document.querySelectorAll('[data-bf-cta]').forEach((link) => link.addEventListener('click', () => track('bf_cta_click', { cta: link.dataset.bfCta })));
-    form?.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      if (form.website.value) return;
-      const button = form.querySelector('button[type="submit"]');
-      if (!(button instanceof HTMLButtonElement) || !(status instanceof HTMLElement)) return;
-      button.disabled = true;
-      button.textContent = 'Invio in corso...';
-      status.textContent = '';
-      try {
-        const response = await fetch(form.action, { method: 'POST', body: new FormData(form) });
-        const data = await response.json();
-        if (!response.ok || !data.success) throw new Error('send');
-        form.reset();
-        status.textContent = 'Richiesta inviata. Ti rispondiamo entro 24 ore lavorative.';
-        track('bf_form_submit');
-      } catch {
-        status.textContent = 'Invio non riuscito. Riprova tra poco o contattaci su WhatsApp.';
-      } finally {
-        button.disabled = false;
-        button.textContent = 'Richiedi il preventivo';
-      }
-    });
-  </script>
-  <script is:inline>
-    const revealItems = document.querySelectorAll('.bf-problem, .bf-socials, .bf-value, .bf-audience, .bf-offer, .bf-method, .bf-proof, .bf-faq, .bf-contact');
-    const revealObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
-      if (entry.isIntersecting) { entry.target.classList.add('bf-is-visible'); revealObserver.unobserve(entry.target); }
-    }), { threshold: 0.12 });
-    revealItems.forEach((item) => revealObserver.observe(item));
-  </script>
-  <style>
-    .bf-page { --bf-coral: #ff674d; --bf-yellow: #d7f54a; --bf-surface: #18233b; --bf-paper: #f5f3ed; background: var(--bf-paper); color: var(--ink); }
-    .bf-page .wrap { width: min(1440px, calc(100% - 64px)); }
-    .bf-page .site-header { position: sticky; top: 0; z-index: 30; background: rgb(16 26 45 / .96); border-bottom: 1px solid rgb(255 255 255 / .14); backdrop-filter: blur(14px); }
-    .bf-page .site-header { padding-inline: max(32px, calc((100vw - 1440px) / 2)); }
-    .bf-page .bf-hero { position: relative; min-height: min(820px, calc(100svh - 78px)); display: grid; align-items: center; overflow: hidden; background: var(--ink); }
-    .bf-page .bf-hero::before { position: absolute; right: -18vw; bottom: -26vw; width: 70vw; height: 70vw; border: 1px solid rgb(215 245 74 / .24); border-radius: 50%; content: ''; box-shadow: inset 0 0 0 13vw rgb(255 103 77 / .03), inset 0 0 0 26vw rgb(255 255 255 / .025); }
-    .bf-page .bf-hero::after { position: absolute; top: 12%; right: 13%; width: 10px; height: 10px; border-radius: 50%; background: var(--bf-yellow); box-shadow: -22vw 19vw 0 var(--bf-coral), -34vw 4vw 0 #fff; content: ''; }
-    .bf-page .bf-hero-grid { position: relative; z-index: 1; grid-template-columns: minmax(0, 1fr) minmax(350px, .74fr); gap: clamp(40px, 8vw, 120px); padding-top: 74px; padding-bottom: 94px; }
-    .bf-page .bf-hero h1 { max-width: none; color: #fff; font: 600 clamp(58px, 7.4vw, 112px)/.88 var(--serif); letter-spacing: -.055em; }
-    .bf-page .bf-hero h1 em { color: var(--bf-yellow); white-space: nowrap; }
-    .bf-page .bf-hero .lead { max-width: 560px; color: #d8e2ef; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.48; }
-    .bf-page .bf-proof-label, .bf-page .section-context, .bf-page .hero-location { color: var(--bf-coral); font: 11px/1.4 var(--mono); letter-spacing: .11em; text-transform: uppercase; }
-    .bf-page .bf-hero-proof { position: relative; min-height: 500px; display: grid; align-content: center; padding: 34px; border: 1px solid rgb(255 255 255 / .65); background: linear-gradient(145deg, #263956, #0d1729 70%); box-shadow: 20px 24px 0 var(--bf-coral), 0 28px 60px rgb(0 0 0 / .34); transform: rotate(3deg); }
-    .bf-page .bf-hero-proof::before { position: absolute; top: 26px; right: 28px; color: #cbd7e6; content: '4 WEB LAB  ·  26 / 11'; font: 10px var(--mono); letter-spacing: .08em; }
-    .bf-page .bf-hero-proof strong { display: block; margin: 65px 0 10px; color: var(--bf-yellow); font: 600 clamp(88px, 12vw, 145px)/.75 var(--serif); letter-spacing: -.08em; }
-    .bf-page .bf-hero-proof p:last-child { max-width: 330px; margin-top: 28px; color: #fff; font-size: 16px; line-height: 1.45; }
-    .bf-page .bf-deadline { background: var(--bf-yellow); color: var(--ink); }
-    .bf-page .bf-deadline-grid { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font: 11px var(--mono); letter-spacing: .04em; text-transform: uppercase; }
-    .bf-page .bf-deadline-grid strong { font-size: 14px; }
-    .bf-page .bf-problem, .bf-page .bf-proof { grid-template-columns: 60px .9fr 1.1fr; gap: clamp(28px, 6vw, 92px); padding-top: 150px; padding-bottom: 150px; opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
-    .bf-page .bf-problem.bf-is-visible, .bf-page .bf-proof.bf-is-visible { opacity: 1; transform: none; }
-    .bf-page .bf-problem h2, .bf-page .bf-proof h2, .bf-page .bf-value h2, .bf-page .bf-audience h2, .bf-page .bf-offer h2, .bf-page .bf-method h2, .bf-page .bf-faq h2, .bf-page .bf-contact h2 { margin: 0; font: 600 clamp(50px, 6vw, 88px)/.92 var(--serif); letter-spacing: -.04em; }
-    .bf-page .bf-problem h2 em, .bf-page .bf-proof h2 em, .bf-page .bf-offer h2 em, .bf-page .bf-method h2 em, .bf-page .bf-faq h2 em, .bf-page .bf-contact h2 em { color: var(--ink); background: var(--bf-yellow); padding: 0 .08em .05em; }
-    .bf-page .bf-problem > div:nth-child(2), .bf-page .bf-proof > div:first-child { grid-column: 3; max-width: 560px; padding-top: 40px; }
-    .bf-page .bf-problem > div:first-child, .bf-page .bf-proof > div:first-child { grid-column: 2; grid-row: 1; }
-    .bf-page .statement { color: var(--ink); font-size: clamp(22px, 2.2vw, 30px); line-height: 1.25; }
-    .bf-page .bf-problem > div:nth-child(2) p:not(.statement), .bf-page .bf-proof .statement { color: var(--muted); line-height: 1.6; }
-    .bf-page .bf-socials, .bf-page .bf-audience, .bf-page .bf-method, .bf-page .bf-faq, .bf-page .bf-contact { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
-    .bf-page .bf-socials.bf-is-visible, .bf-page .bf-audience.bf-is-visible, .bf-page .bf-method.bf-is-visible, .bf-page .bf-faq.bf-is-visible, .bf-page .bf-contact.bf-is-visible { opacity: 1; transform: none; }
-    .bf-page .bf-socials { background: var(--bf-surface); }
-    .bf-page .bf-socials-grid, .bf-page .bf-audience-grid, .bf-page .bf-method-grid, .bf-page .bf-faq-grid { grid-template-columns: .9fr 1.1fr; gap: clamp(50px, 9vw, 150px); padding-top: 140px; padding-bottom: 140px; }
-    .bf-page .bf-socials h2, .bf-page .bf-audience h2, .bf-page .bf-method h2, .bf-page .bf-faq h2 { color: #fff; }
-    .bf-page .bf-socials h2 em, .bf-page .bf-audience h2 em, .bf-page .bf-method h2 em, .bf-page .bf-faq h2 em { color: var(--ink); background: var(--bf-yellow); }
-    .bf-page .bf-socials .statement, .bf-page .bf-audience p, .bf-page .bf-method p, .bf-page .bf-faq p { color: #cbd7e6; }
-    .bf-page .bf-value { position: relative; display: block; width: 100%; max-width: none; overflow: hidden; padding: 0 0 135px; background: var(--bf-surface); color: #fff; }
-    .bf-page .bf-value-art { position: relative; z-index: 0; width: 100%; pointer-events: none; }
-    .bf-page .bf-value-art img { display: block; width: 100%; height: auto; max-width: none; }
-    .bf-page .bf-value-inner { position: relative; z-index: 1; padding-top: 96px; }
-    .bf-page .bf-value-grid { width: min(820px, 100%); grid-template-columns: repeat(2, 1fr); gap: 0 60px; }
-    .bf-page .bf-value-grid article { padding: 30px 0; border-top: 1px solid rgb(255 255 255 / .28); }
-    .bf-page .bf-value-grid article strong { color: var(--bf-coral); font: 11px var(--mono); }
-    .bf-page .bf-value-grid h3 { margin: 32px 0 8px; color: #fff; font: 600 34px/1 var(--serif); }
-    .bf-page .bf-value-grid p { color: #cbd7e6; }
-    .bf-page .bf-audience-list { display: grid; gap: 0; border-top: 1px solid rgb(255 255 255 / .22); }
-    .bf-page .bf-audience-list article { padding: 27px 0; border-bottom: 1px solid rgb(255 255 255 / .22); }
-    .bf-page .bf-audience-list h3 { margin: 0 0 12px; color: #fff; font: 600 34px/1 var(--serif); }
-    .bf-page .bf-plan-tag { color: var(--bf-coral) !important; font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
-    .bf-page .bf-offer { padding-top: 140px; padding-bottom: 140px; }
-    .bf-page .bf-section-heading { display: grid; grid-template-columns: 1fr minmax(280px, .7fr); gap: 50px; align-items: end; margin-bottom: 65px; }
-    .bf-page .bf-section-heading > p:last-child { grid-column: 2; grid-row: 2; margin: 0 0 6px; color: var(--muted); }
-    .bf-page .bf-prices { grid-template-columns: repeat(2, 1fr); gap: 22px; }
-    .bf-page .bf-price-card { min-height: 520px; display: flex; flex-direction: column; padding: 35px 40px 38px; border: 0; background: #e6e9e2; }
-    .bf-page .bf-price-card--featured { background: var(--bf-surface); }
-    .bf-page .bf-price-card h3 { margin: 44px 0 16px; color: var(--ink); font: 600 clamp(39px, 4vw, 60px)/.9 var(--serif); }
-    .bf-page .bf-price-card--featured h3 { color: #fff; }
-    .bf-page .bf-price-card .bf-price { margin-top: auto; color: var(--bf-coral); font-size: 14px; }.bf-page .bf-price-card .bf-price strong { font: 600 clamp(38px, 4vw, 54px)/1 var(--serif); }.bf-page .bf-price-card--featured .bf-price, .bf-page .bf-price-card--featured .bf-price strong { color: var(--bf-yellow); }
-    .bf-page .bf-price-card ul { border-top: 1px solid var(--bf-line); }.bf-page .bf-price-card--featured li { border-color: rgb(255 255 255 / .14); color: #d7e0ec; }
-    .bf-page .bf-price-card .button { margin-top: 25px; }
-    .bf-page .bf-method { background: #e6e9e2; }.bf-page .bf-method h2 { color: var(--ink); }.bf-page .bf-method .section-context--light { color: var(--bf-coral); }.bf-page .bf-method .bf-method-lead, .bf-page .bf-method-steps p { color: var(--muted); }.bf-page .bf-method-steps article { border-color: #abb6b0; }.bf-page .bf-method-steps h3 { color: var(--ink); font: 600 29px/1 var(--serif); }
-    .bf-page .bf-proof-media { grid-column: 3; }.bf-page .bf-proof-media img { height: 440px; object-fit: cover; box-shadow: 18px 20px 0 var(--bf-yellow); }.bf-page .bf-proof-media p { color: var(--muted); font: 11px var(--mono); }
-    .bf-page .bf-proof-projects { grid-column: 3; display: grid; gap: 42px; }
-    .bf-page .bf-proof-project { display: grid; grid-template-columns: minmax(0, 1fr) 132px; align-items: end; gap: 22px; }
-    .bf-page .bf-proof-desktop { overflow: hidden; border: 1px solid var(--ink); background: #e8e8e3; box-shadow: 14px 16px 0 var(--bf-yellow); }
-    .bf-page .bf-proof-desktop img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
-    .bf-page .bf-proof-mobile { align-self: end; margin-bottom: -18px; }
-    .bf-page .bf-proof-mobile img { display: block; width: 100%; height: auto; filter: drop-shadow(0 16px 14px rgb(16 26 45 / .22)); }
-    .bf-page .bf-proof-project > p { grid-column: 1 / -1; margin: 2px 0 0; color: var(--muted); font: 11px/1.4 var(--mono); }
-    .bf-page .bf-faq { background: var(--ink); }.bf-page .bf-faq details { border-color: rgb(255 255 255 / .22); }.bf-page .bf-faq summary { color: #fff; }.bf-page .bf-faq summary span { color: var(--bf-yellow); }
-    .bf-page .bf-contact { padding-top: 140px; padding-bottom: 145px; }.bf-page .bf-contact .perizia-contact { grid-template-columns: .8fr 1.2fr; gap: clamp(50px, 8vw, 120px); }.bf-page .bf-contact form { padding: 35px; background: var(--bf-surface); }.bf-page .bf-contact form label { color: #dce5f1; }.bf-page .bf-contact form input, .bf-page .bf-contact form select, .bf-page .bf-contact form textarea { border-color: rgb(255 255 255 / .34); background: transparent; color: #fff; }.bf-page .bf-contact form input:focus, .bf-page .bf-contact form select:focus, .bf-page .bf-contact form textarea:focus { outline-color: var(--bf-yellow); }.bf-page .bf-contact .button { width: 100%; margin-top: 6px; }
-    .bf-page .bf-contact h2 { line-height: 1.16; }.bf-page .bf-contact h2 em { display: inline-block; margin-top: .08em; padding: .04em .08em .08em; line-height: .96; }
-    @media (max-width: 900px) { .bf-page .bf-hero-grid, .bf-page .bf-socials-grid, .bf-page .bf-audience-grid, .bf-page .bf-method-grid, .bf-page .bf-faq-grid, .bf-page .bf-contact .perizia-contact { grid-template-columns: 1fr; gap: 48px; }.bf-page .bf-hero { min-height: auto; }.bf-page .bf-hero-proof { width: min(100%, 620px); min-height: 450px; margin: 25px auto 0; }.bf-page .bf-problem, .bf-page .bf-proof { grid-template-columns: 1fr; gap: 28px; }.bf-page .bf-problem > div:first-child, .bf-page .bf-problem > div:nth-child(2), .bf-page .bf-proof > div:first-child, .bf-page .bf-proof > div:nth-child(2), .bf-page .bf-proof-media, .bf-page .bf-proof-projects { grid-column: auto; grid-row: auto; padding-top: 0; }.bf-page .bf-proof-media { max-width: 650px; }.bf-page .bf-section-heading { grid-template-columns: 1fr; gap: 0; }.bf-page .bf-section-heading > p:last-child { grid-column: 1; grid-row: auto; max-width: 540px; margin-top: 30px; }.bf-page .bf-prices { grid-template-columns: 1fr; }.bf-page .bf-contact .perizia-contact { gap: 48px; } }
-    @media (max-width: 900px) { .bf-page .bf-value-grid { width: 100%; } }
-    @media (max-width: 680px) { .bf-page .wrap { width: calc(100% - 40px); }.bf-page .site-header { padding-inline: 20px; }.bf-page .bf-hero-grid { padding-top: 58px; padding-bottom: 88px; }.bf-page .bf-hero h1 { font-size: clamp(54px, 15vw, 78px); }.bf-page .bf-hero-proof { min-height: 380px; padding: 22px; box-shadow: 10px 14px 0 var(--bf-coral); }.bf-page .bf-hero-proof strong { font-size: 88px; }.bf-page .bf-deadline-grid { display: grid; gap: 7px; padding-top: 15px; padding-bottom: 15px; }.bf-page .bf-problem, .bf-page .bf-proof { grid-template-columns: 1fr; padding-top: 84px; padding-bottom: 84px; }.bf-page .bf-problem > div:first-child, .bf-page .bf-proof > div:first-child { grid-column: auto; }.bf-page .bf-socials-grid, .bf-page .bf-audience-grid, .bf-page .bf-method-grid, .bf-page .bf-faq-grid, .bf-page .bf-contact .perizia-contact, .bf-page .bf-offer { padding-top: 84px; padding-bottom: 84px; }.bf-page .bf-value { padding-bottom: 84px; }.bf-page .bf-value-art img { min-height: 300px; object-fit: cover; object-position: center; }.bf-page .bf-value-inner { padding-top: 68px; }.bf-page .bf-value-grid { grid-template-columns: 1fr; }.bf-page .bf-price-card { min-height: auto; padding: 27px 23px 29px; }.bf-page .bf-price-card h3 { margin-top: 35px; }.bf-page .bf-price-card .bf-price { margin-top: 35px; }.bf-page .bf-proof-media img { height: 330px; box-shadow: 10px 12px 0 var(--bf-yellow); }.bf-page .bf-proof-project { grid-template-columns: minmax(0, 1fr) 96px; gap: 13px; }.bf-page .bf-proof-mobile { margin-bottom: -10px; }.bf-page .bf-proof-project > p { font-size: 10px; }.bf-page .bf-contact form { padding: 24px 20px; } }
-    @media (prefers-reduced-motion: reduce) { .bf-page *, .bf-page *::before, .bf-page *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }.bf-page .bf-problem, .bf-page .bf-socials, .bf-page .bf-value, .bf-page .bf-audience, .bf-page .bf-offer, .bf-page .bf-method, .bf-page .bf-proof, .bf-page .bf-faq, .bf-page .bf-contact { opacity: 1; transform: none; } }
-  </style>
-</body>
+      </section>
+    </main>
+
+    <footer class="prelanding-footer"><a href="/privacy/">Privacy</a><span aria-hidden="true">·</span><a href="/cookie/">Cookie</a></footer>
+
+    <script is:inline>
+      const form = document.querySelector('#bf-prelanding-form');
+      const status = document.querySelector('#bf-prelanding-status');
+      const button = form?.querySelector('button[type="submit"]');
+
+      form?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (!(form instanceof HTMLFormElement) || !(button instanceof HTMLButtonElement) || !(status instanceof HTMLElement)) return;
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        button.disabled = true;
+        button.textContent = 'Invio…';
+        status.textContent = '';
+        try {
+          const response = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+          const data = await response.json();
+          if (!response.ok || !data.success) throw new Error('send');
+          form.reset();
+          status.textContent = 'Grazie. Ti invieremo un promemoria quando l’offerta sarà disponibile.';
+        } catch {
+          status.textContent = 'Non è stato possibile inviare la richiesta. Riprova tra poco.';
+        } finally {
+          button.disabled = false;
+          button.textContent = 'Avvisami quando sarà disponibile';
+        }
+      });
+    </script>
+
+    <style>
+      .bf-prelanding { min-height: 100svh; margin: 0; background: #101c31; color: #f7f4ec; font-family: var(--sans, Arial, sans-serif); }
+      .prelanding-shell { display: grid; min-height: calc(100svh - 55px); place-items: center; padding: 48px 24px 72px; }
+      .prelanding-card { position: relative; width: min(100%, 720px); padding: clamp(42px, 8vw, 84px); border: 1px solid rgb(215 255 47 / .6); background: linear-gradient(135deg, #16243d, #0b1425); box-shadow: 18px 18px 0 #d7ff2f; }
+      .prelanding-card::after { position: absolute; top: 0; right: 0; width: 28%; height: 100%; background: rgb(215 255 47 / .08); clip-path: polygon(52% 0, 100% 0, 100% 100%, 0 100%); content: ''; pointer-events: none; }
+      .prelanding-brand, .prelanding-eyebrow, .prelanding-copy, .prelanding-form { position: relative; z-index: 1; }
+      .prelanding-brand { display: inline-flex; align-items: center; gap: 9px; color: #d7ff2f; font: 700 16px/1 var(--sans, Arial, sans-serif); letter-spacing: .08em; text-decoration: none; }
+      .prelanding-brand::first-letter { font-size: 31px; }
+      .prelanding-brand span { color: #f7f4ec; font-size: 10px; line-height: .88; letter-spacing: .16em; }
+      .prelanding-eyebrow { margin: clamp(70px, 10vw, 110px) 0 22px; color: #ff665c; font: 11px/1.4 var(--mono, monospace); letter-spacing: .14em; text-transform: uppercase; }
+      .prelanding-card h1 { max-width: 620px; margin: 0; color: #f7f4ec; font: 600 clamp(58px, 10vw, 112px)/.9 var(--serif, Georgia, serif); letter-spacing: -.05em; }
+      .prelanding-card h1 em { display: inline-block; margin-top: .08em; padding: .04em .1em .14em; color: #101c31; background: #d7ff2f; font-style: italic; line-height: 1.1; }
+      .prelanding-copy { max-width: 500px; margin: 38px 0 0; color: #d8e2ef; font-size: 18px; line-height: 1.55; }
+      .prelanding-copy p { margin: 0 0 16px; }
+      .prelanding-copy strong { color: #fff; }
+      .prelanding-form { display: grid; gap: 12px; max-width: 500px; margin-top: 38px; }
+      .prelanding-form > label:first-of-type { color: #f7f4ec; font-size: 14px; font-weight: 700; }
+      .prelanding-form > input[type='email'] { width: 100%; min-height: 52px; box-sizing: border-box; border: 1px solid rgb(255 255 255 / .45); border-radius: 0; background: rgb(255 255 255 / .05); color: #fff; padding: 13px 15px; font: inherit; }
+      .prelanding-form > input[type='email']::placeholder { color: #aebdce; }
+      .prelanding-form > input[type='email']:focus { outline: 3px solid #d7ff2f; outline-offset: 2px; }
+      .prelanding-consent { display: flex; align-items: flex-start; gap: 10px; color: #b9c8d8; font-size: 12px; line-height: 1.45; }
+      .prelanding-consent input { flex: 0 0 auto; width: 16px; height: 16px; margin-top: 1px; accent-color: #d7ff2f; }
+      .prelanding-consent a { color: #d7ff2f; }
+      .prelanding-form button { min-height: 52px; border: 0; border-radius: 0; background: #d7ff2f; color: #101c31; padding: 14px 18px; font: 700 14px/1 var(--sans, Arial, sans-serif); cursor: pointer; }
+      .prelanding-form button:hover { background: #ecff87; }
+      .prelanding-form button:disabled { cursor: wait; opacity: .7; }
+      .prelanding-status { min-height: 1.5em; margin: 2px 0 0; color: #d7ff2f; font-size: 14px; line-height: 1.4; }
+      .prelanding-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+      .prelanding-footer { display: flex; justify-content: center; gap: 10px; min-height: 55px; color: #aebdce; font-size: 12px; }
+      .prelanding-footer a { color: inherit; }
+      @media (max-width: 680px) { .prelanding-shell { padding: 24px 20px 60px; }.prelanding-card { padding: 32px 25px 38px; box-shadow: 10px 10px 0 #d7ff2f; }.prelanding-eyebrow { margin-top: 68px; }.prelanding-card h1 { font-size: clamp(52px, 15vw, 76px); }.prelanding-copy { font-size: 17px; } }
+      @media (prefers-reduced-motion: reduce) { .bf-prelanding * { scroll-behavior: auto !important; } }
+    </style>
+  </body>
 </html>

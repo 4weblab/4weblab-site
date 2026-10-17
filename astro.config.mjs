@@ -12,7 +12,7 @@ const updatedPages = new Set([
   '/sito-web-aziendale/',
   '/sito-web-per-negozio/',
 ]);
-const excludedPages = new Set(['/promo-elitrainer/', '/black-friday-2026/']);
+const excludedPages = new Set(['/promo-elitrainer/', '/black-friday-2026-completa/']);
 
 // https://astro.build/config
 export default defineConfig({
