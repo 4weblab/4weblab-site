@@ -11,7 +11,7 @@ const plans = [
     image: '/images/negozi-storefront.webp',
     alt: 'Vetrina di un negozio',
     original: '490 €',
-    price: '392 €',
+    price: '343 €',
     features: ['Design e struttura del sito', 'Versione mobile', 'Ottimizzazione tecnica di base', 'Inserimento dei contenuti iniziali', '3 mesi di hosting inclusi*'],
   },
   {
@@ -22,7 +22,7 @@ const plans = [
     image: '/images/professionista.webp',
     alt: 'Professionista al lavoro',
     original: '990 €',
-    price: '792 €',
+    price: '693 €',
     features: ['Design su misura', 'Fino a 3 pagine iniziali', 'Versione mobile', 'Base SEO on-page', 'Form e contatti diretti'],
   },
   {
@@ -33,8 +33,17 @@ const plans = [
     image: '/images/aziendali-mockup.webp',
     alt: 'Mockup di un sito web aziendale',
     original: '1.890 €',
-    price: '1.512 €',
+    price: '1.323 €',
     features: ['Architettura multipagina', 'Design dedicato e versione mobile', 'Base SEO tecnica e on-page', 'Form, contatti e tracciamenti essenziali', 'Pubblicazione e passaggio di consegne'],
+  },
+  {
+    id: 'app',
+    number: '04',
+    audience: 'Per professionisti e studi di settore',
+    title: 'Porta il tuo\nservizio in app.',
+    alt: 'Anteprima grafica di un’app personalizzata',
+    custom: true,
+    features: ['Analisi del flusso di lavoro', 'Interfaccia progettata su misura', 'Funzioni pensate per il tuo servizio', 'Versione mobile e responsive', 'Sviluppo con perimetro concordato'],
   },
 ];
 ---
@@ -45,7 +54,7 @@ const plans = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
-    <title>20% di sconto sui siti web · Collaborazione di lancio</title>
+    <title>30% di sconto su siti e app personalizzate · Collaborazione di lancio</title>
   </head>
   <body class="promo-page">
     <a class="skip" href="#contenuto">Vai al contenuto</a>
@@ -58,7 +67,7 @@ const plans = [
           <a href="#richiedi">Richiedi</a>
         </nav>
         <div class="promo-nav-actions">
-          <a class="promo-top-cta" href="#richiedi">Blocca il 20%</a>
+          <a class="promo-top-cta" href="#richiedi">Blocca il 30%</a>
           <details class="promo-mobile-menu">
             <summary aria-label="Apri il menu"><span aria-hidden="true"></span><span class="sr-only">Apri il menu</span></summary>
             <div class="promo-mobile-panel">
@@ -77,19 +86,19 @@ const plans = [
         <div class="promo-hero-noise" aria-hidden="true"></div>
         <div class="wrap promo-hero-grid">
           <div class="promo-hero-copy">
-            <p class="promo-kicker">COLLABORAZIONE DI LANCIO · FINO AL 31 OTTOBRE</p>
-            <h1>Il tuo prossimo sito<br /><em>parte con il 20% in meno.</em></h1>
-            <p class="promo-hero-lead">Il nuovo sito di Elisa e del suo Team EP è online. Per festeggiare il lancio, apro una collaborazione speciale: fino al 31 ottobre puoi scegliere il sito giusto per la tua attività e bloccare il prezzo promozionale.</p>
+            <p class="promo-kicker">COLLABORAZIONE DI LANCIO · FINO AL 1° NOVEMBRE COMPRESO</p>
+            <h1>Il tuo prossimo progetto<br /><em>parte con il 30% in meno.</em></h1>
+            <p class="promo-hero-lead">Il nuovo sito di Elisa e del suo Team EP è online. Per festeggiare il lancio, apro una collaborazione speciale: fino al 1° novembre compreso puoi scegliere il progetto digitale giusto per la tua attività e bloccare il prezzo promozionale.</p>
             <div class="promo-actions">
               <a class="promo-button" href="#offerta">Scegli il tuo pacchetto ↓</a>
               <a class="promo-text-link" href="https://wa.me/393514656042">Parliamone su WhatsApp ↗</a>
             </div>
-            <p class="promo-microcopy">Tre soluzioni. Un prezzo trasparente. Una scadenza vera.</p>
+            <p class="promo-microcopy">Quattro soluzioni. Un prezzo trasparente. Una scadenza vera.</p>
           </div>
           <div class="promo-hero-visual">
-            <div class="promo-sticker"><strong>-20%</strong><span>fino al<br />31 ottobre</span></div>
+            <div class="promo-sticker"><strong>-30%</strong><span>fino al<br />1° novembre</span></div>
             <figure class="promo-hero-image"><img src="/images/promo-elitrainer-hero-v2.webp" width="1672" height="940" alt="Pagina web che prende forma in una composizione luminosa" fetchpriority="high" /></figure>
-            <div class="promo-hero-caption"><span>NUOVO SITO · NUOVA PRESENZA</span><strong>Adesso tocca al tuo.</strong></div>
+            <div class="promo-hero-caption"><span>NUOVO PROGETTO · NUOVA PRESENZA</span><strong>Adesso tocca al tuo.</strong></div>
           </div>
         </div>
       </section>
@@ -98,12 +107,12 @@ const plans = [
         <div class="wrap promo-intro-grid">
           <div>
             <p class="promo-label">Una collaborazione, non un codice sconto</p>
-            <h2 id="promo-intro-title">Il sito che ti serve.<br /><em>Al momento giusto.</em></h2>
+            <h2 id="promo-intro-title">Il progetto che ti serve.<br /><em>Al momento giusto.</em></h2>
           </div>
           <div class="promo-intro-copy">
-            <p class="promo-big-copy">Un sito nuovo non è un vezzo: è il posto in cui una persona decide se fidarsi, chiamare o chiedere un preventivo.</p>
-            <p>Per questo ho raccolto tre partenze chiare. Negozi, professionisti e aziende hanno bisogni diversi: scegli la tua, compila il form e ti ricontatto con il perimetro giusto del progetto.</p>
-            <a class="promo-arrow-link" href="#richiedi">Voglio partire con il 20% →</a>
+            <p class="promo-big-copy">Un progetto digitale non è un vezzo: è il punto in cui una persona decide se fidarsi, chiamare o chiedere un preventivo.</p>
+            <p>Per questo ho raccolto quattro partenze chiare. Negozi, professionisti, aziende e studi di settore hanno bisogni diversi: scegli la tua, compila il form e ti ricontatto con il perimetro giusto del progetto.</p>
+            <a class="promo-arrow-link" href="#richiedi">Voglio partire con il 30% →</a>
           </div>
         </div>
       </section>
@@ -113,15 +122,28 @@ const plans = [
           <div class="promo-section-heading">
             <div>
               <p class="promo-label">L'offerta di lancio</p>
-              <h2 id="offerta-title">Tre modi per<br /><em>farti scegliere.</em></h2>
+              <h2 id="offerta-title">Quattro modi per<br /><em>farti scegliere.</em></h2>
             </div>
-            <p>Il 20% è già calcolato. I prezzi sono di partenza, chiari prima di iniziare e validi per le richieste ricevute entro il 31 ottobre.</p>
+            <p>Per i primi tre percorsi trovi il prezzo di partenza già scontato. Per un’app personalizzata definiamo insieme il progetto e applichiamo il 30% di sconto al preventivo promo, per richieste ricevute entro il 1° novembre compreso.</p>
           </div>
           <div class="promo-plan-list">
             {plans.map((plan) => (
               <article class:list={['promo-plan', `promo-plan-${plan.id}`]}>
                 <div class="promo-plan-visual">
-                  <img src={plan.image} width="1280" height="960" loading="lazy" alt={plan.alt} />
+                  {plan.custom ? (
+                    <div class="promo-app-visual-art" aria-hidden="true">
+                      <div class="promo-app-device">
+                        <div class="promo-app-screen">
+                          <span>AREA RISERVATA</span>
+                          <strong>Il tuo servizio,<br />sempre con te.</strong>
+                          <div class="promo-app-lines"><i></i><i></i><i></i></div>
+                          <b>+</b>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <img src={plan.image} width="1280" height="960" loading="lazy" alt={plan.alt} />
+                  )}
                   <span>{plan.number}</span>
                 </div>
                 <div class="promo-plan-body">
@@ -129,8 +151,12 @@ const plans = [
                   <h3>{plan.title.split('\n').map((line, index) => <>{index > 0 && <br />}{line}</>)}</h3>
                   <ul>{plan.features.map((feature) => <li><span aria-hidden="true">✓</span>{feature}</li>)}</ul>
                   <div class="promo-plan-footer">
-                    <div class="promo-price"><del>{plan.original}</del><strong>{plan.price}</strong><span>+ IVA</span></div>
-                    <a class="promo-small-cta" href="#richiedi">Voglio questo →</a>
+                    {plan.custom ? (
+                      <div class="promo-custom-price"><strong>Su progetto</strong><span>30% di sconto promo</span></div>
+                    ) : (
+                      <div class="promo-price"><del>{plan.original}</del><strong>{plan.price}</strong><span>+ IVA</span></div>
+                    )}
+                    <a class="promo-small-cta" href="#richiedi">{plan.custom ? 'Parliamone →' : 'Voglio questo →'}</a>
                   </div>
                 </div>
               </article>
@@ -150,7 +176,7 @@ const plans = [
           <div class="promo-steps">
             <article><span>01</span><div><h3>Mi racconti cosa fai</h3><p>Compili il form o mi scrivi su WhatsApp. Bastano attività, obiettivo e contatti.</p></div></article>
             <article><span>02</span><div><h3>Inquadriamo il progetto</h3><p>Ti restituisco il pacchetto più adatto, cosa comprende e il prezzo già scontato.</p></div></article>
-            <article><span>03</span><div><h3>Partiamo con il tuo nuovo sito</h3><p>Blocchi la collaborazione entro il 31 ottobre e diamo forma al prossimo passo.</p></div></article>
+            <article><span>03</span><div><h3>Partiamo con il tuo nuovo progetto</h3><p>Blocchi la collaborazione entro il 1° novembre compreso e diamo forma al prossimo passo.</p></div></article>
           </div>
         </div>
       </section>
@@ -161,7 +187,7 @@ const plans = [
           <div>
             <p class="promo-label">Perché questa occasione</p>
             <h2 id="proof-title">Il lancio è adesso.<br /><em>Il tuo turno anche.</em></h2>
-            <p class="promo-big-copy">Una persona può arrivare da un post, da un passaparola o da una ricerca. Quando arriva, il tuo sito deve fare il resto: spiegare, rassicurare e rendere semplice il contatto.</p>
+            <p class="promo-big-copy">Una persona può arrivare da un post, da un passaparola o da una ricerca. Quando arriva, il tuo progetto digitale deve fare il resto: spiegare, rassicurare e rendere semplice il contatto.</p>
             <p>Questa collaborazione nasce per dare a più attività una partenza concreta, con un investimento più leggero e un progetto pensato sul loro modo di lavorare.</p>
             <a class="promo-arrow-link" href="#richiedi">Raccontami il tuo progetto →</a>
           </div>
@@ -172,18 +198,18 @@ const plans = [
         <div class="wrap promo-contact-grid">
           <div class="promo-contact-copy">
             <p class="promo-label">Richiedi il tuo preventivo</p>
-            <h2 id="contact-title">Il prossimo<br />sito è<br /><em>questo.</em></h2>
-            <p>Compila il form: ti rispondo con il pacchetto più adatto e il prezzo promo già calcolato. Se preferisci parlare subito, scrivimi su WhatsApp.</p>
+            <h2 id="contact-title">Il prossimo<br />progetto è<br /><em>questo.</em></h2>
+            <p>Compila il form: ti rispondo con il percorso più adatto e, per le app personalizzate, con un preventivo promo già scontato. Se preferisci parlare subito, scrivimi su WhatsApp.</p>
             <a class="promo-whatsapp" href="https://wa.me/393514656042"><span>CONTATTO DIRETTO</span><strong>Scrivimi su WhatsApp ↗</strong><small>Risposta rapida, senza impegno</small></a>
           </div>
           <form id="promo-elitrainer-form" class="promo-form" method="post" action="https://api.web3forms.com/submit">
             <input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" />
-            <input type="hidden" name="subject" value="Richiesta promo Elitrainer - 20% siti web" />
+            <input type="hidden" name="subject" value="Richiesta promo Elitrainer - 30% sito o app" />
             <input type="hidden" name="source_page" value="promo-elitrainer" />
             <label>Nome *<input name="name" required autocomplete="name" /></label>
             <label>Email *<input name="email" type="email" required autocomplete="email" /></label>
             <label>Telefono<input name="phone" type="tel" autocomplete="tel" /></label>
-            <label>Quale progetto ti interessa? *<select name="service" required><option value="" selected disabled>Scegli una soluzione</option><option value="Sito per negozio - 392 euro + IVA">Sito per negozio · 392 € + IVA</option><option value="Sito per professionista - 792 euro + IVA">Sito per professionista · 792 € + IVA</option><option value="Sito web aziendale - 1512 euro + IVA">Sito web aziendale · 1.512 € + IVA</option><option value="Non so ancora, vorrei un consiglio">Non so ancora, vorrei un consiglio</option></select></label>
+            <label>Quale progetto ti interessa? *<select name="service" required><option value="" selected disabled>Scegli una soluzione</option><option value="Sito per negozio - 343 euro + IVA">Sito per negozio · 343 € + IVA</option><option value="Sito per professionista - 693 euro + IVA">Sito per professionista · 693 € + IVA</option><option value="Sito web aziendale - 1323 euro + IVA">Sito web aziendale · 1.323 € + IVA</option><option value="App personalizzata per professionista o studio - preventivo su progetto con 30% promo">App personalizzata per professionista o studio · preventivo su progetto, 30% promo</option><option value="Non so ancora, vorrei un consiglio">Non so ancora, vorrei un consiglio</option></select></label>
             <label>Raccontami cosa vuoi ottenere *<textarea name="message" required rows="4"></textarea></label>
             <label class="promo-code-label">Codice promozionale<input name="promo_code" value={promoCode} readonly aria-readonly="true" /></label>
             <label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label>
@@ -195,7 +221,7 @@ const plans = [
       </section>
     </main>
 
-    <footer class="promo-footer"><div class="wrap"><span>© 4 Web Lab · Collaborazione di lancio</span><span>Promo valida per richieste ricevute entro il 31 ottobre.</span></div></footer>
+    <footer class="promo-footer"><div class="wrap"><span>© 4 Web Lab · Collaborazione di lancio</span><span>Promo valida per richieste ricevute entro il 1° novembre compreso.</span></div></footer>
 
     <script is:inline>
       const promoForm = document.querySelector('#promo-elitrainer-form');
@@ -271,7 +297,7 @@ const plans = [
 
       .promo-intro { padding: 132px 0; background: #f5f3ed; }.promo-intro-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(50px, 9vw, 150px); align-items: start; }.promo-page h2 { margin: 0; color: var(--ink); font: 600 clamp(50px, 6vw, 84px)/.94 var(--serif); }.promo-page .promo-intro h2 em, .promo-page .promo-process h2 em, .promo-page .promo-proof h2 em { color: var(--ink) !important; background: var(--promo-yellow) !important; padding: 0.015em 0.12em 0.08em !important; font-style: italic; }.promo-intro-copy { padding-top: 37px; max-width: 560px; }.promo-intro-copy p { color: var(--muted); }.promo-intro-copy p:not(.promo-big-copy) { max-width: 45ch; }.promo-big-copy { margin: 0 0 25px; color: var(--ink) !important; font-size: clamp(21px, 2.1vw, 29px); line-height: 1.28; }.promo-arrow-link { display: inline-block; margin-top: 24px; color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--promo-coral); padding-bottom: 4px; }
 
-      .promo-offer { padding: 125px 0 135px; background: var(--promo-surface); color: #fff; }.promo-section-heading { display: flex; justify-content: space-between; gap: 50px; align-items: end; margin-bottom: 68px; }.promo-section-heading h2 { color: #fff; }.promo-section-heading > p { max-width: 360px; margin: 0 0 5px; color: #c0cde0; }.promo-plan-list { display: grid; gap: 22px; }.promo-plan { display: grid; grid-template-columns: minmax(260px, .63fr) 1fr; min-height: 330px; border: 1px solid rgb(255 255 255 / .19); background: #1e2b46; }.promo-plan-visual { position: relative; min-height: 330px; overflow: hidden; }.promo-plan-visual::after { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 45%, #1e2b46); content: ''; }.promo-plan-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }.promo-plan-visual > span { position: absolute; top: 18px; left: 20px; z-index: 1; color: var(--promo-yellow); font: 12px var(--mono); }.promo-plan-body { display: grid; grid-template-columns: minmax(180px, .9fr) 1.1fr; column-gap: 42px; padding: 33px 40px 30px 16px; }.promo-plan-audience { grid-column: 1 / -1; margin: 0 0 7px; color: var(--promo-coral); font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; }.promo-plan h3 { grid-column: 1; margin: 0; align-self: start; color: #fff; white-space: pre-line; font-size: clamp(32px, 3.5vw, 50px); line-height: .95; }.promo-plan ul { grid-column: 2; margin: 0; padding: 0; list-style: none; }.promo-plan li { display: flex; gap: 11px; padding: 7px 0; border-bottom: 1px solid rgb(255 255 255 / .13); color: #d7e0ec; font-size: 14px; line-height: 1.35; }.promo-plan li span { color: var(--promo-yellow); font-weight: 700; }.promo-plan-footer { grid-column: 1 / -1; display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-top: 24px; }.promo-price { display: flex; align-items: baseline; gap: 10px; }.promo-price del { color: #9daac0; font: 17px var(--sans); }.promo-price strong { color: var(--promo-yellow); font: 600 38px/1 var(--serif); }.promo-price span { color: #c2ccda; font-size: 12px; }.promo-small-cta { color: #fff; font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--promo-coral); padding-bottom: 4px; white-space: nowrap; }.promo-offer-note { margin: 28px 0 0; color: #9daac0; font-size: 12px; }
+      .promo-offer { padding: 125px 0 135px; background: var(--promo-surface); color: #fff; }.promo-section-heading { display: flex; justify-content: space-between; gap: 50px; align-items: end; margin-bottom: 68px; }.promo-section-heading h2 { color: #fff; }.promo-section-heading > p { max-width: 390px; margin: 0 0 5px; color: #c0cde0; }.promo-plan-list { display: grid; gap: 22px; }.promo-plan { display: grid; grid-template-columns: minmax(260px, .63fr) 1fr; min-height: 330px; border: 1px solid rgb(255 255 255 / .19); background: #1e2b46; }.promo-plan-app { border-color: var(--promo-yellow); background: #203150; }.promo-plan-visual { position: relative; min-height: 330px; overflow: hidden; }.promo-plan-visual::after { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 45%, #1e2b46); content: ''; }.promo-plan-app .promo-plan-visual::after { background: linear-gradient(90deg, transparent 45%, #203150); }.promo-plan-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }.promo-plan-visual > span { position: absolute; top: 18px; left: 20px; z-index: 1; color: var(--promo-yellow); font: 12px var(--mono); }.promo-app-visual-art { position: absolute; inset: 0; display: grid; place-items: center; background: radial-gradient(circle at 24% 30%, rgb(215 245 74 / .17), transparent 34%), linear-gradient(135deg, #15233c, #263a5d); }.promo-app-device { width: 190px; height: 285px; padding: 8px; transform: rotate(-6deg); border: 1px solid rgb(255 255 255 / .55); border-radius: 22px; background: #0b162b; box-shadow: 18px 22px 35px rgb(0 0 0 / .28); }.promo-app-screen { position: relative; height: 100%; display: grid; align-content: start; gap: 18px; padding: 25px 18px 18px; border: 1px solid rgb(215 245 74 / .42); border-radius: 15px; background: linear-gradient(160deg, #213554, #101c32); color: #fff; }.promo-app-screen::before { position: absolute; top: 10px; left: 50%; width: 42px; height: 4px; transform: translateX(-50%); border-radius: 4px; background: rgb(255 255 255 / .45); content: ''; }.promo-app-screen > span { color: var(--promo-yellow); font: 9px var(--mono); letter-spacing: .08em; }.promo-app-screen strong { font: 600 27px/.98 var(--serif); }.promo-app-lines { display: grid; gap: 8px; margin-top: 12px; }.promo-app-lines i { display: block; height: 8px; background: rgb(255 255 255 / .18); }.promo-app-lines i:first-child { width: 78%; background: var(--promo-coral); }.promo-app-lines i:nth-child(2) { width: 92%; }.promo-app-lines i:nth-child(3) { width: 58%; }.promo-app-screen b { width: 34px; height: 34px; display: grid; place-items: center; margin-top: auto; border-radius: 50%; background: var(--promo-yellow); color: var(--ink); font: 24px/1 var(--sans); }.promo-plan-app .promo-plan-audience { color: var(--promo-yellow); }.promo-plan-body { display: grid; grid-template-columns: minmax(180px, .9fr) 1.1fr; column-gap: 42px; padding: 33px 40px 30px 16px; }.promo-plan-audience { grid-column: 1 / -1; margin: 0 0 7px; color: var(--promo-coral); font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; }.promo-plan h3 { grid-column: 1; margin: 0; align-self: start; color: #fff; white-space: pre-line; font-size: clamp(32px, 3.5vw, 50px); line-height: .95; }.promo-plan ul { grid-column: 2; margin: 0; padding: 0; list-style: none; }.promo-plan li { display: flex; gap: 11px; padding: 7px 0; border-bottom: 1px solid rgb(255 255 255 / .13); color: #d7e0ec; font-size: 14px; line-height: 1.35; }.promo-plan li span { color: var(--promo-yellow); font-weight: 700; }.promo-plan-footer { grid-column: 1 / -1; display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-top: 24px; }.promo-price { display: flex; align-items: baseline; gap: 10px; }.promo-price del { color: #9daac0; font: 17px var(--sans); }.promo-price strong { color: var(--promo-yellow); font: 600 38px/1 var(--serif); }.promo-price span { color: #c2ccda; font-size: 12px; }.promo-custom-price { display: grid; gap: 4px; }.promo-custom-price strong { color: var(--promo-yellow); font: 600 30px/1 var(--serif); }.promo-custom-price span { color: #c2ccda; font-size: 12px; }.promo-small-cta { color: #fff; font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--promo-coral); padding-bottom: 4px; white-space: nowrap; }.promo-offer-note { margin: 28px 0 0; color: #9daac0; font-size: 12px; }
 
       .promo-process { padding: 132px 0; background: #e6e9e2; }.promo-process-grid { display: grid; grid-template-columns: .74fr 1.26fr; gap: clamp(50px, 9vw, 150px); }.promo-process-lead { max-width: 290px; margin-top: 31px; color: var(--muted); font-size: 20px; line-height: 1.35; }.promo-steps { border-top: 1px solid #abb6b0; }.promo-steps article { display: grid; grid-template-columns: 60px 1fr; gap: 24px; padding: 27px 0; border-bottom: 1px solid #abb6b0; }.promo-steps article > span { color: var(--promo-coral); font: 12px var(--mono); }.promo-steps h3 { margin: 0 0 6px; color: var(--ink); font-size: 29px; line-height: 1; }.promo-steps p { max-width: 47ch; margin: 0; color: var(--muted); }
 
@@ -283,7 +309,7 @@ const plans = [
         .promo-header { height: 68px; }.promo-desktop-nav, .promo-top-cta { display: none; }.promo-mobile-menu { display: block; }.promo-mobile-panel { top: 68px; }.promo-hero { min-height: auto; }.promo-hero-grid, .promo-intro-grid, .promo-process-grid, .promo-proof-grid, .promo-contact-grid { grid-template-columns: 1fr; gap: 48px; }.promo-hero-grid { padding-top: 76px; }.promo-hero-copy { max-width: 700px; }.promo-hero-visual { min-height: 500px; width: min(100%, 620px); margin: 0 auto; }.promo-section-heading { display: grid; gap: 25px; align-items: start; }.promo-section-heading > p { max-width: 520px; }.promo-process-lead { max-width: 500px; }.promo-proof-image { width: min(100%, 620px); }.promo-contact-copy { max-width: 580px; }
       }
       @media (max-width: 680px) {
-        .promo-page .wrap { width: calc(100% - 40px); }.promo-header { padding: 0 20px; }.promo-brand img { width: 96px; }.promo-hero-grid { padding-top: 58px; padding-bottom: 70px; }.promo-page h1 { font-size: clamp(52px, 15vw, 77px); }.promo-hero-lead { font-size: 17px; }.promo-hero-visual { min-height: 390px; }.promo-hero-image { right: 8px; bottom: 25px; width: calc(100% - 22px); }.promo-hero-image img { height: 320px; }.promo-sticker { top: 12px; left: -5px; width: 104px; height: 104px; }.promo-sticker strong { font-size: 27px; }.promo-hero-caption { right: -4px; bottom: 0; }.promo-hero-caption strong { font-size: 20px; }.promo-intro, .promo-offer, .promo-process, .promo-proof, .promo-contact { padding: 84px 0; }.promo-page h2 { font-size: clamp(48px, 14vw, 68px); }.promo-intro-copy { padding-top: 0; }.promo-plan { grid-template-columns: 1fr; }.promo-plan-visual { min-height: 230px; }.promo-plan-visual::after { background: linear-gradient(0deg, #1e2b46, transparent 62%); }.promo-plan-body { display: block; padding: 26px 23px 28px; }.promo-plan h3 { margin-bottom: 25px; }.promo-plan ul { margin-bottom: 25px; }.promo-plan-footer { display: flex; align-items: center; margin-top: 25px; }.promo-price strong { font-size: 32px; }.promo-section-heading { margin-bottom: 45px; }.promo-steps article { grid-template-columns: 42px 1fr; gap: 14px; }.promo-steps h3 { font-size: 25px; }.promo-proof-image img { height: 350px; box-shadow: 10px 12px 0 var(--promo-yellow); }.promo-proof-image span { right: -4px; bottom: 14px; font-size: 18px; }.promo-form { padding: 24px 20px; }.promo-footer .wrap { display: grid; gap: 7px; }
+        .promo-page .wrap { width: calc(100% - 40px); }.promo-header { padding: 0 20px; }.promo-brand img { width: 96px; }.promo-hero-grid { padding-top: 58px; padding-bottom: 70px; }.promo-page h1 { font-size: clamp(52px, 15vw, 77px); }.promo-hero-lead { font-size: 17px; }.promo-hero-visual { min-height: 390px; }.promo-hero-image { right: 8px; bottom: 25px; width: calc(100% - 22px); }.promo-hero-image img { height: 320px; }.promo-sticker { top: 12px; left: -5px; width: 104px; height: 104px; }.promo-sticker strong { font-size: 27px; }.promo-hero-caption { right: -4px; bottom: 0; }.promo-hero-caption strong { font-size: 20px; }.promo-intro, .promo-offer, .promo-process, .promo-proof, .promo-contact { padding: 84px 0; }.promo-page h2 { font-size: clamp(48px, 14vw, 68px); }.promo-intro-copy { padding-top: 0; }.promo-plan { grid-template-columns: 1fr; }.promo-plan-visual { min-height: 230px; }.promo-plan-visual::after { background: linear-gradient(0deg, #1e2b46, transparent 62%); }.promo-plan-app .promo-plan-visual::after { background: linear-gradient(0deg, #203150, transparent 62%); }.promo-app-device { width: 140px; height: 210px; }.promo-app-screen { gap: 13px; padding: 22px 14px 14px; }.promo-app-screen strong { font-size: 22px; }.promo-plan-body { display: block; padding: 26px 23px 28px; }.promo-plan h3 { margin-bottom: 25px; }.promo-plan ul { margin-bottom: 25px; }.promo-plan-footer { display: flex; align-items: center; margin-top: 25px; }.promo-price strong { font-size: 32px; }.promo-section-heading { margin-bottom: 45px; }.promo-steps article { grid-template-columns: 42px 1fr; gap: 14px; }.promo-steps h3 { font-size: 25px; }.promo-proof-image img { height: 350px; box-shadow: 10px 12px 0 var(--promo-yellow); }.promo-proof-image span { right: -4px; bottom: 14px; font-size: 18px; }.promo-form { padding: 24px 20px; }.promo-footer .wrap { display: grid; gap: 7px; }
       }
       @media (prefers-reduced-motion: reduce) { .promo-page *, .promo-page *::before, .promo-page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
     </style>
