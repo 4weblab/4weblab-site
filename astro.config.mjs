@@ -13,6 +13,10 @@ const updatedPages = new Set([
   '/sito-web-per-negozio/',
 ]);
 const excludedPages = new Set(['/promo-elitrainer/', '/black-friday-2026-completa/']);
+const latestPages = new Set([
+  '/realizzazioni/',
+  '/realizzazioni/realizzazione-sito-web-personal-trainer-elisa-piovan/',
+]);
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,7 +28,10 @@ export default defineConfig({
     },
     lastmod: new Date('2026-10-12T00:00:00.000Z'),
     serialize(item) {
-      if (updatedPages.has(new URL(item.url).pathname)) {
+      const pathname = new URL(item.url).pathname;
+      if (latestPages.has(pathname)) {
+        item.lastmod = '2026-10-27T00:00:00.000Z';
+      } else if (updatedPages.has(pathname)) {
         item.lastmod = '2026-10-17T00:00:00.000Z';
       }
       return item;

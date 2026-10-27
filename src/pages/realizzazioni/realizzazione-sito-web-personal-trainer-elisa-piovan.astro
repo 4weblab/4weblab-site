@@ -1,0 +1,262 @@
+---
+import '../../styles/global.css';
+import SeoHead from '../../components/SeoHead.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { SITE } from '../../config/site';
+
+const pageUrl = `${SITE.url}/realizzazioni/realizzazione-sito-web-personal-trainer-elisa-piovan/`;
+const liveUrl = 'https://elitrainer.it/';
+const pageSpeedUrl = 'https://pagespeed.web.dev/analysis?url=https%3A%2F%2Felitrainer.it%2F';
+const structuredData = [{ '@context': 'https://schema.org', '@graph': [
+  { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Portfolio', item: `${SITE.url}/realizzazioni/` },
+    { '@type': 'ListItem', position: 3, name: 'Elisa Piovan', item: pageUrl },
+  ] },
+  {
+    '@type': 'CreativeWork',
+    '@id': `${pageUrl}#case-study`,
+    name: 'Elisa Piovan — sito web su misura, SEO e performance',
+    url: pageUrl,
+    inLanguage: 'it-IT',
+    author: { '@id': `${SITE.url}/#business` },
+    creator: { '@id': `${SITE.url}/#business` },
+    about: {
+      '@type': 'Person',
+      name: 'Elisa Piovan',
+      jobTitle: 'Fitness coach al femminile',
+      url: liveUrl,
+    },
+    workExample: { '@type': 'WebSite', name: 'Elisa Piovan Trainer', url: liveUrl },
+  },
+] }];
+---
+
+<!doctype html>
+<html lang="it">
+<head>
+  <SeoHead
+    title="Caso studio Elisa Piovan: sito, SEO e performance | 4 Web Lab"
+    description="Caso studio Elisa Piovan: nuovo sito Astro su misura, SEO tecnica, contenuti leggibili dai sistemi IA, prestazioni e hosting gestito."
+    image="/images/case-elisa-piovan/og-elisa-case-study.webp"
+    structuredData={structuredData}
+  />
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+<SiteHeader contactTarget="/contatti/" />
+<main id="contenuto" class="elisa-case">
+  <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Portfolio', href: '/realizzazioni/' }, { label: 'Elisa Piovan' }]} /></div></div>
+
+  <section class="elisa-hero">
+    <div class="wrap elisa-hero-grid">
+      <div class="elisa-hero-copy">
+        <p class="hero-location">Caso studio reale · Personal training / Padova e online</p>
+        <h1>Elisa Piovan:<br /><em>un sito che ora lavora con lei.</em></h1>
+        <p class="lead">Abbiamo trasformato una presenza digitale difficile da gestire in un sito su misura: più chiaro da usare, più semplice da contattare e costruito su una base tecnica verificabile.</p>
+        <div class="actions"><a class="button" href={liveUrl} target="_blank" rel="noopener external">Visita elitrainer.it ↗</a><a class="plain light" href="#intervento">Vedi il progetto ↓</a></div>
+      </div>
+      <figure class="elisa-hero-media">
+        <img src="/images/case-elisa-piovan/after-home-desktop.webp" width="1410" height="720" alt="Homepage del nuovo sito di Elisa Piovan con presentazione del coaching e accesso diretto a WhatsApp" fetchpriority="high" />
+        <figcaption>Il nuovo sito · homepage desktop</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section wrap elisa-context">
+    <div><p class="eyebrow">Il punto di partenza</p><h2>Il lavoro cresceva.<br />Il sito non lo<br /><em>rappresentava più.</em></h2></div>
+    <div><p class="statement">Elisa aveva costruito un metodo e un team multidisciplinare, ma il sito precedente non riusciva più a tradurre con chiarezza il valore del progetto né ad accompagnare le potenziali clienti verso il primo passo.</p><p>La veste grafica non la rappresentava più, la struttura SEO era limitata e prestazioni, contatti e manutenzione potevano essere migliorati. Serviva una base nuova, non un altro intervento superficiale sul tema esistente.</p></div>
+  </section>
+
+  <section class="elisa-before">
+    <div class="wrap elisa-before-grid">
+      <div class="elisa-before-copy">
+        <p class="eyebrow">Prima</p>
+        <h2>Una presenza<br /><em>da riallineare.</em></h2>
+        <ul>
+          <li><span>Immagine</span><p>Una veste grafica che Elisa non sentiva più coerente con il proprio metodo.</p></li>
+          <li><span>Visibilità</span><p>SEO e organizzazione dei contenuti con margini di sviluppo.</p></li>
+          <li><span>Esperienza</span><p>Prestazioni, percorsi di contatto e consultazione da mobile migliorabili.</p></li>
+          <li><span>Gestione</span><p>Una base WordPress che richiedeva più manutenzione applicativa.</p></li>
+        </ul>
+      </div>
+      <figure>
+        <img src="/images/case-elisa-piovan/before-site.webp" width="1220" height="571" alt="Schermata del precedente sito di Elisa Piovan con sfondo nero, testi bianchi e fotografie della palestra" decoding="async" />
+        <figcaption>Il sito precedente · schermata fornita per il confronto</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="intervento" class="section wrap elisa-intervention">
+    <div class="elisa-section-heading"><p class="eyebrow">L’intervento</p><h2>Dal tema al<br /><em>progetto su misura.</em></h2><p>Struttura, contenuti, design e codice sono stati ripensati insieme. Ogni scelta doveva aiutare una donna a capire il metodo EP e trovare un modo semplice per iniziare.</p></div>
+    <div class="elisa-intervention-grid">
+      <article><span>Identità</span><h3>Una nuova direzione visiva</h3><p>Palette, fotografie e gerarchie editoriali costruiscono un’immagine più vicina alla professionalità e all’energia di Elisa.</p></article>
+      <article><span>Percorso</span><h3>Contatti senza attrito</h3><p>WhatsApp è raggiungibile nei momenti decisivi, mentre servizi e call to action guidano senza costringere l’utente a cercare.</p></article>
+      <article><span>Scoperta</span><h3>SEO e contenuti leggibili</h3><p>Pagine tematiche, metadata, dati strutturati, sitemap e contenuti server-rendered aiutano motori di ricerca e sistemi IA a interpretare il progetto.</p></article>
+      <article><span>Continuità</span><h3>Codice e hosting gestito</h3><p>Il sito Astro genera pagine statiche rapide. Build, pubblicazione e manutenzione tecnica restano sotto il controllo di 4 Web Lab.</p></article>
+    </div>
+  </section>
+
+  <section id="risultato" class="elisa-after">
+    <div class="wrap">
+      <div class="elisa-after-heading"><div><p class="eyebrow light">Dopo</p><h2>Un sito che spiega,<br />orienta e porta<br /><em>al prossimo passo.</em></h2></div><p>Il nuovo percorso parte dal metodo di Elisa, rende leggibile il ruolo del Team EP e offre accessi diretti ai servizi, al quiz e a WhatsApp.</p></div>
+      <div class="elisa-showcase">
+        <figure class="elisa-showcase-home"><img src="/images/case-elisa-piovan/after-home-desktop.webp" width="1410" height="720" alt="Homepage desktop del nuovo sito Elisa Piovan con hero fotografica e call to action per WhatsApp" decoding="async" /><figcaption>Homepage · desktop</figcaption></figure>
+        <figure class="elisa-showcase-mobile"><img src="/images/case-elisa-piovan/after-home-mobile.webp" width="360" height="720" alt="Homepage del sito Elisa Piovan su smartphone con pulsanti per WhatsApp e metodo EP" decoding="async" /><figcaption>Homepage · mobile</figcaption></figure>
+        <figure class="elisa-showcase-services"><img src="/images/case-elisa-piovan/after-services-desktop.webp" width="1410" height="800" alt="Pagina desktop dei servizi Team EP con presentazione di Elisa Piovan e fotografia in palestra" decoding="async" /><figcaption>Metodo e servizi · desktop</figcaption></figure>
+        <figure class="elisa-showcase-quiz"><img src="/images/case-elisa-piovan/after-quiz-mobile.webp" width="360" height="800" alt="Quiz mobile del sito Elisa Piovan per orientare l’utente verso il percorso più adatto" decoding="async" /><figcaption>Quiz di orientamento · mobile</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="elisa-journey">
+    <div class="wrap elisa-journey-grid">
+      <div><p class="eyebrow">Una funzione concreta</p><h2>Chi non sa<br />da dove partire<br /><em>può scoprirlo.</em></h2></div>
+      <div><p class="statement">Il quiz non è un elemento decorativo: raccoglie le informazioni iniziali, aiuta l’utente a orientarsi e consegna al team un contatto più contestualizzato.</p><p>Accanto al quiz, i collegamenti diretti a WhatsApp riducono i passaggi necessari per chiedere informazioni. La persona può scegliere il percorso più adatto al proprio livello di consapevolezza.</p><a class="plain" href="https://elitrainer.it/ginoide-androide-test/" target="_blank" rel="noopener external">Prova il quiz sul sito ↗</a></div>
+    </div>
+  </section>
+
+  <section id="prestazioni" class="elisa-performance">
+    <div class="wrap">
+      <div class="elisa-performance-heading"><div><p class="eyebrow light">Risultati verificabili</p><h2>Le prestazioni<br />non sono una<br /><em>sensazione.</em></h2></div><div><p>I report forniti per il confronto mostrano il passaggio da <strong>69 a 100</strong> in Performance e da <strong>69 a 100</strong> in SEO, insieme a miglioramenti in accessibilità, best practice e controlli per l’agentic browsing.</p><p class="elisa-performance-note">I punteggi sono rilevazioni di laboratorio e possono variare nel tempo in base a pagina, dispositivo, rete e versione dello strumento.</p></div></div>
+      <div class="elisa-performance-grid">
+        <figure><img src="/images/case-elisa-piovan/pagespeed-before.webp" width="1600" height="535" alt="Report precedente con punteggi 69 Performance, 78 Accessibilità, 81 Best Practices, 69 SEO e 1 su 2 Agentic Browsing" decoding="async" /><figcaption>Prima · report fornito</figcaption></figure>
+        <figure><img src="/images/case-elisa-piovan/pagespeed-after.webp" width="1059" height="761" alt="Report successivo con punteggi 100 Performance, 96 Accessibilità, 100 Best Practices, 100 SEO e 3 su 3 Agentic Browsing" decoding="async" /><figcaption>Dopo · report fornito</figcaption></figure>
+      </div>
+      <a class="button" href={pageSpeedUrl} target="_blank" rel="noopener external">Controlla ora elitrainer.it su PageSpeed ↗</a>
+    </div>
+  </section>
+
+  <section id="base-tecnica" class="section wrap elisa-technical">
+    <div><p class="eyebrow">La base tecnica</p><h2>Più controllo.<br />Meno dipendenze.<br /><em>Più continuità.</em></h2></div>
+    <div><p class="statement">Il passaggio da una precedente installazione WordPress a un sito statico su misura riduce la superficie applicativa esposta e concentra gestione tecnica, build e pubblicazione nell’hosting gestito da 4 Web Lab.</p><div class="elisa-technical-list"><article><h3>HTML leggibile</h3><p>Il contenuto principale è disponibile nel documento iniziale, senza dipendere dal caricamento client per essere compreso.</p></article><article><h3>Segnali coerenti</h3><p>Title, description, canonical, sitemap, dati strutturati e file llms.txt lavorano sulla stessa architettura informativa.</p></article><article><h3>Asset ottimizzati</h3><p>Immagini dimensionate, formati moderni e spazio riservato riducono peso e instabilità del layout.</p></article></div><p class="elisa-note"><strong>Trasparenza:</strong> queste basi migliorano accessibilità tecnica e comprensione dei contenuti, ma non garantiscono ranking né citazioni automatiche nelle risposte di ChatGPT o Gemini.</p></div>
+  </section>
+
+  <section id="testimonianza" class="elisa-testimonial">
+    <div class="wrap elisa-testimonial-grid">
+      <p class="elisa-quote-mark" aria-hidden="true">“</p>
+      <blockquote>
+        <p>Carlo e 4 Web Lab hanno capito esattamente cosa mi serviva. Finalmente un sito che funziona: niente più mail perse, niente lentezza. Le mie potenziali clienti possono scrivermi su WhatsApp in un clic e il quiz aiuta davvero chi non sa da dove partire. Sono entusiasta del risultato.</p>
+        <cite>Elisa Piovan · Fitness coach e fondatrice EP Team</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="elisa-next">
+    <div class="wrap elisa-next-grid"><div><p class="eyebrow light">Il tuo sito è ancora quello giusto?</p><h2>Se il lavoro è cresciuto,<br />anche il sito deve<br /><em>tenere il passo.</em></h2></div><div><p>Prima di rifarlo, conviene capire cosa limita davvero immagine, visibilità, prestazioni e richieste di contatto.</p><div class="actions"><a class="button" href="/perizia-sito-web/">Scopri la perizia →</a><a class="plain lime" href="/contatti/">Parliamone →</a></div></div></div>
+  </section>
+</main>
+<SiteFooter />
+
+<style>
+  .elisa-case { background: var(--paper); }
+  .elisa-hero { min-height: 720px; padding: 144px 0 72px; display: grid; align-items: end; overflow: hidden; background: radial-gradient(circle at 84% 28%, #3f5772 0, transparent 31%), var(--ink); color: white; }
+  .elisa-hero-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 68px; align-items: end; }
+  .elisa-hero h1 { max-width: 11ch; }
+  .elisa-hero-media { margin: 0; overflow: hidden; border: 1px solid var(--dark-line); background: #19253a; box-shadow: 0 25px 58px rgb(0 0 0 / .3); }
+  .elisa-hero-media img { display: block; width: 100%; min-height: 440px; object-fit: cover; object-position: 42% center; }
+  .elisa-hero-media figcaption, .elisa-showcase figcaption, .elisa-before figcaption, .elisa-performance figcaption { padding: 11px 14px; border-top: 1px solid var(--dark-line); color: #b7c5d8; font: 10px var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+  .elisa-context, .elisa-journey-grid, .elisa-technical { display: grid; grid-template-columns: 1fr 1.25fr; gap: 64px; }
+  .elisa-context > div:last-child, .elisa-journey-grid > div:last-child, .elisa-technical > div:last-child { max-width: 44rem; padding-top: 38px; }
+  .elisa-context > div:last-child > p:last-child, .elisa-journey-grid > div:last-child > p:not(.statement) { color: var(--muted); }
+  .elisa-before { padding: 116px 0; background: #e8e9e4; }
+  .elisa-before-grid { display: grid; grid-template-columns: .88fr 1.12fr; gap: 70px; align-items: center; }
+  .elisa-before-copy ul { margin: 40px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .elisa-before-copy li { display: grid; grid-template-columns: 92px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .elisa-before-copy li span { color: var(--label); font: 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+  .elisa-before-copy li p { margin: 0; color: #314057; font-size: 14px; line-height: 1.5; }
+  .elisa-before figure, .elisa-showcase figure, .elisa-performance figure { margin: 0; overflow: hidden; border: 1px solid var(--line); background: var(--paper); }
+  .elisa-before img, .elisa-showcase img, .elisa-performance img { display: block; width: 100%; height: auto; }
+  .elisa-before figcaption, .elisa-performance figcaption { border-color: var(--line); color: var(--muted); }
+  .elisa-intervention { padding-bottom: 116px; }
+  .elisa-section-heading { display: grid; grid-template-columns: 1fr 1.25fr; column-gap: 64px; align-items: end; margin-bottom: 60px; }
+  .elisa-section-heading .eyebrow, .elisa-section-heading h2 { grid-column: 2; text-align: right; }
+  .elisa-section-heading h2 { margin-top: 4px; }
+  .elisa-section-heading > p:last-child { grid-column: 1; grid-row: 1 / span 2; max-width: 35rem; margin: 0 0 4px; color: var(--muted); font-size: 18px; }
+  .elisa-intervention-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+  .elisa-intervention-grid article { min-height: 270px; padding: 25px 26px 28px 0; border-bottom: 1px solid var(--line); }
+  .elisa-intervention-grid article + article { padding-left: 26px; border-left: 1px solid var(--line); }
+  .elisa-intervention-grid span { color: var(--label); font: 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+  .elisa-intervention-grid h3 { margin: 24px 0 12px; font: 600 25px/1.05 var(--serif); letter-spacing: -.02em; }
+  .elisa-intervention-grid p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+  .elisa-after { padding: 116px 0; background: var(--ink); color: white; }
+  .elisa-after-heading { display: grid; grid-template-columns: .95fr 1.05fr; gap: 70px; align-items: end; margin-bottom: 62px; }
+  .elisa-after-heading h2 { margin: 0; }
+  .elisa-after-heading > p { max-width: 34rem; margin: 0 0 7px; color: #c5d1e1; font-size: 18px; }
+  .elisa-showcase { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(250px, .65fr); gap: 16px; align-items: start; }
+  .elisa-showcase figure { border-color: var(--dark-line); background: #16233a; }
+  .elisa-showcase-home { grid-column: 1 / -1; }
+  .elisa-showcase-mobile, .elisa-showcase-quiz { width: min(100%, 390px); justify-self: center; }
+  .elisa-showcase-services { align-self: center; }
+  .elisa-journey { padding: 116px 0; background: #e8e9e4; }
+  .elisa-journey .plain { margin-top: 18px; }
+  .elisa-performance { padding: 116px 0; background: #1a2d49; color: white; }
+  .elisa-performance-heading { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: end; margin-bottom: 60px; }
+  .elisa-performance-heading h2 { margin: 0; }
+  .elisa-performance-heading > div:last-child p { color: #d0d9e6; font-size: 18px; line-height: 1.55; }
+  .elisa-performance-heading strong { color: var(--lime); }
+  .elisa-performance-note { padding-top: 16px; border-top: 1px solid var(--dark-line); font-size: 12px !important; }
+  .elisa-performance-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 16px; align-items: stretch; margin-bottom: 34px; }
+  .elisa-performance figure { display: flex; flex-direction: column; border-color: var(--dark-line); background: white; }
+  .elisa-performance figure img { flex: 1; object-fit: contain; }
+  .elisa-performance figcaption { margin-top: auto; border-color: var(--dark-line); color: #5c6a7c; }
+  .elisa-technical .statement { max-width: 44rem; }
+  .elisa-technical-list { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 42px; border-top: 1px solid var(--line); }
+  .elisa-technical-list article { padding: 21px 25px 0 0; }
+  .elisa-technical-list article + article { padding-left: 25px; border-left: 1px solid var(--line); }
+  .elisa-technical-list h3 { margin: 0 0 10px; font: 600 23px/1.05 var(--serif); }
+  .elisa-technical-list p, .elisa-note { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+  .elisa-note { margin-top: 37px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 12px; }
+  .elisa-note strong { color: var(--ink); }
+  .elisa-testimonial { padding: 120px 0; background: var(--lime); color: var(--ink); }
+  .elisa-testimonial-grid { display: grid; grid-template-columns: .25fr 1.75fr; gap: 44px; align-items: start; }
+  .elisa-quote-mark { margin: -25px 0 0; font: 600 clamp(110px, 15vw, 220px)/.8 var(--serif); }
+  .elisa-testimonial blockquote { max-width: 63rem; margin: 0; }
+  .elisa-testimonial blockquote p { margin: 0; font: 600 clamp(35px, 4.2vw, 61px)/1.03 var(--serif); letter-spacing: -.025em; }
+  .elisa-testimonial cite { display: block; margin-top: 34px; font: 700 12px var(--sans); letter-spacing: .04em; text-transform: uppercase; }
+  .elisa-next { padding: 112px 0; background: var(--ink); color: white; }
+  .elisa-next-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: end; }
+  .elisa-next-grid h2 { margin: 0; }
+  .elisa-next-grid > div:last-child { max-width: 34rem; }
+  .elisa-next-grid > div:last-child > p { margin: 0 0 31px; color: #d0d9e6; font-size: 19px; line-height: 1.45; }
+  @media (max-width: 900px) {
+    .elisa-hero-grid, .elisa-before-grid, .elisa-context, .elisa-journey-grid, .elisa-technical, .elisa-after-heading, .elisa-performance-heading, .elisa-next-grid { grid-template-columns: 1fr; gap: 36px; }
+    .elisa-hero-media img { min-height: 360px; }
+    .elisa-context > div:last-child, .elisa-journey-grid > div:last-child, .elisa-technical > div:last-child { padding-top: 0; }
+    .elisa-intervention-grid { grid-template-columns: 1fr 1fr; }
+    .elisa-intervention-grid article:nth-child(odd) { padding-left: 0; border-left: 0; }
+    .elisa-intervention-grid article:nth-child(even) { padding-left: 26px; border-left: 1px solid var(--line); }
+    .elisa-showcase { grid-template-columns: 1fr; }
+    .elisa-showcase-home, .elisa-showcase-services, .elisa-showcase-mobile, .elisa-showcase-quiz { grid-column: auto; width: auto; max-width: none; }
+    .elisa-performance-grid { grid-template-columns: 1fr; }
+    .elisa-technical-list { grid-template-columns: 1fr; }
+    .elisa-technical-list article { padding: 21px 0; border-bottom: 1px solid var(--line); }
+    .elisa-technical-list article + article { padding-left: 0; border-left: 0; }
+  }
+  @media (max-width: 680px) {
+    .elisa-hero { min-height: auto; padding: 130px 0 56px; }
+    .elisa-hero-media img { min-height: 310px; }
+    .elisa-context, .elisa-before, .elisa-intervention, .elisa-after, .elisa-journey, .elisa-performance, .elisa-technical, .elisa-testimonial, .elisa-next { padding-top: 84px; padding-bottom: 84px; }
+    .elisa-before-grid { gap: 46px; }
+    .elisa-before-copy li { grid-template-columns: 74px 1fr; }
+    .elisa-section-heading { grid-template-columns: 1fr; gap: 24px; margin-bottom: 42px; }
+    .elisa-section-heading .eyebrow, .elisa-section-heading h2 { grid-column: 1; text-align: left; }
+    .elisa-section-heading > p:last-child { grid-column: 1; grid-row: auto; margin: 0; font-size: 16px; }
+    .elisa-intervention-grid { grid-template-columns: 1fr; }
+    .elisa-intervention-grid article:nth-child(n) { min-height: auto; padding: 23px 0; border-left: 0; }
+    .elisa-after-heading, .elisa-performance-heading { margin-bottom: 42px; }
+    .elisa-after-heading > p, .elisa-performance-heading > div:last-child p { font-size: 16px; }
+    .elisa-showcase { gap: 12px; }
+    .elisa-performance-grid { gap: 12px; }
+    .elisa-performance .button { width: 100%; text-align: center; }
+    .elisa-technical-list { margin-top: 30px; }
+    .elisa-testimonial-grid { grid-template-columns: 1fr; gap: 0; }
+    .elisa-quote-mark { margin-bottom: -35px; }
+    .elisa-testimonial blockquote p { font-size: 35px; }
+    .elisa-next-grid > div:last-child > p { font-size: 17px; }
+  }
+</style>
+</body>
+</html>
