@@ -2,6 +2,7 @@
 import '../styles/global.css';
 
 const promoCode = 'SCONTO PROMO ELITRAINER';
+const promoDeadline = '2026-11-06T12:00:00+01:00';
 const plans = [
   {
     id: 'negozio',
@@ -86,17 +87,31 @@ const plans = [
         <div class="promo-hero-noise" aria-hidden="true"></div>
         <div class="wrap promo-hero-grid">
           <div class="promo-hero-copy">
-            <p class="promo-kicker">COLLABORAZIONE DI LANCIO · FINO AL 1° NOVEMBRE COMPRESO</p>
+            <p class="promo-kicker">COLLABORAZIONE DI LANCIO · FINO AL 6 NOVEMBRE, ORE 12:00</p>
             <h1>Il tuo prossimo progetto<br /><em>parte con il 30% in meno.</em></h1>
-            <p class="promo-hero-lead">Il nuovo sito di Elisa e del suo Team EP è online. Per festeggiare il lancio, apro una collaborazione speciale: fino al 1° novembre compreso puoi scegliere il progetto digitale giusto per la tua attività e bloccare il prezzo promozionale.</p>
+            <p class="promo-hero-lead">Il nuovo sito di Elisa e del suo Team EP è online. Per festeggiare il lancio, apro una collaborazione speciale: fino al 6 novembre alle ore 12:00 puoi scegliere il progetto digitale giusto per la tua attività e bloccare il prezzo promozionale.</p>
             <div class="promo-actions">
               <a class="promo-button" href="#offerta">Scegli il tuo pacchetto ↓</a>
               <a class="promo-text-link" href="https://wa.me/393514656042">Parliamone su WhatsApp ↗</a>
             </div>
             <p class="promo-microcopy">Quattro soluzioni. Un prezzo trasparente. Una scadenza vera.</p>
+            <aside class="promo-countdown" data-deadline={promoDeadline} aria-label="Tempo rimanente alla scadenza della promo">
+              <p class="promo-countdown-label">Tempo rimasto</p>
+              <div class="promo-countdown-values" role="timer" aria-label="Conto alla rovescia">
+                <span><strong data-countdown-days>--</strong><small>gg</small></span>
+                <b aria-hidden="true">:</b>
+                <span><strong data-countdown-hours>--</strong><small>hh</small></span>
+                <b aria-hidden="true">:</b>
+                <span><strong data-countdown-minutes>--</strong><small>mm</small></span>
+                <b aria-hidden="true">:</b>
+                <span><strong data-countdown-seconds>--</strong><small>ss</small></span>
+              </div>
+              <p class="promo-countdown-note">La promo termina il 6 novembre alle ore 12:00.</p>
+              <p class="sr-only" data-countdown-status aria-live="polite"></p>
+            </aside>
           </div>
           <div class="promo-hero-visual">
-            <div class="promo-sticker"><strong>-30%</strong><span>fino al<br />1° novembre</span></div>
+            <div class="promo-sticker"><strong>-30%</strong><span>fino al<br />6 novembre · ore 12</span></div>
             <figure class="promo-hero-image"><img src="/images/promo-elitrainer-hero-v2.webp" width="1672" height="940" alt="Pagina web che prende forma in una composizione luminosa" fetchpriority="high" /></figure>
             <div class="promo-hero-caption"><span>NUOVO PROGETTO · NUOVA PRESENZA</span><strong>Adesso tocca al tuo.</strong></div>
           </div>
@@ -124,7 +139,7 @@ const plans = [
               <p class="promo-label">L'offerta di lancio</p>
               <h2 id="offerta-title">Quattro modi per<br /><em>farti scegliere.</em></h2>
             </div>
-            <p>Per i primi tre percorsi trovi il prezzo di partenza già scontato. Per un’app personalizzata definiamo insieme il progetto e applichiamo il 30% di sconto al preventivo promo, per richieste ricevute entro il 1° novembre compreso.</p>
+            <p>Per i primi tre percorsi trovi il prezzo di partenza già scontato. Per un’app personalizzata definiamo insieme il progetto e applichiamo il 30% di sconto al preventivo promo, per richieste ricevute entro il 6 novembre alle ore 12:00.</p>
           </div>
           <div class="promo-plan-list">
             {plans.map((plan) => (
@@ -176,7 +191,7 @@ const plans = [
           <div class="promo-steps">
             <article><span>01</span><div><h3>Mi racconti cosa fai</h3><p>Compili il form o mi scrivi su WhatsApp. Bastano attività, obiettivo e contatti.</p></div></article>
             <article><span>02</span><div><h3>Inquadriamo il progetto</h3><p>Ti restituisco il pacchetto più adatto, cosa comprende e il prezzo già scontato.</p></div></article>
-            <article><span>03</span><div><h3>Partiamo con il tuo nuovo progetto</h3><p>Blocchi la collaborazione entro il 1° novembre compreso e diamo forma al prossimo passo.</p></div></article>
+            <article><span>03</span><div><h3>Partiamo con il tuo nuovo progetto</h3><p>Blocchi la collaborazione entro il 6 novembre alle ore 12:00 e diamo forma al prossimo passo.</p></div></article>
           </div>
         </div>
       </section>
@@ -221,9 +236,52 @@ const plans = [
       </section>
     </main>
 
-    <footer class="promo-footer"><div class="wrap"><span>© 4 Web Lab · Collaborazione di lancio</span><span>Promo valida per richieste ricevute entro il 1° novembre compreso.</span></div></footer>
+    <footer class="promo-footer"><div class="wrap"><span>© 4 Web Lab · Collaborazione di lancio</span><span>Promo valida per richieste ricevute entro il 6 novembre alle ore 12:00.</span></div></footer>
 
     <script is:inline>
+      const countdown = document.querySelector('[data-deadline]');
+      const countdownValues = {
+        days: countdown?.querySelector('[data-countdown-days]'),
+        hours: countdown?.querySelector('[data-countdown-hours]'),
+        minutes: countdown?.querySelector('[data-countdown-minutes]'),
+        seconds: countdown?.querySelector('[data-countdown-seconds]'),
+      };
+      const countdownStatus = countdown?.querySelector('[data-countdown-status]');
+      const deadline = countdown ? new Date(countdown.dataset.deadline).getTime() : NaN;
+      let lastAnnouncedMinute = '';
+      let countdownInterval;
+
+      const updateCountdown = () => {
+        if (!countdown || !Number.isFinite(deadline)) return;
+        const remainingSeconds = Math.max(0, Math.floor((deadline - Date.now()) / 1000));
+        const days = Math.floor(remainingSeconds / 86400);
+        const hours = Math.floor((remainingSeconds % 86400) / 3600);
+        const minutes = Math.floor((remainingSeconds % 3600) / 60);
+        const seconds = remainingSeconds % 60;
+        const pad = (value) => String(value).padStart(2, '0');
+
+        countdownValues.days.textContent = pad(days);
+        countdownValues.hours.textContent = pad(hours);
+        countdownValues.minutes.textContent = pad(minutes);
+        countdownValues.seconds.textContent = pad(seconds);
+
+        if (remainingSeconds === 0) {
+          countdown.dataset.expired = 'true';
+          countdownStatus.textContent = 'La promo è terminata.';
+          window.clearInterval(countdownInterval);
+          return;
+        }
+
+        const minuteAnnouncement = `${days}:${hours}:${minutes}`;
+        if (minuteAnnouncement !== lastAnnouncedMinute) {
+          countdownStatus.textContent = `Mancano ${days} giorni, ${hours} ore e ${minutes} minuti alla scadenza della promo.`;
+          lastAnnouncedMinute = minuteAnnouncement;
+        }
+      };
+
+      updateCountdown();
+      countdownInterval = window.setInterval(updateCountdown, 1000);
+
       const promoForm = document.querySelector('#promo-elitrainer-form');
       const promoStatus = document.querySelector('#promo-elitrainer-status');
       promoForm?.addEventListener('submit', async (event) => {
@@ -288,6 +346,15 @@ const plans = [
       .promo-text-link, .promo-arrow-link { color: inherit; font-weight: 700; text-underline-offset: 5px; }
       .promo-text-link { color: #fff; text-decoration: none; border-bottom: 1px solid var(--promo-coral); padding-bottom: 4px; }
       .promo-microcopy { margin: 34px 0 0; color: #9fb1c9; font: 11px var(--mono); letter-spacing: .04em; }
+      .promo-countdown { width: fit-content; margin-top: 24px; padding: 16px 18px 14px; border: 1px solid rgb(255 255 255 / .28); background: rgb(24 35 59 / .72); }
+      .promo-countdown-label { margin: 0 0 9px; color: var(--promo-yellow); font: 10px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+      .promo-countdown-values { display: flex; align-items: baseline; gap: 8px; color: #fff; }
+      .promo-countdown-values span { display: grid; gap: 2px; min-width: 42px; text-align: center; }
+      .promo-countdown-values strong { font: 600 clamp(28px, 3.2vw, 42px)/.9 var(--serif); letter-spacing: -.04em; }
+      .promo-countdown-values small { color: #aebed4; font: 9px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+      .promo-countdown-values b { color: var(--promo-coral); font: 700 22px/1 var(--mono); }
+      .promo-countdown-note { margin: 10px 0 0; color: #b9c8dc; font-size: 11px; }
+      .promo-countdown[data-expired="true"] { border-color: var(--promo-coral); }
       .promo-hero-visual { position: relative; min-height: 540px; }
       .promo-hero-image { position: absolute; right: 0; bottom: 35px; width: min(100%, 500px); margin: 0; transform: rotate(3deg); border: 1px solid rgb(255 255 255 / .65); background: #253552; box-shadow: 22px 26px 0 rgb(255 103 77 / .8), 0 28px 60px rgb(0 0 0 / .34); }
       .promo-hero-image img { display: block; width: 100%; height: 430px; object-fit: cover; }
@@ -309,7 +376,7 @@ const plans = [
         .promo-header { height: 68px; }.promo-desktop-nav, .promo-top-cta { display: none; }.promo-mobile-menu { display: block; }.promo-mobile-panel { top: 68px; }.promo-hero { min-height: auto; }.promo-hero-grid, .promo-intro-grid, .promo-process-grid, .promo-proof-grid, .promo-contact-grid { grid-template-columns: 1fr; gap: 48px; }.promo-hero-grid { padding-top: 76px; }.promo-hero-copy { max-width: 700px; }.promo-hero-visual { min-height: 500px; width: min(100%, 620px); margin: 0 auto; }.promo-section-heading { display: grid; gap: 25px; align-items: start; }.promo-section-heading > p { max-width: 520px; }.promo-process-lead { max-width: 500px; }.promo-proof-image { width: min(100%, 620px); }.promo-contact-copy { max-width: 580px; }
       }
       @media (max-width: 680px) {
-        .promo-page .wrap { width: calc(100% - 40px); }.promo-header { padding: 0 20px; }.promo-brand img { width: 96px; }.promo-hero-grid { padding-top: 58px; padding-bottom: 70px; }.promo-page h1 { font-size: clamp(52px, 15vw, 77px); }.promo-hero-lead { font-size: 17px; }.promo-hero-visual { min-height: 390px; }.promo-hero-image { right: 8px; bottom: 25px; width: calc(100% - 22px); }.promo-hero-image img { height: 320px; }.promo-sticker { top: 12px; left: -5px; width: 104px; height: 104px; }.promo-sticker strong { font-size: 27px; }.promo-hero-caption { right: -4px; bottom: 0; }.promo-hero-caption strong { font-size: 20px; }.promo-intro, .promo-offer, .promo-process, .promo-proof, .promo-contact { padding: 84px 0; }.promo-page h2 { font-size: clamp(48px, 14vw, 68px); }.promo-intro-copy { padding-top: 0; }.promo-plan { grid-template-columns: 1fr; }.promo-plan-visual { min-height: 230px; }.promo-plan-visual::after { background: linear-gradient(0deg, #1e2b46, transparent 62%); }.promo-plan-app .promo-plan-visual::after { background: linear-gradient(0deg, #203150, transparent 62%); }.promo-app-device { width: 140px; height: 210px; }.promo-app-screen { gap: 13px; padding: 22px 14px 14px; }.promo-app-screen strong { font-size: 22px; }.promo-plan-body { display: block; padding: 26px 23px 28px; }.promo-plan h3 { margin-bottom: 25px; }.promo-plan ul { margin-bottom: 25px; }.promo-plan-footer { display: flex; align-items: center; margin-top: 25px; }.promo-price strong { font-size: 32px; }.promo-section-heading { margin-bottom: 45px; }.promo-steps article { grid-template-columns: 42px 1fr; gap: 14px; }.promo-steps h3 { font-size: 25px; }.promo-proof-image img { height: 350px; box-shadow: 10px 12px 0 var(--promo-yellow); }.promo-proof-image span { right: -4px; bottom: 14px; font-size: 18px; }.promo-form { padding: 24px 20px; }.promo-footer .wrap { display: grid; gap: 7px; }
+        .promo-page .wrap { width: calc(100% - 40px); }.promo-header { padding: 0 20px; }.promo-brand img { width: 96px; }.promo-hero-grid { padding-top: 58px; padding-bottom: 70px; }.promo-page h1 { font-size: clamp(52px, 15vw, 77px); }.promo-hero-lead { font-size: 17px; }.promo-countdown { width: min(100%, 360px); }.promo-countdown-values { justify-content: space-between; gap: 4px; }.promo-countdown-values span { min-width: 0; flex: 1; }.promo-countdown-values strong { font-size: clamp(25px, 9vw, 36px); }.promo-countdown-values b { font-size: 18px; }.promo-hero-visual { min-height: 390px; }.promo-hero-image { right: 8px; bottom: 25px; width: calc(100% - 22px); }.promo-hero-image img { height: 320px; }.promo-sticker { top: 12px; left: -5px; width: 104px; height: 104px; }.promo-sticker strong { font-size: 27px; }.promo-hero-caption { right: -4px; bottom: 0; }.promo-hero-caption strong { font-size: 20px; }.promo-intro, .promo-offer, .promo-process, .promo-proof, .promo-contact { padding: 84px 0; }.promo-page h2 { font-size: clamp(48px, 14vw, 68px); }.promo-intro-copy { padding-top: 0; }.promo-plan { grid-template-columns: 1fr; }.promo-plan-visual { min-height: 230px; }.promo-plan-visual::after { background: linear-gradient(0deg, #1e2b46, transparent 62%); }.promo-plan-app .promo-plan-visual::after { background: linear-gradient(0deg, #203150, transparent 62%); }.promo-app-device { width: 140px; height: 210px; }.promo-app-screen { gap: 13px; padding: 22px 14px 14px; }.promo-app-screen strong { font-size: 22px; }.promo-plan-body { display: block; padding: 26px 23px 28px; }.promo-plan h3 { margin-bottom: 25px; }.promo-plan ul { margin-bottom: 25px; }.promo-plan-footer { display: flex; align-items: center; margin-top: 25px; }.promo-price strong { font-size: 32px; }.promo-section-heading { margin-bottom: 45px; }.promo-steps article { grid-template-columns: 42px 1fr; gap: 14px; }.promo-steps h3 { font-size: 25px; }.promo-proof-image img { height: 350px; box-shadow: 10px 12px 0 var(--promo-yellow); }.promo-proof-image span { right: -4px; bottom: 14px; font-size: 18px; }.promo-form { padding: 24px 20px; }.promo-footer .wrap { display: grid; gap: 7px; }
       }
       @media (prefers-reduced-motion: reduce) { .promo-page *, .promo-page *::before, .promo-page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
     </style>
