@@ -29,7 +29,9 @@ export default defineConfig({
     lastmod: new Date('2026-10-12T00:00:00.000Z'),
     serialize(item) {
       const pathname = new URL(item.url).pathname;
-      if (latestPages.has(pathname)) {
+      if (pathname === '/black-friday-2026/') {
+        item.lastmod = '2026-11-01T00:00:00.000Z';
+      } else if (latestPages.has(pathname)) {
         item.lastmod = '2026-10-27T00:00:00.000Z';
       } else if (updatedPages.has(pathname)) {
         item.lastmod = '2026-10-17T00:00:00.000Z';
