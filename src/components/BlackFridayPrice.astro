@@ -1,0 +1,21 @@
+---
+import { BLACK_FRIDAY, blackFriday, euro, promoPrice, type BlackFridayPlan } from '../config/black-friday';
+import BlackFridayTerms from './BlackFridayTerms.astro';
+interface Props { plan: BlackFridayPlan }
+const { plan } = Astro.props;
+const ordinary = BLACK_FRIDAY.plans[plan].ordinary;
+---
+<div class="bf-service-price">
+  <p class="bf-price-period"><strong>Black Friday · −25%</strong><span>{blackFriday.upcoming ? 'Prezzo valido dal 2 al 27 novembre 2026' : 'Preventivo da confermare entro il 27 novembre 2026'}</span></p>
+  <p class="bf-price-ordinary">Prezzo ordinario da <del>{euro(ordinary)} €</del> + IVA</p>
+  <h2>Da <em>{euro(promoPrice(plan))} €</em><br />+ IVA.</h2>
+  <p class="bf-price-saving">Risparmi {euro(ordinary - promoPrice(plan))} € sulla base di partenza.</p>
+  <BlackFridayTerms />
+</div>
+<style>
+  .bf-price-period { display: grid; gap: 6px; margin: 0 0 26px; color: #d7dfeb; font-size: 15px; line-height: 1.5; }
+  .bf-price-period strong { color: var(--lime); font-size: 20px; }
+  .bf-price-ordinary { margin: 0 0 12px; color: #d7dfeb; font-size: 17px; }
+  .bf-service-price h2 { font-size: clamp(44px, 5.4vw, 78px); line-height: 1.05; font-variant-numeric: lining-nums; }
+  .bf-price-saving { margin: 18px 0 24px; color: var(--lime); font-weight: 700; }
+</style>

@@ -1,0 +1,16 @@
+---
+import { BLACK_FRIDAY, blackFriday } from '../config/black-friday';
+interface Props { href: string; home?: boolean }
+const { href, home = false } = Astro.props;
+---
+{blackFriday.visible && <aside class="bf-service-notice" aria-label="Offerta Black Friday">
+  <p><strong>Black Friday · −25%</strong><span>{BLACK_FRIDAY.dates} sulla realizzazione di nuovi siti {home ? 'per professionisti e aziende' : 'di questo piano'}.</span></p>
+  <a href={href}>{home ? 'Vedi le soluzioni' : 'Vedi prezzo e condizioni'} <span aria-hidden="true">↓</span></a>
+</aside>}
+<style>
+  .bf-service-notice { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; max-width: 46rem; margin: 26px 0; padding: 18px 0; border-block: 1px solid var(--dark-line); color: white; }
+  .bf-service-notice p { display: grid; gap: 6px; margin: 0; flex: 1 1 21rem; font-size: 15px; line-height: 1.5; }
+  .bf-service-notice strong { color: var(--lime); font-size: 19px; }
+  .bf-service-notice a { display: inline-flex; gap: 8px; align-items: center; min-height: 44px; color: var(--lime); font-size: 14px; font-weight: 700; text-decoration-thickness: 1px; }
+  .bf-service-notice a:hover { color: white; }
+</style>

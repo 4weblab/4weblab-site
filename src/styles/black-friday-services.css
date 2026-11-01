@@ -1,0 +1,19 @@
+/* Campaign styles are scoped to the home hub; ordinary service cards retain their layout. */
+.bf-hub-offer { margin: 0 0 28px; padding: 26px 0; border-block: 1px solid var(--dark-line); }
+.bf-hub-offer h3 { margin: 0 0 10px; color: var(--lime); font: 600 clamp(27px, 3vw, 38px)/1.15 var(--serif); }
+.bf-hub-offer > p { max-width: 66ch; margin: 0 0 14px; color: #d7dfeb; font-size: 17px; }
+.services .bf-service-card { border-color: var(--lime); min-height: 410px; }
+.services .bf-service-card .service-copy { padding-bottom: 28px; }
+.services .bf-service-card .bf-card-price { display: grid; gap: 4px; margin-top: 22px; color: var(--lime); font-size: 21px; font-weight: 700; }
+.services .bf-card-price span { font-size: 14px; font-weight: 400; color: #d7dfeb; }
+.services .bf-card-label { display: block; margin-bottom: 8px; color: var(--lime); font-size: 14px; font-weight: 700; }
+.services .bf-service-card .service-photo { width: 44%; height: 42%; opacity: .25; }
+.services .bf-service-card .company-art { opacity: .28; }
+.bf-form-note { max-width: 60ch; margin: 8px 0 18px; color: #d7dfeb; font-size: 14px; line-height: 1.5; }
+@media (max-width: 900px) {
+  .aziendali-price.bf-offer-active > .wrap > div:last-child { order: -1; }
+}
+@media (max-width: 680px) {
+  .services .bf-service-card { min-height: 390px; }
+  .bf-hub-offer { padding-block: 22px; }
+}

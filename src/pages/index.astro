@@ -4,6 +4,10 @@ import SeoHead from "../components/SeoHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import ResponsiveImage from "../components/ResponsiveImage.astro";
+import "../styles/black-friday-services.css";
+import BlackFridayNotice from "../components/BlackFridayNotice.astro";
+import BlackFridayTerms from "../components/BlackFridayTerms.astro";
+import { BLACK_FRIDAY, blackFriday, euro, promoPrice } from "../config/black-friday";
 
 const whatsApp =
   "https://wa.me/393514656042?text=Ciao!%20Vorrei%20informazioni%20sui%20servizi%20di%204%20Web%20Lab.";
@@ -36,7 +40,7 @@ const checks = [
             <p class="hero-location">Siti web e Google Ads per attività, professionisti e PMI</p>
             <h1>Il tuo sito non deve solo esserci.<br /><em>Deve farsi capire e portare contatti.</em></h1>
             <p class="lead">Hai già un sito ma non sai cosa lo sta frenando? Oppure devi crearne uno da zero? Partiamo dalla tua situazione, mettiamo in ordine le priorità e costruiamo ciò che serve: analisi, contenuti, sito web e Google Ads quando possono aiutarti davvero.</p>
-            <div class="actions"><a class="button" href="#partenza">Raccontaci da dove parti ↓</a><a class="plain" href="#soluzioni">Vedi le soluzioni</a></div>
+            <BlackFridayNotice href="#soluzioni" home /><div class="actions"><a class="button" href="#partenza">Raccontaci da dove parti ↓</a><a class="plain" href="#soluzioni">Vedi le soluzioni</a></div>
           </div>
         </div>
       </section>
@@ -67,11 +71,16 @@ const checks = [
       <section id="soluzioni" class="section dark">
         <div class="wrap">
           <div class="services-title"><div><p class="eyebrow light">Cosa possiamo costruire</p><h2>Scegli la soluzione<br /><em>in base al tuo obiettivo.</em></h2></div><p>Non vendiamo pacchetti scollegati. Colleghiamo sito, contenuti e promozione solo quando servono al problema che vuoi risolvere.</p></div>
+          {blackFriday.visible && <section class="bf-hub-offer" aria-labelledby="bf-hub-title">
+            <h3 id="bf-hub-title">Black Friday: −25% sui siti per professionisti e aziende.</h3>
+            <p>Il servizio resta quello ordinario. Dal 2 al 27 novembre 2026 scende il costo di realizzazione iniziale dei piani Professionisti e Aziende.</p>
+            <BlackFridayTerms />
+          </section>}
           <div class="services">
             <a class="featured" href="/perizia-sito-web/"><div class="service-copy"><small>Se il sito esiste già</small><h3>Verifica professionale del sito</h3><p>Hai dubbi su velocità, visibilità o risultati del tuo sito? Controlliamo cosa succede e ti indichiamo da dove conviene iniziare.</p></div><div class="service-art audit-art" aria-hidden="true"><span>Struttura</span><span>Visibilità</span><span>Contatti</span></div><span class="service-link">Scopri la verifica ↗</span></a>
             <a href="/sito-web-per-negozio/"><div class="service-copy"><small>Per attività locali</small><h3>Siti web per negozi e attività locali</h3><p>Per farti trovare, mostrare cosa offri e rendere semplice contattarti, chiamarti o raggiungerti.</p></div><div class="service-art local-art" aria-hidden="true"><i></i><i></i><i></i></div><span class="service-link">Vedi i siti per attività locali ↗</span></a>
-            <a href="/sito-web-per-professionisti/"><div class="service-copy"><small>Per professionisti</small><h3>Siti web per professionisti</h3><p>Per spiegare con chiarezza cosa fai, per chi lavori e perché una persona dovrebbe contattarti.</p></div><ResponsiveImage class="service-photo" src="/images/website-pages-editorial.webp" width={1254} height={1254} sizes="(max-width: 680px) calc(100vw - 40px), 360px" alt="Rivista aperta con immagini editoriali, a supporto dei siti per professionisti" /><span class="service-link">Vedi i siti per professionisti ↗</span></a>
-            <a href="/sito-web-aziendale/"><div class="service-copy"><small>Per PMI e aziende</small><h3>Siti web aziendali per PMI</h3><p>Per presentare servizi, competenze e casi reali a clienti, partner e interlocutori B2B.</p></div><div class="service-art company-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="service-link">Vedi i siti aziendali ↗</span></a>
+            <a class:list={{ "bf-service-card": blackFriday.visible }} href="/sito-web-per-professionisti/"><div class="service-copy">{blackFriday.visible && <span class="bf-card-label">Black Friday −25% · 2–27 novembre</span>}<small>Per professionisti</small><h3>Siti web per professionisti</h3><p>Per spiegare con chiarezza cosa fai, per chi lavori e perché una persona dovrebbe contattarti.</p>{blackFriday.visible && <p class="bf-card-price">Da {euro(promoPrice('professionisti'))} € + IVA<span>Prezzo ordinario da <del>{euro(BLACK_FRIDAY.plans.professionisti.ordinary)} €</del> + IVA</span></p>}</div><ResponsiveImage class="service-photo" src="/images/website-pages-editorial.webp" width={1254} height={1254} sizes="(max-width: 680px) calc(100vw - 40px), 360px" alt="Rivista aperta con immagini editoriali, a supporto dei siti per professionisti" /><span class="service-link">Vedi i siti per professionisti ↗</span></a>
+            <a class:list={{ "bf-service-card": blackFriday.visible }} href="/sito-web-aziendale/"><div class="service-copy">{blackFriday.visible && <span class="bf-card-label">Black Friday −25% · 2–27 novembre</span>}<small>Per PMI e aziende</small><h3>Siti web aziendali per PMI</h3><p>Per presentare servizi, competenze e casi reali a clienti, partner e interlocutori B2B.</p>{blackFriday.visible && <p class="bf-card-price">Da {euro(promoPrice('aziende'))} € + IVA<span>Prezzo ordinario da <del>{euro(BLACK_FRIDAY.plans.aziende.ordinary)} €</del> + IVA</span></p>}</div><div class="service-art company-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="service-link">Vedi i siti aziendali ↗</span></a>
             <a href="/pubblicita-su-google/"><div class="service-copy"><small>Per chi sta già cercando</small><h3>Google Ads per ottenere richieste</h3><p>Campagne pensate per intercettare ricerche attive, portare il traffico alla pagina giusta e misurare richieste, chiamate o vendite.</p></div><div class="service-art search-art" aria-hidden="true"><span>cerca</span><i></i><i></i></div><span class="service-link">Valuta Google Ads ↗</span></a>
             <a href="/pubblicita-su-chatgpt/"><div class="service-copy"><small>Nuovi contesti di scelta</small><h3>Pubblicità nei nuovi contesti di scelta</h3><p>Un servizio sperimentale per valutare come rendere il tuo brand presente mentre le persone confrontano soluzioni e prendono decisioni.</p></div><div class="service-art conversation-art" aria-hidden="true"><i></i><i></i><i></i></div><span class="service-link">Scopri il servizio ↗</span></a>
           </div>
@@ -84,34 +93,27 @@ const checks = [
       <section id="contatti" class="contact">
         <div class="wrap contact-grid">
           <div><p class="eyebrow light">Il prossimo passo</p><h2>Raccontaci cosa<br /><em>non sta funzionando.</em></h2><p>Hai già un sito, devi crearne uno o vuoi capire se Google Ads può aiutarti? Scrivici in due righe. Ti risponderemo con il prossimo passo più sensato per la tua situazione.</p><a class="plain lime" href={whatsApp} target="_blank" rel="noopener noreferrer">Scrivici su WhatsApp ↗</a></div>
-          <form id="home-contact-form" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuovo contatto dal sito 4 Web Lab" /><input type="hidden" name="source_page" value="home" /><label class="honeypot" aria-hidden="true">Non compilare questo campo<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label><label>Nome<input name="name" required autocomplete="name" /></label><label>Email<input name="email" type="email" required autocomplete="email" /></label><label>Di cosa hai bisogno?<select name="esigenza"><option>Ho già un sito e voglio capire cosa non funziona</option><option>Devo creare un sito web</option><option>Voglio valutare Google Ads</option><option>Non so ancora quale servizio mi serve</option></select></label><label>Raccontaci il progetto in due righe<textarea name="message" rows="3" required></textarea></label><button class="button" type="submit">Raccontaci il progetto ↗</button><p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy/">Privacy policy</a>.</p><p id="home-contact-status" class="form-status" aria-live="polite"></p></form>
+          <form id="home-contact-form" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuovo contatto dal sito 4 Web Lab" /><input type="hidden" name="source_page" value="home" />{blackFriday.visible && <><input type="hidden" name="campaign" value="" /><p class="bf-form-note">Per l’offerta scegli “Nuovo sito per professionista · Black Friday” o “Nuovo sito aziendale · Black Friday”. Il piano Negozi resta alla tariffa ordinaria. La richiesta non conferma il preventivo.</p></>}<label class="honeypot" aria-hidden="true">Non compilare questo campo<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label><label>Nome<input name="name" required autocomplete="name" /></label><label>Email<input name="email" type="email" required autocomplete="email" /></label><label>Di cosa hai bisogno?<select name="esigenza"><option>Ho già un sito e voglio capire cosa non funziona</option><option>Devo creare un sito web</option>{blackFriday.visible && <><option data-campaign="professionisti">Nuovo sito per professionista · Black Friday</option><option data-campaign="aziende">Nuovo sito aziendale · Black Friday</option></>}<option>Voglio valutare Google Ads</option><option>Non so ancora quale servizio mi serve</option></select></label><label>Raccontaci il progetto in due righe<textarea name="message" rows="3" required></textarea></label><button class="button" type="submit">Raccontaci il progetto ↗</button><p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy/">Privacy policy</a>.</p><p id="home-contact-status" class="form-status" aria-live="polite"></p></form>
         </div>
       </section>
     </main>
     <SiteFooter />
-    <script is:inline>
-      const homeForm = document.querySelector('#home-contact-form');
-      const homeStatus = document.querySelector('#home-contact-status');
-      homeForm?.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        if (homeForm.botcheck.checked) return;
-        const button = homeForm.querySelector('button[type="submit"]');
-        button.disabled = true;
-        button.textContent = 'Invio in corso…';
-        homeStatus.textContent = '';
-        try {
-          const response = await fetch(homeForm.action, { method: 'POST', body: new FormData(homeForm) });
-          const data = await response.json();
-          if (!response.ok || !data.success) throw new Error('send');
-          homeForm.reset();
-          homeStatus.textContent = 'Richiesta inviata. Abbiamo ricevuto il tuo messaggio e ti ricontatteremo a breve.';
-        } catch {
-          homeStatus.textContent = 'Invio non riuscito. Riprova tra poco o contattaci su WhatsApp.';
-        } finally {
-          button.disabled = false;
-          button.textContent = 'Raccontaci il progetto ↗';
-        }
-      });
+    <script>
+      const homeForm = document.querySelector<HTMLFormElement>('#home-contact-form');
+      const need = homeForm?.querySelector<HTMLSelectElement>('select[name="esigenza"]');
+      const campaign = homeForm?.querySelector<HTMLInputElement>('input[name="campaign"]');
+      const subject = homeForm?.querySelector<HTMLInputElement>('input[name="subject"]');
+      const ordinarySubject = subject?.value || '';
+      const syncCampaign = () => {
+        if (!campaign || !subject || !need) return;
+        const plan = need.selectedOptions[0]?.dataset.campaign;
+        campaign.value = plan ? 'black_friday_2026' : '';
+        subject.value = plan ? `Richiesta Black Friday 2026 - ${need.value} - home` : ordinarySubject;
+      };
+      need?.addEventListener('change', syncCampaign);
+      // A successful submission resets the select; remove stale campaign metadata too.
+      homeForm?.addEventListener('reset', () => setTimeout(syncCampaign, 0));
+      syncCampaign();
     </script>
   </body>
 </html>
