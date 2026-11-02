@@ -46,5 +46,5 @@ export function serviceOffer(plan: BlackFridayPlan, url: string) {
 
 export const blackFridayFaqs = [
   ['Come funziona il Black Friday?', 'Dal 2 al 27 novembre 2026, il 25% di sconto si applica alla realizzazione iniziale di nuovi siti per professionisti e aziende. Non riguarda il piano Negozi e attività locali, restyling, interventi parziali, hosting o servizi ricorrenti.'],
-  ['Come si conferma l’offerta?', 'Inviare il modulo serve a richiedere un preventivo e non lo conferma. Per aderire alla promozione il preventivo deve essere confermato entro il 27 novembre 2026 compreso; non è necessario che l’acconto sia già contabilizzato entro quella data. La consegna viene concordata per ogni progetto.'],
+  ['Come si conferma l’offerta?', 'Inviare il modulo serve a richiedere un preventivo e non lo conferma. Per aderire alla promozione il preventivo deve essere confermato entro il 27 novembre 2026 compreso. La consegna viene concordata per ogni progetto.'],
 ];

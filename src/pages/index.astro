@@ -37,13 +37,14 @@ const checks = [
       <section class="hero">
         <div class="wrap hero-layout">
           <div class="hero-copy">
-            <p class="hero-location">Siti web e Google Ads per attività, professionisti e PMI</p>
-            <h1>Il tuo sito non deve solo esserci.<br /><em>Deve farsi capire e portare contatti.</em></h1>
-            <p class="lead">Hai già un sito ma non sai cosa lo sta frenando? Oppure devi crearne uno da zero? Partiamo dalla tua situazione, mettiamo in ordine le priorità e costruiamo ciò che serve: analisi, contenuti, sito web e Google Ads quando possono aiutarti davvero.</p>
-            <BlackFridayNotice href="#soluzioni" home /><div class="actions"><a class="button" href="#partenza">Raccontaci da dove parti ↓</a><a class="plain" href="#soluzioni">Vedi le soluzioni</a></div>
+            <p class="hero-location">Siti web e Google Ads · Padova</p>
+            <h1>Il sito giusto<br /><em>per la tua attività.</em></h1>
+            <p class="lead">Realizziamo siti su misura e miglioriamo quelli esistenti, partendo da ciò che serve alla tua attività.</p>
+            <div class="actions"><a class="button" href="#soluzioni">Scopri i servizi</a><a class="plain" href="/realizzazioni/">Guarda i nostri lavori <span aria-hidden="true">↗</span></a></div>
           </div>
         </div>
       </section>
+      {blackFriday.visible && <div class="home-promotion"><div class="wrap"><BlackFridayNotice href="#soluzioni" home /></div></div>}
       <section id="partenza" class="home-start" aria-labelledby="home-start-title">
         <div class="wrap home-start-layout">
           <div><h2 id="home-start-title">Da dove<br /><em>parti?</em></h2><p>La soluzione cambia in base alla situazione. Scegli il punto più vicino al tuo caso.</p></div>
@@ -73,7 +74,6 @@ const checks = [
           <div class="services-title"><div><p class="eyebrow light">Cosa possiamo costruire</p><h2>Scegli la soluzione<br /><em>in base al tuo obiettivo.</em></h2></div><p>Non vendiamo pacchetti scollegati. Colleghiamo sito, contenuti e promozione solo quando servono al problema che vuoi risolvere.</p></div>
           {blackFriday.visible && <section class="bf-hub-offer" aria-labelledby="bf-hub-title">
             <h3 id="bf-hub-title">Black Friday: −25% sui siti per professionisti e aziende.</h3>
-            <p>Il servizio resta quello ordinario. Dal 2 al 27 novembre 2026 scende il costo di realizzazione iniziale dei piani Professionisti e Aziende.</p>
             <BlackFridayTerms />
           </section>}
           <div class="services">
