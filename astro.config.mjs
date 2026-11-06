@@ -17,6 +17,19 @@ const latestPages = new Set([
   '/realizzazioni/',
   '/realizzazioni/realizzazione-sito-web-personal-trainer-elisa-piovan/',
 ]);
+const copyUpdatedPages = new Set([
+  '/',
+  '/perizia-sito-web/',
+  '/sito-web-per-negozio/',
+  '/sito-web-per-professionisti/',
+  '/sito-web-aziendale/',
+  '/pubblicita-su-google/',
+  '/realizzazione-siti-web-padova/',
+  '/blog/come-controllare-un-sito-web-gratis/',
+  '/blog/aruba-supersite-conviene-davvero-limiti-e-cosa-sapere/',
+  '/blog/siti-web-creati-con-intelligenza-artificiale/',
+  '/blog/perche-il-tuo-sito-non-si-trova-su-google/',
+]);
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,7 +42,9 @@ export default defineConfig({
     lastmod: new Date('2026-10-12T00:00:00.000Z'),
     serialize(item) {
       const pathname = new URL(item.url).pathname;
-      if (pathname === '/black-friday-2026/') {
+      if (copyUpdatedPages.has(pathname)) {
+        item.lastmod = '2026-11-06T00:00:00.000Z';
+      } else if (pathname === '/black-friday-2026/') {
         item.lastmod = '2026-11-01T00:00:00.000Z';
       } else if (latestPages.has(pathname)) {
         item.lastmod = '2026-10-27T00:00:00.000Z';

@@ -39,20 +39,24 @@ const structuredData = [{ '@context': 'https://schema.org', '@graph': [
             <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span aria-current="page">Controllare un sito web gratis</span></nav>
             <p class="eyebrow light">{article.category}</p>
             <h1>{article.title}</h1>
-            <p class="article-linear-meta">Pubblicato il {formatArticleDate(article.published)} · 6 min di lettura</p>
+            <p class="article-linear-meta">Pubblicato il {formatArticleDate(article.published)} · Aggiornato il {formatArticleDate(article.modified)} · 7 min di lettura</p>
           </div>
         </header>
 
         <div class="article-linear-body">
           <p class="article-kicker">Vuoi capire se il tuo sito ha problemi senza pagare subito un’analisi? Puoi partire da strumenti gratuiti. Ti daranno indizi su indicizzazione, velocità, link e SEO delle pagine. Il punto è sapere che cosa stanno misurando: un semaforo rosso non spiega da solo la causa, né indica quale intervento conviene fare per primo.</p>
 
-          <h2>Prima dei tool, scegli tre pagine</h2>
+          <h2>Prima dei tool: un controllo SEO su tre pagine</h2>
           <p>Per un primo controllo del sito web prendi la homepage, una pagina che descrive un servizio e la pagina da cui arrivano le richieste. Guardale anche dal telefono: riesci a capire cosa offre l’attività, a trovare i contatti e a completare il modulo senza ostacoli? Questo piccolo test non produce un punteggio, ma intercetta problemi che i controlli automatici possono lasciarsi sfuggire.</p>
           <p>Annota l’indirizzo esatto delle pagine. Quando farai un test SEO o di velocità, confronta sempre URL equivalenti: la homepage può funzionare bene mentre una pagina importante ha un errore o carica molto più lentamente.</p>
 
-          <h2>Indicizzazione: Google Search Console</h2>
+          <h2>Come verificare l’indicizzazione con Search Console</h2>
           <p>Se possiedi il sito e puoi verificare la proprietà, <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Google Search Console</a> è il punto di partenza per verificare l’indicizzazione. Con lo strumento <a href="https://support.google.com/webmasters/answer/9012289/" target="_blank" rel="noopener noreferrer">Controllo URL</a> puoi vedere che cosa sa Google di una pagina e fare un test della versione online. Controlla le pagine che contano davvero, non solo il numero totale riportato nei grafici.</p>
           <p>Se non hai accesso, cercare <code>site:tuodominio.it</code> su Google dà un primo indizio, ma non è un censimento delle pagine indicizzate: Google precisa che i risultati dell’operatore <a href="https://developers.google.com/search/docs/monitor-debug/search-operators/all-search-site" target="_blank" rel="noopener noreferrer"><code>site:</code> non sono necessariamente completi</a>. Anche un test URL positivo non garantisce che la pagina compaia in ogni ricerca. «Non trovo il sito su Google» può voler dire mancata indicizzazione, ma anche che la pagina non risponde abbastanza bene alla ricerca fatta.</p>
+
+          <h2>Come controllare visite e ricerche di un sito</h2>
+          <p>Se gestisci il sito e hai accesso a Google Analytics, il report <a href="https://support.google.com/analytics/answer/12923437?hl=it" target="_blank" rel="noopener noreferrer">Acquisizione traffico</a> mostra le sessioni e i canali da cui arrivano. Search Console risponde a una domanda diversa: per quali ricerche il sito appare su Google e quanti clic riceve. I clic della ricerca e le visite complessive misurano cose diverse; inoltre, Analytics può non rilevare chi rifiuta il consenso alla misurazione.</p>
+          <p>Per controllare il posizionamento, guarda query, pagina e posizione media nello stesso periodo in Search Console. La media non è una posizione fissa uguale per tutti. Se non possiedi il sito e non hai accesso ai suoi dati, eventuali stime pubbliche del traffico non equivalgono alle visite effettive. Se invece il dubbio è la presenza nei risultati, leggi <a href="/blog/perche-il-tuo-sito-non-si-trova-su-google/">perché un sito non compare su Google</a>.</p>
 
           <h2>Velocità e versione mobile: PageSpeed Insights</h2>
           <p>Inserisci ciascuna pagina in <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a> e guarda separatamente i risultati mobile e desktop. Lo strumento mostra dati di laboratorio e, quando ce ne sono abbastanza, dati raccolti da utenti reali. Se questi ultimi mancano, non significa automaticamente che il sito non abbia visitatori o che funzioni male: <a href="https://developers.google.com/speed/docs/insights/v5/about" target="_blank" rel="noopener noreferrer">Google spiega che servono campioni sufficienti</a>.</p>
