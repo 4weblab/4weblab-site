@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="100" viewBox="0 0 160 100" fill="currentColor" focusable="false">
+  <path d="M54 30h53v12H68v10h31v11H68v11h39v12H54V30Z"/>
+  <path d="M40 75a36 36 0 0 1 37-57" fill="none" stroke="currentColor" stroke-width="7"/>
+  <path d="M54 1v9M31 7l5 8M13 25l8 4M7 49h9M12 72l8-4M77 4l-3 8M96 15l-7 7" fill="none" stroke="currentColor" stroke-width="4"/>
+  <path d="m116 42 20-13-6 19h12l-23 28 6-24h-12l3-10Z"/>
+</svg>

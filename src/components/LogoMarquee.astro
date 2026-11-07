@@ -1,0 +1,147 @@
+---
+// Fictional brand briefs, kept here for maintenance; no client claim or visible names.
+const brands = [
+  { file: '01-valdoro', company: 'Valdoro', industry: 'Viticoltura', concept: 'Sigillo botanico e V con grazie' },
+  { file: '02-ferma', company: 'Ferma', industry: 'Meccanica di precisione', concept: 'Monogramma tecnico in una matrice esagonale' },
+  { file: '03-marea', company: 'Marea', industry: 'Ospitalità', concept: 'M classica, luna e linea di marea' },
+  { file: '04-forno-dera', company: 'Forno Dèra', industry: 'Panificazione', concept: 'D da timbro artigiano con spiga' },
+  { file: '05-virel', company: 'Virel', industry: 'Trasporti e logistica', concept: 'V alata e tagli direzionali' },
+  { file: '06-nexora', company: 'Nexora', industry: 'Software e cybersecurity', concept: 'Legatura NX e terminali di circuito' },
+  { file: '07-liria', company: 'Liria', industry: 'Moda e sartoria', concept: 'Iniziali LR intrecciate ad alto contrasto' },
+  { file: '08-atria', company: 'Atria', industry: 'Architettura', concept: 'Doppio portale con pesi strutturali diversi' },
+  { file: '09-savia', company: 'Savia', industry: 'Cosmesi botanica', concept: 'S organica in un medaglione a foglie' },
+  { file: '10-elios', company: 'Elios', industry: 'Energia rinnovabile', concept: 'E solare con segno elettrico' },
+  { file: '11-oriva', company: 'Oriva', industry: 'Odontoiatria', concept: 'Dente continuo a doppia curva e scintilla' },
+  { file: '12-fonica', company: 'Fonica', industry: 'Audio professionale', concept: 'F con archi acustici e livelli sonori' },
+];
+const artwork = import.meta.glob<string>('../assets/decorative-logos/*.svg', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
+---
+
+<section id="fascia-loghi" class="logo-showcase" aria-labelledby="logo-showcase-title">
+  <div class="wrap logo-showcase__intro">
+    <h2 id="logo-showcase-title">La fiducia non si può comprare, un sito utile per la propria azienda, <em>sì.</em></h2>
+  </div>
+  <div class="logo-marquee" aria-hidden="true" inert>
+    <div class="logo-marquee__track">
+      {[0, 1].map(() => (
+        <div class="logo-marquee__group">
+          {brands.map((brand) => (
+            <span class="logo-marquee__item">
+              <Fragment set:html={artwork[`../assets/decorative-logos/${brand.file}.svg`]} />
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .logo-showcase {
+    background: var(--paper);
+  }
+
+  .logo-showcase__intro {
+    padding-top: clamp(64px, 7vw, 104px);
+    padding-bottom: clamp(40px, 4vw, 64px);
+  }
+
+  .logo-showcase h2 {
+    max-width: 1100px;
+    font-size: clamp(36px, 4.2vw, 62px);
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  .logo-marquee {
+    overflow: hidden;
+    background: var(--lime);
+    color: var(--ink);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .logo-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: logo-drift 88s linear infinite;
+    animation-play-state: paused;
+  }
+
+  .logo-marquee[data-running] .logo-marquee__track {
+    animation-play-state: running;
+  }
+
+  .logo-marquee__group {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-around;
+    min-width: 100vw;
+  }
+
+  .logo-marquee__item {
+    display: grid;
+    flex: 0 0 clamp(144px, 14vw, 224px);
+    height: 156px;
+    place-items: center;
+  }
+
+  .logo-marquee :global(svg) {
+    display: block;
+    width: 132px;
+    height: 88px;
+  }
+
+  /* Equal groups keep the seam identical to any other point in the sequence. */
+  @keyframes logo-drift {
+    to { transform: translateX(-50%); }
+  }
+
+  @media (max-width: 680px) {
+    .logo-marquee__track { animation-duration: 64s; }
+    .logo-marquee__item { height: 116px; }
+    .logo-marquee :global(svg) { width: 108px; height: 72px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-marquee__track { width: 100%; animation: none; }
+    .logo-marquee__group {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      width: 100%;
+      min-width: 0;
+      padding: 12px;
+    }
+    .logo-marquee__group + .logo-marquee__group { display: none; }
+    .logo-marquee__item { height: 88px; }
+    .logo-marquee :global(svg) { width: min(100%, 112px); height: 72px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) and (max-width: 680px) {
+    .logo-marquee__group { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .logo-marquee__item { height: 64px; }
+    .logo-marquee :global(svg) { width: min(100%, 68px); height: 46px; }
+  }
+</style>
+
+<script>
+  const marquee = document.querySelector<HTMLElement>('.logo-marquee');
+  if (marquee) {
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let inView = false;
+    const syncMotion = () => {
+      marquee.toggleAttribute('data-running', inView && !document.hidden && !motion.matches);
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      syncMotion();
+    });
+    observer.observe(marquee);
+    document.addEventListener('visibilitychange', syncMotion);
+    motion.addEventListener('change', syncMotion);
+  }
+</script>
