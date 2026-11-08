@@ -18,7 +18,9 @@
 /faq-realizzazione-siti-web /faq-realizzazione-siti-web/ 301
 /perizia-sito-web /perizia-sito-web/ 301
 /privacy /privacy/ 301
-/promo-elitrainer /promo-elitrainer/ 301
+# Expired EliTrainer offer: keep the page source and redirect to the seasonal campaign.
+/promo-elitrainer /black-friday-2026/ 302!
+/promo-elitrainer/ /black-friday-2026/ 302!
 /pubblicita-su-chatgpt /pubblicita-su-chatgpt/ 301
 /pubblicita-su-google /pubblicita-su-google/ 301
 /realizzazione-siti-web-abano-terme /realizzazione-siti-web-abano-terme/ 301
