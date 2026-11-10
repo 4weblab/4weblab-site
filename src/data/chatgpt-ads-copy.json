@@ -1,0 +1,94 @@
+{
+  "eyebrow": "CHATGPT ADS · PADOVA E TUTTA ITALIA",
+  "h1": "Pubblicità su ChatGPT",
+  "heroHtml": "<p>Mostra i tuoi servizi alle persone mentre cercano informazioni e confrontano soluzioni su ChatGPT. Prepariamo gli annunci, configuriamo la campagna e ne seguiamo l’andamento.</p>\n<p>Prima di partire valutiamo la tua offerta, la pagina di destinazione e l’investimento necessario. Da Legnaro, in provincia di Padova, lavoriamo anche da remoto con attività e professionisti in tutta Italia.</p>\n<p><strong>699 € + IVA per avvio e primo mese di gestione. Dal secondo mese: 399 € + IVA al mese.</strong><br />Budget pubblicitario escluso, pagato direttamente a OpenAI.</p>",
+  "primary": "Parliamo della tua campagna",
+  "secondary": "Scopri cosa comprende",
+  "sections": [
+    {
+      "id": "come-funziona-chatgpt",
+      "title": "Dove compare il tuo annuncio",
+      "html": "<p>Gli annunci vengono mostrati sotto le risposte di ChatGPT, riconoscibili come contenuti sponsorizzati. Presentano l’inserzionista, un titolo, una descrizione, un’immagine e un collegamento alla pagina che vuoi promuovere.</p>\n<p>Il sistema li seleziona in base alla pertinenza rispetto alla conversazione e ad altri segnali della campagna. Il nostro lavoro è preparare messaggi e indicazioni di contesto coerenti con le esigenze a cui risponde la tua offerta.</p>\n<p>Per esempio, un’azienda che propone un software gestionale può valutare una campagna rivolta a contesti in cui le persone confrontano strumenti per organizzare il lavoro. L’annuncio può portare a una pagina dedicata alle funzioni del software e alla richiesta di una dimostrazione.</p>\n<p>È un esempio illustrativo: l’abbinamento è deciso dalla piattaforma e non garantisce la comparsa in una domanda specifica.</p>",
+      "cta": null
+    },
+    {
+      "id": "valutazione-chatgpt-ads",
+      "title": "Partiamo da ciò che vuoi promuovere",
+      "html": "<p>Ci racconti il servizio, i clienti a cui ti rivolgi e l’azione che vorresti ottenere: una richiesta di informazioni, una prenotazione o un preventivo.</p>\n<p>Valutiamo la pagina di destinazione, il pubblico raggiungibile e il budget. Verifichiamo anche l’account e le opzioni disponibili per la campagna, prima di confermare il lavoro.</p>\n<p>Il settore, da solo, non basta a stabilire se il canale è adatto. Conta che l’offerta possa incontrare un’esigenza pertinente e che il sito permetta di capire il servizio e contattarti.</p>",
+      "cta": null
+    },
+    {
+      "id": "avvio-chatgpt-ads",
+      "title": "Avvio e primo mese: 699 € + IVA",
+      "html": "<p>Il lavoro iniziale comprende la preparazione della campagna e la gestione delle prime settimane di attività. Il mese incluso parte dalla pubblicazione degli annunci.</p>\n<p>Comprende:</p>\n<ul><li><strong>Analisi dell’offerta e dell’obiettivo.</strong> Definiamo cosa promuovere, a chi e con quale azione da misurare.</li><li><strong>Affiancamento nella configurazione dell’account.</strong> Verifichiamo accessi, requisiti e impostazioni necessarie in OpenAI Ads Manager.</li><li><strong>Testi e creatività iniziale.</strong> Prepariamo la proposta dell’annuncio, con titolo, descrizione e immagine coerenti con il servizio.</li><li><strong>Impostazione della campagna.</strong> Definiamo obiettivo, budget, destinazioni e indicazioni di contesto per orientare la pertinenza degli annunci.</li><li><strong>Configurazione della misurazione sul sito.</strong> Impostiamo le azioni concordate in base alle possibilità tecniche della pagina e alle scelte di consenso dei visitatori.</li><li><strong>Primo mese di gestione.</strong> Controlliamo l’andamento, analizziamo i dati disponibili e prepariamo un primo resoconto.</li></ul>\n<p>L’account e il budget pubblicitario restano sotto il tuo controllo. Prima della conferma verifichiamo anche gli accessi al sito e gli interventi necessari per la misurazione.</p>\n<p>La realizzazione di una nuova landing page è separata dal costo di avvio.</p>",
+      "cta": "Valutiamo il tuo progetto"
+    },
+    {
+      "id": "gestione-chatgpt-ads",
+      "title": "Dal secondo mese: 399 € + IVA al mese",
+      "html": "<p>Seguiamo la campagna usando i dati raccolti per rivedere messaggi e impostazioni.</p>\n<p>Durante la gestione:</p>\n<ul><li>analizziamo pubblicazione, clic, spesa e azioni registrate;</li><li>aggiorniamo le indicazioni di contesto e i testi degli annunci;</li><li>valutiamo modifiche alle immagini e varianti da provare;</li><li>rivediamo offerte e distribuzione del budget;</li><li>controlliamo la misurazione e gli eventuali problemi della campagna.</li></ul>\n<p>Ricevi un resoconto mensile con risultati, costi e interventi proposti. Il tuo riscontro sulle richieste ricevute ci aiuta a valutarne la pertinenza.</p>\n<p>Le prime settimane servono a raccogliere informazioni utili. Il tempo necessario per una valutazione attendibile dipende anche dal budget e dal volume dei dati.</p>",
+      "cta": null
+    },
+    {
+      "id": "landing-chatgpt-ads",
+      "title": "Una landing dedicata alla campagna, da 199 € + IVA",
+      "html": "<p>Chi clicca sull’annuncio deve trovare informazioni coerenti con il servizio promosso.</p>\n<p>Se la pagina esistente è adatta, possiamo utilizzarla. Quando serve, realizziamo una landing dedicata alla singola campagna, con contenuti mirati, visualizzazione da smartphone e un modulo o un contatto concordato.</p>\n<p>Il prezzo parte da <strong>199 € + IVA per landing</strong> e comprende il collegamento ai tracciamenti previsti per la campagna. Definiamo contenuti e realizzazione prima di iniziare.</p>",
+      "cta": null
+    }
+  ],
+  "faqTitle": "Le domande prima di partire",
+  "faqs": [
+    {
+      "question": "ChatGPT Ads è disponibile in Italia?",
+      "answer": "Sì, l’accesso self-service a OpenAI Ads Manager è disponibile per gli inserzionisti italiani. Prima di avviare la campagna verifichiamo requisiti dell’account, idoneità dell’offerta e approvazione degli annunci.",
+      "html": "<p>Sì, l’accesso self-service a OpenAI Ads Manager è disponibile per gli inserzionisti italiani. Prima di avviare la campagna verifichiamo requisiti dell’account, idoneità dell’offerta e approvazione degli annunci.</p>"
+    },
+    {
+      "question": "Chi può vedere gli annunci?",
+      "answer": "Gli annunci possono essere mostrati agli utenti idonei dei piani Free e Go. I piani Plus, Pro, Business, Enterprise ed Edu non prevedono annunci; sono esclusi anche gli account identificati come appartenenti a minorenni. Questa disponibilità va considerata quando valutiamo il pubblico da raggiungere.",
+      "html": "<p>Gli annunci possono essere mostrati agli utenti idonei dei piani Free e Go. I piani Plus, Pro, Business, Enterprise ed Edu non prevedono annunci; sono esclusi anche gli account identificati come appartenenti a minorenni. Questa disponibilità va considerata quando valutiamo il pubblico da raggiungere.</p>"
+    },
+    {
+      "question": "Pagando, ChatGPT consiglierà la mia azienda nelle risposte?",
+      "answer": "Gli annunci sono separati dalle risposte e non ne determinano il contenuto. Acquisti uno spazio pubblicitario; non una raccomandazione del modello. Anche la visibilità organica nelle risposte AI è un’attività distinta da questo servizio.",
+      "html": "<p>Gli annunci sono separati dalle risposte e non ne determinano il contenuto. Acquisti uno spazio pubblicitario; non una raccomandazione del modello. Anche la visibilità organica nelle risposte AI è un’attività distinta da questo servizio.</p>"
+    },
+    {
+      "question": "Posso scegliere le domande in cui comparire?",
+      "answer": "Possiamo fornire indicazioni sugli argomenti e sulle esigenze pertinenti alla tua offerta. Queste indicazioni aiutano il sistema ad abbinare gli annunci, ma non garantiscono la pubblicazione in conversazioni specifiche.",
+      "html": "<p>Possiamo fornire indicazioni sugli argomenti e sulle esigenze pertinenti alla tua offerta. Queste indicazioni aiutano il sistema ad abbinare gli annunci, ma non garantiscono la pubblicazione in conversazioni specifiche.</p>"
+    },
+    {
+      "question": "Quanto devo prevedere per la pubblicità?",
+      "answer": "Il budget è separato dal nostro compenso e viene pagato direttamente a OpenAI. Al 10 novembre 2026, per gli account con fatturazione in euro, il budget giornaliero minimo impostabile è di 15 €. Su trenta giorni equivale a programmare circa 450 € di budget, oltre al costo del servizio. Verifichiamo il requisito aggiornato e concordiamo l’investimento prima dell’avvio. La spesa effettiva dipende dalla pubblicazione della campagna.",
+      "html": "<p>Il budget è separato dal nostro compenso e viene pagato direttamente a OpenAI. Al 10 novembre 2026, per gli account con fatturazione in euro, il budget giornaliero minimo impostabile è di 15 €. Su trenta giorni equivale a programmare circa 450 € di budget, oltre al costo del servizio.</p>\n<p>Verifichiamo il requisito aggiornato e concordiamo l’investimento prima dell’avvio. La spesa effettiva dipende dalla pubblicazione della campagna.</p>"
+    },
+    {
+      "question": "La landing è inclusa nei 699 € o nei 399 €?",
+      "answer": "La realizzazione di una nuova landing è un servizio aggiuntivo, da 199 € + IVA per pagina dedicata alla campagna. Se hai già una pagina adatta, utilizziamo quella.",
+      "html": "<p>La realizzazione di una nuova landing è un servizio aggiuntivo, da 199 € + IVA per pagina dedicata alla campagna. Se hai già una pagina adatta, utilizziamo quella.</p>"
+    },
+    {
+      "question": "Come misurate i risultati?",
+      "answer": "Configuriamo le azioni concordate e analizziamo i dati della campagna insieme a quelli disponibili sul sito. Distinguiamo le richieste registrate dai semplici clic sui pulsanti di contatto. Nel resoconto trovi i risultati misurabili e le indicazioni per proseguire.",
+      "html": "<p>Configuriamo le azioni concordate e analizziamo i dati della campagna insieme a quelli disponibili sul sito. Distinguiamo le richieste registrate dai semplici clic sui pulsanti di contatto. Nel resoconto trovi i risultati misurabili e le indicazioni per proseguire.</p>"
+    },
+    {
+      "question": "Vedrete le conversazioni private degli utenti?",
+      "answer": "No. L’inserzionista riceve i dati di rendimento disponibili per la campagna, non le conversazioni private delle persone con ChatGPT.",
+      "html": "<p>No. L’inserzionista riceve i dati di rendimento disponibili per la campagna, non le conversazioni private delle persone con ChatGPT.</p>"
+    },
+    {
+      "question": "Posso promuovere un’attività che lavora solo in una zona?",
+      "answer": "Verifichiamo le località selezionabili nell’account e per il tipo di campagna. Le opzioni disponibili possono variare: prima di proporre l’attivazione controlliamo che siano compatibili con la zona che servi.",
+      "html": "<p>Verifichiamo le località selezionabili nell’account e per il tipo di campagna. Le opzioni disponibili possono variare: prima di proporre l’attivazione controlliamo che siano compatibili con la zona che servi.</p>"
+    }
+  ],
+  "contactTitle": "Raccontaci cosa vuoi promuovere",
+  "contactHtml": "<p>Indicaci il servizio, il pubblico a cui ti rivolgi e il risultato che vorresti misurare. Se hai già un sito o un account pubblicitario, segnalacelo: valuteremo da dove partire.</p>",
+  "whatsapp": "Scrivici su WhatsApp",
+  "submit": "Richiedi una valutazione",
+  "privacy": "L’invio del modulo non attiva una campagna e non comporta un pagamento. I dati saranno utilizzati per rispondere alla richiesta. Leggi l’informativa privacy.",
+  "title": "ChatGPT Ads: avvio e gestione campagne | 4 Web Lab",
+  "description": "Pubblicità su ChatGPT: avvio e primo mese a 699 € + IVA, poi 399 € + IVA/mese. Landing da 199 € + IVA. Budget escluso. Padova e tutta Italia."
+}
