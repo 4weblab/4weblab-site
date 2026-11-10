@@ -30,7 +30,7 @@ const privacy = copy.privacy.replace('Leggi l’informativa privacy.', '<a href=
 ---
 <!doctype html>
 <html lang="it">
-  <head><SeoHead title={copy.title} description={copy.description} image="/images/chatgpt-ads-direction-3/og.webp" structuredData={structuredData} /></head>
+  <head><SeoHead title={copy.title} description={copy.description} image="/images/chatgpt-ads-direction-3/og-it.webp" structuredData={structuredData} /></head>
   <body>
     <a class="skip" href="#contenuto">Vai al contenuto</a>
     <SiteHeader contactTarget={'#' + contactId} />
@@ -47,9 +47,9 @@ const privacy = copy.privacy.replace('Leggi l’informativa privacy.', '<a href=
           <figure class="cg-hero-figure">
             <div class="cg-phone-scene">
               <div class="cg-hand" aria-hidden="true"><ResponsiveImage src="/images/chatgpt-ads-direction-3/mano-telefono.webp" width={1200} height={1200} sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 900px) 480px, 48vw" alt="" loading="eager" /></div>
-              <div class="cg-phone-screen"><ResponsiveImage src="/images/chatgpt-ads-direction-3/schermo-chatgpt-openai.webp" width={700} height={1473} sizes="(max-width: 680px) 42vw, (max-width: 900px) 200px, 22vw" alt="Esempio ufficiale OpenAI: risposta di ChatGPT seguita da un annuncio HarborWest, separato e riconoscibile come pubblicità." loading="eager" fetchpriority="high" /></div>
+              <div class="cg-phone-screen"><ResponsiveImage src="/images/chatgpt-ads-direction-3/schermo-chatgpt-openai-it.webp" width={700} height={1473} sizes="(max-width: 680px) 42vw, (max-width: 900px) 200px, 22vw" alt="Esempio ufficiale OpenAI in italiano: risposta di ChatGPT seguita da un annuncio HarborWest, separato e riconoscibile come pubblicità." loading="eager" fetchpriority="high" /></div>
             </div>
-            <figcaption>Esempio illustrativo · <a href="https://ads.openai.com/">Fonte: OpenAI</a></figcaption>
+            <figcaption>Esempio illustrativo · <a href="https://ads.openai.com/it-IT">Fonte: OpenAI</a></figcaption>
           </figure>
         </div>
       </section>
@@ -58,7 +58,7 @@ const privacy = copy.privacy.replace('Leggi l’informativa privacy.', '<a href=
           <h2>{format.title}</h2>
           <div class="cg-format-grid">
             <div class="cg-prose" set:html={format.html} />
-            <figure><ResponsiveImage src="/images/chatgpt-ads-direction-3/formato-annuncio-openai.webp" width={481} height={497} sizes="(max-width: 680px) calc(100vw - 40px), 400px" alt="Esempio ufficiale OpenAI di annuncio sponsorizzato Heirloom Groceries, con titolo, descrizione e immagine." /><figcaption>Esempio illustrativo · <a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">Fonte: OpenAI</a></figcaption></figure>
+            <figure><ResponsiveImage src="/images/chatgpt-ads-direction-3/formato-annuncio-openai-it.webp" width={481} height={497} sizes="(max-width: 680px) calc(100vw - 40px), 400px" alt="Adattamento in italiano dell’esempio OpenAI di annuncio sponsorizzato Heirloom Groceries, con titolo, descrizione e immagine." /><figcaption>Esempio illustrativo · Adattamento in italiano da <a href="https://help.openai.com/it-it/articles/20001207-ads-in-chatgpt-the-basics">OpenAI</a></figcaption></figure>
           </div>
         </div>
       </section>
@@ -71,7 +71,7 @@ const privacy = copy.privacy.replace('Leggi l’informativa privacy.', '<a href=
           <div class="cg-prose" set:html={setupBlocks.slice(0, 2).join('')} />
           <div class="cg-setup-grid">
             <div class="cg-inclusions" set:html={setupBlocks[2].replace('<ul>', '<ul role="list">')} />
-            <figure><ResponsiveImage src="/images/chatgpt-ads-direction-3/ads-manager-openai.webp" width={1200} height={790} sizes="(max-width: 900px) calc(100vw - 40px), 34vw" alt="Interfaccia dimostrativa OpenAI Ads Manager con anteprima di un annuncio Simple Home Designs." /><figcaption>Interfaccia dimostrativa · <a href="https://ads.openai.com/">Fonte: OpenAI</a></figcaption></figure>
+            <figure><ResponsiveImage src="/images/chatgpt-ads-direction-3/ads-manager-openai-it.webp" width={1200} height={790} sizes="(max-width: 900px) calc(100vw - 40px), 34vw" alt="Interfaccia dimostrativa OpenAI Ads Manager in italiano con anteprima di un annuncio Simple Home Designs." /><figcaption>Interfaccia dimostrativa · <a href="https://ads.openai.com/it-IT">Fonte: OpenAI</a></figcaption></figure>
           </div>
           <div class="cg-prose cg-setup-notes" set:html={setupBlocks.slice(3).join('')} />
           <a class="button" href={'#' + contactId}>{setup.cta}</a>
