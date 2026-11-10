@@ -1,0 +1,130 @@
+/* Direzione 1: vetro, carta e strati. Importato soltanto dalla pagina Perizia. */
+.perizia-direction { background: var(--paper); }
+.perizia-direction h1, .perizia-direction h2, .perizia-direction h3 { font-family: var(--sans); font-weight: 700; letter-spacing: -.035em; }
+.perizia-direction .inspection-hero { padding: 54px 0 64px; }
+.perizia-direction .inspection-hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 16px; align-items: center; }
+.perizia-direction .inspection-hero-copy { min-width: 0; }
+.perizia-direction .inspection-hero .hero-location { margin: 0 0 22px; color: var(--ink); font: 400 10px/1.6 var(--mono); letter-spacing: .075em; }
+.perizia-direction .inspection-hero h1 { max-width: 15ch; margin: 0 0 24px; font-size: clamp(44px, 4.2vw, 60px); line-height: 1.05; }
+.perizia-direction .inspection-hero-text { max-width: 60ch; font-size: 17px; line-height: 1.65; }
+.perizia-direction .inspection-hero-text p { margin: 0 0 16px; }
+.perizia-direction .inspection-hero-text p:last-child { margin-top: 22px; margin-bottom: 24px; padding-left: 18px; border-left: 4px solid var(--lime); }
+.perizia-direction .inspection-hero-text p:last-child strong { font-size: 19px; }
+.perizia-direction .inspection-hero .actions { gap: 12px; align-items: stretch; flex-wrap: wrap; }
+.perizia-direction .inspection-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 13px 18px; border: 1px solid var(--ink); border-radius: 7px; color: var(--ink); font-size: 14px; font-weight: 700; line-height: 1.4; text-decoration: none; }
+.perizia-direction .inspection-secondary:hover { background: var(--ink); color: var(--paper); }
+.perizia-direction .inspection-hero-art { min-width: 0; }
+.perizia-direction .inspection-hero-art picture, .perizia-direction .inspection-hero-art img { display: block; width: 100%; height: auto; }
+.perizia-direction .inspection-section { padding: 0 0 72px; }
+.perizia-direction .inspection-ruled { padding-top: 52px; border-top: 1px solid var(--line); }
+.perizia-direction .inspection-section h2, .perizia-direction .copy-faq h2, .perizia-direction .copy-contact h2 { margin: 0 0 28px; font-size: clamp(30px, 2.9vw, 40px); line-height: 1.15; text-wrap: balance; }
+.perizia-direction .inspection-section p { font-size: 17px; line-height: 1.65; }
+.perizia-direction .inspection-context-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.perizia-direction .inspection-context-grid p { margin: 0; }
+.perizia-direction .inspection-context-grid p + p { padding-left: 28px; border-left: 1px solid var(--line); }
+.perizia-direction .inspection-checks-intro { margin: 0 0 36px; }
+.perizia-direction .inspection-check-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.perizia-direction .inspection-check { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 18px; padding: 26px 24px; border-left: 1px solid var(--line); }
+.perizia-direction .inspection-check:nth-child(3n + 1) { padding-left: 0; border-left: 0; }
+.perizia-direction .inspection-check:nth-child(3n) { padding-right: 0; }
+.perizia-direction .inspection-check:nth-child(-n + 3) { border-bottom: 1px solid var(--line); }
+.perizia-direction .inspection-check-icon { display: block; width: 36px; height: 36px; color: var(--ink); padding: 3px; border-radius: 5px; background: rgb(215 245 74 / .22); }
+.perizia-direction .inspection-check h3 { margin: 0 0 12px; font-size: 20px; line-height: 1.25; letter-spacing: -.025em; }
+.perizia-direction .inspection-check p { margin: 0; font-size: 16px; line-height: 1.65; }
+.perizia-direction .inspection-checks-note { margin: 24px 0 0; padding: 18px 22px; border-left: 3px solid var(--lime); background: #eceee5; }
+.perizia-direction .inspection-report-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 42px; align-items: center; }
+.perizia-direction .inspection-report-art picture, .perizia-direction .inspection-report-art img { display: block; width: 100%; height: auto; }
+.perizia-direction .inspection-report-copy > p:first-child { margin-top: 0; }
+.perizia-direction .inspection-report-copy p { margin-bottom: 20px; }
+.perizia-direction .inspection-report-copy p:last-child { margin-bottom: 0; font-size: 16px; }
+.perizia-direction .inspection-report-copy ul { list-style: none; margin: 30px 0; padding: 0; }
+.perizia-direction .inspection-report-copy li { position: relative; margin: 0; padding: 17px 0 17px 25px; border-bottom: 1px solid var(--line); font-size: 17px; line-height: 1.65; }
+.perizia-direction .inspection-report-copy li::before { position: absolute; top: 28px; left: 0; width: 7px; height: 7px; content: ''; background: var(--lime); border: 1px solid var(--ink); border-radius: 50%; }
+.perizia-direction .inspection-example .section-context { margin: 0 0 16px; color: var(--ink); font: 400 11px/1.5 var(--mono); letter-spacing: .07em; }
+.perizia-direction .inspection-example-copy > p { margin: 0 0 26px; }
+.perizia-direction .inspection-example .copy-table { border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+.perizia-direction .inspection-example table { width: 100%; table-layout: fixed; font-size: 17px; }
+.perizia-direction .inspection-example th, .perizia-direction .inspection-example td { padding: 18px 24px; overflow-wrap: break-word; }
+.perizia-direction .inspection-example th:first-child { width: 25%; }
+.perizia-direction .inspection-example thead { background: var(--ink); color: var(--paper); }
+.perizia-direction .inspection-example tbody tr:nth-child(even) { background: #eceee5; }
+.perizia-direction .inspection-example tbody tr:last-child > * { border-bottom: 0; }
+.perizia-direction .inspection-offer { padding-top: 64px; background: var(--ink); color: var(--paper); }
+.perizia-direction .inspection-offer-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 64px; }
+.perizia-direction .inspection-offer h2 { max-width: 13ch; color: var(--lime); font-size: clamp(36px, 4vw, 52px); }
+.perizia-direction .inspection-offer-copy p { margin: 0 0 22px; color: #dbe4ef; }
+.perizia-direction .inspection-offer-copy strong { color: white; }
+.perizia-direction .inspection-offer-copy p:last-child { margin: 32px 0 0; }
+.perizia-direction .inspection-process { padding-top: 64px; }
+.perizia-direction .inspection-process ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; list-style: none; margin: 40px 0 0; padding: 0; counter-reset: inspection-step; }
+.perizia-direction .inspection-process li { border-top: 1px solid var(--line); counter-increment: inspection-step; padding-top: 24px; }
+.perizia-direction .inspection-process li::before { content: '0' counter(inspection-step); display: block; margin-bottom: 22px; font: 400 14px var(--mono); }
+.perizia-direction .inspection-process h3 { margin: 0 0 14px; font-size: 21px; line-height: 1.2; }
+.perizia-direction .inspection-process p { margin: 0; font-size: 16px; }
+.perizia-direction .copy-faq { padding-top: 48px; padding-bottom: 80px; border-top: 1px solid var(--line); }
+.perizia-direction .copy-faq > div:last-child { padding-top: 0; }
+.perizia-direction .copy-faq summary span { color: var(--ink); }
+.perizia-direction .copy-faq details p { font-size: 16px; }
+.perizia-direction .copy-contact h2 { font-size: clamp(30px, 2.8vw, 38px); }
+.perizia-direction .inspection-section :is(h2, h3) { scroll-margin-top: 110px; }
+@media (max-width: 1100px) and (min-width: 901px) {
+  .perizia-direction .inspection-hero h1 { font-size: 48px; }
+  .perizia-direction .inspection-hero-text { font-size: 16px; }
+  .perizia-direction .inspection-check { grid-template-columns: 30px minmax(0, 1fr); gap: 12px; padding-right: 18px; padding-left: 18px; }
+  .perizia-direction .inspection-check-icon { width: 30px; height: 30px; }
+}
+@media (max-width: 900px) {
+  .perizia-direction .inspection-hero { padding: 40px 0 48px; }
+  .perizia-direction .inspection-hero-grid { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .perizia-direction .inspection-hero-copy { display: contents; }
+  .perizia-direction .inspection-hero .hero-location { order: 0; margin-bottom: 16px; }
+  .perizia-direction .inspection-hero h1 { order: 1; max-width: 20ch; margin-bottom: 12px; font-size: clamp(38px, 6.5vw, 54px); }
+  .perizia-direction .inspection-hero-art { order: 2; width: min(480px, 100%); margin: 0 auto 24px; }
+  .perizia-direction .inspection-hero-text { order: 3; max-width: none; }
+  .perizia-direction .inspection-hero .actions { order: 4; }
+  .perizia-direction .inspection-context-grid { gap: 20px; }
+  .perizia-direction .inspection-context-grid p + p { padding-left: 20px; }
+  .perizia-direction .inspection-check-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .perizia-direction .inspection-check { padding: 24px; border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .perizia-direction .inspection-check:nth-child(3n + 1) { padding-left: 24px; border-left: 1px solid var(--line); }
+  .perizia-direction .inspection-check:nth-child(odd) { padding-left: 0; border-left: 0; }
+  .perizia-direction .inspection-check:nth-child(even) { padding-right: 0; }
+  .perizia-direction .inspection-check:nth-last-child(-n + 2) { border-bottom: 0; }
+  .perizia-direction .inspection-report-grid { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 24px; }
+  .perizia-direction .inspection-offer-grid { gap: 32px; }
+  .perizia-direction .inspection-process ol { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+  .perizia-direction .copy-faq { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+}
+@media (max-width: 680px) {
+  .perizia-direction .wrap { width: calc(100% - 40px); }
+  .perizia-direction .inspection-hero { padding-top: 30px; }
+  .perizia-direction .inspection-hero h1 { font-size: clamp(36px, 9.5vw, 44px); }
+  .perizia-direction .inspection-hero-art { width: min(340px, 100%); margin-bottom: 18px; }
+  .perizia-direction .inspection-hero .actions { display: flex; flex-direction: column; }
+  .perizia-direction .inspection-hero .actions > a { width: 100%; text-align: center; justify-content: center; }
+  .perizia-direction .inspection-section { padding-bottom: 48px; }
+  .perizia-direction .inspection-ruled { padding-top: 34px; }
+  .perizia-direction .inspection-section h2, .perizia-direction .copy-faq h2 { margin-bottom: 24px; font-size: 30px; }
+  .perizia-direction .inspection-context-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .perizia-direction .inspection-context-grid p + p { border-left: 0; padding-left: 0; }
+  .perizia-direction .inspection-check-grid { grid-template-columns: minmax(0, 1fr); }
+  .perizia-direction .inspection-check:nth-child(n) { padding: 24px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+  .perizia-direction .inspection-check:last-child { border-bottom: 0; }
+  .perizia-direction .inspection-check h3 { font-size: 20px; }
+  .perizia-direction .inspection-checks-note { padding: 16px; font-size: 16px; }
+  .perizia-direction .inspection-report-grid, .perizia-direction .inspection-offer-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .perizia-direction .inspection-report-art { width: min(280px, 100%); margin: 0 auto; }
+  .perizia-direction .inspection-report-copy ul { margin: 20px 0; }
+  .perizia-direction .inspection-example table { font-size: 15px; line-height: 1.6; }
+  .perizia-direction .inspection-example th, .perizia-direction .inspection-example td { padding: 14px 12px; }
+  .perizia-direction .inspection-example th:first-child { width: 40%; overflow-wrap: normal; }
+  .perizia-direction .inspection-offer { padding-top: 44px; }
+  .perizia-direction .inspection-offer h2 { max-width: none; margin-bottom: 0; font-size: 36px; }
+  .perizia-direction .inspection-offer .button { width: 100%; justify-content: center; text-align: center; }
+  .perizia-direction .inspection-process { padding-top: 44px; }
+  .perizia-direction .inspection-process ol { grid-template-columns: minmax(0, 1fr); gap: 26px; margin-top: 28px; }
+  .perizia-direction .inspection-process li::before { margin-bottom: 16px; }
+  .perizia-direction .copy-faq { padding-top: 34px; padding-bottom: 48px; }
+  .perizia-direction .contact { padding: 56px 0; }
+  .perizia-direction .copy-contact { gap: 44px; }
+}

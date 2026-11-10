@@ -1,0 +1,10 @@
+/** Copy definitivo: appendice G del piano del 9 novembre 2026. */
+export const pageMetadata = {
+  home: { title: 'Siti web a Padova: analisi, creazione e Google Ads | 4 Web Lab', description: 'Siti web per negozi, professionisti e PMI. Verifiche tecniche e Google Ads. Base a Legnaro, Padova: lavoriamo anche da remoto in tutta Italia.' },
+  negozi: { title: 'Siti web per negozi a Padova, da 490 € | 4 Web Lab', description: 'Siti web per negozi da 490 € + IVA. Una pagina personalizzata, dominio e hosting inclusi per 6 mesi. Da Padova, anche da remoto in tutta Italia.' },
+  professionisti: { title: 'Siti web per professionisti e studi a Padova | 4 Web Lab', description: 'Siti web per professionisti da 990 € + IVA: fino a 5 pagine, testi inclusi e design personalizzato. Padova e tutta Italia, anche da remoto.', promoDescription: 'Siti web per professionisti: Black Friday −25% dal 2 al 27 novembre 2026, da 742,50 € + IVA sulla realizzazione iniziale. Padova e tutta Italia.' },
+  aziende: { title: 'Realizzazione siti web aziendali per PMI | 4 Web Lab', description: 'Siti web aziendali da 1.890 € + IVA: fino a 10 pagine, testi e confronto con 3 concorrenti. Per PMI a Padova e in tutta Italia.', promoDescription: 'Siti web aziendali: Black Friday −25% dal 2 al 27 novembre 2026, da 1.417,50 € + IVA sulla realizzazione iniziale. Padova e tutta Italia.' },
+  google: { title: 'Gestione Google Ads a Padova: prezzi e servizi | 4 Web Lab', description: 'Campagne Google Ads a Padova: avvio e primo mese a 499 € + IVA, poi 299 € + IVA/mese. Landing dedicate da 199 € + IVA. Budget pubblicitario escluso.' },
+  perizia: { title: 'Perizia tecnica sito web: verifica a 49,90 € | 4 Web Lab', description: 'Verifica tecnica di codice, prestazioni e SEO del sito. Report con evidenze e priorità a 49,90 € + IVA fino a 9 pagine. Preventivo dedicato da 10.' },
+  zones: { title: 'Siti web a Padova e provincia | Zone servite | 4 Web Lab', description: 'Base a Legnaro, Padova: realizziamo siti web anche da remoto in tutta Italia. Scopri le pagine dedicate a Padova e ai comuni della provincia.' },
+} as const;

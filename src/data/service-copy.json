@@ -1,0 +1,573 @@
+{
+  "negozi": {
+    "slug": "sito-web-per-negozio",
+    "contactId": "contatti-negozi",
+    "eyebrow": "Siti web per negozi · Padova e tutta Italia",
+    "h1": "Un sito web per far conoscere il tuo negozio.",
+    "heroHtml": "<p>Presenta ciò che vendi, mostra la tua attività e aiuta i clienti a contattarti o raggiungerti. Realizziamo siti web per negozi e attività locali: una pagina personalizzata con le informazioni che le persone cercano prima di venire da te.</p>\n<p>Da Legnaro, in provincia di Padova, seguiamo negozi e attività locali in tutta Italia, anche da remoto.</p>\n<p class=\"copy-price-current\"><strong>Da 490 € + IVA. Dominio e hosting gestito inclusi per sei mesi.</strong></p>",
+    "promoHtml": "",
+    "primary": "Raccontaci del tuo negozio →",
+    "secondary": "Scopri cosa comprende ↓",
+    "sections": [
+      {
+        "title": "Chi ti cerca vuole sapere cosa può trovare da te.",
+        "id": "dettagli-1",
+        "price": false,
+        "html": "<p>C'è chi scopre il negozio sui social e chi ne ha sentito parlare da un conoscente. Sul sito può vedere i prodotti, conoscere i servizi e trovare le informazioni per organizzare una visita.</p>\n<p>Diamo spazio a ciò che rende riconoscibile l'attività: la selezione dei marchi, una lavorazione artigianale, la consulenza nell'acquisto o un servizio particolare. Fotografie e descrizioni aiutano a capire se il negozio offre ciò che si sta cercando.</p>\n<p>Orari, posizione, telefono e WhatsApp restano facili da trovare anche da smartphone, insieme al collegamento alle indicazioni stradali.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Tutto in una pagina, con lo spazio per crescere.",
+        "id": "dettagli-2",
+        "price": false,
+        "html": "<p>Il piano di partenza comprende una pagina unica. Scorrendola, il visitatore trova presentazione, offerta, fotografie e contatti.</p>\n<p>Scegliamo le sezioni in base al negozio. Per una fioreria possiamo valorizzare composizioni e occasioni; per una bottega, prodotti e lavorazioni; per un negozio di abbigliamento, collezioni e marchi.</p>\n<p>Se in seguito servono pagine dedicate, un catalogo più ampio o altre funzioni, il sito può essere esteso con un progetto concordato.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Come lavoriamo insieme.",
+        "id": "dettagli-3",
+        "price": false,
+        "html": "<ol><li><strong>Ci racconti il negozio.</strong> Raccogliamo informazioni sull'offerta, sui clienti e sui materiali disponibili. Definiamo struttura, costo e tempi nel preventivo.</li><li><strong>Prepariamo la pagina.</strong> Rivediamo i testi che ci fornisci, organizziamo le fotografie e sviluppiamo la grafica.</li><li><strong>Ti mostriamo il sito.</strong> Lo esamini e raccogli le modifiche nel ciclo di revisione incluso, prima dell'approvazione finale.</li><li><strong>Andiamo online.</strong> Controlliamo il sito da smartphone, i collegamenti e i contatti, poi lo pubblichiamo. Restiamo disponibili anche dopo la consegna.</li></ol>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Le basi per la ricerca locale.",
+        "id": "dettagli-4",
+        "price": false,
+        "html": "<p>Organizziamo le informazioni su attività, prodotti, servizi e posizione. Prepariamo titoli e descrizioni, curiamo le immagini e la struttura tecnica, così il sito può essere letto e compreso anche dai motori di ricerca.</p>\n<p>È il lavoro iniziale per presentare il negozio online. Eventuali attività per svilupparne ulteriormente la visibilità vengono valutate in base alla zona e al mercato.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Cosa comprende il progetto.",
+        "id": "cosa-includiamo",
+        "price": true,
+        "html": "<p><strong>Sito web per negozi e attività locali</strong></p>\n<p class=\"copy-price-current\"><strong>Da 490 € + IVA</strong></p>\n<ul><li>Una pagina con sezioni concordate sulla tua attività.</li><li>Design personalizzato e versione mobile.</li><li>Presentazione di prodotti o servizi e galleria fotografica.</li><li>Orari, posizione, indicazioni stradali e contatti diretti.</li><li>Collegamento WhatsApp.</li><li>Revisione e organizzazione dei testi forniti.</li><li>Impostazione SEO tecnica e dei contenuti.</li><li>Un ciclo di revisione prima della pubblicazione.</li><li>Gestione standard di privacy e cookie policy.</li><li>Dominio e hosting gestito inclusi per sei mesi dalla pubblicazione.</li></ul>\n<p><strong>Dal settimo mese: 99,90 € + IVA all'anno per dominio e hosting gestito.</strong></p>\n<p class=\"copy-materials\">Foto e materiali possono essere forniti da te. Se mancano, ti aiutiamo a trovare la soluzione più adatta.</p>\n<p><a class=\"button\" href=\"#contatti-negozi\">Parliamo del tuo progetto →</a></p>",
+        "ordinaryHtml": null
+      }
+    ],
+    "faqTitle": "Le risposte prima di iniziare.",
+    "faqs": [
+      {
+        "question": "Quanto tempo serve?",
+        "answer": "Indicativamente da 7 a 15 giorni lavorativi dalla raccolta delle informazioni e dei materiali necessari. Concordiamo il calendario nel preventivo, considerando anche i passaggi di approvazione. Ritardi nell'invio dei materiali o nei riscontri possono spostare la pubblicazione.",
+        "promoOnly": false
+      },
+      {
+        "question": "Devo scrivere i testi?",
+        "answer": "Il piano comprende la revisione e l'organizzazione dei testi che ci fornisci. Puoi descrivere l'attività con parole semplici: li rendiamo chiari e adatti alla pagina. Se occorre prepararli da zero, definiamo il lavoro nel preventivo.",
+        "promoOnly": false
+      },
+      {
+        "question": "Posso aggiungere pagine o vendere online?",
+        "answer": "Sì. Pagine aggiuntive, cataloghi, prenotazioni e vendita online vengono progettati e preventivati in base alle funzioni necessarie.",
+        "promoOnly": false
+      },
+      {
+        "question": "Come funziona la revisione?",
+        "answer": "Esamini la proposta e ci invii un elenco completo delle modifiche a testi, immagini e grafica. Le applichiamo e ti mostriamo il sito aggiornato. La correzione di nostri errori non consuma il ciclo incluso; cambiamenti della struttura già approvata vengono valutati separatamente.",
+        "promoOnly": false
+      },
+      {
+        "question": "Come funziona il pagamento?",
+        "answer": "50% all'avvio del progetto e 50% alla pubblicazione.",
+        "promoOnly": false
+      },
+      {
+        "question": "Cosa succede dopo i sei mesi inclusi?",
+        "answer": "Il primo canone di 99,90 € + IVA viene addebitato alla scadenza dei sei mesi dalla pubblicazione e copre i dodici mesi successivi di dominio e hosting gestito.",
+        "promoOnly": false
+      },
+      {
+        "question": "Le caselle email sono comprese?",
+        "answer": "No. Puoi richiedere caselle email sul tuo dominio: soluzione e costo vengono indicati nel preventivo.",
+        "promoOnly": false
+      },
+      {
+        "question": "Posso chiedere aggiornamenti dopo la pubblicazione?",
+        "answer": "Certamente. L'assistenza dopo la vendita è assicurata: puoi contattarci per qualsiasi necessità relativa al sito. Per modificare testi, fotografie, orari o aggiungere contenuti, concordiamo il lavoro e l'eventuale costo quando serve.",
+        "promoOnly": false
+      },
+      {
+        "question": "Il sito comparirà su Google?",
+        "answer": "Prepariamo il sito per essere comprensibile ai motori di ricerca e adatto all'indicizzazione. Il posizionamento dipende anche dalla concorrenza, dai contenuti e dalle attività svolte nel tempo.",
+        "promoOnly": false
+      },
+      {
+        "question": "Privacy e cookie policy sono compresi?",
+        "answer": "Ci occupiamo delle esigenze standard. Per situazioni che richiedono verifiche più approfondite o servizi esterni, concordiamo soluzione e costi nel preventivo. Le pagine delle informative sono separate dalla pagina commerciale del sito.",
+        "promoOnly": false
+      },
+      {
+        "question": "Il sito e il dominio restano miei?",
+        "answer": "Sì. Il dominio viene intestato a te. Se cambi fornitore, ti consegniamo i sorgenti e i materiali necessari per trasferire il sito.",
+        "promoOnly": false
+      }
+    ],
+    "contactTitle": "Raccontaci del tuo negozio.",
+    "contactHtml": "<p>Che attività hai, dove si trova e cosa vorresti presentare? Scrivici anche se devi ancora raccogliere i materiali: ne parliamo insieme.</p>",
+    "whatsapp": "Scrivici su WhatsApp →",
+    "submit": "Invia la richiesta →",
+    "privacy": "I dati vengono utilizzati per rispondere alla richiesta. Leggi la privacy policy."
+  },
+  "professionisti": {
+    "slug": "sito-web-per-professionisti",
+    "contactId": "contatti-professionisti",
+    "eyebrow": "Siti web per professionisti · Padova e tutta Italia",
+    "h1": "Un sito web che racconta il tuo lavoro.",
+    "heroHtml": "<p>Spiega i tuoi servizi, presenta le competenze e aiuta le persone a capire quando rivolgersi a te. Realizziamo siti web per professionisti e studi, occupandoci di struttura, design e preparazione dei testi.</p>\n<p>Lavoriamo con professionisti di Padova, del Veneto e di tutta Italia, seguendo il progetto anche da remoto.</p>\n<p><strong>Fino a cinque pagine, organizzate sulle esigenze della tua attività.</strong></p>",
+    "promoHtml": "<p><strong>Black Friday: −25% sulla realizzazione di nuovi siti.</strong><br />Dal 2 al 27 novembre 2026, da <strong>742,50 € + IVA</strong> anziché 990 € + IVA.</p>",
+    "primary": "Parliamo del tuo progetto →",
+    "secondary": "Scopri cosa comprende ↓",
+    "sections": [
+      {
+        "title": "Le domande di chi sta cercando un professionista.",
+        "id": "dettagli-1",
+        "price": false,
+        "html": "<p>Chi visita il sito vuole capire se puoi aiutarlo. Cerca informazioni sui servizi, sul tuo approccio e sulle competenze pertinenti alla sua situazione.</p>\n<p>Partiamo da queste domande per decidere cosa scrivere e come organizzare le pagine. Descriviamo a chi ti rivolgi, cosa comprende ciascun servizio e come si svolge il lavoro. Quando servono termini tecnici, li accompagniamo con spiegazioni adatte al pubblico.</p>\n<p>Il percorso professionale, il metodo e le modalità del primo contatto completano la presentazione, così chi legge può valutare se contattarti e sa come farlo.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "I testi li prepariamo noi, partendo da te.",
+        "id": "dettagli-2",
+        "price": false,
+        "html": "<p>Non devi arrivare con cinque pagine già scritte.</p>\n<p>Ti facciamo domande sul tuo lavoro: quali servizi offri, quali richieste ricevi più spesso, come segui i clienti e cosa vuoi far conoscere. Puoi condividere anche presentazioni, materiali esistenti e appunti.</p>\n<p>Da queste informazioni prepariamo i testi delle pagine concordate. Tu li leggi, ne verifichi la correttezza e ci segnali ciò che va modificato prima dell'approvazione. La tua conoscenza del lavoro e la nostra cura dei contenuti servono a costruire una presentazione che ti rappresenti.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Cinque pagine, distribuite secondo le tue esigenze.",
+        "id": "dettagli-3",
+        "price": false,
+        "html": "<p>Una possibile struttura comprende home, presentazione del professionista o dello studio, due pagine di servizio e contatti.</p>\n<p>È un esempio: scegliamo insieme la distribuzione più utile. Un servizio può richiedere una spiegazione dedicata, mentre altre informazioni possono stare nella stessa pagina.</p>\n<p>Se in seguito vuoi aggiungere servizi, lingue o funzioni, il sito può essere ampliato con un preventivo concordato.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Come nasce il sito.",
+        "id": "dettagli-4",
+        "price": false,
+        "html": "<ol><li><strong>Definiamo il progetto.</strong> Ci racconti attività, pubblico e obiettivi. Individuiamo le pagine necessarie e concordiamo contenuti, costo e calendario.</li><li><strong>Prepariamo testi e struttura.</strong> Raccogliamo le informazioni, scriviamo i contenuti e organizziamo il percorso tra presentazione, servizi e contatti.</li><li><strong>Ti mostriamo le pagine.</strong> Sviluppiamo la proposta grafica e il sito. Sono inclusi due cicli di revisione per raccogliere e applicare le modifiche concordate.</li><li><strong>Pubblichiamo e ti affianchiamo.</strong> Controlliamo il sito da smartphone, i collegamenti e il modulo contatti. Dopo la consegna restiamo il tuo riferimento per assistenza e nuove necessità.</li></ol>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Le basi SEO per i tuoi servizi.",
+        "id": "dettagli-5",
+        "price": false,
+        "html": "<p>Prepariamo titoli, descrizioni e collegamenti tra le pagine, mantenendo coerenza con i servizi che offri. Curiamo anche struttura tecnica, immagini e leggibilità da smartphone.</p>\n<p>Queste impostazioni aiutano i motori di ricerca a comprendere il sito e le persone a consultarlo. Eventuali attività continuative per sviluppare la visibilità vengono valutate in base al mercato e agli obiettivi.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Cosa comprende il progetto.",
+        "id": "cosa-include",
+        "price": true,
+        "html": "<p><strong>Sito web per professionisti e studi</strong></p>\n<p class=\"copy-price-ordinary\">Prezzo ordinario da <strong>990 € + IVA</strong></p>\n<p class=\"copy-price-current\"><strong>Black Friday: da 742,50 € + IVA</strong></p>\n<ul><li>Fino a cinque pagine con struttura concordata.</li><li>Design personalizzato e versione mobile.</li><li>Raccolta delle informazioni sulla tua attività.</li><li>Preparazione dei testi delle pagine concordate.</li><li>Presentazione di competenze, metodo e servizi.</li><li>Impostazione SEO tecnica e on-page.</li><li>Modulo contatti e collegamenti diretti.</li><li>Due cicli di revisione prima della pubblicazione.</li><li>Gestione standard di privacy e cookie policy.</li><li>Dominio e hosting gestito inclusi per sei mesi dalla pubblicazione.</li></ul>\n<p><strong>Dal settimo mese: 99,90 € + IVA all'anno per dominio e hosting gestito.</strong></p>\n<p class=\"copy-materials\">Foto e materiali possono essere forniti da te. Se mancano, ti aiutiamo a trovare la soluzione più adatta.</p>\n<p><a class=\"button\" href=\"#contatti-professionisti\">Richiedi il preventivo Black Friday →</a></p>\n<p>Lo sconto del 25% riguarda la realizzazione iniziale di nuovi siti di questo piano, con preventivo confermato entro il 27 novembre 2026 compreso. Sono esclusi restyling, interventi parziali, hosting e servizi ricorrenti. Prezzo finale e tempi vengono definiti nel preventivo in base al progetto.</p>",
+        "ordinaryHtml": "<p><strong>Sito web per professionisti e studi</strong></p>\n<p class=\"copy-price-current\">Da <strong>990 € + IVA</strong></p>\n<ul><li>Fino a cinque pagine con struttura concordata.</li><li>Design personalizzato e versione mobile.</li><li>Raccolta delle informazioni sulla tua attività.</li><li>Preparazione dei testi delle pagine concordate.</li><li>Presentazione di competenze, metodo e servizi.</li><li>Impostazione SEO tecnica e on-page.</li><li>Modulo contatti e collegamenti diretti.</li><li>Due cicli di revisione prima della pubblicazione.</li><li>Gestione standard di privacy e cookie policy.</li><li>Dominio e hosting gestito inclusi per sei mesi dalla pubblicazione.</li></ul>\n<p><strong>Dal settimo mese: 99,90 € + IVA all'anno per dominio e hosting gestito.</strong></p>\n<p class=\"copy-materials\">Foto e materiali possono essere forniti da te. Se mancano, ti aiutiamo a trovare la soluzione più adatta.</p>\n<p><a class=\"button\" href=\"#contatti-professionisti\">Richiedi il preventivo →</a></p>"
+      }
+    ],
+    "faqTitle": "Le risposte prima di iniziare.",
+    "faqs": [
+      {
+        "question": "Quanto tempo serve?",
+        "answer": "Indicativamente da 2 a 4 settimane dalla raccolta delle informazioni e dei materiali necessari. Concordiamo il calendario nel preventivo, considerando anche i passaggi di approvazione. Ritardi nell'invio dei materiali o nei riscontri possono spostare la pubblicazione.",
+        "promoOnly": false
+      },
+      {
+        "question": "Cosa devo fornire?",
+        "answer": "Le informazioni sul tuo lavoro, il logo e i materiali disponibili. Ti guidiamo nella raccolta di ciò che serve. Prepariamo noi i testi delle pagine concordate; tu li verifichi e li approvi.",
+        "promoOnly": false
+      },
+      {
+        "question": "Posso modificare i testi che preparate?",
+        "answer": "Certamente. Devono descrivere correttamente il tuo lavoro e rappresentarti. Li sottoponiamo alla tua approvazione e raccogliamo le modifiche nei cicli di revisione inclusi.",
+        "promoOnly": false
+      },
+      {
+        "question": "Cosa comprende un ciclo di revisione?",
+        "answer": "Esamini la proposta e raccogli in un unico elenco le modifiche a testi, immagini e grafica. Le applichiamo e ti mostriamo il sito aggiornato. La correzione di nostri errori non consuma i cicli inclusi; cambiamenti della struttura già approvata vengono valutati separatamente.",
+        "promoOnly": false
+      },
+      {
+        "question": "Posso aggiungere pagine o funzioni?",
+        "answer": "Sì. Altre pagine di servizio, blog, lingue e strumenti per gli appuntamenti vengono valutati nel preventivo, insieme alle modalità di gestione.",
+        "promoOnly": false
+      },
+      {
+        "question": "Come funziona il pagamento?",
+        "answer": "50% all'avvio del progetto e 50% alla pubblicazione.",
+        "promoOnly": false
+      },
+      {
+        "question": "Cosa succede dopo i sei mesi inclusi?",
+        "answer": "Il primo canone di 99,90 € + IVA viene addebitato alla scadenza dei sei mesi dalla pubblicazione e copre i dodici mesi successivi di dominio e hosting gestito.",
+        "promoOnly": false
+      },
+      {
+        "question": "Le caselle email sono comprese?",
+        "answer": "No. Puoi richiedere caselle email sul tuo dominio: soluzione e costo vengono indicati nel preventivo.",
+        "promoOnly": false
+      },
+      {
+        "question": "Posso aggiornare il sito dopo la pubblicazione?",
+        "answer": "Sì. L'assistenza dopo la vendita è assicurata: puoi contattarci per qualsiasi necessità relativa al sito. Nuovi servizi, modifiche ai testi, fotografie e altri aggiornamenti vengono valutati quando servono, concordando il lavoro e l'eventuale costo.",
+        "promoOnly": false
+      },
+      {
+        "question": "Il sito comparirà su Google?",
+        "answer": "Prepariamo il sito per essere comprensibile ai motori di ricerca e adatto all'indicizzazione. Il posizionamento dipende anche dalla concorrenza, dai contenuti e dalle attività svolte nel tempo.",
+        "promoOnly": false
+      },
+      {
+        "question": "Privacy e cookie policy sono compresi?",
+        "answer": "Ci occupiamo delle esigenze standard. Per situazioni che richiedono verifiche più approfondite o servizi esterni, concordiamo soluzione e costi nel preventivo. Le pagine delle informative non consumano le cinque pagine commerciali del piano.",
+        "promoOnly": false
+      },
+      {
+        "question": "Il sito e il dominio restano miei?",
+        "answer": "Sì. Il dominio viene intestato a te. Se cambi fornitore, ti consegniamo i sorgenti e i materiali necessari per trasferire il sito.",
+        "promoOnly": false
+      },
+      {
+        "question": "Come aderisco al Black Friday?",
+        "answer": "Inviaci la richiesta: prepariamo il preventivo per il tuo progetto. Per aderire, il preventivo deve essere confermato entro il 27 novembre 2026 compreso. L'invio del modulo non conferma il preventivo.",
+        "promoOnly": true
+      }
+    ],
+    "contactTitle": "Raccontaci del tuo lavoro.",
+    "contactHtml": "<p>Di cosa ti occupi, a chi ti rivolgi e quali servizi vuoi presentare? Puoi scriverci anche se devi ancora preparare i materiali: cominciamo dalle informazioni che hai.</p>",
+    "whatsapp": "Scrivici su WhatsApp →",
+    "submit": "Richiedi il preventivo Black Friday →",
+    "privacy": "I dati vengono utilizzati per rispondere alla richiesta. Leggi la privacy policy."
+  },
+  "aziende": {
+    "slug": "sito-web-aziendale",
+    "contactId": "contatti-aziendali",
+    "eyebrow": "Siti web aziendali · Padova e tutta Italia",
+    "h1": "Un sito aziendale che spiega cosa fate e come lavorate.",
+    "heroHtml": "<p>Realizziamo siti web per PMI e imprese. Organizziamo servizi, competenze e informazioni tecniche per aiutare potenziali clienti a valutare la vostra offerta e inviare richieste più complete.</p>\n<p>Con base a Legnaro, in provincia di Padova, seguiamo anche da remoto progetti per aziende in tutta Italia.</p>\n<p><strong>Fino a dieci pagine, con analisi iniziale, preparazione dei testi e design personalizzato.</strong></p>",
+    "promoHtml": "<p><strong>Black Friday: −25% sulla realizzazione di nuovi siti.</strong><br />Dal 2 al 27 novembre 2026, da <strong>1.417,50 € + IVA</strong> anziché 1.890 € + IVA.</p>",
+    "primary": "Parliamo del progetto →",
+    "secondary": "Scoprite cosa comprende ↓",
+    "sections": [
+      {
+        "title": "Chi valuta un fornitore cerca informazioni precise.",
+        "id": "dettagli-1",
+        "price": false,
+        "html": "<p>Quali servizi offrite? Per quali settori lavorate? Avete le competenze e le capacità adatte alla richiesta?</p>\n<p>Il sito deve permettere di trovare queste risposte. Scegliamo con voi quali informazioni servono per presentare l'azienda: attività, lavorazioni, attrezzature, qualifiche e progetti, secondo ciò che è pertinente e disponibile.</p>\n<p>Le pagine dedicate ai servizi approfondiscono cosa fate, per chi e con quali modalità. Il percorso verso il contatto aiuta chi è interessato a descrivere la propria esigenza e chiedere un primo riscontro.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Partiamo dall'offerta e dalle domande dei clienti.",
+        "id": "dettagli-2",
+        "price": false,
+        "html": "<p>Il confronto con il referente aziendale ci serve a capire cosa vendete, a chi vi rivolgete e quali informazioni vengono richieste prima di una trattativa.</p>\n<p>Esaminiamo anche tre concorrenti: come presentano i servizi, quali dettagli forniscono e come invitano al contatto. Da questo confronto ricaviamo indicazioni su cosa chiarire e quali differenze della vostra offerta meritano spazio.</p>\n<p>Ricerchiamo le parole e le domande pertinenti ai servizi principali. Le usiamo per organizzare le pagine e sviluppare contenuti coerenti con ciò che l'azienda offre.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Dai materiali aziendali ai testi del sito.",
+        "id": "dettagli-3",
+        "price": false,
+        "html": "<p>Brochure, presentazioni, schede tecniche e appunti contengono spesso informazioni utili, ma distribuite tra documenti diversi.</p>\n<p>Le raccogliamo e prepariamo i testi delle pagine concordate. Descriviamo servizi e lavorazioni con un linguaggio adatto a chi deve valutarli, conservando i dettagli tecnici necessari.</p>\n<p>Il referente aziendale chiarisce gli aspetti specialistici e verifica dati, termini e affermazioni prima dell'approvazione.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Dieci pagine per dare spazio a servizi e competenze.",
+        "id": "struttura-aziendale",
+        "price": false,
+        "html": "<p>La struttura viene scelta in base all'offerta. Può comprendere presentazione dell'azienda, panoramica dei servizi, pagine dedicate alle singole attività, settori serviti, lavori realizzati e contatti.</p>\n<p>Ogni pagina approfondisce un argomento utile alla valutazione. Cataloghi articolati, più lingue, aree riservate, gestione autonoma dei contenuti e collegamenti con altri sistemi vengono definiti nel preventivo quando necessari.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Una richiesta di preventivo con le informazioni che vi servono.",
+        "id": "dettagli-5",
+        "price": false,
+        "html": "<p>Concordiamo i campi del modulo in base alle richieste che ricevete: servizio cercato, zona di intervento, caratteristiche del lavoro o altre informazioni utili al primo riscontro. Scegliamo ciò che serve, senza rendere inutilmente lungo il contatto.</p>\n<p>Definiamo anche le azioni da misurare, come l'invio del modulo o il clic su un contatto diretto, e ne configuriamo il rilevamento secondo le possibilità tecniche del progetto.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Come seguiamo il progetto.",
+        "id": "dettagli-6",
+        "price": false,
+        "html": "<ol><li><strong>Analisi e struttura.</strong> Raccogliamo obiettivi e informazioni, confrontiamo tre concorrenti e definiamo le pagine. Il preventivo stabilisce contenuti, funzioni, costo e calendario.</li><li><strong>Testi e grafica.</strong> Prepariamo i contenuti, organizziamo materiali e immagini e sviluppiamo la proposta grafica.</li><li><strong>Sviluppo e revisioni.</strong> Realizziamo il sito e lo condividiamo per la valutazione. I tre cicli di revisione inclusi vengono distribuiti tra proposta iniziale, sito completo e rifiniture.</li><li><strong>Pubblicazione e consegna.</strong> Controlliamo il sito da smartphone, navigazione, collegamenti, moduli e azioni da misurare. Pubblichiamo il sito e restiamo disponibili per l'assistenza.</li></ol>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Cosa comprende il progetto.",
+        "id": "prezzo-aziendale",
+        "price": true,
+        "html": "<p><strong>Sito web aziendale per PMI e imprese</strong></p>\n<p class=\"copy-price-ordinary\">Prezzo ordinario da <strong>1.890 € + IVA</strong></p>\n<p class=\"copy-price-current\"><strong>Black Friday: da 1.417,50 € + IVA</strong></p>\n<ul><li>Fino a dieci pagine con struttura concordata.</li><li>Analisi dell'offerta, del pubblico e delle principali domande commerciali.</li><li>Confronto con tre concorrenti.</li><li>Design personalizzato e versione mobile.</li><li>Raccolta delle informazioni con il referente aziendale.</li><li>Preparazione dei testi delle pagine concordate.</li><li>Ricerca delle parole chiave pertinenti ai servizi principali.</li><li>Impostazione SEO tecnica e on-page.</li><li>Modulo preventivo con campi concordati.</li><li>Configurazione e verifica delle azioni da misurare, secondo le possibilità tecniche del progetto.</li><li>Tre cicli di revisione prima della pubblicazione.</li><li>Gestione standard di privacy e cookie policy.</li><li>Pubblicazione e passaggio di consegne.</li></ul>\n<p><strong>Dominio e hosting gestito vengono definiti nel preventivo in base al progetto.</strong></p>\n<p class=\"copy-materials\">Foto e materiali possono essere forniti da voi. Se mancano, vi aiutiamo a trovare la soluzione più adatta.</p>\n<p><a class=\"button\" href=\"#contatti-aziendali\">Richiedete il preventivo Black Friday →</a></p>\n<p>Lo sconto del 25% riguarda la realizzazione iniziale di nuovi siti di questo piano, con preventivo confermato entro il 27 novembre 2026 compreso. Sono esclusi restyling, interventi parziali, hosting e servizi ricorrenti. Prezzo finale e tempi vengono definiti nel preventivo in base al progetto.</p>",
+        "ordinaryHtml": "<p><strong>Sito web aziendale per PMI e imprese</strong></p>\n<p class=\"copy-price-current\">Da <strong>1.890 € + IVA</strong></p>\n<ul><li>Fino a dieci pagine con struttura concordata.</li><li>Analisi dell'offerta, del pubblico e delle principali domande commerciali.</li><li>Confronto con tre concorrenti.</li><li>Design personalizzato e versione mobile.</li><li>Raccolta delle informazioni con il referente aziendale.</li><li>Preparazione dei testi delle pagine concordate.</li><li>Ricerca delle parole chiave pertinenti ai servizi principali.</li><li>Impostazione SEO tecnica e on-page.</li><li>Modulo preventivo con campi concordati.</li><li>Configurazione e verifica delle azioni da misurare, secondo le possibilità tecniche del progetto.</li><li>Tre cicli di revisione prima della pubblicazione.</li><li>Gestione standard di privacy e cookie policy.</li><li>Pubblicazione e passaggio di consegne.</li></ul>\n<p><strong>Dominio e hosting gestito vengono definiti nel preventivo in base al progetto.</strong></p>\n<p class=\"copy-materials\">Foto e materiali possono essere forniti da voi. Se mancano, vi aiutiamo a trovare la soluzione più adatta.</p>\n<p><a class=\"button\" href=\"#contatti-aziendali\">Richiedete il preventivo →</a></p>"
+      }
+    ],
+    "faqTitle": "Le risposte prima di iniziare.",
+    "faqs": [
+      {
+        "question": "Quanto tempo serve?",
+        "answer": "Indicativamente da 2 a 6 settimane dalla raccolta delle informazioni e dei materiali necessari. Concordiamo il calendario nel preventivo in base a struttura, funzioni e passaggi di approvazione. Ritardi nell'invio dei materiali o nei riscontri possono spostare la pubblicazione.",
+        "promoOnly": false
+      },
+      {
+        "question": "Cosa dobbiamo fornire?",
+        "answer": "Le informazioni sull'azienda e sui servizi, il logo e i materiali disponibili. Un referente ci aiuta a chiarire gli aspetti tecnici e verifica i contenuti prima dell'approvazione.",
+        "promoOnly": false
+      },
+      {
+        "question": "La scrittura dei testi è inclusa?",
+        "answer": "Sì. Prepariamo i testi delle pagine concordate usando le informazioni raccolte e i materiali aziendali. Schede prodotto, traduzioni e ulteriori contenuti vengono definiti in base al progetto.",
+        "promoOnly": false
+      },
+      {
+        "question": "Possiamo aggiornare il sito in autonomia?",
+        "answer": "Possiamo prevedere gli strumenti necessari. Li definiamo nel preventivo in base ai contenuti da aggiornare e alle persone che se ne occuperanno. Gli aggiornamenti possono anche essere affidati a noi quando servono.",
+        "promoOnly": false
+      },
+      {
+        "question": "Cosa comprende un ciclo di revisione?",
+        "answer": "Esaminate la proposta e raccogliete in un unico elenco le modifiche a testi, immagini e grafica. Le applichiamo e vi mostriamo il sito aggiornato. La correzione di nostri errori non consuma i cicli inclusi; cambiamenti della struttura già approvata vengono valutati separatamente.",
+        "promoOnly": false
+      },
+      {
+        "question": "Come funziona il pagamento?",
+        "answer": "50% all'avvio del progetto e 50% alla pubblicazione.",
+        "promoOnly": false
+      },
+      {
+        "question": "Quanto costano dominio e hosting?",
+        "answer": "Il costo viene indicato nel preventivo in base alle necessità tecniche del sito. Il dominio viene intestato all'azienda.",
+        "promoOnly": false
+      },
+      {
+        "question": "Le caselle email sono comprese?",
+        "answer": "No. Potete richiedere caselle email sul dominio aziendale: soluzione e costo vengono indicati nel preventivo.",
+        "promoOnly": false
+      },
+      {
+        "question": "Il sito comprende la SEO?",
+        "answer": "Comprende la ricerca delle parole chiave pertinenti ai servizi principali e l'impostazione SEO tecnica e on-page. Il posizionamento dipende anche dalla concorrenza, dai contenuti e dalle attività svolte nel tempo. Eventuali attività continuative vengono concordate separatamente.",
+        "promoOnly": false
+      },
+      {
+        "question": "Dopo la pubblicazione possiamo contare su di voi?",
+        "answer": "Sì. L'assistenza dopo la vendita è assicurata: potete contattarci per qualsiasi necessità relativa al sito. Aggiornamenti, nuove pagine e ampliamenti vengono valutati quando servono, concordando il lavoro e l'eventuale costo.",
+        "promoOnly": false
+      },
+      {
+        "question": "Privacy e cookie policy sono compresi?",
+        "answer": "Ci occupiamo delle esigenze standard. Per situazioni che richiedono verifiche più approfondite o servizi esterni, concordiamo soluzione e costi nel preventivo. Le pagine delle informative non consumano le dieci pagine commerciali del piano.",
+        "promoOnly": false
+      },
+      {
+        "question": "Possiamo trasferire il sito a un altro fornitore?",
+        "answer": "Sì. Vi consegniamo i sorgenti e i materiali necessari al trasferimento. Il dominio resta intestato all'azienda.",
+        "promoOnly": false
+      },
+      {
+        "question": "Come aderiamo al Black Friday?",
+        "answer": "Inviateci la richiesta: prepariamo il preventivo per il progetto. Per aderire, il preventivo deve essere confermato entro il 27 novembre 2026 compreso. L'invio del modulo non conferma il preventivo.",
+        "promoOnly": true
+      }
+    ],
+    "contactTitle": "Raccontateci la vostra azienda.",
+    "contactHtml": "<p>Quali servizi volete presentare, a quali clienti vi rivolgete e quali richieste vorreste ricevere? Da queste informazioni cominciamo a definire il sito.</p>",
+    "whatsapp": "Scriveteci su WhatsApp →",
+    "submit": "Richiedete il preventivo Black Friday →",
+    "privacy": "I dati vengono utilizzati per rispondere alla richiesta. Leggete la privacy policy."
+  },
+  "google": {
+    "slug": "pubblicita-su-google",
+    "contactId": "contatti-google-ads",
+    "eyebrow": "GOOGLE ADS · PADOVA E TUTTA ITALIA",
+    "h1": "Gestione campagne Google Ads a Padova",
+    "heroHtml": "<p>Fai trovare i tuoi servizi a chi li cerca su Google. Studiamo le ricerche dei potenziali clienti, prepariamo gli annunci e seguiamo la campagna per capire quali visite diventano richieste.</p>\n<p>Prima di partire valutiamo la tua offerta, il sito e il budget disponibile.</p>\n<p>Seguiamo da remoto le campagne di attività e professionisti a Padova, in Veneto e in tutta Italia.</p>\n<p><strong>499 € + IVA per la configurazione iniziale e il primo mese di gestione. Poi 299 € + IVA al mese.</strong><br />Budget pubblicitario escluso, pagato direttamente a Google.</p>",
+    "promoHtml": "",
+    "primary": "Parliamo della tua campagna",
+    "secondary": "Scopri cosa comprende",
+    "sections": [
+      {
+        "title": "Google Ads può aiutare la tua attività?",
+        "id": "dettagli-1",
+        "price": false,
+        "html": "<p>Le campagne sulla rete di ricerca permettono di mostrare annunci a chi cerca un prodotto o un servizio come il tuo. Per un’attività locale conta anche dove si trova quella persona: una richiesta fuori dalla zona che servi può avere poco valore.</p>\n<p>Partiamo da ciò che vuoi promuovere e dall’azione che desideri ottenere, come una richiesta di preventivo o una prenotazione. Analizziamo le ricerche, la concorrenza e la pagina a cui arriveranno i visitatori.</p>\n<p>Questo ci aiuta a valutare se il canale è adatto e quale investimento considerare.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Configurazione iniziale e primo mese: 499 € + IVA",
+        "id": "avvio-google-ads",
+        "price": true,
+        "html": "<p>Prepariamo la campagna e la seguiamo nelle prime settimane di attività. Il primo mese di gestione parte dalla pubblicazione degli annunci.</p>\n<p>Il prezzo comprende:</p>\n<ul><li><strong>Analisi iniziale:</strong> attività, servizi da promuovere, zona servita, concorrenti e obiettivo della campagna.</li><li><strong>Ricerca delle parole chiave:</strong> prima selezione delle ricerche pertinenti e delle esclusioni utili a limitare le visite fuori tema.</li><li><strong>Configurazione dell’account:</strong> creazione, se necessaria, oppure verifica dell’account esistente, con impostazione della campagna e del budget concordato.</li><li><strong>Scrittura degli annunci:</strong> testi coerenti con il servizio promosso e con la pagina di destinazione.</li><li><strong>Configurazione dei tracciamenti sul sito:</strong> impostazione e verifica delle azioni concordate, come l’invio di un modulo, in base al sito e alle scelte di consenso dei visitatori.</li><li><strong>Primo mese di gestione:</strong> controllo dell’andamento, primi interventi e resoconto dei dati disponibili.</li></ul>\n<p>Prima di confermare il lavoro verifichiamo gli accessi e la configurazione del sito. Così possiamo indicarti gli interventi necessari per avviare la campagna.</p>\n<p>Il pacchetto riguarda la configurazione pubblicitaria e dei tracciamenti sul sito esistente. La creazione di una nuova pagina dedicata è un servizio aggiuntivo.</p>\n<p><a class=\"button\" href=\"#contatti-google-ads\">Valutiamo la tua campagna</a></p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Dal secondo mese: 299 € + IVA al mese",
+        "id": "gestione-google-ads",
+        "price": false,
+        "html": "<p>Dopo l’avvio usiamo i dati raccolti per rivedere le scelte iniziali. Controlliamo quali ricerche attivano gli annunci, quanto costano le visite e quali azioni vengono registrate sul sito.</p>\n<p>Durante la gestione:</p>\n<ul><li>aggiorniamo le parole chiave e le esclusioni in base alle ricerche effettive;</li><li>rivediamo i testi degli annunci e valutiamo le varianti da provare;</li><li>controlliamo offerte, aree geografiche e distribuzione del budget;</li><li>verifichiamo la raccolta dei dati e analizziamo le richieste misurabili.</li></ul>\n<p>Ogni mese ricevi un resoconto con la spesa pubblicitaria, i risultati registrati e gli interventi proposti. Il tuo riscontro sulle richieste ricevute ci aiuta a valutarne anche la pertinenza.</p>\n<p><strong>Il budget per gli annunci è sempre separato dal nostro compenso e lo paghi direttamente a Google, dal tuo account.</strong></p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Una pagina dedicata alla tua campagna, da 199 € + IVA",
+        "id": "landing-google-ads",
+        "price": false,
+        "html": "<p>Chi clicca su un annuncio dovrebbe trovare subito informazioni sul servizio che sta cercando. Una pagina troppo generica può costringerlo a cercarle altrove nel sito.</p>\n<p>Quando è utile, realizziamo una landing dedicata alla singola campagna: una pagina costruita intorno all’offerta promossa e all’azione che vuoi ottenere.</p>\n<p>Per esempio, una campagna sulla sostituzione delle finestre può portare a una pagina che presenta quel servizio, risponde ai dubbi principali e invita a richiedere un preventivo.</p>\n<p>La landing comprende contenuti coerenti con gli annunci, una presentazione adatta anche allo smartphone, il modulo o il contatto concordato e il collegamento ai tracciamenti della campagna.</p>\n<p class=\"copy-price-current\"><strong>Da 199 € + IVA per landing</strong>, come servizio aggiuntivo alla gestione Ads. Definiamo contenuti e realizzazione in base alla campagna e al sito su cui verrà pubblicata.</p>\n<p>Se hai già una pagina adatta, possiamo utilizzare quella.</p>",
+        "ordinaryHtml": null
+      }
+    ],
+    "faqTitle": "Le domande prima di partire",
+    "faqs": [
+      {
+        "question": "Quanto costa complessivamente il servizio?",
+        "answer": "La configurazione iniziale e il primo mese di gestione costano 499 € + IVA. Dal secondo mese la gestione costa 299 € + IVA al mese. A questi importi si aggiunge il budget pubblicitario che versi a Google. Una landing dedicata, se richiesta, parte da 199 € + IVA.",
+        "promoOnly": false
+      },
+      {
+        "question": "Quanto devo investire negli annunci?",
+        "answer": "Dipende dal servizio, dalla zona e dal costo delle ricerche che vogliamo intercettare. Valutiamo il budget prima di iniziare, considerando anche se può produrre dati sufficienti per prendere decisioni utili sulla campagna.",
+        "promoOnly": false
+      },
+      {
+        "question": "Devo rifare il mio sito?",
+        "answer": "Valutiamo prima la pagina esistente, il funzionamento dei contatti e la possibilità di configurare i tracciamenti. Se è adatta, la utilizziamo. Se servono interventi o una landing dedicata, definiamo insieme il lavoro prima di procedere.",
+        "promoOnly": false
+      },
+      {
+        "question": "Ho già un account Google Ads: potete utilizzarlo?",
+        "answer": "Sì. Verifichiamo la configurazione e, se ci sono campagne precedenti, analizziamo lo storico disponibile. L’account resta tuo e ci autorizzi a gestirlo.",
+        "promoOnly": false
+      },
+      {
+        "question": "Quando posso valutare i risultati?",
+        "answer": "Le prime settimane servono a raccogliere dati e correggere le impostazioni iniziali. Il tempo necessario dipende dal budget, dal numero di ricerche e dalle azioni registrate: un mese con pochi dati può non bastare per una valutazione attendibile.",
+        "promoOnly": false
+      },
+      {
+        "question": "Come capisco se stanno arrivando richieste?",
+        "answer": "Configuriamo le azioni misurabili concordate e le riportiamo nel resoconto. Un modulo inviato e un clic sul pulsante WhatsApp sono eventi diversi: il clic, da solo, non conferma che sia stato inviato un messaggio. Il confronto con le richieste che ricevi ci aiuta a leggere correttamente i dati.",
+        "promoOnly": false
+      },
+      {
+        "question": "La campagna funziona anche solo su Padova e provincia?",
+        "answer": "Possiamo impostare le aree geografiche in base alle zone che servi. La scelta viene valutata insieme alle parole chiave e alle esclusioni, per limitare le visite poco pertinenti.",
+        "promoOnly": false
+      },
+      {
+        "question": "Che differenza c’è rispetto alla SEO?",
+        "answer": "Google Ads permette di ottenere visibilità attraverso annunci a pagamento. La SEO lavora sulla presenza del sito nei risultati organici. Sono attività diverse e possono essere utilizzate insieme in base agli obiettivi.",
+        "promoOnly": false
+      }
+    ],
+    "contactTitle": "Quale servizio vuoi promuovere?",
+    "contactHtml": "<p>Raccontaci di cosa ti occupi, dove lavori e quali richieste vorresti ricevere. Se hai già un sito o campagne attive, indicacelo: partiremo da quello che c’è.</p>",
+    "whatsapp": "Scrivici su WhatsApp",
+    "submit": "Invia la richiesta",
+    "privacy": "I dati saranno utilizzati per rispondere alla tua richiesta. Leggi l’informativa privacy."
+  },
+  "perizia": {
+    "slug": "perizia-sito-web",
+    "contactId": "richiedi-perizia",
+    "eyebrow": "PERIZIA SITO WEB · VERIFICA TECNICA PROFESSIONALE",
+    "h1": "Perizia tecnica del sito web",
+    "heroHtml": "<p>Il sito carica lentamente, alcune pagine danno errore o hai dubbi sulla sua configurazione?</p>\n<p>Controlliamo il codice delle pagine pubbliche, le prestazioni e gli aspetti tecnici che possono ostacolare la lettura del sito da parte di Google. Ricevi un report scritto con le anomalie riscontrate, le evidenze e le priorità di correzione.</p>\n<p>La verifica si svolge da remoto ed è disponibile per siti di attività e professionisti in tutta Italia.</p>\n<p><strong>49,90 € + IVA per siti fino a 9 pagine.</strong><br />Da 10 pagine, preventivo dedicato prima dell’avvio.</p>",
+    "promoHtml": "",
+    "primary": "Richiedi la verifica tecnica",
+    "secondary": "Scopri i controlli inclusi",
+    "sections": [
+      {
+        "title": "Capire quali problemi tecnici richiedono un intervento",
+        "id": "dettagli-1",
+        "price": false,
+        "html": "<p>Una pagina che si apre può comunque avere risorse che non caricano, collegamenti interrotti o impostazioni che ne ostacolano l’indicizzazione.</p>\n<p>La verifica mette in relazione i risultati dei test con ciò che accade nelle pagine. Per ogni anomalia segnalata ti spieghiamo dove si trova, quale effetto tecnico può avere e cosa occorre correggere.</p>\n<p>È utile anche prima di accettare un intervento sul sito: il report ti dà elementi documentati da discutere con chi lo gestisce.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Cosa verifichiamo",
+        "id": "cosa-controlliamo",
+        "price": false,
+        "html": "<p>L’analisi parte dal sito pubblico e dal codice HTML, CSS e JavaScript accessibile dal browser.</p>\n<p><strong>Codice e caricamento delle risorse</strong><br />Controlliamo anomalie rilevabili nelle pagine, risorse mancanti ed errori visibili durante il caricamento o l’utilizzo.</p>\n<p><strong>Collegamenti e configurazioni di base</strong><br />Verifichiamo HTTPS, link interrotti, reindirizzamenti e risposte di errore nelle pagine analizzate.</p>\n<p><strong>Scansione e indicizzabilità</strong><br />Esaminiamo sitemap, robots.txt e indicazioni presenti nel codice che possono consentire o ostacolare l’indicizzazione. Se sono disponibili i dati di Search Console, li utilizziamo per approfondire lo stato delle pagine.</p>\n<p><strong>SEO tecnica delle pagine</strong><br />Controlliamo titoli, meta description, struttura delle intestazioni e indicazioni canonical, cercando omissioni o incoerenze tecniche rilevanti.</p>\n<p><strong>Prestazioni</strong><br />Analizziamo il caricamento con strumenti come PageSpeed Insights, le immagini e le risorse che possono rallentarlo. Consideriamo i Core Web Vitals quando sono disponibili dati reali.</p>\n<p><strong>Visualizzazione e uso da mobile</strong><br />Verifichiamo problemi di adattamento allo schermo, elementi sovrapposti o fuori pagina e anomalie di funzionamento dei menu e dei comandi visibili.</p>\n<p>L’analisi riguarda gli aspetti tecnici verificabili dall’esterno. Non richiede l’accesso al pannello di gestione per iniziare.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Cosa trovi nel report",
+        "id": "dettagli-3",
+        "price": false,
+        "html": "<p>Ricevi una valutazione scritta riferita alle pagine controllate. Per le anomalie segnalate trovi:</p>\n<ul><li><strong>La pagina interessata</strong>, con l’elemento o la risorsa coinvolta.</li><li><strong>Il riscontro</strong>, attraverso dati del test, indirizzi, messaggi di errore o schermate pertinenti.</li><li><strong>La conseguenza tecnica</strong>, spiegata in modo comprensibile.</li><li><strong>La priorità e l’indicazione di correzione</strong>, da condividere con chi interverrà.</li></ul>\n<p>I problemi vengono distinti in <strong>Critico, Importante e Migliorabile</strong>, in base alla loro natura e all’effetto riscontrato. Gli aspetti che richiedono altri dati vengono indicati come da approfondire.</p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Come viene descritta un’anomalia",
+        "id": "dettagli-4",
+        "price": false,
+        "html": "<p>Questo esempio mostra la struttura di una segnalazione. Non riguarda un sito cliente.</p>\n<div class=\"copy-table\"><table><thead><tr><th scope=\"col\">Voce</th><th scope=\"col\">Esempio</th></tr></thead><tbody><tr><th scope=\"row\">Problema</th><td>Un collegamento del menu porta a una pagina inesistente.</td></tr><tr><th scope=\"row\">Evidenza</th><td>L’indirizzo di destinazione restituisce una risposta HTTP 404.</td></tr><tr><th scope=\"row\">Conseguenza</th><td>Da quel collegamento il visitatore non riesce ad aprire la pagina prevista.</td></tr><tr><th scope=\"row\">Priorità</th><td>Importante, da valutare nel contesto del sito.</td></tr><tr><th scope=\"row\">Correzione indicata</th><td>Aggiornare il collegamento oppure ripristinare la destinazione corretta.</td></tr></tbody></table></div>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Verifica tecnica: 49,90 € + IVA",
+        "id": "prezzi",
+        "price": true,
+        "html": "<p>Il prezzo comprende i controlli descritti e la consegna del report scritto per un sito fino a 9 pagine.</p>\n<p>Per siti con 10 o più pagine prepariamo un preventivo dedicato. Prezzo, pagine da controllare e tempi di consegna vengono confermati prima di iniziare.</p>\n<p><strong>Le correzioni sono un lavoro separato:</strong> puoi affidarle al tuo tecnico oppure chiedere un preventivo a noi.</p>\n<p>Se affidi a 4 Web Lab gli interventi individuati, <strong>l’intero costo pagato per la verifica viene scalato dal preventivo dei lavori</strong>.</p>\n<p><a class=\"button\" href=\"#richiedi-perizia\">Richiedi la verifica tecnica</a></p>",
+        "ordinaryHtml": null
+      },
+      {
+        "title": "Dalla richiesta alla consegna",
+        "id": "dettagli-6",
+        "price": false,
+        "html": "<ol><li><strong>Ci invii il sito.</strong> Indichi l’indirizzo e l’eventuale problema tecnico che vuoi verificare.</li><li><strong>Confermiamo il lavoro.</strong> Definiamo le pagine da analizzare, il prezzo e la consegna. La verifica parte dopo la tua conferma.</li><li><strong>Eseguiamo i controlli.</strong> Esaminiamo le pagine e documentiamo i riscontri tecnici.</li><li><strong>Ricevi il report.</strong> Puoi utilizzarlo per organizzare gli interventi con il professionista che preferisci.</li></ol>",
+        "ordinaryHtml": null
+      }
+    ],
+    "faqTitle": "Prima di richiedere la verifica",
+    "faqs": [
+      {
+        "question": "Cosa comprende il prezzo di 49,90 € + IVA?",
+        "answer": "La verifica degli aspetti tecnici descritti nella pagina e il report scritto per siti fino a 9 pagine. Per siti da 10 pagine confermiamo un preventivo dedicato prima dell’avvio.",
+        "promoOnly": false
+      },
+      {
+        "question": "Analizzate anche i siti realizzati da altre agenzie?",
+        "answer": "Sì. La verifica parte dalle pagine pubbliche e può essere svolta anche se il sito è stato realizzato da un altro professionista.",
+        "promoOnly": false
+      },
+      {
+        "question": "Devo fornire password o accessi amministrativi?",
+        "answer": "Per iniziare basta l’indirizzo del sito. Se occorre consultare Search Console, concordiamo un accesso autorizzato. Non serve inviarci la tua password personale.",
+        "promoOnly": false
+      },
+      {
+        "question": "Controllate anche codice del server e database?",
+        "answer": "Il servizio riguarda il codice e il comportamento osservabili dal browser. L’analisi del codice lato server, del database, delle aree riservate e delle configurazioni interne non rientra in questa verifica.",
+        "promoOnly": false
+      },
+      {
+        "question": "La verifica spiega perché non ricevo clienti?",
+        "answer": "Può individuare ostacoli tecnici, come pagine non raggiungibili o problemi di caricamento. Non comprende una valutazione del prodotto, della strategia commerciale o dell’efficacia persuasiva dei testi.",
+        "promoOnly": false
+      },
+      {
+        "question": "Le correzioni sono comprese?",
+        "answer": "Il prezzo copre la verifica e il report. Gli interventi vengono preventivati separatamente. Puoi farli eseguire da chi gestisce già il sito o richiederli a noi, recuperando in quel caso il costo pagato per la verifica.",
+        "promoOnly": false
+      },
+      {
+        "question": "E se non emergono problemi rilevanti?",
+        "answer": "Lo riportiamo nella valutazione, indicando le verifiche svolte. Non è necessario trovare un intervento da vendere perché il report abbia valore.",
+        "promoOnly": false
+      },
+      {
+        "question": "Quando ricevo il report?",
+        "answer": "Confermiamo la data di consegna prima dell’avvio, dopo aver verificato le pagine da analizzare.",
+        "promoOnly": false
+      },
+      {
+        "question": "È una perizia giurata o forense?",
+        "answer": "No. È una valutazione tecnica operativa del sito. Non comprende attività forensi, asseverazioni, test di intrusione o valutazioni legali su privacy e cookie.",
+        "promoOnly": false
+      },
+      {
+        "question": "Il report resta a mia disposizione?",
+        "answer": "Sì. Puoi conservarlo e condividerlo con il professionista che preferisci. Non sei obbligato ad affidarci altri lavori.",
+        "promoOnly": false
+      }
+    ],
+    "contactTitle": "Vuoi verificare un problema tecnico del tuo sito?",
+    "contactHtml": "<p>Inviaci l’indirizzo e descrivi cosa hai notato. Ti confermeremo i controlli previsti, il prezzo e i tempi prima di iniziare.</p>",
+    "whatsapp": "Scrivici su WhatsApp",
+    "submit": "Richiedi la verifica tecnica",
+    "privacy": "L’invio del modulo non avvia la verifica e non comporta un pagamento. I dati vengono utilizzati per rispondere alla richiesta. Leggi l’informativa privacy."
+  }
+}

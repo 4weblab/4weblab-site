@@ -1,0 +1,61 @@
+---
+import copyData from '../data/service-copy.json';
+import ResponsiveImage from './ResponsiveImage.astro';
+
+interface Props { content: typeof copyData.negozi }
+const { content } = Astro.props;
+const [identity, architecture, process, local, offer] = content.sections;
+const shopImages = ['fioreria', 'bottega-ceramica', 'abbigliamento'];
+// Recompose only at existing paragraph/list boundaries, without rewriting the copy.
+const paragraphs = (html: string) => [...html.matchAll(/<p\b[^>]*>(.*?)<\/p>/gs)].map(match => match[1]);
+const architectureParagraphs = paragraphs(architecture.html);
+const processItems = [...process.html.matchAll(/<li><strong>(.*?)<\/strong>(.*?)<\/li>/gs)].map(match => ({ title: match[1], body: match[2] }));
+const offerBlocks = [...offer.html.matchAll(/<p\b[^>]*>.*?<\/p>|<ul>.*?<\/ul>/gs)].map(match => match[0]);
+const offerListIndex = offerBlocks.findIndex(block => block.startsWith('<ul>'));
+const offerIntro = offerBlocks.slice(0, offerListIndex).join('');
+const offerList = offerBlocks[offerListIndex].replace('<ul>', '<ul role="list">');
+const offerNotes = offerBlocks.slice(offerListIndex + 1).join('');
+---
+<section class="shops-hero">
+  <div class="wrap">
+    <div class="shops-hero-grid">
+      <div class="shops-hero-heading"><p class="hero-location">{content.eyebrow}</p><h1>{content.h1}</h1></div>
+      <div class="shops-hero-copy"><div class="shops-prose" set:html={content.heroHtml} /><div class="actions"><a class="button" href={`#${content.contactId}`}>{content.primary}</a><a class="shops-secondary" href="#cosa-includiamo">{content.secondary}</a></div></div>
+    </div>
+    <div class="shops-triptych" aria-hidden="true">{shopImages.map((name, index) => <ResponsiveImage src={`/images/negozi-direction-1/${name}.webp`} width={1200} height={800} sizes="(max-width: 680px) calc((100vw - 56px) / 3), (max-width: 1200px) 32vw, 390px" alt="" loading="eager" fetchpriority={index === 0 ? 'high' : 'auto'} />)}</div>
+  </div>
+</section>
+
+<section id={identity.id} class="shops-identity shops-section">
+  <div class="wrap shops-identity-grid">
+    <div class="shops-identity-art" aria-hidden="true"><ResponsiveImage src="/images/negozi-direction-1/lavorazione-ceramica.webp" width={1200} height={800} sizes="(max-width: 900px) calc(100vw - 40px), 51vw" alt="" /></div>
+    <div class="shops-identity-copy"><h2>{identity.title}</h2><div class="shops-prose" set:html={identity.html} /></div>
+  </div>
+</section>
+
+<section id={architecture.id} class="shops-architecture shops-section">
+  <div class="wrap shops-ruled">
+    <h2>{architecture.title}</h2>
+    <p class="shops-architecture-intro" set:html={architectureParagraphs[0]} />
+    <div class="shops-reading-pair">{architectureParagraphs.slice(1).map(paragraph => <p set:html={paragraph} />)}</div>
+  </div>
+</section>
+
+<section id={process.id} class="shops-process shops-section">
+  <div class="wrap shops-ruled"><h2>{process.title}</h2><ol role="list">{processItems.map(item => <li><h3 set:html={item.title} /><p set:html={item.body} /></li>)}</ol></div>
+</section>
+
+<section id={local.id} class="shops-local shops-section">
+  <div class="wrap shops-ruled shops-local-grid">
+    <div><h2>{local.title}</h2><svg viewBox="0 0 100 80" fill="none" aria-hidden="true"><ellipse cx="50" cy="66" rx="33" ry="9" stroke="#D7F54A" stroke-width="3" /><path d="M50 61S29 34 29 24A21 21 0 0 1 71 24C71 34 50 61 50 61Z" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="24" r="7" stroke="currentColor" stroke-width="2.5" /></svg></div>
+    <div class="shops-prose" set:html={local.html} />
+  </div>
+</section>
+
+<section id={offer.id} class="shops-offer shops-section">
+  <div class="wrap">
+    <h2>{offer.title}</h2>
+    <div class="shops-offer-grid"><div class="shops-offer-price" set:html={offerIntro} /><div class="shops-offer-list" set:html={offerList} /></div>
+    <div class="shops-offer-notes" set:html={offerNotes} />
+  </div>
+</section>

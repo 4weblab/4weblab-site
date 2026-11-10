@@ -1,0 +1,116 @@
+/* Direzione fotografica della sola pagina Negozi, dal mockup approvato. */
+.shops-direction { background: var(--paper); }
+.shops-direction h1, .shops-direction h2, .shops-direction h3 { font-family: var(--sans); font-weight: 700; letter-spacing: -.035em; }
+.shops-direction .shops-hero { padding: 48px 0 32px; }
+.shops-direction .shops-hero-grid { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 38px; align-items: start; }
+.shops-direction .shops-hero-heading { min-width: 0; }
+.shops-direction .shops-hero .hero-location { margin: 0 0 22px; color: var(--ink); font-size: 13px; line-height: 1.5; font-weight: 700; }
+.shops-direction .shops-hero .hero-location::after { display: block; width: 64px; height: 4px; margin-top: 18px; background: var(--lime); content: ''; }
+.shops-direction .shops-hero h1 { max-width: 18ch; margin: 0; font-size: clamp(44px, 4.2vw, 60px); line-height: 1.05; }
+.shops-direction .shops-hero-copy { min-width: 0; padding-left: 30px; border-left: 1px solid var(--line); }
+.shops-direction .shops-prose { font-size: 17px; line-height: 1.65; }
+.shops-direction .shops-prose p { margin: 0 0 18px; }
+.shops-direction .shops-prose > :last-child { margin-bottom: 0; }
+.shops-direction .shops-hero .copy-price-current { font-size: 18px; line-height: 1.5; }
+.shops-direction .shops-hero .actions { margin-top: 24px; gap: 12px; align-items: stretch; flex-wrap: wrap; }
+.shops-direction .shops-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 13px 18px; border: 1px solid var(--ink); border-radius: 7px; color: var(--ink); font-size: 14px; font-weight: 700; line-height: 1.4; text-decoration: none; }
+.shops-direction .shops-secondary:hover { color: var(--paper); background: var(--ink); }
+.shops-direction .shops-triptych { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 36px; }
+.shops-direction .shops-triptych picture, .shops-direction .shops-triptych img { display: block; width: 100%; }
+.shops-direction .shops-triptych img { aspect-ratio: 3 / 2; height: auto; object-fit: cover; }
+.shops-direction .shops-section { padding: 32px 0; }
+.shops-direction .shops-section h2, .shops-direction .copy-faq h2, .shops-direction .copy-contact h2 { margin: 0 0 24px; font-size: clamp(30px, 2.9vw, 40px); line-height: 1.15; text-wrap: balance; }
+.shops-direction .shops-identity-grid { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr); gap: 42px; align-items: center; }
+.shops-direction .shops-identity-art { min-width: 0; }
+.shops-direction .shops-identity-art picture, .shops-direction .shops-identity-art img { display: block; width: 100%; height: auto; }
+.shops-direction .shops-identity-art img { aspect-ratio: 4 / 3; object-fit: cover; }
+.shops-direction .shops-ruled { position: relative; border-top: 1px solid var(--line); padding-top: 30px; }
+.shops-direction .shops-ruled::before { position: absolute; top: -2px; left: 0; width: 52px; height: 4px; background: var(--lime); content: ''; }
+.shops-direction .shops-section p { font-size: 17px; line-height: 1.65; }
+.shops-direction .shops-architecture-intro { margin: 0 0 20px; }
+.shops-direction .shops-reading-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
+.shops-direction .shops-reading-pair p { margin: 0; }
+.shops-direction .shops-reading-pair p + p { border-left: 1px solid var(--line); padding-left: 28px; }
+.shops-direction .shops-process ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; list-style: none; margin: 32px 0 0; padding: 0; counter-reset: shop-step; }
+.shops-direction .shops-process li { min-width: 0; counter-increment: shop-step; }
+.shops-direction .shops-process li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+.shops-direction .shops-process li::before { content: '0' counter(shop-step); display: block; width: max-content; margin-bottom: 18px; padding-bottom: 7px; border-bottom: 4px solid var(--lime); font: 400 15px/1 var(--mono); }
+.shops-direction .shops-process h3 { margin: 0 0 12px; font-size: 21px; line-height: 1.2; }
+.shops-direction .shops-process p { margin: 0; font-size: 16px; }
+.shops-direction .shops-local-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 42px; }
+.shops-direction .shops-local-grid > .shops-prose { border-left: 1px solid var(--line); padding-left: 30px; }
+.shops-direction .shops-local svg { display: block; width: 82px; height: 66px; margin-top: 10px; }
+.shops-direction .shops-offer { margin-top: 28px; padding-top: 48px; padding-bottom: 52px; background: var(--ink); color: var(--paper); }
+.shops-direction .shops-offer h2::after { display: block; width: 64px; height: 4px; margin-top: 20px; background: var(--lime); content: ''; }
+.shops-direction .shops-offer-grid { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1.35fr); gap: 38px; margin-top: 32px; }
+.shops-direction .shops-offer-price { border-right: 1px solid var(--dark-line); padding-right: 30px; }
+.shops-direction .shops-offer-price p { margin: 0 0 16px; font-size: 24px; line-height: 1.2; }
+.shops-direction .shops-offer-price p:last-child { margin-bottom: 0; }
+.shops-direction .shops-offer-price .copy-price-current { color: var(--lime); font-size: clamp(32px, 3.2vw, 44px); line-height: 1.15; letter-spacing: -.035em; }
+.shops-direction .shops-offer-list ul { margin: 0; padding: 0; columns: 2; column-gap: 32px; list-style: none; }
+.shops-direction .shops-offer-list li { position: relative; margin: 0 0 16px; padding-left: 27px; break-inside: avoid; font-size: 16px; line-height: 1.55; }
+.shops-direction .shops-offer-list li::before { position: absolute; top: 6px; left: 1px; width: 7px; height: 12px; border: solid var(--lime); border-width: 0 2px 2px 0; content: ''; transform: rotate(45deg); }
+.shops-direction .shops-offer-notes { border-top: 1px solid var(--dark-line); margin-top: 32px; padding-top: 24px; }
+.shops-direction .shops-offer-notes p { margin: 0 0 16px; font-size: 16px; line-height: 1.6; }
+.shops-direction .shops-offer-notes p:first-child { font-size: 18px; }
+.shops-direction .shops-offer-notes p:last-child { margin-bottom: 0; }
+.shops-direction .shops-offer-notes .copy-materials { color: #dbe4ef; font-size: 15px; }
+.shops-direction .copy-faq { padding-top: 72px; padding-bottom: 80px; }
+.shops-direction .copy-faq > div:last-child { padding-top: 0; }
+.shops-direction .copy-faq summary span { color: var(--ink); }
+.shops-direction .copy-faq details p { font-size: 16px; }
+.shops-direction .copy-contact h2 { font-size: clamp(30px, 2.8vw, 38px); }
+@media (max-width: 1100px) and (min-width: 901px) {
+  .shops-direction .shops-hero-grid { gap: 24px; }
+  .shops-direction .shops-hero h1 { font-size: 48px; }
+  .shops-direction .shops-hero-copy { padding-left: 24px; }
+  .shops-direction .shops-identity-grid { gap: 30px; }
+}
+@media (max-width: 900px) {
+  .shops-direction .shops-hero { padding-top: 36px; }
+  .shops-direction .shops-hero-grid, .shops-direction .shops-identity-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .shops-direction .shops-hero h1 { max-width: 22ch; font-size: clamp(40px, 6.5vw, 54px); }
+  .shops-direction .shops-hero-copy { border-left: 0; padding-left: 0; }
+  .shops-direction .shops-identity-art { order: 1; }
+  .shops-direction .shops-identity-copy { order: 0; }
+  .shops-direction .shops-identity-art img { aspect-ratio: 3 / 2; }
+  .shops-direction .shops-process ol { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+  .shops-direction .shops-process li:nth-child(odd) { padding-left: 0; border-left: 0; }
+  .shops-direction .shops-local-grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 24px; }
+  .shops-direction .shops-local-grid > .shops-prose { padding-left: 24px; }
+  .shops-direction .shops-offer-grid { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 28px; }
+  .shops-direction .shops-offer-list ul { columns: 1; }
+  .shops-direction .copy-faq { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+}
+@media (max-width: 680px) {
+  .shops-direction .wrap { width: calc(100% - 40px); }
+  .shops-direction .shops-hero { padding-top: 30px; padding-bottom: 18px; }
+  .shops-direction .shops-hero h1 { font-size: clamp(36px, 9.5vw, 44px); }
+  .shops-direction .shops-hero .actions { flex-direction: column; }
+  .shops-direction .shops-hero .actions > a { width: 100%; text-align: center; justify-content: center; }
+  .shops-direction .shops-triptych { margin-top: 28px; gap: 8px; }
+  .shops-direction .shops-triptych img { aspect-ratio: 2 / 3; height: auto; object-fit: cover; }
+  .shops-direction .shops-triptych picture:first-child img { object-position: 38% center; }
+  .shops-direction .shops-triptych picture:last-child img { object-position: 65% center; }
+  .shops-direction .shops-section { padding: 28px 0; }
+  .shops-direction .shops-section h2, .shops-direction .copy-faq h2 { font-size: 30px; }
+  .shops-direction .shops-ruled { padding-top: 26px; }
+  .shops-direction .shops-reading-pair, .shops-direction .shops-local-grid, .shops-direction .shops-offer-grid, .shops-direction .shops-process ol { grid-template-columns: minmax(0, 1fr); }
+  .shops-direction .shops-reading-pair { gap: 20px; }
+  .shops-direction .shops-reading-pair p + p { border-left: 0; padding-left: 0; }
+  .shops-direction .shops-process ol { margin-top: 28px; gap: 26px; }
+  .shops-direction .shops-process li:nth-child(n) { padding-left: 0; border-left: 0; }
+  .shops-direction .shops-process li + li { border-top: 1px solid var(--line); padding-top: 24px; }
+  .shops-direction .shops-local-grid { gap: 18px; }
+  .shops-direction .shops-local-grid > .shops-prose { border-left: 0; padding-left: 0; }
+  .shops-direction .shops-local svg { width: 64px; height: 52px; }
+  .shops-direction .shops-offer { margin-top: 20px; padding-top: 36px; padding-bottom: 40px; }
+  .shops-direction .shops-offer-grid { gap: 28px; margin-top: 26px; }
+  .shops-direction .shops-offer-price { border-right: 0; padding-right: 0; }
+  .shops-direction .shops-offer-price p { font-size: 22px; }
+  .shops-direction .shops-offer-price .copy-price-current { font-size: 40px; }
+  .shops-direction .shops-offer .button { width: 100%; justify-content: center; text-align: center; }
+  .shops-direction .copy-faq { padding-top: 44px; padding-bottom: 52px; }
+  .shops-direction .contact { padding: 56px 0; }
+  .shops-direction .copy-contact { gap: 40px; }
+}

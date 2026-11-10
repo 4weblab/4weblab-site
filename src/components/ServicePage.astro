@@ -1,0 +1,115 @@
+---
+import '../styles/global.css';
+import '../styles/service-copy.css';
+import SeoHead from './SeoHead.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
+import CompanyContent from './CompanyContent.astro';
+import PeriziaContent from './PeriziaContent.astro';
+import ShopsContent from './ShopsContent.astro';
+import ProfessionalContent from './ProfessionalContent.astro';
+import GoogleAdsContent from './GoogleAdsContent.astro';
+import copy from '../data/service-copy.json';
+import { pageMetadata } from '../config/service-metadata';
+import { SITE } from '../config/site';
+import { BLACK_FRIDAY, blackFriday, serviceOffer } from '../config/black-friday';
+
+interface Props { service: keyof typeof copy; companyDesign?: boolean; periziaDesign?: boolean; shopsDesign?: boolean; professionalDesign?: boolean; googleDesign?: boolean }
+const { service, companyDesign = false, periziaDesign = false, shopsDesign = false, professionalDesign = false, googleDesign = false } = Astro.props;
+const content = copy[service];
+const plan = service === 'professionisti' || service === 'aziende' ? service : undefined;
+const promotional = Boolean(plan && blackFriday.visible);
+const metadata = pageMetadata[service];
+const description = promotional && 'promoDescription' in metadata ? metadata.promoDescription : metadata.description;
+const pageUrl = `${SITE.url}/${content.slug}/`;
+const ordinarySubmit = service === 'aziende' ? 'Richiedete il preventivo →' : 'Richiedi il preventivo →';
+const submit = plan && !promotional ? ordinarySubmit : content.submit;
+const faqs = content.faqs.filter(faq => !faq.promoOnly || promotional);
+const detailsAnchor = service === 'perizia' ? 'cosa-controlliamo' : content.sections.find(section => section.price)!.id;
+const settings = {
+  negozi: { label: 'Siti web per negozi', theme: 'negozi', form: 'negozi', subject: 'Nuova richiesta sito web per negozio', business: 'Nome del negozio', image: '/images/negozi-mobile-search.webp', alt: 'Ricerca locale su smartphone' },
+  professionisti: { label: 'Siti web per professionisti', theme: 'professionisti', form: 'professionisti', subject: 'Nuova richiesta sito web per professionisti', business: 'Professione o studio', image: '', alt: '' },
+  aziende: { label: 'Siti web aziendali', theme: 'aziendali', form: 'aziendali', subject: 'Nuova richiesta sito web aziendale', business: 'Azienda', image: '/images/aziendali-team.webp', alt: 'Team aziendale al lavoro' },
+  google: { label: 'Pubblicità Google Ads', theme: 'ads', form: 'google-ads', subject: 'Nuova richiesta Google Ads', business: 'Azienda o attività', image: '/images/google-ads-method.webp', alt: 'Pianificazione di una campagna pubblicitaria' },
+  perizia: { label: 'Perizia sito web', theme: 'perizia', form: 'perizia', subject: 'Nuova richiesta verifica tecnica sito web', business: '', image: '', alt: '' },
+}[service];
+const money = (name: string, price: string, extra = {}) => ({ '@type': 'Offer', name, url: pageUrl, priceCurrency: 'EUR', priceSpecification: { '@type': 'PriceSpecification', price, priceCurrency: 'EUR', valueAddedTaxIncluded: false }, ...extra });
+const offers = plan ? serviceOffer(plan, pageUrl) : service === 'negozi'
+  ? { '@type': 'Offer', name: 'Sito web per negozi e attività locali', url: pageUrl, description: 'Una pagina; dominio e hosting gestito inclusi per sei mesi, poi 99,90 € + IVA all’anno per entrambi. Email aggiuntive su richiesta.', priceSpecification: { '@type': 'PriceSpecification', minPrice: '490', priceCurrency: 'EUR', valueAddedTaxIncluded: false } }
+  : service === 'google' ? [
+    money('Configurazione iniziale e primo mese di gestione', '499', { description: 'Primo mese dalla pubblicazione della campagna. Budget pubblicitario escluso e pagato direttamente a Google. Landing facoltativa separata.' }),
+    money('Gestione dal secondo mese', '299', { description: 'Budget pubblicitario escluso.', priceSpecification: { '@type': 'UnitPriceSpecification', price: '299', priceCurrency: 'EUR', valueAddedTaxIncluded: false, unitText: 'MONTH' } }),
+    { '@type': 'Offer', name: 'Landing facoltativa dedicata alla singola campagna', url: pageUrl, priceSpecification: { '@type': 'PriceSpecification', minPrice: '199', priceCurrency: 'EUR', valueAddedTaxIncluded: false } },
+  ] : money('Verifica tecnica professionale del sito', '49.90', { description: 'Controlli tecnici e report scritto fino a 9 pagine; da 10 pagine preventivo dedicato prima dell’avvio. Correzioni separate.' });
+const structuredData = [{ '@context': 'https://schema.org', '@graph': [
+  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: settings.label, item: pageUrl }] },
+  { '@type': 'Service', '@id': `${pageUrl}#service`, name: service === 'perizia' ? 'Verifica tecnica professionale del sito' : settings.label, description, serviceType: settings.label, provider: { '@id': `${SITE.url}/#business` }, areaServed: [{ '@type': 'Country', name: 'Italia' }, { '@type': 'AdministrativeArea', name: 'Veneto' }, { '@type': 'City', name: 'Padova' }], url: pageUrl, inLanguage: 'it-IT', isPartOf: { '@id': `${SITE.url}/#website` }, offers },
+  { '@type': 'FAQPage', mainEntity: faqs.map(({question, answer}) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) },
+] }];
+const privacy = content.privacy.replace(/(?:Leggi|Leggete) (?:la privacy policy|l’informativa privacy)\./, match => `<a href="/privacy/">${match}</a>`);
+const successMessages = {
+  negozi: 'Richiesta ricevuta. Ti contatteremo per parlare del progetto.',
+  professionisti: 'Richiesta ricevuta. Ti contatteremo per parlare del progetto.',
+  aziende: 'Richiesta ricevuta. Vi contatteremo per parlare del progetto.',
+  google: 'Richiesta Google Ads ricevuta. Ti contatteremo per valutare la campagna.',
+  perizia: 'Richiesta ricevuta. Ti confermeremo prezzo e tempi prima di iniziare. La verifica non è stata avviata e non è richiesto alcun pagamento.',
+};
+---
+<!doctype html>
+<html lang="it">
+  <head><SeoHead title={metadata.title} description={description} image={`/images/og/${content.slug}.webp`} structuredData={structuredData} /></head>
+  <body>
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+    <SiteHeader contactTarget={`#${content.contactId}`} />
+    <main id="contenuto" class:list={['service-page-copy', { 'company-direction': companyDesign && service === 'aziende', 'perizia-direction': periziaDesign && service === 'perizia', 'shops-direction': shopsDesign && service === 'negozi', 'professional-direction': professionalDesign && service === 'professionisti', 'google-direction': googleDesign && service === 'google' }]}>
+      <div class="breadcrumb-strip"><div class="wrap"><Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: settings.label }]} /></div></div>
+      {companyDesign && service === 'aziende' ? <CompanyContent content={content} promotional={promotional} ordinarySubmit={ordinarySubmit} /> : periziaDesign && service === 'perizia' ? <PeriziaContent content={content} /> : shopsDesign && service === 'negozi' ? <ShopsContent content={content} /> : professionalDesign && service === 'professionisti' ? <ProfessionalContent content={content} promotional={promotional} ordinarySubmit={ordinarySubmit} /> : googleDesign && service === 'google' ? <GoogleAdsContent content={content} /> : <>
+      <section class:list={[`${settings.theme}-hero`, 'copy-hero']}>
+        <div class="wrap"><div class="copy-hero-content">
+          <p class="hero-location">{content.eyebrow}</p>
+          <h1>{content.h1}</h1>
+          <div class="copy-hero-text" set:html={content.heroHtml} />
+          {plan && !promotional && <p class="copy-hero-price">Da {plan === 'professionisti' ? '990' : '1.890'} € + IVA.</p>}
+          <div class="actions"><a class="button" href={`#${content.contactId}`}>{plan && !promotional ? ordinarySubmit : content.primary}</a><a class="plain light" href={`#${detailsAnchor}`}>{content.secondary}</a></div>
+          {promotional && <div class="copy-promo" set:html={content.promoHtml} />}
+        </div></div>
+      </section>
+      {content.sections.map((section, index) => <section id={section.id} class:list={['copy-section', { 'copy-price dark': section.price, 'copy-tinted': !section.price && index % 2 === 1 }]}>
+        {service === 'google' && section.price && <span id="metodo-google-ads" aria-hidden="true"></span>}
+        <div class="wrap copy-section-grid">
+          <div class="copy-section-heading">{service === 'perizia' && section.title === 'Come viene descritta un’anomalia' && <p class="section-context">Esempio dimostrativo</p>}<h2>{section.title}</h2>
+            {(service === 'google' ? section.id === 'landing-google-ads' : index === 1) && settings.image && <ResponsiveImage src={settings.image} width={service === 'google' ? 1024 : 1280} height={service === 'google' ? 1024 : 960} sizes="(max-width: 900px) calc(100vw - 48px), 36vw" alt={settings.alt} />}
+          </div>
+          <div class="copy-body" set:html={promotional ? section.html : section.ordinaryHtml ?? section.html} />
+        </div>
+      </section>)}
+      </>}
+      <section class="section wrap perizia-faq copy-faq"><div><h2>{content.faqTitle}</h2></div><div>{faqs.map(({question, answer}) => <details><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
+      <section id={content.contactId} class="contact"><div class="wrap perizia-contact copy-contact">
+        <div><h2>{content.contactTitle}</h2><div set:html={content.contactHtml} /><a class="plain lime" href="https://wa.me/393514656042">{content.whatsapp}</a>
+          {googleDesign && service === 'google' && <figure class="google-contact-photo" data-visual-caption><ResponsiveImage src="/images/google-ads-direction-1/confronto-google.webp" width={1000} height={563} sizes="(max-width: 900px) calc(100vw - 40px), 34vw" alt="Scena illustrativa pubblicata da Google: una persona al computer e una consulente in conversazione." /><figcaption>Immagine illustrativa · <a href="https://business.google.com/it/ad-tools/google-ads-app/">Fonte: Google</a></figcaption></figure>}
+        </div>
+        <form id={`${settings.form}-form`} method="post" action="https://api.web3forms.com/submit" data-success-message={successMessages[service]}>
+          <input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" />
+          <input type="hidden" name="subject" value={promotional ? `Richiesta Black Friday 2026 - sito ${settings.label}` : settings.subject} />
+          <input type="hidden" name="source_page" value={content.slug} />
+          {service === 'perizia' && <input type="hidden" name="from_name" value="4 Web Lab – Verifica sito web" />}
+          {promotional && <><input type="hidden" name="campaign" value={BLACK_FRIDAY.campaign} /><input type="hidden" name="plan" value={BLACK_FRIDAY.plans[plan!].name} /><p class="bf-form-note">L’invio del modulo non conferma il preventivo. Per aderire al Black Friday, il preventivo deve essere confermato entro il 27 novembre 2026 compreso.</p></>}
+          <label>Nome e cognome *<input name="name" required autocomplete="name" /></label>
+          <label>Email *<input name="email" type="email" required autocomplete="email" /></label>
+          <label>Telefono — facoltativo<input name="phone" type="tel" autocomplete="tel" /></label>
+          {settings.business && <label>{settings.business}<input name="business" autocomplete="organization" /></label>}
+          {(service === 'google' || service === 'perizia') && <label>{service === 'perizia' ? 'Indirizzo del sito *' : 'Sito web — facoltativo'}<input name="site_url" type="url" required={service === 'perizia'} placeholder="https://www.tuosito.it" autocomplete="url" /></label>}
+          <label>{service === 'perizia' ? 'Problema tecnico da verificare o motivo della richiesta *' : service === 'google' ? 'Servizio da promuovere e zona servita *' : service === 'aziende' ? 'Raccontateci di cosa avete bisogno *' : 'Raccontaci di cosa hai bisogno *'}<textarea name={service === 'perizia' ? 'reason' : 'message'} required rows="4"></textarea></label>
+          <label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label>
+          <button class="button" type="submit">{submit}</button>
+          <p class="privacy" set:html={privacy} />
+          <p id={service === 'perizia' ? 'form-status' : `${settings.form}-status`} class="form-status" aria-live="polite"></p>
+        </form>
+      </div></section>
+    </main>
+    <SiteFooter />
+  </body>
+</html>

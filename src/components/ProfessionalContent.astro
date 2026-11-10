@@ -1,0 +1,76 @@
+---
+import copyData from '../data/service-copy.json';
+import ResponsiveImage from './ResponsiveImage.astro';
+
+interface Props { content: typeof copyData.professionisti; promotional: boolean; ordinarySubmit: string }
+const { content, promotional, ordinarySubmit } = Astro.props;
+const [questions, writing, pages, process, seo, offer] = content.sections;
+// Split at approved paragraph/list boundaries only. Every source word stays in order.
+const paragraphs = (html: string) => [...html.matchAll(/<p\b[^>]*>(.*?)<\/p>/gs)].map(match => match[1]);
+const questionParagraphs = paragraphs(questions.html);
+const pageParagraphs = paragraphs(pages.html);
+const seoParagraphs = paragraphs(seo.html);
+const processItems = [...process.html.matchAll(/<li><strong>(.*?)<\/strong>(.*?)<\/li>/gs)].map(match => ({ title: match[1], body: match[2] }));
+// Keep each amount and VAT label on one line, without changing any source characters.
+const keepMoneyTogether = (html: string) => html.replace(/(\d[\d.,]* € \+ IVA)/g, '<span class="professional-money">$1</span>');
+const offerHtml = promotional ? offer.html : offer.ordinaryHtml ?? offer.html;
+const offerBlocks = [...offerHtml.matchAll(/<p\b[^>]*>.*?<\/p>|<ul>.*?<\/ul>/gs)].map(match => match[0]);
+const offerListIndex = offerBlocks.findIndex(block => block.startsWith('<ul>'));
+const offerIntro = keepMoneyTogether(offerBlocks.slice(0, offerListIndex).join(''));
+const offerList = offerBlocks[offerListIndex].replace('<ul>', '<ul role="list">');
+const offerNotes = offerBlocks.slice(offerListIndex + 1).join('');
+---
+<section class="professional-hero">
+  <div class="wrap professional-hero-grid">
+    <div class="professional-hero-panel">
+      <p class="hero-location">{content.eyebrow}</p>
+      <h1>{content.h1}</h1>
+      <div class="professional-prose" set:html={content.heroHtml} />
+      {!promotional && <p class="professional-ordinary-price">Da 990 € + IVA.</p>}
+      <div class="actions"><a class="button" href={`#${content.contactId}`}>{promotional ? content.primary : ordinarySubmit}</a><a class="professional-secondary" href="#cosa-include">{content.secondary}</a></div>
+      {promotional && <div class="professional-promotion" set:html={keepMoneyTogether(content.promoHtml)} />}
+    </div>
+    <div class="professional-hero-art" aria-hidden="true">
+      <svg class="professional-browser-outline" viewBox="0 0 400 530" fill="none"><rect x="2" y="2" width="396" height="526" rx="14" stroke="currentColor" /><path d="M2 36H398" stroke="currentColor" /><circle cx="20" cy="20" r="4" stroke="currentColor" /><circle cx="38" cy="20" r="4" stroke="currentColor" /><circle cx="56" cy="20" r="4" stroke="currentColor" /></svg>
+      <ResponsiveImage src="/images/professionisti-direction-3/dossier-progetto.webp" width={1200} height={1200} sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 900px) 480px, 48vw" alt="" loading="eager" fetchpriority="high" />
+    </div>
+  </div>
+</section>
+
+<section id={questions.id} class="professional-questions professional-section">
+  <div class="wrap"><h2>{questions.title}</h2><div class="professional-reading-grid">{questionParagraphs.map(paragraph => <p set:html={paragraph} />)}</div></div>
+</section>
+
+<section id={writing.id} class="professional-writing professional-section">
+  <div class="wrap professional-ruled">
+    <h2>{writing.title}</h2>
+    <div class="professional-writing-grid">
+      <div class="professional-prose professional-writing-copy" set:html={writing.html} />
+      <div class="professional-writing-art" aria-hidden="true"><ResponsiveImage src="/images/professionisti-direction-3/materiali-testi.webp" width={1200} height={800} sizes="(max-width: 900px) calc(100vw - 40px), 52vw" alt="" /></div>
+    </div>
+  </div>
+</section>
+
+<section id={pages.id} class="professional-pages professional-section">
+  <div class="wrap professional-ruled">
+    <h2>{pages.title}</h2>
+    <div class="professional-pages-art" aria-hidden="true"><ResponsiveImage src="/images/professionisti-direction-3/cinque-pagine.webp" width={1500} height={500} sizes="(max-width: 1200px) calc(100vw - 40px), 1180px" alt="" /></div>
+    <div class="professional-reading-grid">{pageParagraphs.map(paragraph => <p set:html={paragraph} />)}</div>
+  </div>
+</section>
+
+<section id={process.id} class="professional-process professional-section">
+  <div class="wrap professional-ruled"><h2>{process.title}</h2><ol role="list">{processItems.map(item => <li><h3 set:html={item.title} /><p set:html={item.body} /></li>)}</ol></div>
+</section>
+
+<section id={seo.id} class="professional-seo professional-section">
+  <div class="wrap professional-ruled"><h2>{seo.title}</h2><div class="professional-reading-pair">{seoParagraphs.map(paragraph => <p set:html={paragraph} />)}</div></div>
+</section>
+
+<section id={offer.id} class:list={['professional-offer', 'professional-section', { 'professional-offer-promo': promotional }]}>
+  <div class="wrap">
+    <h2>{offer.title}</h2>
+    <div class="professional-offer-grid"><div class="professional-offer-price" set:html={offerIntro} /><div class="professional-offer-list" set:html={offerList} /></div>
+    <div class="professional-offer-notes" set:html={offerNotes} />
+  </div>
+</section>

@@ -1,0 +1,76 @@
+---
+import copyData from '../data/service-copy.json';
+import ResponsiveImage from './ResponsiveImage.astro';
+import PeriziaCheckIcon from './PeriziaCheckIcon.astro';
+
+interface Props { content: typeof copyData.perizia }
+const { content } = Astro.props;
+const [context, checks, report, example, price, process] = content.sections;
+// Recompose only at the paragraph and list boundaries of the approved copy.
+const paragraphs = (html: string) => [...html.matchAll(/<p\b[^>]*>(.*?)<\/p>/gs)].map(match => match[1]);
+const contextParagraphs = paragraphs(context.html);
+const checkParagraphs = paragraphs(checks.html);
+const checkItems = checkParagraphs.slice(1, -1).map(paragraph => {
+  const [, title, body] = paragraph.match(/^<strong>(.*?)<\/strong><br\s*\/>\s*(.*)$/s)!;
+  return { title, body };
+});
+const processItems = [...process.html.matchAll(/<li><strong>(.*?)<\/strong>(.*?)<\/li>/gs)].map(match => ({ title: match[1], body: match[2] }));
+---
+<section class="inspection-hero">
+  <div class="wrap inspection-hero-grid">
+    <div class="inspection-hero-copy">
+      <p class="hero-location">{content.eyebrow}</p>
+      <h1>{content.h1}</h1>
+      <div class="inspection-hero-text" set:html={content.heroHtml} />
+      <div class="actions"><a class="button" href={`#${content.contactId}`}>{content.primary}</a><a class="inspection-secondary" href="#cosa-controlliamo">{content.secondary}</a></div>
+    </div>
+    <div class="inspection-hero-art" aria-hidden="true">
+      <ResponsiveImage src="/images/perizia-direction-1/sito-a-strati.webp" width={1200} height={1200} sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 900px) 480px, 48vw" alt="" loading="eager" fetchpriority="high" />
+    </div>
+  </div>
+</section>
+
+<section id={context.id} class="inspection-context inspection-section">
+  <div class="wrap inspection-ruled">
+    <h2>{context.title}</h2>
+    <div class="inspection-context-grid">{contextParagraphs.map(paragraph => <p set:html={paragraph} />)}</div>
+  </div>
+</section>
+
+<section id={checks.id} class="inspection-checks inspection-section">
+  <div class="wrap inspection-ruled">
+    <h2>{checks.title}</h2>
+    <p class="inspection-checks-intro" set:html={checkParagraphs[0]} />
+    <div class="inspection-check-grid">{checkItems.map((item, index) => <div class="inspection-check">
+      <PeriziaCheckIcon index={index} />
+      <div><h3 set:html={item.title} /><p set:html={item.body} /></div>
+    </div>)}</div>
+    <p class="inspection-checks-note" set:html={checkParagraphs.at(-1)} />
+  </div>
+</section>
+
+<section id={report.id} class="inspection-report inspection-section">
+  <div class="wrap inspection-ruled">
+    <h2>{report.title}</h2>
+    <div class="inspection-report-grid">
+      <div class="inspection-report-art" aria-hidden="true"><ResponsiveImage src="/images/perizia-direction-1/report-tecnico.webp" width={1200} height={1200} sizes="(max-width: 680px) 280px, 36vw" alt="" /></div>
+      <div class="inspection-report-copy" set:html={report.html.replace('<ul>', '<ul role="list">')} />
+    </div>
+  </div>
+</section>
+
+<section id={example.id} class="inspection-example inspection-section">
+  <div class="wrap inspection-ruled">
+    <p class="section-context">Esempio dimostrativo</p>
+    <h2>{example.title}</h2>
+    <div class="inspection-example-copy" set:html={example.html} />
+  </div>
+</section>
+
+<section id={price.id} class="inspection-offer inspection-section">
+  <div class="wrap inspection-offer-grid"><h2>{price.title}</h2><div class="inspection-offer-copy" set:html={price.html} /></div>
+</section>
+
+<section id={process.id} class="inspection-process inspection-section">
+  <div class="wrap"><h2>{process.title}</h2><ol role="list">{processItems.map(item => <li><h3 set:html={item.title} /><p set:html={item.body} /></li>)}</ol></div>
+</section>

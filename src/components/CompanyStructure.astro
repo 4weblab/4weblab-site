@@ -1,0 +1,12 @@
+---
+import CompanyPageMap from './CompanyPageMap.astro';
+interface Props { title: string; html: string; id: string }
+const { title, html, id } = Astro.props;
+---
+<section id={id} class="company-structure">
+  <div class="wrap">
+    <h2>{title}</h2>
+    <div class="company-structure-visual"><CompanyPageMap /></div>
+    <div class="company-structure-text" set:html={html} />
+  </div>
+</section>

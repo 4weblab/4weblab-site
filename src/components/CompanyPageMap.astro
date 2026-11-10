@@ -1,0 +1,47 @@
+---
+const middle = [130, 400, 670];
+const lower = [40, 200, 360, 520, 680, 840];
+---
+<svg class="company-page-map" viewBox="0 0 1000 470" fill="none" aria-hidden="true" focusable="false">
+  <g stroke="#9DAA9F" stroke-width="1.5">
+    <path d="M500 112V148H230V188M500 148V188M500 148H770V188" />
+    <path d="M230 288V320H100V360M230 320H260V360M500 288V320H420V360M500 320H580V360M770 288V320H740V360M770 320H900V360" />
+  </g>
+  <g transform="translate(390 8)">
+    <rect x="0" y="5" width="220" height="108" rx="5" fill="#101A2D" opacity=".08" />
+    <rect width="220" height="108" rx="5" fill="#101A2D" />
+    <path d="M0 21H220" stroke="#506075" />
+    <g fill="#9EADBD"><circle cx="11" cy="11" r="2" /><circle cx="19" cy="11" r="2" /><circle cx="27" cy="11" r="2" /></g>
+    <rect x="18" y="37" width="83" height="6" rx="1" fill="#F5F4EF" />
+    <rect x="18" y="50" width="69" height="5" rx="1" fill="#8798AD" />
+    <rect x="18" y="64" width="83" height="3" rx="1" fill="#8798AD" />
+    <rect x="18" y="73" width="73" height="3" rx="1" fill="#8798AD" />
+    <rect x="18" y="87" width="39" height="7" rx="1" fill="#D7F54A" />
+    <rect x="124" y="35" width="78" height="59" rx="2" fill="#D7F54A" />
+    <rect x="138" y="52" width="37" height="30" rx="1" stroke="#101A2D" stroke-width="1.5" />
+    <path d="M150 52V42H188V70H175" stroke="#101A2D" stroke-width="1.5" />
+  </g>
+  {middle.map((x, i) => <g transform={`translate(${x} 188)`}>
+    <rect x="0" y="4" width="200" height="102" rx="5" fill="#101A2D" opacity=".05" />
+    <rect width="200" height="100" rx="5" fill="#FFFFFF" stroke="#C4CEC4" />
+    <path d="M0 18H200" stroke="#D8DED8" />
+    <circle cx="10" cy="9" r="1.5" fill="#A3B09F" /><circle cx="17" cy="9" r="1.5" fill="#A3B09F" />
+    <rect x="15" y="32" width={i === 1 ? 113 : 74} height="5" rx="1" fill="#101A2D" />
+    <rect x="15" y="45" width="99" height="3" rx="1" fill="#97A598" />
+    <rect x="15" y="54" width="85" height="3" rx="1" fill="#BBC4BA" />
+    <rect x="15" y="69" width="49" height="17" rx="2" fill={i === 1 ? '#101A2D' : '#E8EDDF'} />
+    <rect x="70" y="69" width="44" height="17" rx="2" fill="#E8EDDF" />
+    {i !== 1 && <rect x="131" y="32" width="53" height="54" rx="2" fill={i === 2 ? '#D7F54A' : '#DCE4DB'} />}
+    {i === 1 && <rect x="142" y="45" width="39" height="41" rx="2" fill="#D7F54A" />}
+  </g>)}
+  {lower.map((x,i) => <g transform={`translate(${x} 360)`}>
+    <rect x="0" y="3" width="120" height="88" rx="4" fill="#101A2D" opacity=".04" />
+    <rect width="120" height="86" rx="4" fill="#FFFFFF" stroke="#C4CEC4" />
+    <path d="M0 15H120" stroke="#D8DED8" />
+    <circle cx="8" cy="7.5" r="1.4" fill="#A3B09F" />
+    <rect x="11" y="25" width={i%2 ? 43 : 63} height="4" rx="1" fill="#344538" />
+    <rect x="11" y="37" width="98" height="24" rx="1" fill={i===3 ? '#D7F54A' : '#E8EDDF'} />
+    <rect x="11" y="68" width="76" height="2.5" rx="1" fill="#BBC4BA" />
+    <rect x="11" y="75" width="61" height="2.5" rx="1" fill="#BBC4BA" />
+  </g>)}
+</svg>

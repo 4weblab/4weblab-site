@@ -1,0 +1,13 @@
+---
+interface Props { index: number }
+const { index } = Astro.props;
+const paths = [
+  'M13 13L5 21L13 29M29 13L37 21L29 29M25 7L17 35',
+  'M17 25L25 17M15 28L12 31A7 7 0 0 1 2 21L10 13A7 7 0 0 1 20 13M27 14L30 11A7 7 0 0 1 40 21L32 29A7 7 0 0 1 22 29',
+  'M21 5L39 14L21 23L3 14L21 5ZM3 22L21 31L39 22M3 30L21 39L39 30',
+  'M28 28L38 38M31 18A13 13 0 1 1 5 18A13 13 0 1 1 31 18',
+  'M5 32A18 18 0 1 1 37 32M21 23L30 12M10 21H13M21 8V11M30 28L33 30M21 23A2 2 0 1 1 17 23A2 2 0 1 1 21 23',
+  'M13 3H29A3 3 0 0 1 32 6V36A3 3 0 0 1 29 39H13A3 3 0 0 1 10 36V6A3 3 0 0 1 13 3ZM17 3V7H25V3M18 34H24',
+];
+---
+<svg class="inspection-check-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d={paths[index]} stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>

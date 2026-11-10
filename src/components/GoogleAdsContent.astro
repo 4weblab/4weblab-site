@@ -1,0 +1,76 @@
+---
+import copyData from '../data/service-copy.json';
+import ResponsiveImage from './ResponsiveImage.astro';
+
+interface Props { content: typeof copyData.google }
+const { content } = Astro.props;
+const keepMoneyTogether = (html: string) => html.replace(/(\d[\d.,]* € \+ IVA)/g, '<span class="google-money">$1</span>');
+const highlightPrice = (title: string) => title.replace(/((?:da )?\d[\d.,]* € \+ IVA(?: al mese)?)/, '<mark>$1</mark>');
+const [suitability, setup, management, landing] = content.sections;
+// Rearrange only complete source blocks: preserve every word and reading order.
+const blocks = (html: string) => [...html.matchAll(/<p\b[^>]*>.*?<\/p>|<ul>.*?<\/ul>/gs)].map(match => match[0]);
+const setupBlocks = blocks(setup.html);
+const managementBlocks = blocks(management.html);
+---
+<section class="google-hero">
+  <div class="wrap google-hero-grid">
+    <div class="google-hero-copy">
+      <p class="hero-location">{content.eyebrow}</p>
+      <h1 set:html={content.h1.replace('Google Ads', '<span>Google Ads</span>')} />
+      <div class="google-prose" set:html={keepMoneyTogether(content.heroHtml)} />
+      <div class="actions"><a class="button" href={`#${content.contactId}`}>{content.primary}</a><a class="google-secondary" href="#avvio-google-ads">{content.secondary}</a></div>
+    </div>
+    <figure class="google-hero-figure" data-visual-caption>
+      <div class="google-screen-frame"><ResponsiveImage src="/images/google-ads-direction-1/interfaccia-google-ads-it.webp" width={1600} height={1035} sizes="(max-width: 900px) calc(100vw - 64px), 48vw" alt="Adattamento in italiano dell’interfaccia dimostrativa Google Ads: menu delle campagne e panoramica." loading="eager" fetchpriority="high" /></div>
+      <figcaption>Interfaccia dimostrativa · Adattamento in italiano da <a href="https://support.google.com/google-ads/answer/14846754?hl=it">Google</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id={suitability.id} class="google-section google-suitability">
+  <div class="wrap google-suitability-grid">
+    <div><h2>{suitability.title}</h2><div class="google-prose" set:html={suitability.html} /></div>
+    <figure class="google-search-figure" data-visual-caption>
+      <ResponsiveImage src="/images/google-ads-direction-1/ricerca-google.webp" width={908} height={908} sizes="(max-width: 680px) 280px, (max-width: 900px) 340px, 30vw" alt="Immagine ufficiale Google che illustra un annuncio nella rete di ricerca." />
+      <figcaption>Immagine illustrativa · <a href="https://business.google.com/it/ad-solutions/search/">Fonte: Google</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id={setup.id} class="google-section google-setup">
+  <span id="metodo-google-ads" aria-hidden="true"></span>
+  <div class="wrap google-ruled">
+    <h2 set:html={highlightPrice(setup.title)} />
+    <div class="google-prose" set:html={setupBlocks.slice(0, 2).join('')} />
+    <div class="google-inclusions" set:html={setupBlocks[2].replace('<ul>', '<ul role="list">')} />
+    <div class="google-prose google-setup-notes" set:html={setupBlocks.slice(3).join('')} />
+  </div>
+</section>
+
+<section id={management.id} class="google-section google-management">
+  <div class="wrap">
+    <h2 set:html={highlightPrice(management.title)} />
+    <div class="google-management-grid">
+      <div class="google-prose google-management-intro" set:html={managementBlocks.slice(0, 2).join('')} />
+      <div class="google-management-actions" set:html={managementBlocks[2].replace('<ul>', '<ul role="list">')} />
+      <div class="google-prose google-management-notes" set:html={managementBlocks.slice(3).join('')} />
+    </div>
+  </div>
+</section>
+
+<section id={landing.id} class="google-section google-landing">
+  <div class="wrap">
+    <h2 set:html={highlightPrice(landing.title)} />
+    <div class="google-landing-grid">
+      <figure class="google-landing-figure" data-visual-caption>
+        <div class="google-landing-browser">
+          <div class="google-browser-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+          <ResponsiveImage src="/images/google-ads-direction-1/landing-finestra.webp" width={1100} height={733} sizes="(max-width: 900px) calc(100vw - 64px), 35vw" alt="Finestra moderna in un ambiente luminoso: illustrazione dell’esempio di campagna descritto nel testo." />
+          <div class="google-browser-body" aria-hidden="true"><span></span><span></span><span></span><b></b></div>
+        </div>
+        <figcaption>Esempio illustrativo di landing · Immagine generata</figcaption>
+      </figure>
+      <div class="google-prose google-landing-copy" set:html={keepMoneyTogether(landing.html)} />
+    </div>
+  </div>
+</section>
