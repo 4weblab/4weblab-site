@@ -1,0 +1,140 @@
+---
+import "../styles/global.css";
+import "../styles/home-test2.css";
+import SeoHead from "../components/SeoHead.astro";
+import { pageMetadata } from "../config/service-metadata";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
+import LogoMarquee from "../components/LogoMarquee.astro";
+import "../styles/black-friday-services.css";
+import BlackFridayNotice from "../components/BlackFridayNotice.astro";
+import BlackFridayTerms from "../components/BlackFridayTerms.astro";
+import { BLACK_FRIDAY, blackFriday, euro, promoPrice } from "../config/black-friday";
+
+interface Props {
+  preview?: boolean;
+}
+
+const { preview = false } = Astro.props;
+
+const whatsApp =
+  "https://wa.me/393514656042?text=Ciao!%20Vorrei%20informazioni%20sui%20servizi%20di%204%20Web%20Lab.";
+const checks = [
+  "Codice e risorse delle pagine.",
+  "Configurazioni SEO tecniche.",
+  "Prestazioni e caricamento.",
+  "Visualizzazione e uso da mobile.",
+  "Link e anomalie rilevabili dall’esterno.",
+  "Priorità di correzione.",
+];
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <SeoHead
+      title={pageMetadata.home.title}
+      description={pageMetadata.home.description}
+      image="/images/og/home.webp"
+      noindex={preview}
+    />
+  </head>
+  <body class="home-test2-page">
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+    <SiteHeader contactTarget="#contatti" showHome={false} />
+    <main id="contenuto" class="home-test">
+      <section class="hero laboratory-hero">
+        <div class="wrap hero-layout">
+          <div class="hero-copy">
+            <p class="hero-location">Siti web e Google Ads · Padova e tutta Italia</p>
+            <h1>Il sito web giusto<br /><em>per la tua attività.</em></h1>
+            </div><div class="test-hero-description"><p class="lead">Realizziamo siti web su misura per negozi, professionisti e PMI. Se hai già un sito, ne verifichiamo il codice, le configurazioni tecniche e le prestazioni per individuare eventuali anomalie.</p>
+            <p class="lead">Da Legnaro, in provincia di Padova, lavoriamo con clienti in tutta Italia, anche da remoto.</p>
+            <div class="actions"><a class="button" href="#soluzioni">Scopri i servizi</a><a class="plain" href="/realizzazioni/">Guarda i nostri lavori <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </div>
+        <div class="laboratory-devices" aria-label="Esempi di siti realizzati">
+          <div class="laboratory-screen laboratory-main"><img src="/images/case-rb-snc/after-desktop.webp" width="1600" height="903" alt="Sito realizzato per R.B. snc" fetchpriority="high" /></div>
+          <div class="laboratory-screen laboratory-front"><img src="/images/case-elisa-piovan/after-home-desktop.webp" width="1410" height="720" alt="Sito realizzato per Elisa Piovan" /></div>
+        </div>
+      </section>
+      {blackFriday.visible && <div class="home-promotion"><div class="wrap"><BlackFridayNotice href="#soluzioni" home /></div></div>}
+      <section id="partenza" class="home-start" aria-labelledby="home-start-title">
+        <div class="wrap home-start-layout">
+          <div><h2 id="home-start-title">Da dove<br /><em>parti?</em></h2><p>La soluzione cambia in base alla situazione. Scegli il punto più vicino al tuo caso.</p></div>
+          <div class="home-start-list">
+            <a href="/perizia-sito-web/"><small>01</small><span><strong>Ho già un sito</strong><em>Hai dubbi sul funzionamento o sulla configurazione tecnica e vuoi una verifica documentata.</em></span><b aria-hidden="true">→</b></a>
+            <a href="#soluzioni"><small>02</small><span><strong>Devo creare un sito</strong><em>Ti serve un sito chiaro, credibile e adatto alla tua attività.</em></span><b aria-hidden="true">→</b></a>
+            <a href="/pubblicita-su-google/"><small>03</small><span><strong>Voglio più richieste</strong><em>Vuoi capire se Google Ads può intercettare persone interessate ai tuoi servizi.</em></span><b aria-hidden="true">→</b></a>
+          </div>
+        </div>
+      </section>
+      <section id="perizia" class="test-perizia-block">
+        <div class="wrap test-perizia-layout">
+          <aside class="local-strip"><div><span>SITI WEB A PADOVA</span><p>Partiamo dalla tua realtà, dal pubblico che vuoi raggiungere e dal tipo di contatto che vuoi ricevere.</p><a href="/realizzazione-siti-web-padova/">Siti web a Padova ↗</a></div></aside>
+          <div class="test-perizia-copy">
+            <p class="eyebrow">Se il sito esiste già</p><h2>Prima di rifarlo,<br />verifichiamo gli <em>aspetti tecnici.</em></h2>
+            <p class="statement">La Perizia Sito Web controlla le pagine pubbliche, il codice accessibile dal browser, le configurazioni SEO tecniche e le prestazioni. Ricevi un report scritto con anomalie documentate e priorità di correzione, da condividere anche con il tuo tecnico.</p><a class="plain" href="/perizia-sito-web/">Scopri la verifica tecnica →</a>
+          </div>
+          <figure class="test-perizia-photo"><ResponsiveImage src="/images/perizia-direction-1/sito-a-strati.webp" width={1200} height={1200} sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 1100px) 45vw, 25vw" alt="Illustrazione di un sito scomposto in livelli: interfaccia, contenuti e struttura tecnica." /></figure>
+          <div class="board">
+            <div class="board-top"><strong>Verifica tecnica professionale del sito</strong></div>
+            <div class="board-main"><div><b>49,90 €</b><p>+ IVA<br />Report scritto con evidenze e priorità.</p><a class="button board-cta" href="/perizia-sito-web/">Richiedi la verifica tecnica →</a></div><ul>{checks.map((check) => <li>✓ {check}</li>)}</ul></div>
+          </div>
+          <div class="test-perizia-notes"><span>Fino a 9 pagine. Da 10 pagine, preventivo dedicato prima dell’avvio. Se ci affidi gli interventi individuati, <strong>recuperi l’intero costo pagato per la verifica.</strong></span><span>Non è una perizia giurata o forense.</span></div>
+        </div>
+      </section>
+      <section class="diagnostic-feature" aria-labelledby="diagnostic-feature-title">
+        <figure class="diagnostic-feature-visual"><ResponsiveImage src="/images/home-test/report.webp" width={960} height={640} sizes="(max-width: 680px) 100vw, 40vw" alt="Esempio di scheda di verifica tecnica del sito: configurazione, codice, sicurezza e prestazioni." /></figure>
+        <div class="diagnostic-feature-copy"><div><p class="eyebrow">Il punto di partenza</p><h2 id="diagnostic-feature-title">Un sito nuovo non risolve<br />automaticamente un problema <em>vecchio.</em></h2></div><p>Quando il sito esiste già, verifichiamo prima gli aspetti tecnici. Per un nuovo progetto definiamo struttura, contenuti e modalità di contatto in base all’attività.</p></div>
+        <aside class="test-trust"><LogoMarquee /></aside>
+      </section>
+      <section id="soluzioni" class="section dark">
+        <div class="wrap test-services-layout">
+          <div class="test-services-intro"><div class="services-title"><div><p class="eyebrow light">Siti web, analisi e Google Ads</p><h2>Scegli la soluzione<br /><em>in base al tuo obiettivo.</em></h2></div><p>Non vendiamo pacchetti scollegati. Colleghiamo sito, contenuti e promozione solo quando servono al problema che vuoi risolvere.</p></div>
+          {blackFriday.visible && <section class="bf-hub-offer" aria-labelledby="bf-hub-title">
+            <h3 id="bf-hub-title">Black Friday: −25% sui siti per professionisti e aziende.</h3>
+            <BlackFridayTerms />
+          </section>}
+          </div><div class="services">
+            <a class="featured" href="/perizia-sito-web/"><ResponsiveImage src="/images/perizia-direction-1/report-tecnico.webp" width={960} height={640} sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 1100px) 22vw, 17vw" alt="Scena illustrativa: report di verifica tecnica tra le mani, accanto a un tablet." /><div class="service-copy"><small>Se il sito esiste già</small><h3>Perizia tecnica del sito web</h3><p>Controlliamo il codice pubblico, le configurazioni tecniche, il caricamento e il comportamento da mobile. Ricevi un report con evidenze e priorità di correzione.</p><p>49,90 € + IVA · fino a 9 pagine</p></div><div class="service-art audit-art" aria-hidden="true"><span>Codice</span><span>Prestazioni</span><span>SEO tecnica</span></div><span class="service-link">Scopri la verifica →</span></a>
+            <a href="/sito-web-per-negozio/"><ResponsiveImage src="/images/home-test/negozio-abbigliamento.webp" width={960} height={640} sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 1100px) 22vw, 17vw" alt="Scena illustrativa: un negozio di abbigliamento con capi e materiali esposti." /><div class="service-copy"><small>Per attività locali</small><h3>Siti web per negozi e attività locali</h3><p>Per farti trovare, mostrare cosa offri e rendere semplice contattarti, chiamarti o raggiungerti.</p><p>Da 490 € + IVA</p></div><span class="service-link">Vedi i siti per attività locali ↗</span></a>
+            <a class:list={{ "bf-service-card": blackFriday.visible }} href="/sito-web-per-professionisti/"><ResponsiveImage src="/images/professionisti-direction-3/dossier-progetto.webp" width={960} height={640} sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 1100px) 22vw, 17vw" alt="Scena illustrativa: una professionista esamina un documento nel suo studio." /><div class="service-copy">{blackFriday.visible && <span class="bf-card-label">Black Friday −25% · 2–27 novembre</span>}<small>Per professionisti</small><h3>Siti web per professionisti</h3><p>Per spiegare con chiarezza cosa fai, per chi lavori e perché una persona dovrebbe contattarti.</p>{blackFriday.visible && <p class="bf-card-price">Da {euro(promoPrice('professionisti'))} € + IVA<span>Prezzo ordinario da <del>{euro(BLACK_FRIDAY.plans.professionisti.ordinary)} €</del> + IVA</span></p>}{!blackFriday.visible && <p>Da 990 € + IVA</p>}</div><span class="service-link">Vedi i siti per professionisti ↗</span></a>
+            <a class:list={{ "bf-service-card": blackFriday.visible }} href="/sito-web-aziendale/"><ResponsiveImage src="/images/aziende-direction-3/architettura-pagine.webp" width={960} height={640} sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 1100px) 22vw, 17vw" alt="Scena illustrativa: un tecnico al lavoro in una piccola azienda manifatturiera." /><div class="service-copy">{blackFriday.visible && <span class="bf-card-label">Black Friday −25% · 2–27 novembre</span>}<small>Per PMI e aziende</small><h3>Siti web aziendali per PMI</h3><p>Per presentare servizi, competenze e casi reali a clienti, partner e interlocutori B2B.</p>{blackFriday.visible && <p class="bf-card-price">Da {euro(promoPrice('aziende'))} € + IVA<span>Prezzo ordinario da <del>{euro(BLACK_FRIDAY.plans.aziende.ordinary)} €</del> + IVA</span></p>}{!blackFriday.visible && <p>Da 1.890 € + IVA</p>}</div><span class="service-link">Vedi i siti aziendali ↗</span></a>
+            <a href="/pubblicita-su-google/"><ResponsiveImage src="/images/home-test/campagne-google.webp" width={960} height={640} sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 1100px) 22vw, 17vw" alt="Interfaccia illustrativa in italiano per la preparazione di una campagna Google Ads, senza dati di risultato." /><div class="service-copy"><small>Per chi sta già cercando</small><h3>Google Ads per ottenere richieste</h3><p>Campagne pensate per intercettare ricerche attive, portare il traffico alla pagina giusta e misurare le azioni concordate.</p></div><div class="test-card-search" aria-hidden="true"><span>cerca</span></div><span class="service-link">Valuta Google Ads ↗</span></a>
+            <a href="/pubblicita-su-chatgpt/"><ResponsiveImage src="/images/home-test/chatgpt-italiano.webp" width={960} height={640} sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 1100px) 22vw, 17vw" alt="Esempio illustrativo ChatGPT con conversazione e annuncio in italiano, da fonte ufficiale OpenAI." /><div class="service-copy"><small>Nuovi contesti di scelta</small><h3>Pubblicità nei nuovi contesti di scelta</h3><p>Un servizio sperimentale per valutare come rendere il tuo brand presente mentre le persone confrontano soluzioni e prendono decisioni.</p></div><span class="service-link">Scopri il servizio ↗</span></a>
+          </div>
+        </div>
+      </section>
+      <section id="metodo" class="section wrap method">
+        <div><p class="eyebrow">Come lavoriamo</p><h2>Prima capiamo.<br /><em>Poi costruiamo.</em></h2></div>
+        <ol><li><small>01</small><div><h3>Guardiamo la situazione reale</h3><p>Obiettivi, pubblico, sito attuale, contenuti e ostacoli. Non partiamo dal template.</p></div></li><li><small>02</small><div><h3>Scegliamo cosa serve davvero</h3><p>Una correzione, una nuova struttura, un sito completo o una campagna. La soluzione dipende dal problema.</p></div></li><li><small>03</small><div><h3>Costruiamo e verifichiamo</h3><p>Design, testi, sviluppo e promozione lavorano insieme per portare alla prossima conversazione.</p></div></li></ol>
+      </section>
+      <section id="contatti" class="contact">
+        <div class="wrap contact-grid">
+          <div><p class="eyebrow light">Il prossimo passo</p><h2>Raccontaci cosa<br /><em>non sta funzionando.</em></h2><p>Hai già un sito, devi crearne uno o vuoi capire se Google Ads può aiutarti? Scrivici in due righe. Ti risponderemo con il prossimo passo più sensato per la tua situazione.</p><a class="plain lime" href={whatsApp} target="_blank" rel="noopener noreferrer">Scrivici su WhatsApp ↗</a></div>
+          <form id="home-contact-form" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="2afa7184-7e7d-4881-9472-d10ca4e3c6c3" /><input type="hidden" name="subject" value="Nuovo contatto dal sito 4 Web Lab" /><input type="hidden" name="source_page" value={preview ? "home-test" : "home"} />{blackFriday.visible && <><input type="hidden" name="campaign" value="" /><p class="bf-form-note">Per l’offerta scegli “Nuovo sito per professionista · Black Friday” o “Nuovo sito aziendale · Black Friday”. Il piano Negozi resta alla tariffa ordinaria. La richiesta non conferma il preventivo.</p></>}<label class="honeypot" aria-hidden="true">Non compilare questo campo<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label><label>Nome<input name="name" required autocomplete="name" /></label><label>Email<input name="email" type="email" required autocomplete="email" /></label><label>Di cosa hai bisogno?<select name="esigenza"><option>Ho già un sito e voglio capire cosa non funziona</option><option>Devo creare un sito web</option>{blackFriday.visible && <><option data-campaign="professionisti">Nuovo sito per professionista · Black Friday</option><option data-campaign="aziende">Nuovo sito aziendale · Black Friday</option></>}<option>Voglio valutare Google Ads</option><option>Non so ancora quale servizio mi serve</option></select></label><label>Raccontaci il progetto in due righe<textarea name="message" rows="3" required></textarea></label><button class="button" type="submit">Raccontaci il progetto ↗</button><p class="privacy">I dati sono usati solo per rispondere alla richiesta. <a href="/privacy/">Privacy policy</a>.</p><p id="home-contact-status" class="form-status" aria-live="polite"></p></form>
+        </div>
+      </section>
+    </main>
+    <SiteFooter />
+    <script>
+      const homeForm = document.querySelector<HTMLFormElement>('#home-contact-form');
+      const need = homeForm?.querySelector<HTMLSelectElement>('select[name="esigenza"]');
+      const campaign = homeForm?.querySelector<HTMLInputElement>('input[name="campaign"]');
+      const subject = homeForm?.querySelector<HTMLInputElement>('input[name="subject"]');
+      const ordinarySubject = subject?.value || '';
+      const syncCampaign = () => {
+        if (!campaign || !subject || !need) return;
+        const plan = need.selectedOptions[0]?.dataset.campaign;
+        campaign.value = plan ? 'black_friday_2026' : '';
+        subject.value = plan ? `Richiesta Black Friday 2026 - ${need.value} - home` : ordinarySubject;
+      };
+      need?.addEventListener('change', syncCampaign);
+      // A successful submission resets the select; remove stale campaign metadata too.
+      homeForm?.addEventListener('reset', () => setTimeout(syncCampaign, 0));
+      syncCampaign();
+    </script>
+  </body>
+</html>

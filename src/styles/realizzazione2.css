@@ -1,0 +1,106 @@
+.realizzazione2-page { background:#f5f4ef; color:#101a2d; }
+.realizzazione2-page main .wrap { width:min(1360px,calc(100% - 96px)); }
+.realizzazione2-page main :is(h1,h2,h3) { font-family:var(--sans); font-weight:700; letter-spacing:-.045em; }
+.realizzazione2-page main em { font:inherit; color:inherit; }
+.realizzazione2-page main .button { border-radius:8px; }
+.realizzazione2-page .breadcrumb-strip { background:#f5f4ef; }
+.realizzazione2-page .portfolio-hero { position:relative; min-height:500px; padding:72px 0; display:grid; grid-template-columns:1fr 1fr; background:#eeede7; color:#101a2d; isolation:isolate; }
+.realizzazione2-page .portfolio-hero .wrap { width:auto; margin:0; padding-left:max(48px,calc((100vw - 1360px)/2)); padding-right:48px; }
+.realizzazione2-page .portfolio-hero .wrap::after { display:none; }
+.realizzazione2-page .portfolio-hero h1 { max-width:18ch; font-size:clamp(36px,3.6vw,58px); line-height:1.06; margin:20px 0 24px; }
+.realizzazione2-page .portfolio-hero .lead { max-width:43ch; font-size:18px; line-height:1.6; color:#314057; }
+.realizzazione2-page .hero-location { color:#314057; font:500 12px/1.6 var(--sans); }
+.realizzazione2-page .atlas-hero-image { position:absolute; inset:0 0 0 50%; z-index:-1; margin:0; }
+.realizzazione2-page .atlas-hero-image img { width:100%; height:100%; object-fit:cover; object-position:center; }
+.realizzazione2-page .portfolio-intro { padding-block:80px; grid-template-columns:.8fr 1.2fr; gap:64px; }
+.realizzazione2-page .portfolio-intro h2 { font-size:36px; line-height:1.12; }
+.realizzazione2-page .portfolio-intro>div:last-child { padding:0 0 0 40px; border-left:2px solid #d7f54a; max-width:none; }
+.realizzazione2-page .portfolio-intro .statement { font:400 20px/1.5 var(--sans); }
+.realizzazione2-page .portfolio-real { background:transparent; padding:32px 0 104px; }
+.realizzazione2-page .portfolio-section-heading { grid-template-columns:1fr 1fr; gap:8px 48px; margin-bottom:40px; }
+.realizzazione2-page .portfolio-section-heading h2 { font-size:40px; line-height:1.1; }
+.realizzazione2-page .portfolio-section-heading>p:last-child { font-size:16px; line-height:1.6; }
+.realizzazione2-page .portfolio-section-heading .eyebrow { margin:0; }
+.realizzazione2-page .portfolio-real-grid { gap:48px; }
+.realizzazione2-page .portfolio-real-card { display:block; min-height:0; border:0; background:transparent; }
+.realizzazione2-page .portfolio-real-card>img { height:auto; min-height:0; width:100%; aspect-ratio:1.8; object-fit:cover; border-radius:8px; }
+.realizzazione2-page .portfolio-real-card>div { padding:24px 0 0; }
+.realizzazione2-page .portfolio-real-card h3 { margin:0 0 12px; font-size:28px; }
+.realizzazione2-page .portfolio-real-card>div>p:not(.portfolio-label) { font-size:16px; max-width:56ch; line-height:1.6; }
+.realizzazione2-page .portfolio-label { font:600 11px/1.5 var(--sans); letter-spacing:.06em; margin:0 0 12px; }
+.realizzazione2-page .portfolio-label.real { color:#155dc0; }
+.realizzazione2-page .portfolio-status { margin-top:18px; color:#155dc0; font:600 15px/1.5 var(--sans); }
+.realizzazione2-page .portfolio-concepts { padding:0 0 120px; }
+.realizzazione2-page .portfolio-section-heading.align-right .eyebrow,
+.realizzazione2-page .portfolio-section-heading.align-right h2 { grid-column:1; text-align:left; }
+.realizzazione2-page .portfolio-section-heading.align-right>p:last-child { grid-column:2; }
+.realizzazione2-page .concept-list { grid-template-columns:repeat(2,minmax(0,1fr)); gap:104px 72px; padding-top:24px; }
+.realizzazione2-page .concept-card,
+.realizzazione2-page .concept-card.reverse {
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:28px;
+  min-width:0;
+  padding:24px;
+  border:1px solid #101a2d25;
+  border-radius:12px;
+  background:#faf9f6;
+}
+.realizzazione2-page .concept-card .concept-previews { order:0; }
+.realizzazione2-page .concept-card .concept-main { order:1; max-width:none; min-width:0; }
+.realizzazione2-page .concept-main h3 { font-size:30px; line-height:1.15; margin:0 0 16px; max-width:30ch; }
+.realizzazione2-page .concept-main>p:not(.portfolio-label) { font-size:17px; line-height:1.6; max-width:54ch; }
+.realizzazione2-page .concept-main ul { margin:24px 0; gap:0; grid-template-columns:1fr; }
+.realizzazione2-page .concept-main li { font-size:14px; line-height:1.5; padding-top:10px; }
+.realizzazione2-page .concept-main .plain { font:600 15px/1.5 var(--sans); color:#155dc0; min-height:44px; display:inline-flex; align-items:center; }
+.realizzazione2-page .concept-previews { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.realizzazione2-page .concept-previews button,
+.realizzazione2-page .concept-previews button:first-child { min-height:0; grid-row:auto; border:1px solid #101a2d20; border-radius:6px; background:#e8e9e4; }
+.realizzazione2-page .concept-previews button:first-child { grid-column:1/-1; }
+.realizzazione2-page .concept-previews img { width:100%; height:auto; aspect-ratio:1265/712; object-fit:contain; }
+.realizzazione2-page .concept-previews span { position:static; display:block; background:#eeede8; color:#314057; padding:10px 12px; font:500 11px/1.5 var(--sans); letter-spacing:0; text-transform:none; }
+.realizzazione2-page .concept-card:last-child { grid-column:1/-1; display:grid; grid-template-columns:1.2fr 1fr; align-items:center; gap:64px; }
+.realizzazione2-page .portfolio-contact { padding-block:88px; background:#101a2d; }
+.realizzazione2-page .portfolio-contact h2 { font-size:48px; line-height:1.1; }
+.realizzazione2-page :is(a,button):focus-visible { outline:3px solid #155dc0; outline-offset:5px; }
+@media (max-width:1000px) {
+ .realizzazione2-page main .wrap { width:calc(100% - 64px); }
+ .realizzazione2-page .portfolio-hero .wrap { width:auto; padding-left:32px; padding-right:32px; }
+ .realizzazione2-page .portfolio-hero { min-height:480px; }
+ .realizzazione2-page .portfolio-hero h1 { font-size:38px; }
+ .realizzazione2-page .portfolio-intro { gap:32px; }
+ .realizzazione2-page .portfolio-section-heading { gap:16px 32px; }
+ .realizzazione2-page .portfolio-real-grid { gap:32px; }
+ .realizzazione2-page .concept-list { grid-template-columns:1fr; }
+ .realizzazione2-page .concept-card:last-child { display:flex; gap:28px; }
+ .realizzazione2-page .concept-previews { grid-template-columns:2fr 1fr; }
+ .realizzazione2-page .concept-previews button:first-child { grid-column:auto; grid-row:span 2; align-self:start; }
+ .realizzazione2-page .concept-main h3 { font-size:32px; }
+}
+@media (max-width:700px) {
+ .realizzazione2-page main .wrap { width:calc(100% - 40px); }
+ .realizzazione2-page .portfolio-hero { display:flex; flex-direction:column; padding:44px 0 0; min-height:0; }
+ .realizzazione2-page .portfolio-hero .wrap { width:auto; padding:0 20px 36px; }
+ .realizzazione2-page .portfolio-hero h1 { font-size:36px; max-width:20ch; }
+ .realizzazione2-page .portfolio-hero .lead { font-size:17px; }
+ .realizzazione2-page .atlas-hero-image { position:static; height:220px; z-index:auto; }
+ .realizzazione2-page .portfolio-intro { padding-block:56px; grid-template-columns:1fr; gap:24px; }
+ .realizzazione2-page .portfolio-intro h2 { font-size:30px; }
+ .realizzazione2-page .portfolio-intro>div:last-child { padding-left:20px; }
+ .realizzazione2-page .portfolio-intro .statement { font-size:18px; }
+ .realizzazione2-page .portfolio-real { padding:12px 0 72px; }
+ .realizzazione2-page .portfolio-section-heading { display:block; margin-bottom:32px; }
+ .realizzazione2-page .portfolio-section-heading h2 { font-size:34px; margin:12px 0 20px; }
+ .realizzazione2-page .portfolio-real-grid { grid-template-columns:1fr; gap:48px; }
+ .realizzazione2-page .portfolio-concepts { padding-bottom:80px; }
+ .realizzazione2-page .concept-list { gap:80px; padding-top:0; }
+ .realizzazione2-page .concept-card,
+ .realizzazione2-page .concept-card.reverse { padding:16px; }
+ .realizzazione2-page .concept-previews { grid-template-columns:1fr 1fr; gap:12px; }
+ .realizzazione2-page .concept-previews button:first-child { grid-column:1/-1; grid-row:auto; }
+ .realizzazione2-page .concept-main h3 { font-size:28px; }
+ .realizzazione2-page .portfolio-contact { padding-block:64px; }
+ .realizzazione2-page .portfolio-contact h2 { font-size:38px; }
+ .realizzazione2-page .portfolio-contact-card { padding:28px; }
+}
