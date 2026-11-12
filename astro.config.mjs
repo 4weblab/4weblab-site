@@ -42,7 +42,9 @@ export default defineConfig({
     lastmod: new Date('2026-10-12T00:00:00.000Z'),
     serialize(item) {
       const pathname = new URL(item.url).pathname;
-      if (copyUpdatedPages.has(pathname)) {
+      if (pathname === '/realizzazione-siti-web-padova/') {
+        item.lastmod = '2026-11-12T00:00:00.000Z';
+      } else if (copyUpdatedPages.has(pathname)) {
         item.lastmod = '2026-11-06T00:00:00.000Z';
       } else if (pathname === '/black-friday-2026/') {
         item.lastmod = '2026-11-01T00:00:00.000Z';
